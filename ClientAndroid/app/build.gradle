@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.dti.defilecture"
-        minSdk 22
+        minSdkVersion 21
         targetSdk 32
         versionCode 1
         versionName "1.0"
