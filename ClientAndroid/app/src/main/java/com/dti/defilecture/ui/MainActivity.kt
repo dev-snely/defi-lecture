@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     /** Fonction qui affiche le fragment spécifié comme paramètre de la fonction.
      *
      * @param fragment Le fragment que l'on veut afficher.
