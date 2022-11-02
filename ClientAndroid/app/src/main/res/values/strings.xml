@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DefiLecture</string>
+    <string name="ic_equipage">Équipage</string>
+    <string name="ic_ajouter">Ajouter</string>
+    <string name="ic_tresorerie">Trésorerie</string>
+    <string name="ic_epreuve">Épreuve</string>
+    <string name="compte">Compte</string>
 </resources>
