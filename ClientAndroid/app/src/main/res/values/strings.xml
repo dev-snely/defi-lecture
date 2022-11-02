@@ -5,4 +5,9 @@
     <string name="ic_tresorerie">Trésorerie</string>
     <string name="ic_epreuve">Épreuve</string>
     <string name="compte">Compte</string>
+    <string name="defilecture">Défi Lecture</string>
+    <string name="AjouterLecture">Ajouter une lecture</string>
+    <string name="paramètre">Paramètres</string>
+    <string name="langue">Langue</string>
+    <string name="deconnexion">Déconnexion</string>
 </resources>
