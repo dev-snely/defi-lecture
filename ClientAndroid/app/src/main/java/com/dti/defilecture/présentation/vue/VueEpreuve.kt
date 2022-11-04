@@ -1,4 +1,4 @@
 package com.dti.defilecture.présentation.vue
 
-class vueEquipage {
+class VueEpreuve {
 }

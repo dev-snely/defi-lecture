@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     var barre_navigation: BottomNavigationView? = null
     var fragmentAjouterLecture : Fragment? = null
     var fragmentEquipage : Fragment? = null
-    var fragmentTresorie : Fragment? = null
+    var fragmentTresorerie : Fragment? = null
     var fragmentEpreuve : Fragment? = null
     var fragmentCompteUtilisateur : Fragment? = null
 
@@ -20,12 +20,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Page AjouterLecture
         fragmentAjouterLecture = FragmentAjouterLecture()
         afficherFragmentCourant(fragmentAjouterLecture)
 
+        //Page Equipage
         fragmentEquipage = FragmentEquipage()
         afficherFragmentCourant(fragmentEquipage)
 
+        //Page Tresorerie
+        fragmentTresorerie = FragmentEquipage()
+        afficherFragmentCourant(fragmentTresorerie)
+
+        //Page Epreuve
+        fragmentEpreuve = FragmentEquipage()
+        afficherFragmentCourant(fragmentEpreuve)
+
+        //Page CompteUtilisateur
+        fragmentCompteUtilisateur = FragmentEquipage()
+        afficherFragmentCourant(fragmentCompteUtilisateur)
 
         barre_navigation = findViewById(R.id.barre_navigation)
         barre_navigation?.setOnItemSelectedListener {
@@ -33,13 +46,13 @@ class MainActivity : AppCompatActivity() {
                 /*
                Pour afficher vos fragments avec la barre de navigation :
                ----------------------------------------------------------
-               R.id.ic_tresorie -> afficherFragmentCourant( fragmentTresorie )
-               R.id.ic_epreuve -> afficherFragmentCourant ( fragmentEpreuve )
-               R.id.ic_compte -> afficherFragmentCourant( fragmentCompteUtilisateur )
                ----------------------------------------------------------
                 */
                 R.id.ic_ajouter -> afficherFragmentCourant( fragmentAjouterLecture )
                 R.id.ic_equipage -> afficherFragmentCourant( fragmentEquipage )
+                R.id.ic_tresorerie -> afficherFragmentCourant( fragmentTresorerie )
+                R.id.ic_epreuve -> afficherFragmentCourant ( fragmentEpreuve )
+                R.id.ic_compte -> afficherFragmentCourant( fragmentCompteUtilisateur )
             }
             true
         }
