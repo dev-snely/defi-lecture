@@ -5,11 +5,16 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.vue.FragmentAjouterLecture
+import com.dti.defilecture.présentation.vue.FragmentEquipage
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     var barre_navigation: BottomNavigationView? = null
     var fragmentAjouterLecture : Fragment? = null
+    var fragmentEquipage : Fragment? = null
+    var fragmentTresorie : Fragment? = null
+    var fragmentEpreuve : Fragment? = null
+    var fragmentCompteUtilisateur : Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,17 +23,23 @@ class MainActivity : AppCompatActivity() {
         fragmentAjouterLecture = FragmentAjouterLecture()
         afficherFragmentCourant(fragmentAjouterLecture)
 
+        fragmentEquipage = FragmentEquipage()
+        afficherFragmentCourant(fragmentEquipage)
+
+
         barre_navigation = findViewById(R.id.barre_navigation)
         barre_navigation?.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.ic_ajouter -> afficherFragmentCourant( fragmentAjouterLecture )
                 /*
-                Pour afficher vos fragments avec la barre de navigation :
-                ----------------------------------------------------------
+               Pour afficher vos fragments avec la barre de navigation :
+               ----------------------------------------------------------
+               R.id.ic_tresorie -> afficherFragmentCourant( fragmentTresorie )
+               R.id.ic_epreuve -> afficherFragmentCourant ( fragmentEpreuve )
+               R.id.ic_compte -> afficherFragmentCourant( fragmentCompteUtilisateur )
+               ----------------------------------------------------------
+                */
+                R.id.ic_ajouter -> afficherFragmentCourant( fragmentAjouterLecture )
                 R.id.ic_equipage -> afficherFragmentCourant( fragmentEquipage )
-                R.id.ic_compte -> afficherFragmentCourant( fragmentCompteUtilisateur )
-                ----------------------------------------------------------
-                 */
             }
             true
         }
