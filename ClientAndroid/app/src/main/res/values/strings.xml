@@ -10,4 +10,6 @@
     <string name="paramètre">Paramètres</string>
     <string name="langue">Langue</string>
     <string name="deconnexion">Déconnexion</string>
+    <string name="oui">OUI</string>
+    <string name="non">NON</string>
 </resources>

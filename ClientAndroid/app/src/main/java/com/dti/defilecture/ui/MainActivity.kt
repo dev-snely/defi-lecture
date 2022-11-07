@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.vue.FragmentAjouterLecture
+import com.dti.defilecture.présentation.vue.VueAjouterLecture
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fragmentAjouterLecture = FragmentAjouterLecture()
+        fragmentAjouterLecture = VueAjouterLecture()
         afficherFragmentCourant(fragmentAjouterLecture)
 
         barre_navigation = findViewById(R.id.barre_navigation)

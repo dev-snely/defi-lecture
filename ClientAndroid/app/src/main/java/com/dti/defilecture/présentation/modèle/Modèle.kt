@@ -1,4 +1,6 @@
 package com.dti.defilecture.présentation.modèle
 
-class Modèle {
+import com.dti.defilecture.domaine.entité.Lecture
+
+object Modèle {
 }
