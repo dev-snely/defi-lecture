@@ -1,15 +1,12 @@
 package com.dti.defilecture.ui
 
-import android.app.Person
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
-import com.dti.defilecture.domaine.entité.Personne
-import com.dti.defilecture.présentation.modèle.MyAdapter
 import com.dti.defilecture.présentation.vue.VueAjouterLecture
+import com.dti.defilecture.présentation.vue.VueTrésorerie
 import com.dti.defilecture.présentation.vue.VueÉquipage
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -18,10 +15,9 @@ class MainActivity : AppCompatActivity() {
     var fragmentAjouterLecture : Fragment? = null
 
     var fragmentÉquipage : Fragment? = null
-    private lateinit var newRecyclerView: RecyclerView
-    private lateinit var listeÉquipage : ArrayList<Personne>
-    lateinit var nomPersonnes : Array<String>
-    lateinit var doublonsPersonnes : Array<Int>
+
+    var fragmentTrésorerie : Fragment? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +26,19 @@ class MainActivity : AppCompatActivity() {
         fragmentAjouterLecture = VueAjouterLecture()
         afficherFragmentCourant(fragmentAjouterLecture)
 
+        fragmentÉquipage = VueÉquipage()
+        afficherFragmentCourant(fragmentÉquipage)
+
+        fragmentTrésorerie = VueTrésorerie()
+        afficherFragmentCourant(fragmentTrésorerie)
+
+
         barre_navigation = findViewById(R.id.barre_navigation)
         barre_navigation?.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.ic_ajouter -> afficherFragmentCourant( fragmentAjouterLecture )
+                R.id.ic_équipage -> afficherFragmentCourant( fragmentÉquipage )
+                R.id.ic_trésorerie -> afficherFragmentCourant( fragmentTrésorerie )
                 /*
                 Pour afficher vos fragments avec la barre de navigation :
                 ----------------------------------------------------------
@@ -44,18 +49,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-        fragmentÉquipage = VueÉquipage()
-        afficherFragmentCourant(fragmentÉquipage)
-
-        nomPersonnes = arrayOf("Gerard", "Snely", "Vu Minh", "Ovidiu", "Jonathan")
-        doublonsPersonnes = arrayOf(10, 20, 30, 40 , 50)
-        newRecyclerView = findViewById(R.id.listePersonnesÉquipage)
-        newRecyclerView.layoutManager = LinearLayoutManager(this)
-        newRecyclerView.setHasFixedSize(true)
-
-        listeÉquipage = arrayListOf<Personne>()
-        getUserData()
 
     }
 
@@ -71,15 +64,5 @@ class MainActivity : AppCompatActivity() {
             addToBackStack(null)
             commit()
         }
-    }
-
-    private fun getUserData() {
-        for (i in 0 until nomPersonnes.size){
-            val personneÉquipage = Personne(nomPersonnes[i],doublonsPersonnes[i])
-            listeÉquipage.add(personneÉquipage)
-        }
-
-        newRecyclerView.adapter = MyAdapter(listeÉquipage)
-
     }
 }
