@@ -13,14 +13,12 @@ interface ContratVuePrésentateurÉquipage {
      */
     interface IVueÉquipage{
 
-
     }
 
     /**
      * Définit les méthodes à utiliser dans un présentateur Équipage.
      */
     interface IPrésentateurÉquipage{
-
 
     }
 }

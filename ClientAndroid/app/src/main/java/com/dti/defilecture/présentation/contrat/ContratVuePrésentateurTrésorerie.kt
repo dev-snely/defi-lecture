@@ -1,5 +1,7 @@
 package com.dti.defilecture.présentation.contrat
 
+import android.view.Menu
+import android.view.MenuInflater
 
 
 /**
@@ -13,14 +15,12 @@ interface ContratVuePrésentateurTrésorerie {
      */
     interface IVueTrésorerie{
 
-
     }
 
     /**
      * Définit les méthodes à utiliser dans un présentateur Trésorerie.
      */
     interface IPrésentateurTrésorerie{
-
 
     }
 }
