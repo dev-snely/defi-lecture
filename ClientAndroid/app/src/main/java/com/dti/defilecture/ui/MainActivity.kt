@@ -5,23 +5,28 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.vue.VueAjouterLecture
+import com.dti.defilecture.présentation.vue.VueMesLectures
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     var barre_navigation: BottomNavigationView? = null
     var fragmentAjouterLecture : Fragment? = null
+    var fragmentMesLectures : Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        fragmentMesLectures = VueMesLectures()
         fragmentAjouterLecture = VueAjouterLecture()
         afficherFragmentCourant(fragmentAjouterLecture)
+
 
         barre_navigation = findViewById(R.id.barre_navigation)
         barre_navigation?.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.ic_ajouter -> afficherFragmentCourant( fragmentAjouterLecture )
+                R.id.ic_compte -> afficherFragmentCourant( fragmentMesLectures )
                 /*
                 Pour afficher vos fragments avec la barre de navigation :
                 ----------------------------------------------------------

@@ -1,6 +1,8 @@
 package com.dti.defilecture.présentation.vue
 
+import android.app.AlertDialog
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,13 +10,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.TableLayout
 import android.widget.TextView
-import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.contrat.ContratVuePrésentateurAjouterLecture
-import com.dti.defilecture.présentation.modèle.Modèle
+import com.dti.defilecture.présentation.modèle.modèle
 import com.dti.defilecture.présentation.présentateur.PrésentateurAjouterLecture
 
 
@@ -33,14 +35,17 @@ class VueAjouterLecture : Fragment(), ContratVuePrésentateurAjouterLecture.IVue
     lateinit var tvTitreLecture: TextView
     lateinit var tvNbMinutes: TextView
 
+    private lateinit var builder : AlertDialog.Builder
 
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_ajouter_lecture, container, false)
-        présentateur = PrésentateurAjouterLecture( Modèle, this  )
+        présentateur = PrésentateurAjouterLecture( modèle, this  )
         return vue
     }
 
@@ -59,15 +64,14 @@ class VueAjouterLecture : Fragment(), ContratVuePrésentateurAjouterLecture.IVue
         rdBtnOui = view.findViewById(R.id.radio_oui)
         rdBtnNon = view.findViewById(R.id.radio_non)
         btnAjouterLecture = view.findViewById(R.id.btnAjouterLecture)
-        btnAjouterLecture.isClickable = false
-        btnAjouterLecture.setBackgroundColor(Color.GRAY)
+        //
 
         //Différente fonctions sur la vue.
         gestionAjoutMinutes()
-        gestionObligationLecture()
         gestionBtnReinit()
         gestionAjoutLecture()
-
+        gestionValidation()
+        gestionObligationLecture()
     }
 
     private fun gestionAjoutMinutes(){
@@ -85,6 +89,55 @@ class VueAjouterLecture : Fragment(), ContratVuePrésentateurAjouterLecture.IVue
         }
     }
 
+    private fun gestionBtnReinit(){
+        btnReinit.setOnClickListener {
+            présentateur.traiterReinitialisationCompteur()
+        }
+    }
+    private fun gestionAjoutLecture(){
+        //btnAjouterLecture.setBackgroundColor(Color.GRAY)
+        var bool: Boolean = false
+        if(rdGroup.checkedRadioButtonId == rdBtnNon.id) { bool = false }
+        else if (rdGroup.checkedRadioButtonId == rdBtnOui.id) { bool = true }
+        /*
+
+        Changement couleur du bouton ajouter lecture
+        ------------------------------------------------
+        btnAjouterLecture.setOnClickListener {
+            if ( tvTitreLecture.text.toString().isNotEmpty() &&
+                tvNbMinutes.text.toString().filter { it.isDigit() }.toInt() != 0 &&
+                rdBtnOui.isChecked || rdBtnNon.isChecked ){
+
+                btnAjouterLecture.setBackgroundColor(Color.BLUE)
+
+            }
+        }
+*/
+        btnAjouterLecture.setOnClickListener {
+            présentateur.traiterAjouterLecture(
+                tvTitreLecture.text.toString(),
+                tvNbMinutes
+                    .text.toString()
+                    .filter { it.isDigit() }
+                    .toInt(),
+                rdBtnOui.isChecked || rdBtnNon.isChecked,
+                bool
+            )
+        }
+    }
+
+    private fun gestionValidation(){
+        btnAjouterLecture.setOnClickListener {
+            présentateur.avertirInfosManquant(
+                tvTitreLecture.text.toString(),
+                tvNbMinutes
+                    .text.toString()
+                    .filter { it.isDigit() }
+                    .toInt(),
+                rdBtnOui.isChecked || rdBtnNon.isChecked
+            )
+        }
+    }
     private fun gestionObligationLecture(){
         rdBtnOui.setOnClickListener {
             présentateur.traiterObligationDeLecture()
@@ -94,14 +147,11 @@ class VueAjouterLecture : Fragment(), ContratVuePrésentateurAjouterLecture.IVue
         }
     }
 
-    private fun gestionBtnReinit(){
-        btnReinit.setOnClickListener {
-            présentateur.traiterReinitialisationCompteur()
-        }
+    override fun afficherObligationDeLecture() {
+        val selectBtn: Int= rdGroup!!.checkedRadioButtonId
+        val btn = view?.findViewById<RadioButton>(selectBtn)
     }
-    private fun gestionAjoutLecture(){
 
-    }
 
     override fun modifierMinutesAuCompteur(nombreDeMinutes: Int) {
         tvNbMinutes.text = "$nombreDeMinutes minutes"
@@ -111,18 +161,24 @@ class VueAjouterLecture : Fragment(), ContratVuePrésentateurAjouterLecture.IVue
         tvNbMinutes.text = "0 minute"
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun activerBoutonLorsqueLectureValide() {
-        btnAjouterLecture.isClickable= true
-        btnAjouterLecture.setBackgroundColor(resources.getColor(R.color.df_rougeprimaire))
+        this.context?.let { btnAjouterLecture.setBackgroundColor(it.getColor(R.color.df_rougeprimaire)) }
     }
 
     override fun désactiverBoutonLorsqueLectureInvalide() {
-        btnAjouterLecture.isClickable= false
         btnAjouterLecture.setBackgroundColor(Color.GRAY)
     }
 
-    override fun afficherObligationDeLecture() {
-        val selectBtn: Int= rdGroup!!.checkedRadioButtonId
-        val btn = view?.findViewById<RadioButton>(selectBtn)
+    override fun afficherAvertissementInfosManquants(message: String) {
+        builder = AlertDialog.Builder(this.context)
+        builder.setTitle("Avertissement!")
+            .setMessage(message)
+            .setCancelable(true)
+            .setPositiveButton("J'ai compris"){dialoginterface, it ->
+                //continue l'application
+            }
+            .show()
+        désactiverBoutonLorsqueLectureInvalide()
     }
 }

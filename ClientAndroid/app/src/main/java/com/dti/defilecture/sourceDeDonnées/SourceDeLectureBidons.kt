@@ -1,28 +1,32 @@
 package com.dti.defilecture.sourceDeDonnées
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.dti.defilecture.domaine.entité.Lecture
+import com.dti.defilecture.domaine.intéracteur.SourceDeLecture
 import java.sql.Date
+import java.time.LocalDate
 
-/*
-    Note pour les méthodes static :
 
-Il est recommandé de résoudre la plupart des besoins
-pour les méthodes static avec des fonctions au niveau du package.
-Ils sont simplement déclarés en dehors d'une classe dans un fichier KT.
-
-Lien : https://stackoverflow.com/questions/40352684/what-is-the-equivalent-of-java-static-methods-in-kotlin
-*/
+class SourceDeLectureBidons : SourceDeLecture{
+    override fun récupérerListeDeLecture(): List<Lecture> {
+        TODO("Not yet implemented")
+    }
+    override fun ajouterUneLecture(uneLecture: Lecture) {
+        TODO("Not yet implemented")
+    }
+}
 
 var lectures: MutableList<Lecture>? = null
 
+@RequiresApi(Build.VERSION_CODES.O)
 fun Remplir() {
     if (lectures.isNullOrEmpty()) {
         lectures = mutableListOf(
-            Lecture("Alchimiste", Date(2022, 6, 12), 75, true),
-            Lecture("Rouge Poison", Date(2022, 7, 15), 15, false),
-            Lecture("Tartuffle", Date(2022, 9, 16), 120, false),
-            Lecture("Rouge Poison", Date(2022, 7, 20), 75, false),
-            Lecture("Tartuffle", Date(2022, 6, 20), 75, false)
+            Lecture("Alchimiste", LocalDate.now(), 75, true),
+            Lecture("Tartuffle", LocalDate.now(), 120, false),
+            Lecture("Rouge Poison", LocalDate.now(), 75, false),
+            Lecture("Tartuffle", LocalDate.now(), 75, false)
         )
     }
 }

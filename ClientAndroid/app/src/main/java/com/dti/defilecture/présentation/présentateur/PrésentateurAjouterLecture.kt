@@ -1,12 +1,17 @@
 package com.dti.defilecture.présentation.présentateur
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.dti.defilecture.domaine.entité.Lecture
-import com.dti.defilecture.domaine.intéracteur.SourceDeLecture
 import com.dti.defilecture.présentation.contrat.ContratVuePrésentateurAjouterLecture
-import com.dti.defilecture.présentation.modèle.Modèle
+import com.dti.defilecture.présentation.modèle.modèle
 import com.dti.defilecture.sourceDeDonnées.*
+import java.time.LocalDate
+import kotlin.math.min
 
-class PrésentateurAjouterLecture(var modèle : Modèle, var vue: ContratVuePrésentateurAjouterLecture.IVueAjouterLecture):
+@RequiresApi(Build.VERSION_CODES.O)
+class PrésentateurAjouterLecture(var modèle : modèle,
+                                 var vue: ContratVuePrésentateurAjouterLecture.IVueAjouterLecture):
     ContratVuePrésentateurAjouterLecture.IPrésentateurAjouterLecture {
 
     init {
@@ -17,6 +22,7 @@ class PrésentateurAjouterLecture(var modèle : Modèle, var vue: ContratVuePré
         vue.afficherObligationDeLecture()
     }
 
+
     override fun traiterAjouterMinutes(minuteAAjouter: Int, texteAuCompteur: String) {
         var texteAvecChiffreSeulement = texteAuCompteur.filter { it.isDigit() }
         var mins: Int = texteAvecChiffreSeulement.toInt()
@@ -24,16 +30,33 @@ class PrésentateurAjouterLecture(var modèle : Modèle, var vue: ContratVuePré
         vue.modifierMinutesAuCompteur(mins)
     }
 
-    override fun traiterAjouterLecture(uneLecture: Lecture) {
-        ajouterUneLecture(uneLecture)
+    override fun traiterAjouterLecture(titre: String,
+                                       minutes: Int,
+                                       obligationSelectionné: Boolean,
+                                       lectureObligé: Boolean ) {
+        if( titre.isNotEmpty() && minutes != 0 && obligationSelectionné ){
+
+            val aujourdhui = LocalDate.now()
+            if( !lectureObligé ){
+               // doubler les doublons gagné par le joueur.
+            }
+            modèle.lecture = Lecture( titre, aujourdhui, minutes, lectureObligé )
+        }
+        modèle.ajouterLectureDansSourceDeDonnée(modèle.lecture)
     }
 
     override fun traiterReinitialisationCompteur() {
         vue.réinitialiserMinutesAuCompteur()
     }
 
-    override fun traiterValiderLecture() {
+    override fun traiterValiderLecture(titre: String, minutes: Int, obligation: Boolean) {
 
+    }
+
+    override fun avertirInfosManquant(titre: String, minutes: Int, obligation: Boolean) {
+        if(titre.isEmpty() || minutes == 0 || !obligation){
+            vue.afficherAvertissementInfosManquants("Entrer les informations nécéssaires.")
+        }
     }
 
 

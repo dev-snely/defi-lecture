@@ -160,7 +160,7 @@
             android:id="@+id/textView"
             android:layout_width="65dp"
             android:layout_height="45dp"
-            android:text="l📖"
+            android:text="📖"
             android:textSize="34sp"
             app:layout_constraintEnd_toStartOf="@+id/LectureEditTxt"
             app:layout_constraintHorizontal_bias="0.967"
