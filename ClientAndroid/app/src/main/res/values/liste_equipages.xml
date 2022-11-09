@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name ="page_tresorerie"> Trésorerie </string>
+    <string-array name="liste_équipages">
+        <item>ÉquipageUn            0 doublons</item>
+        <item>ÉquipageDeux            0 doublons</item>
+        <item>ÉquipageTrois            0 doublons</item>
+        <item>ÉquipageQuatre            0 doublons</item>
+        <item>ÉquipageCinq            0 doublons</item>
+        <item>ÉquipageSix            0 doublons</item>
+        <item>ÉquipageSept            0 doublons</item>
+        <item>ÉquipageHuit            0 doublons</item>
+        <item>ÉquipageNeuf            0 doublons</item>
+        <item>ÉquipageDix            0 doublons</item>
+        <item>ÉquipageOnze            0 doublons</item>
+        <item>ÉquipageDouze            0 doublons</item>
+        <item>ÉquipageTreize            0 doublons</item>
+
+    </string-array>
+
+
+</resources>

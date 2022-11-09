@@ -4,8 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.contrat.ContratVuePrésentateurÉquipage
@@ -19,6 +18,7 @@ class VueÉquipage : Fragment(), ContratVuePrésentateurÉquipage.IVueÉquipage 
     lateinit var numéroRang: TextView
     lateinit var totalDoublons: TextView
     lateinit var listePersonnesÉquipage: ListView
+    lateinit var adapter : ArrayAdapter<*>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,11 +39,17 @@ class VueÉquipage : Fragment(), ContratVuePrésentateurÉquipage.IVueÉquipage 
         totalDoublons = view.findViewById(R.id.tv_totalDoublons)
         listePersonnesÉquipage = view.findViewById(R.id.lv_listePersonnesÉquipage)
 
+        adapter = ArrayAdapter(view.context, android.R.layout.simple_list_item_1, resources.getStringArray(R.array.liste_personnes))
+        listePersonnesÉquipage.adapter = adapter
+        listePersonnesÉquipage.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            Toast.makeText(context, parent?.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
+        }
+
         //Différentes fonctions sur la vue.
         calculerTotalDoublons()
     }
 
     private fun calculerTotalDoublons() {
-        totalDoublons.text = (0).toString()
+        totalDoublons.text = (0).toString() + " doublons"
     }
 }
