@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
-    >
-
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?android:attr/windowBackground"
-            app:itemBackground="@color/bg_color_barre"
-            app:itemIconTint="#000"
-            app:itemTextColor="#000"
-            app:menu="@menu/top_bar_app"
-            app:navigationIcon="@drawable/back_svgrepo_com"
-            app:title="@string/AjouterLecture" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+    tools:context=".ui.MainActivity">
 
     <FrameLayout
         android:id="@+id/fl_wrapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="405dp"
+        android:layout_height="799dp"
+        app:layout_constraintBottom_toTopOf="@+id/barre_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/barre_navigation"
@@ -40,6 +26,12 @@
         app:itemBackground="@color/bg_color_barre"
         app:itemIconTint="#000"
         app:itemTextColor="#000"
-        app:menu="@menu/menu_navigation"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navigation">
 
-</RelativeLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,8 @@ package com.dti.defilecture.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.vue.*
@@ -21,8 +23,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView (R.layout.activity_main)
 
+/*
 
         //Page AjouterLecture
         fragmentAjouterLecture = VueAjouterLecture()
@@ -32,16 +35,16 @@ class MainActivity : AppCompatActivity() {
         fragmentMesLectures = VueMesLectures()
 
         //Page Equipage
-        fragmentEquipage = FragmentEquipage()
+        fragmentEquipage = VueEquipage()
 
         //Page Tresorerie
-        fragmentTresorerie = FragmentTresorerie()
+        fragmentTresorerie = VueTresorerie()
 
         //Page Epreuve
-        fragmentEpreuve = FragmentEpreuve()
+        fragmentEpreuve = VueEpreuve()
 
         //Page CompteUtilisateur
-        fragmentCompteUtilisateur = FragmentCompteUtilisateur()
+        fragmentCompteUtilisateur = VueCompteUtilisateur()
 
 
 
@@ -66,8 +69,9 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-    }
 
+
+    }
     /** Fonction qui affiche le fragment spécifié comme paramètre de la fonction.
      *
      * @param fragment Le fragment que l'on veut afficher.
@@ -79,6 +83,6 @@ class MainActivity : AppCompatActivity() {
             }
             addToBackStack(null)
             commit()
-        }
+        }*/
     }
 }

@@ -1,4 +1,6 @@
 package com.dti.defilecture.présentation.vue
 
-class VueEpreuve {
+import androidx.fragment.app.Fragment
+
+class VueEpreuve: Fragment()  {
 }

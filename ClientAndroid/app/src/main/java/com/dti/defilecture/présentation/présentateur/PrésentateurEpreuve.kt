@@ -1,4 +1,4 @@
-package com.dti.defilecture.présentation.présenteur
+package com.dti.defilecture.présentation.présentateur
 
 class PrésentateurEpreuve {
 }
