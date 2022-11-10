@@ -181,4 +181,16 @@ class VueAjouterLecture : Fragment(), ContratVuePrésentateurAjouterLecture.IVue
             .show()
         désactiverBoutonLorsqueLectureInvalide()
     }
+
+    override fun avertirAjoutReussi(message: String) {
+        builder = AlertDialog.Builder(this.context)
+        builder.setTitle("Réussi!")
+            .setMessage(message)
+            .setCancelable(true)
+            .setPositiveButton("J'ai compris"){dialoginterface, it ->
+                //continue l'application
+            }
+    }
+
+
 }

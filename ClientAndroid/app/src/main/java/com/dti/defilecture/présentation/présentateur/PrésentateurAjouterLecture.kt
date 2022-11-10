@@ -59,5 +59,11 @@ class PrésentateurAjouterLecture(var modèle : modèle,
         }
     }
 
+    override fun avertirAjoutReussi(titre: String, minutes: Int, obligation: Boolean) {
+        if(titre.isNotEmpty() || minutes != 0 || obligation){
+            vue.afficherAvertissementInfosManquants("Ajout Réussi")
+        }
+    }
+
 
 }
