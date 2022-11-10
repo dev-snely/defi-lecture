@@ -1,4 +1,6 @@
 package com.dti.defilecture.présentation.vue
 
-class VueCompteUtilisateur {
+import androidx.fragment.app.Fragment
+
+class VueCompteUtilisateur : Fragment()  {
 }

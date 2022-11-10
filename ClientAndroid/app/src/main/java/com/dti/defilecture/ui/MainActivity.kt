@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.vue.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.fragment.NavHostFragment
 
 class MainActivity : AppCompatActivity() {
     var barre_navigation: BottomNavigationView? = null
@@ -32,16 +33,16 @@ class MainActivity : AppCompatActivity() {
         fragmentMesLectures = VueMesLectures()
 
         //Page Equipage
-        fragmentEquipage = FragmentEquipage()
+        fragmentEquipage = VueEquipage()
 
         //Page Tresorerie
-        fragmentTresorerie = FragmentTresorerie()
+        fragmentTresorerie = VueTresorerie()
 
         //Page Epreuve
-        fragmentEpreuve = FragmentEpreuve()
+        fragmentEpreuve = VueEpreuve()
 
         //Page CompteUtilisateur
-        fragmentCompteUtilisateur = FragmentCompteUtilisateur()
+        fragmentCompteUtilisateur =VueCompteUtilisateur()
 
 
 

@@ -1,4 +1,7 @@
 package com.dti.defilecture.présentation.vue
 
-class VueEquipage {
+import androidx.fragment.app.Fragment
+import com.dti.defilecture.R
+
+class VueEquipage : Fragment() {
 }

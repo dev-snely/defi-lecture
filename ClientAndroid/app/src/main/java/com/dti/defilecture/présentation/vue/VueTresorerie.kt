@@ -1,4 +1,7 @@
 package com.dti.defilecture.présentation.vue
 
-class VueTresorerie {
+import androidx.fragment.app.Fragment
+import com.dti.defilecture.R
+
+class VueTresorerie  : Fragment() {
 }
