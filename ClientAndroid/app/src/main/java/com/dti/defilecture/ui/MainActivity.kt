@@ -5,17 +5,20 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.vue.VueAjouterLecture
+import com.dti.defilecture.présentation.vue.VueInscription
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     var barre_navigation: BottomNavigationView? = null
     var fragmentAjouterLecture : Fragment? = null
+    var fragmentInscription : Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         fragmentAjouterLecture = VueAjouterLecture()
+        fragmentInscription = VueInscription()
         afficherFragmentCourant(fragmentAjouterLecture)
 
         barre_navigation = findViewById(R.id.barre_navigation)
