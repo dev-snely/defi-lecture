@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name ="page_équipage"> Équipage </string>
+    <string-array name="liste_personnes">
+        <item>PersonneUn            0 doublons</item>
+        <item>PersonneDeux            0 doublons</item>
+        <item>PersonneTrois            0 doublons</item>
+        <item>PersonneQuatre            0 doublons</item>
+        <item>PersonneCinq            0 doublons</item>
+        <item>PersonneSix            0 doublons</item>
+        <item>PersonneSept            0 doublons</item>
+        <item>PersonneHuit            0 doublons</item>
+        <item>PersonneNeuf            0 doublons</item>
+        <item>PersonneDix            0 doublons</item>
+        <item>PersonneOnze            0 doublons</item>
+        <item>PersonneDouze            0 doublons</item>
+        <item>PersonneTreize            0 doublons</item>
+
+    </string-array>
+
+</resources>

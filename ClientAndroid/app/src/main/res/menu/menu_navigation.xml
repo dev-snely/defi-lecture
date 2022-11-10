@@ -7,12 +7,12 @@
         android:title="@string/ic_ajouter"
         />
     <item
-        android:id="@+id/ic_equipage"
+        android:id="@+id/ic_équipage"
         android:icon="@drawable/team_svgrepo_com"
         android:title="@string/ic_equipage"
         />
     <item
-        android:id="@+id/ic_tresorerie"
+        android:id="@+id/ic_trésorerie"
         android:icon="@drawable/locked_chest_svgrepo_com"
         android:title="@string/ic_tresorerie"
         />

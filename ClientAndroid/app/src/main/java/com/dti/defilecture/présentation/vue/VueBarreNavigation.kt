@@ -28,8 +28,8 @@ class VueBarreNavigation : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         iconeAjouter = view.findViewById(R.id.ic_ajouter)
-        iconeEquipage = view.findViewById(R.id.ic_equipage)
-        iconeTresorerie = view.findViewById(R.id.ic_tresorerie)
+        iconeEquipage = view.findViewById(R.id.ic_équipage)
+        iconeTresorerie = view.findViewById(R.id.ic_trésorerie)
         iconeEpreuve = view.findViewById(R.id.ic_epreuve)
         iconeCompte = view.findViewById(R.id.ic_compte)
 
