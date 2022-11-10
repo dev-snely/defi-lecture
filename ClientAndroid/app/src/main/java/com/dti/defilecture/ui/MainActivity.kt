@@ -6,29 +6,32 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
+
 import com.dti.defilecture.présentation.vue.*
+
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     var barre_navigation: BottomNavigationView? = null
+
     var fragmentAjouterLecture: Fragment? = null
-
     var fragmentMesLectures: Fragment? = null
-
     var fragmentEquipage: Fragment? = null
     var fragmentTresorerie: Fragment? = null
     var fragmentEpreuve: Fragment? = null
     var fragmentCompteUtilisateur: Fragment? = null
+    var fragmentInscription : Fragment? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView (R.layout.activity_main)
+        setContentView (R.layout.fragment_inscription)
 
 /*
 
         //Page AjouterLecture
         fragmentAjouterLecture = VueAjouterLecture()
+        fragmentInscription = VueInscription()
         afficherFragmentCourant(fragmentAjouterLecture)
 
         //Page MesLectures
