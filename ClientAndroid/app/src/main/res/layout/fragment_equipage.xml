@@ -4,15 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".présentation.vue.FragmentEquipage">
+    android:layout_margin="50dp"
+    tools:context=".présentation.vue.VueÉquipage">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_poste2">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
+        <TextView
+            android:id="@+id/tv_nomÉquipage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="( Nom de l'équipage )"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tv_numéroRang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rang #0"
+            app:layout_constraintEnd_toEndOf="@+id/tv_nomÉquipage"
+            app:layout_constraintStart_toStartOf="@+id/tv_nomÉquipage"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nomÉquipage" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_totalDoublons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Doublons"
+            app:layout_constraintEnd_toEndOf="@+id/tv_numéroRang"
+            app:layout_constraintStart_toStartOf="@+id/tv_numéroRang"
+            app:layout_constraintTop_toBottomOf="@+id/tv_numéroRang" />
 
-    </FrameLayout>
+        <ListView
+            android:id="@+id/lv_listePersonnesÉquipage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="50dp"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_totalDoublons"
+            app:layout_constraintStart_toStartOf="@+id/tv_totalDoublons"
+            app:layout_constraintTop_toBottomOf="@+id/tv_totalDoublons" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
