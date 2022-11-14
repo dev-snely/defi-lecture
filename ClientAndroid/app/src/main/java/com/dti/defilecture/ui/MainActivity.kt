@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView (R.layout.activity_main)
 
-
+/*
 
         //Page AjouterLecture
         fragmentAjouterLecture = VueAjouterLecture()
@@ -96,6 +96,6 @@ class MainActivity : AppCompatActivity() {
             }
             addToBackStack(null)
             commit()
-        }
+        }*/
     }
 }

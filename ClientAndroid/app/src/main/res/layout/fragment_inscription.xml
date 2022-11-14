@@ -127,7 +127,8 @@
             android:textAlignment="center"
             android:textColorHint="#000000"
             app:layout_constraintBottom_toTopOf="@+id/tvValidPassword"
-            tools:layout_editor_absoluteX="2dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/tvValidPassword"
@@ -143,7 +144,8 @@
             android:textAlignment="center"
             android:textColorHint="#000000"
             app:layout_constraintBottom_toTopOf="@+id/btnInscription"
-            tools:layout_editor_absoluteX="2dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnInscription"
@@ -156,8 +158,9 @@
             android:textColorLink="#853535"
             app:iconTint="#7E1C1C"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:rippleColor="#000000"
-            tools:layout_editor_absoluteX="55dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:rippleColor="#000000" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
