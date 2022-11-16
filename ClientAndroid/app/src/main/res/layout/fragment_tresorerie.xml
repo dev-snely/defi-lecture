@@ -9,7 +9,7 @@
     android:layout_margin="50dp"
     tools:context=".présentation.trésorerie.VueTrésorerie">
 
-    <SearcdhView
+    <SearchView
         android:id="@+id/sv_équipage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
