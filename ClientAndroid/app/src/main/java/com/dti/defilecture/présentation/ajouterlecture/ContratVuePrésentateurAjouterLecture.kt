@@ -35,6 +35,11 @@ interface ContratVuePrésentateurAjouterLecture {
          * Indique a l'utilisateur que des informations manque pour sa soumission.
          */
         fun afficherAvertissementInfosManquants(message: String)
+
+        /**
+         * Indique a l'utilisateur que l'ajout à réussi.
+         */
+        fun avertirAjoutReussi(message: String)
     }
 
     /**
@@ -67,5 +72,9 @@ interface ContratVuePrésentateurAjouterLecture {
          */
         fun avertirInfosManquant(titre: String, minutes: Int, obligation: Boolean)
 
+        /**
+         * Avertit l'utilisateur que r l'ajout de lecture à réussi.
+         */
+        fun avertirAjoutReussi(titre: String, minutes: Int, obligation: Boolean)
     }
 }

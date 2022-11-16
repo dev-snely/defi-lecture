@@ -7,9 +7,10 @@ import com.dti.defilecture.R
 import com.dti.defilecture.présentation.compte.VueCompteUtilisateur
 import com.dti.defilecture.présentation.trésorerie.VueTrésorerie
 import com.dti.defilecture.présentation.voirlectures.VueMesLectures
-import com.dti.defilecture.présentation.épreuve.VueEpreuve
+import com.dti.defilecture.présentation.épreuve.VueÉpreuve
 import com.dti.defilecture.présentation.équipage.VueÉquipage
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.fragment.NavHostFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var barre_navigation: BottomNavigationView
@@ -26,8 +27,9 @@ class MainActivity : AppCompatActivity() {
         fragmentMesLectures = VueMesLectures()
         fragmentÉquipage = VueÉquipage()
         fragmentTrésorerie = VueTrésorerie()
-        fragmentÉpreuve = VueEpreuve()
+        fragmentÉpreuve = VueÉpreuve()
         fragmentCompteUtilisateur = VueCompteUtilisateur()
+
         barre_navigation = findViewById(R.id.barre_navigation)
 
         afficherFragmentCourant( fragmentMesLectures )
