@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/vueConnexion">
+    app:startDestination="@id/vueBienvenue">
 
     <fragment
         android:id="@+id/vueConnexion"
@@ -48,5 +48,17 @@
         <action
             android:id="@+id/action_vueMesLectures_to_vueAjouterLecture"
             app:destination="@id/vueAjouterLecture" />
+    </fragment>
+    <fragment
+        android:id="@+id/vueBienvenue"
+        android:name="com.dti.defilecture.présentation.bienvenue.VueBienvenue"
+        android:label="fragment_page_de_bienvenue"
+        tools:layout="@layout/fragment_page_de_bienvenue" >
+        <action
+            android:id="@+id/action_vueBienvenue_to_vueConnexion"
+            app:destination="@id/vueConnexion" />
+        <action
+            android:id="@+id/action_vueBienvenue_to_vueInscription"
+            app:destination="@id/vueInscription" />
     </fragment>
 </navigation>
