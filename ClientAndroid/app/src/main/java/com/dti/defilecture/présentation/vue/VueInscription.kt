@@ -56,20 +56,6 @@ class VueInscription : Fragment(), ContratVuePrésentateurInscription.IVueInscri
         tvMotDePasse = view.findViewById(R.id.tvPassword)
         tvConfirmationMotDePasse = view.findViewById(R.id.tvValidPassword)
 
-
-    }
-
-    fun désactiverBoutonLorsqueInscriptionInvalide() {
-        btnInscription.setBackgroundColor(Color.GRAY)
-    }
-
-    @RequiresApi(Build.VERSION_CODES.M)
-    override fun activerBoutonInscriptionLorsqueLectureValide() {
-        this.context?.let { btnInscription.setBackgroundColor(it.getColor(R.color.df_rougeprimaire)) }
-    }
-
-    override fun désactiverBoutonInscriptionLorsqueLectureInvalide() {
-        btnInscription.setBackgroundColor(Color.GRAY)
     }
 
     override fun afficherAvertissementInfosManquants(message: String) {
@@ -80,15 +66,15 @@ class VueInscription : Fragment(), ContratVuePrésentateurInscription.IVueInscri
             .setPositiveButton("J'ai compris"){dialoginterface, it ->
                 //continue l'application
             }
-            .show()
-        désactiverBoutonLorsqueInscriptionInvalide()
+        .show()
     }
 
     private fun gestionCréationInscription(){
         btnInscription.setOnClickListener {
-            présentateur.traiterInscription(tvPrenom.text.toString(),tvNom.text.toString(),
+            présentateur.verifierInfosManquant(tvPrenom.text.toString(),tvNom.text.toString(),
                 tvCourriel.text.toString(),tvPseudonyme.text.toString(),tvProgramme.text.toString(),
-                tvMotDePasse.text.toString())
+                tvMotDePasse.text.toString(), tvConfirmationMotDePasse.text.toString())
+
 
         }
     }

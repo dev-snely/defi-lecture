@@ -19,10 +19,10 @@ class PrésentateurInscription(var modèle : modèle,
         programmeCompte: String,
         motDePasseCompte: String
     ) {
-        TODO("Not yet implemented")
+        //Création du compte
     }
 
-    override fun avertirInfosManquant(
+    override fun verifierInfosManquant(
         prenomCompte: String,
         nomCompte: String,
         courrielCompte: String,

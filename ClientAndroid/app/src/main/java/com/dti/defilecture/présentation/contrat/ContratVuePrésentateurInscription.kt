@@ -6,16 +6,7 @@ interface ContratVuePrésentateurInscription {
      */
     interface IVueInscription{
         /**
-         * Active le bouton de validation lorsque l'inscription est valide.
-         */
-        fun activerBoutonInscriptionLorsqueLectureValide()
-
-        /**
-         * Désactive le bouton de validation lorsque les données ne sont pas valide.
-         */
-        fun désactiverBoutonInscriptionLorsqueLectureInvalide()
-        /**
-         * Indique a l'utilisateur que des informations manque pour sa soumission.
+         * Indique a l'utilisateur que des informations manque pour son inscription.
          */
         fun afficherAvertissementInfosManquants(message: String)
 
@@ -25,14 +16,14 @@ interface ContratVuePrésentateurInscription {
      */
     interface IPrésentateurInscription{
         /**
-         * Ajoute une lecture a la liste de lecture fais par un étudiant.
+         * Création d'un compte.
          */
         fun traiterInscription(prenomCompte: String, nomCompte: String, courrielCompte: String,
                                pseudonymeCompte: String, programmeCompte: String, motDePasseCompte: String)
         /**
          * Avertit l'utilisateur que des informations manque pour l'inscription.
          */
-        fun avertirInfosManquant(prenomCompte: String, nomCompte: String, courrielCompte: String,
+        fun verifierInfosManquant(prenomCompte: String, nomCompte: String, courrielCompte: String,
                                  pseudonymeCompte: String, programmeCompte: String,
                                  motDePasseCompte: String, motDePasseCompteValidation: String)
 
