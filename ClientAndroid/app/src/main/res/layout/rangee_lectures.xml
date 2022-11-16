@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/titreDUneLecture"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:text="Titre du roman" />
+
+    <ImageView
+        android:id="@+id/icDureeLecture"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:layout_below="@+id/titreDUneLecture"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/dateDUneLecture"
+        android:background="#00FEFEFE"
+        android:src="@drawable/clock_svgrepo_com" />
+
+    <TextView
+        android:id="@+id/dureeDUneLecture"
+        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titreDUneLecture"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/icDureeLecture"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:text="30 minutes"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/icCalendrier"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/titreDUneLecture"
+        android:layout_marginTop="5dp"
+        android:background="#00FEFEFE"
+        android:src="@drawable/calendar_svgrepo_com" />
+
+    <TextView
+        android:id="@+id/dateDUneLecture"
+        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titreDUneLecture"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/icCalendrier"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:text="12-31-2022"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <ImageButton
+        android:id="@+id/icSupprimerLecture"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignTop="@+id/titreDUneLecture"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/icCalendrier"
+        android:contentDescription="@string/Supprimer"
+        android:src="@drawable/delete_svgrepo_com" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dureeDUneLecture"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@+id/dureeDUneLecture"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:text="OBLIGATOIRE"
+        android:textColor="#4CAF50"
+        android:textSize="15sp" />
+
+</RelativeLayout>

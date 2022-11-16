@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="50dp"
-    tools:context=".présentation.vue.VueÉquipage">
+    tools:context=".présentation.équipage.VueÉquipage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

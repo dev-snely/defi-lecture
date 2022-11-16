@@ -1,43 +1,46 @@
 package com.dti.defilecture.sourceDeDonnées
 
 import android.os.Build
-import androidx.annotation.RequiresApi
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.domaine.intéracteur.SourceDeLecture
 import java.sql.Date
-import java.time.LocalDate
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class SourceDeLectureBidons : SourceDeLecture{
-    override fun récupérerListeDeLecture(): List<Lecture> {
-        TODO("Not yet implemented")
+    init {
+        Remplir()
+    }
+    override fun récupérerListeDeLecture(): List<Lecture>? {
+        return if(lectures.isNullOrEmpty()) null else lectures
     }
     override fun ajouterUneLecture(uneLecture: Lecture) {
-        TODO("Not yet implemented")
+        lectures?.add(uneLecture)
     }
 }
 
 var lectures: MutableList<Lecture>? = null
+val date = getCurrentDateTime()
+val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
 
-@RequiresApi(Build.VERSION_CODES.O)
+
 fun Remplir() {
     if (lectures.isNullOrEmpty()) {
         lectures = mutableListOf(
-            Lecture("Alchimiste", LocalDate.now(), 75, true),
-            Lecture("Tartuffle", LocalDate.now(), 120, false),
-            Lecture("Rouge Poison", LocalDate.now(), 75, false),
-            Lecture("Tartuffle", LocalDate.now(), 75, false)
+            Lecture("Alchimiste", formatter.format(date), 75, true),
+            Lecture("Tartuffle", formatter.format(date), 120, false),
+            Lecture("Rouge Poison", formatter.format(date), 75, false),
+            Lecture("Tartuffle", formatter.format(date), 75, false)
         )
     }
 }
 
-/**
- * Méthode qui permet de récupérer une liste de lectures fictives.
- */
-fun récupérerListeDeLecture(): List<Lecture>? {
-    return if(lectures.isNullOrEmpty()) null else lectures
+// Étant donnée notre API minimum de 21, j'ai tiré cette méthode de stackoverflow, parce que
+// celle que j'utilisais, soit LocalDateTime.now() obligeais un api minimum de 26.
+// Source : https://stackoverflow.com/questions/47006254/how-to-get-current-local-date-and-time-in-kotlin
+// Consulté le : 15-11-2022
+fun getCurrentDateTime(): java.util.Date {
+    return Calendar.getInstance().time
 }
 
-fun ajouterUneLecture(uneLecture: Lecture) {
-    lectures?.add(uneLecture)
-}
