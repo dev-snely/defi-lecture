@@ -10,7 +10,7 @@ interface SourceDeLecture {
     /**
      * Récupère une liste de lecture.
      */
-    fun récupérerListeDeLecture(): List<Lecture>
+    fun récupérerListeDeLecture(): List<Lecture>?
 
     /**
      * Ajoute un lecture aléatoire à la liste de lecture actuelle.

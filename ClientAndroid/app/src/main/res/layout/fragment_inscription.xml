@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".présentation.vue.VueInscription"
+    tools:context=".présentation.inscription.VueInscription"
     android:background="@drawable/bg_poste"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvPrenom"
+        app:layout_constraintStart_toEndOf="@+id/tvPrenom">
 
         <TextView
             android:id="@+id/textView2"
@@ -28,8 +30,8 @@
         <EditText
             android:id="@+id/tvProgramme"
             android:layout_width="410dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
             android:fontFamily="serif"
@@ -41,31 +43,15 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/tvPassword"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/tvPseudonyme"
-            android:layout_width="205dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@android:drawable/editbox_background"
-            android:ems="10"
-            android:fontFamily="serif"
-            android:hint="Pseudonyme*"
-            android:inputType="textPersonName"
-            android:paddingLeft="10dp"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textColorHint="#000000"
-            app:layout_constraintBottom_toTopOf="@+id/tvProgramme"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <EditText
             android:id="@+id/tvCourriel"
-            android:layout_width="205dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="179dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
             android:fontFamily="serif"
@@ -80,8 +66,8 @@
 
         <EditText
             android:id="@+id/tvNom"
-            android:layout_width="205dp"
-            android:layout_height="40dp"
+            android:layout_width="204dp"
+            android:layout_height="52dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
             android:fontFamily="serif"
@@ -93,12 +79,13 @@
             app:layout_constraintBottom_toTopOf="@+id/tvPseudonyme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.85" />
+            app:layout_constraintVertical_bias="0.766" />
 
         <EditText
             android:id="@+id/tvPrenom"
-            android:layout_width="205dp"
-            android:layout_height="40dp"
+            android:layout_width="182dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="16dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
             android:fontFamily="serif"
@@ -111,13 +98,14 @@
             app:layout_constraintBottom_toTopOf="@+id/tvCourriel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.85" />
+            app:layout_constraintVertical_bias="0.766" />
 
         <EditText
             android:id="@+id/tvPassword"
             android:layout_width="410dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="24dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
             android:fontFamily="serif"
@@ -127,13 +115,16 @@
             android:textAlignment="center"
             android:textColorHint="#000000"
             app:layout_constraintBottom_toTopOf="@+id/tvValidPassword"
-            tools:layout_editor_absoluteX="2dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/tvValidPassword"
             android:layout_width="410dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="148dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
             android:fontFamily="serif"
@@ -143,21 +134,44 @@
             android:textAlignment="center"
             android:textColorHint="#000000"
             app:layout_constraintBottom_toTopOf="@+id/btnInscription"
-            tools:layout_editor_absoluteX="2dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/tvPseudonyme"
+            android:layout_width="207dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="24dp"
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:fontFamily="serif"
+            android:hint="Pseudonyme*"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/tvProgramme"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
             android:id="@+id/btnInscription"
             android:layout_width="300dp"
             android:layout_height="75dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="56dp"
             android:layout_marginBottom="100dp"
+            android:backgroundTint="#D75764"
             android:text="S'inscrire"
             android:textColorHighlight="#D31C1C"
             android:textColorHint="#B50D0D"
             android:textColorLink="#853535"
             app:iconTint="#7E1C1C"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:rippleColor="#000000"
-            tools:layout_editor_absoluteX="55dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:rippleColor="#000000" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

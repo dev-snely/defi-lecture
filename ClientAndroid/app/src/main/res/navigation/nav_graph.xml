@@ -7,37 +7,46 @@
 
     <fragment
         android:id="@+id/vueConnexion"
-        android:name="com.dti.defilecture.présentation.vue.VueConnexion"
+        android:name="com.dti.defilecture.présentation.connexion.VueConnexion"
         android:label="fragment_connexion"
-        tools:layout="@layout/fragment_connexion" />
+        tools:layout="@layout/fragment_connexion" >
+        <action
+            android:id="@+id/action_vueConnexion_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_vueConnexion_to_vueInscription"
+            app:destination="@id/vueInscription" />
+    </fragment>
     <fragment
         android:id="@+id/vueAjouterLecture"
-        android:name="com.dti.defilecture.présentation.vue.VueAjouterLecture"
+        android:name="com.dti.defilecture.présentation.ajouterlecture.VueAjouterLecture"
         android:label="fragment_ajouter_lecture"
-        tools:layout="@layout/fragment_ajouter_lecture" />
-    <fragment
-        android:id="@+id/vueEpreuve"
-        android:name="com.dti.defilecture.présentation.vue.VueEpreuve"
-        android:label="VueEpreuve" />
-    <fragment
-        android:id="@+id/vueCompteUtilisateur"
-        android:name="com.dti.defilecture.présentation.vue.VueCompteUtilisateur"
-        android:label="VueCompteUtilisateur" />
-    <fragment
-        android:id="@+id/vueTresorerie"
-        android:name="com.dti.defilecture.présentation.vue.VueTresorerie"
-        android:label="VueTresorerie" />
-    <fragment
-        android:id="@+id/vueEquipage"
-        android:name="com.dti.defilecture.présentation.vue.VueEquipage"
-        android:label="VueEquipage" />
-    <fragment
-        android:id="@+id/vueBarreNavigation"
-        android:name="com.dti.defilecture.présentation.vue.VueBarreNavigation"
-        android:label="fragment_vue_barre_navigation"
-        tools:layout="@layout/fragment_vue_barre_navigation" >
+        tools:layout="@layout/fragment_ajouter_lecture" >
         <action
-            android:id="@+id/action_vueBarreNavigation_to_vueAjouterLecture"
+            android:id="@+id/action_vueAjouterLecture_to_vueMesLectures"
+            app:destination="@id/vueMesLectures" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.dti.defilecture.ui.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/vueInscription"
+        android:name="com.dti.defilecture.présentation.inscription.VueInscription"
+        android:label="fragment_inscription"
+        tools:layout="@layout/fragment_inscription" >
+    <action
+        android:id="@+id/action_vueInscription_to_vueConnexion"
+        app:destination="@id/vueConnexion" />
+    </fragment>
+    <fragment
+        android:id="@+id/vueMesLectures"
+        android:name="com.dti.defilecture.présentation.voirlectures.VueMesLectures"
+        android:label="fragment_vue_mes_lectures"
+        tools:layout="@layout/fragment_vue_mes_lectures" >
+        <action
+            android:id="@+id/action_vueMesLectures_to_vueAjouterLecture"
             app:destination="@id/vueAjouterLecture" />
     </fragment>
 </navigation>
