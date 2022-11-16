@@ -10,6 +10,8 @@ interface ContratVuePrésentateurInscription {
          */
         fun afficherAvertissementInfosManquants(message: String)
 
+        fun gestionCréationInscription()
+
     }
     /**
      * Définit les méthodes à utiliser dans un présentateur Inscription.

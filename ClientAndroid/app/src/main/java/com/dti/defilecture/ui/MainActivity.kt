@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.vue.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

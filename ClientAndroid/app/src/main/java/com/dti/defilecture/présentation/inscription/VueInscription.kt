@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.modèle
+import com.dti.defilecture.présentation.présentateur.PrésentateurInscription
 
 
 class VueInscription : Fragment(), ContratVuePrésentateurInscription.IVueInscription {
@@ -55,17 +56,17 @@ class VueInscription : Fragment(), ContratVuePrésentateurInscription.IVueInscri
     }
 
     override fun afficherAvertissementInfosManquants(message: String) {
-        builder = AlertDialog.Builder(this.context)
+        builder = AlertDialog.Builder(context)
         builder.setTitle("Avertissement!")
             .setMessage(message)
             .setCancelable(true)
-            .setPositiveButton("J'ai compris"){dialoginterface, it ->
-                //continue l'application
+            .setPositiveButton("J'ai compris"){ _, _ ->
+
             }
-        .show()
+
     }
 
-    private fun gestionCréationInscription(){
+    override fun gestionCréationInscription(){
         btnInscription.setOnClickListener {
             présentateur.verifierInfosManquant(tvPrenom.text.toString(),tvNom.text.toString(),
                 tvCourriel.text.toString(),tvPseudonyme.text.toString(),tvProgramme.text.toString(),
