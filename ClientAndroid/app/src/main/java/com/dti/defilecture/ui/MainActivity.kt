@@ -11,6 +11,7 @@ import com.dti.defilecture.présentation.épreuve.VueÉpreuve
 import com.dti.defilecture.présentation.équipage.VueÉquipage
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.fragment.NavHostFragment
+import com.dti.defilecture.présentation.ajouterlecture.VueAjouterLecture
 
 class MainActivity : AppCompatActivity() {
     lateinit var barre_navigation: BottomNavigationView
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var fragmentÉquipage : Fragment
     lateinit var fragmentTrésorerie : Fragment
     lateinit var fragmentÉpreuve : Fragment
+    lateinit var fragmentAjout : Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         fragmentTrésorerie = VueTrésorerie()
         fragmentÉpreuve = VueÉpreuve()
         fragmentCompteUtilisateur = VueCompteUtilisateur()
+        fragmentAjout = VueAjouterLecture()
 
         barre_navigation = findViewById(R.id.barre_navigation)
 
@@ -42,6 +45,7 @@ class MainActivity : AppCompatActivity() {
     private fun gestionBarreNacigation() {
         barre_navigation.setOnItemSelectedListener {
             when(it.itemId){
+                //R.id.ic_ajouter -> afficherFragmentCourant( fragmentAjout )
                 R.id.ic_ajouter -> afficherFragmentCourant( fragmentMesLectures )
                 R.id.ic_équipage -> afficherFragmentCourant( fragmentÉquipage )
                 R.id.ic_trésorerie -> afficherFragmentCourant( fragmentTrésorerie )

@@ -1,16 +1,15 @@
 package com.dti.defilecture.présentation.ajouterlecture
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.présentation.modèle
-import com.dti.defilecture.sourceDeDonnées.*
+import com.dti.defilecture.accesAuxDonnees.*
 import java.time.LocalDate
+import com.dti.defilecture.présentation.ajouterlecture.ContratVuePrésentateurAjouterLecture.IVueAjouterLecture
+import com.dti.defilecture.présentation.ajouterlecture.ContratVuePrésentateurAjouterLecture.IPrésentateurAjouterLecture
 
-@RequiresApi(Build.VERSION_CODES.O)
+
 class PrésentateurAjouterLecture(var modèle : modèle,
-                                 var vue: ContratVuePrésentateurAjouterLecture.IVueAjouterLecture):
-    ContratVuePrésentateurAjouterLecture.IPrésentateurAjouterLecture {
+                                 var vue: IVueAjouterLecture): IPrésentateurAjouterLecture {
 
     init {
         Remplir()
@@ -34,7 +33,7 @@ class PrésentateurAjouterLecture(var modèle : modèle,
                                        lectureObligé: Boolean ) {
         if( titre.isNotEmpty() && minutes != 0 && obligationSelectionné ){
 
-            val aujourdhui = LocalDate.now()
+            //val aujourdhui = LocalDate.now()
             if( !lectureObligé ){
                // doubler les doublons gagné par le joueur.
             }

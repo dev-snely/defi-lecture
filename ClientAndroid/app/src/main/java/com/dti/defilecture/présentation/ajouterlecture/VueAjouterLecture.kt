@@ -15,11 +15,13 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.modèle
+import com.dti.defilecture.présentation.ajouterlecture.ContratVuePrésentateurAjouterLecture.IPrésentateurAjouterLecture
+import com.dti.defilecture.présentation.ajouterlecture.ContratVuePrésentateurAjouterLecture.IVueAjouterLecture
 
 
-class VueAjouterLecture : Fragment(), ContratVuePrésentateurAjouterLecture.IVueAjouterLecture  {
+class VueAjouterLecture : Fragment(), IVueAjouterLecture  {
 
-    lateinit var présentateur : ContratVuePrésentateurAjouterLecture.IPrésentateurAjouterLecture
+    lateinit var présentateur : IPrésentateurAjouterLecture
     lateinit var btn15mins: Button
     lateinit var btn30mins: Button
     lateinit var btn45mins: Button
