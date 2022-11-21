@@ -57,6 +57,6 @@ class VueConnexion : Fragment(), IVueConnexion {
     }
 
     override fun naviguerVersDefiLecture(){
-        navController.navigate(R.id.action_vueConnexion_to_mainActivity)
+        //navController.navigate(R.id.action_vueConnexion_to_mainActivity)
     }
 }

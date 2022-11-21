@@ -5,7 +5,7 @@ import com.dti.defilecture.domaine.entité.Lecture
 interface IContratVPMesLectures {
 
     interface IVueMesLectures{
-
+        fun naviguerVersAjoutTitreLecture()
     }
 
     interface IPrésentateurMesLectures{

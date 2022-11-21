@@ -9,7 +9,7 @@ class PrésentateurConnexion(var vue: VueConnexion): IPrésentateurConnexion{
     }
 
     override fun validerIdentifiants(pseudonyme:String,mdp:String) {
-        if(pseudonyme=="admin" && mdp=="admin"){
+        if(pseudonyme=="" && mdp==""){
             vue.connexionReussi()
         }
         else{

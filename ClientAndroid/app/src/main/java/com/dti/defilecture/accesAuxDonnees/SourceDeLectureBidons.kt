@@ -36,8 +36,10 @@ fun Remplir() {
             Lecture("Rouge Poison", formatter.format(date), 15, false),
             Lecture("Tartuffle", formatter.format(date), 30, false),
             Lecture("Tartuffle", formatter.format(date), 75, true),
+            Lecture("Naruto Shippuden", formatter.format(date), 120, false),
             Lecture("Alchimiste", formatter.format(date), 75, true),
             Lecture("Alchimiste", formatter.format(date), 75, true),
+            Lecture("Baki", formatter.format(date), 30, false),
             Lecture("Tartuffle", formatter.format(date), 45, false),
             Lecture("Rouge Poison", formatter.format(date), 15, false)
         )

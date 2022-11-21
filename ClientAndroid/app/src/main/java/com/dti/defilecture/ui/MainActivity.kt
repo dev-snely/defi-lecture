@@ -12,6 +12,7 @@ import com.dti.defilecture.présentation.équipage.VueÉquipage
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.fragment.NavHostFragment
 import com.dti.defilecture.présentation.ajouterlecture.VueAjouterLecture
+import com.dti.defilecture.présentation.ajouterlecture.titre.VueAjouterLectureTitre
 
 class MainActivity : AppCompatActivity() {
     lateinit var barre_navigation: BottomNavigationView
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var fragmentTrésorerie : Fragment
     lateinit var fragmentÉpreuve : Fragment
     lateinit var fragmentAjout : Fragment
+    lateinit var fragmentAjoutTitre : Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +33,10 @@ class MainActivity : AppCompatActivity() {
         fragmentTrésorerie = VueTrésorerie()
         fragmentÉpreuve = VueÉpreuve()
         fragmentCompteUtilisateur = VueCompteUtilisateur()
-        fragmentAjout = VueAjouterLecture()
+        //fragmentAjout = VueAjouterLecture()
+        fragmentAjoutTitre = VueAjouterLectureTitre()
 
         barre_navigation = findViewById(R.id.barre_navigation)
-
         afficherFragmentCourant( fragmentMesLectures )
         gestionBarreNacigation()
     }
@@ -62,7 +64,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun afficherFragmentCourant(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_wrapper, fragment)
+            replace(R.id.nav_host_fragment_1, fragment)
             addToBackStack(null)
             commit()
         }

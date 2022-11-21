@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sophie_louisnard_bg_unsplash"
+    tools:context=".présentation.ajouterlecture.titre.VueAjouterLectureTitre">
+
+    <ImageView
+        android:id="@+id/opacity_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#CCFFEAEA"
+        android:contentDescription="@string/bg_opacite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/materialToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Ajouter une lecture"
+                app:titleTextColor="@color/black" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ImageView
+            android:id="@+id/bg_ajouterLectureTitre2"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:layout_marginTop="190dp"
+            android:background="@drawable/bg_ajouter_lecture"
+            android:contentDescription="@string/bg_opacite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:layout_constraintVertical_bias="0.981"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/renduAuTitre1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:text="Titre"
+            android:textColor="@color/df_rougeprimaire"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bg_ajouterLectureTitre2" />
+
+        <ImageView
+            android:id="@+id/barreRenduAuTitre1"
+            android:layout_width="80dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/barre_rouge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/renduAuTitre1" />
+
+        <TextView
+            android:id="@+id/renduAuTemps1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:text="Temps"
+            android:textColor="#8D8D8D"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bg_ajouterLectureTitre2" />
+
+        <ImageView
+            android:id="@+id/barreRenduAuTemps1"
+            android:layout_width="80dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/barre_gris"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/renduAuTemps1" />
+
+        <TextView
+            android:id="@+id/renduAuObligation1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:text="Obligation"
+            android:textColor="#8D8D8D"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.867"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bg_ajouterLectureTitre2" />
+
+        <ImageView
+            android:id="@+id/barreRenduAObligation1"
+            android:layout_width="80dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/barre_gris"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.876"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/renduAuObligation1" />
+
+        <TextView
+            android:id="@+id/descriptionAjouterTitre"
+            android:layout_width="346dp"
+            android:layout_height="74dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:text="Une lecture libre est un ouvrage littéraire, incluant les essais et les article scientifiues, mais exclu les journaux et les médias sociaux. "
+            android:textSize="19sp"
+            app:layout_constraintStart_toStartOf="@+id/titreAjouterTitre"
+            app:layout_constraintTop_toBottomOf="@+id/titreAjouterTitre" />
+
+        <TextView
+            android:id="@+id/titreAjouterTitre"
+            android:layout_width="345dp"
+            android:layout_height="81dp"
+            android:elegantTextHeight="false"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:text="Quel est le nom de votre lecture ?"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/barreRenduAuTitre1"
+            app:layout_constraintTop_toBottomOf="@+id/barreRenduAuTemps1"
+            app:layout_constraintVertical_bias="0.071"
+            app:lineHeight="36dp" />
+
+        <Button
+            android:id="@+id/btnVersGlossaire1"
+            android:layout_width="152dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#6C2E2C"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:text="Glossaire"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/tvPlusDInformation"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionAjouterTitre" />
+
+        <TextView
+            android:id="@+id/tvPlusDInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:text="Plus d'informations :"
+            android:textColor="#6C2E2C"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/descriptionAjouterTitre"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionAjouterTitre" />
+
+        <Button
+            android:id="@+id/btnSuivantVersAjouterTemps"
+            android:layout_width="303dp"
+            android:layout_height="73dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:padding="5dp"
+            android:text="Suivant"
+            android:textAllCaps="false"
+            android:textSize="25sp"
+            app:cornerRadius="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAjouterTitreLecture"
+            app:layout_constraintVertical_bias="0.19999999" />
+
+        <EditText
+            android:id="@+id/editTextAjouterTitreLecture"
+            android:layout_width="338dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/custom_input_1"
+            android:drawableStart="@drawable/custom_title_icon"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:hint="Entrer le titre de votre lecture"
+            android:inputType="textPersonName"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/tvPlusDInformation"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlusDInformation" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
