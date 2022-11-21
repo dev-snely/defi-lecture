@@ -10,7 +10,6 @@ interface ContratVuePrésentateurInscription {
          */
         fun afficherAvertissementInfosManquants(message: String)
 
-        fun gestionCréationInscription()
 
     }
     /**
