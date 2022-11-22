@@ -165,7 +165,7 @@
             app:layout_constraintTop_toBottomOf="@+id/titreAjouterTemps" />
 
         <Button
-            android:id="@+id/btnSuivantVersAjouterTemps"
+            android:id="@+id/btnTerminerVersMesLectures"
             android:layout_width="303dp"
             android:layout_height="73dp"
             android:backgroundTint="#000000"
@@ -177,9 +177,9 @@
             app:cornerRadius="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewMinutes" />
+            app:layout_constraintTop_toBottomOf="@+id/cardViewMinutes"
+            app:layout_constraintVertical_bias="0.2" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardViewMinutes"
@@ -252,9 +252,9 @@
                     app:layout_constraintTop_toBottomOf="@+id/btn30minutes" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/VALTBtnReinit"
                     android:layout_width="70dp"
-                    android:layout_height="53dp"
+                    android:layout_height="50dp"
                     android:backgroundTint="@color/df_rougeprimaire"
                     android:contentDescription="@string/btnReinitialiser"
                     android:src="@drawable/ic_reinitialiser"

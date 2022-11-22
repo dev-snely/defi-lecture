@@ -1,6 +1,18 @@
 package com.dti.defilecture.domaine.entité
 
-import java.time.LocalDate
+class Lecture {
 
-class Lecture(val titreLecture: String, val dateInscription: String,
-              val duréeMinutes: Int, val obligatoire: Boolean )
+    var titreLecture: String = ""
+    var dateInscription: String = ""
+    var duréeMinutes: Int = 0
+    var obligatoire: Boolean? = null
+
+    init{}
+
+    constructor( titre: String, date: String, durée: Int, obligatoire: Boolean ){
+        this.titreLecture = titre
+        this.dateInscription = date
+        this.duréeMinutes = duréeMinutes
+        this.obligatoire = obligatoire
+    }
+}

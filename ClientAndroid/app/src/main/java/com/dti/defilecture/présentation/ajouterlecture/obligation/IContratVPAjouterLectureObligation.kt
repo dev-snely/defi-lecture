@@ -17,6 +17,7 @@ interface IContratVPAjouterLectureObligation {
      * Définit les méthodes à utiliser dans un présentateur AjouterLecture.
      */
     interface IPrésentateurAjouterLectureObligation{
+        fun naviguerVersMesLecture()
         fun traiterObligationDeLecture()
         /**
          * Ajoute une lecture a la liste de lecture fais par un étudiant.

@@ -8,10 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.modèle
+import com.dti.defilecture.présentation.inscription.ContratVuePrésentateurInscription.IVueInscription
 
-
-class VueInscription : Fragment(), ContratVuePrésentateurInscription.IVueInscription {
+class VueInscription : Fragment(), IVueInscription {
 
     lateinit var présentateur: ContratVuePrésentateurInscription.IPrésentateurInscription
     lateinit var btnInscription: Button
@@ -29,7 +28,7 @@ class VueInscription : Fragment(), ContratVuePrésentateurInscription.IVueInscri
         savedInstanceState: Bundle?
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_inscription, container, false)
-        présentateur = PrésentateurInscription( modèle, this  )
+        présentateur = PrésentateurInscription(  this  )
         return vue
     }
 

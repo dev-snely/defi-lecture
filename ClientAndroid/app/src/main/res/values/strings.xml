@@ -17,4 +17,9 @@
     <string name="ajouter_une_lecture_minuscule">Ajouter une lecture</string>
     <string name="bg_opacite">bg_opacite</string>
     <string name="btnReinitialiser">Réinitialiser</string>
+    <string name="minutes_pluriel">J\'ai lu %1$d minutes</string>
+    <string name="minutes_singulier">Veuiller entrer le nombre de minute lu.</string>
+    <string name="jaicompris">J\'ai compris</string>
+    <string name="avertissement">Avertissement!</string>
+    <string name="titreManquant">Veuillez s\'il vous plaît spécifier le titre de votre lecture.</string>
 </resources>

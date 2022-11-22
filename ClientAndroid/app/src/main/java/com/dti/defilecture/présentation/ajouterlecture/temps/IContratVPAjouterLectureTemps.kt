@@ -11,6 +11,12 @@ interface IContratVPAjouterLectureTemps {
      */
     interface IVueAjouterLectureTemps{
         fun naviguerVersAjouterLectureObligation()
+        fun modifierMinutesAuCompteur(nombreDeMinutes: Int)
+        /**
+         * Reinitialise le compteur a 0 minute.
+         */
+        fun réinitialiserMinutesAuCompteur()
+        fun afficherAvertissementInfosManquants(message: String)
     }
 
     /**
@@ -25,5 +31,8 @@ interface IContratVPAjouterLectureTemps {
          * Reinitialise le compteur a 0.
          */
         fun traiterReinitialisationCompteur()
+
+        fun naviguerVersAjouterLectureObligation()
+        fun avertirInfosManquant( minutes: Int)
     }
 }

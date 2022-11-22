@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.ajouterlecture.obligation.IContratVPAjouterLectureObligation.IPrésentateurAjouterLectureObligation
 import com.dti.defilecture.présentation.ajouterlecture.obligation.IContratVPAjouterLectureObligation.IVueAjouterLectureObligation
 
@@ -16,6 +16,7 @@ import com.dti.defilecture.présentation.ajouterlecture.obligation.IContratVPAjo
 class VueAjouterLectureObligation : Fragment(), IVueAjouterLectureObligation {
     lateinit var navController : NavController
     lateinit var présentateur : IPrésentateurAjouterLectureObligation
+    lateinit var btnSuivant: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,13 +24,18 @@ class VueAjouterLectureObligation : Fragment(), IVueAjouterLectureObligation {
         savedInstanceState: Bundle?
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_vue_ajouter_lecture_obligation, container, false)
-        présentateur = PrésentateurAjouterLectureObligation( modèle, this  )
+        présentateur = PrésentateurAjouterLectureObligation(  this  )
         return vue
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+        btnSuivant = view.findViewById(R.id.btnTerminerVersMesLectures)
+
+        btnSuivant.setOnClickListener {
+            présentateur.naviguerVersMesLecture()
+        }
     }
 
     override fun naviguerVersMesLecture() {

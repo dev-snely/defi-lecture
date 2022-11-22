@@ -14,7 +14,6 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.ajouterlecture.ContratVuePrésentateurAjouterLecture.IPrésentateurAjouterLecture
 import com.dti.defilecture.présentation.ajouterlecture.ContratVuePrésentateurAjouterLecture.IVueAjouterLecture
 
@@ -43,7 +42,7 @@ class VueAjouterLecture : Fragment(), IVueAjouterLecture  {
         savedInstanceState: Bundle?
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_ajouter_lecture, container, false)
-        présentateur = PrésentateurAjouterLecture( modèle, this  )
+        présentateur = PrésentateurAjouterLecture( this  )
         return vue
     }
 
@@ -53,10 +52,10 @@ class VueAjouterLecture : Fragment(), IVueAjouterLecture  {
         //Initialisations
         tvNbMinutes = view.findViewById(R.id.tvNbMins)
         tvTitreLecture = view.findViewById(R.id.LectureEditTxt)
-        btn15mins = view.findViewById(R.id.btn15minutes)
-        btn30mins = view.findViewById(R.id.btn30minutes)
-        btn45mins = view.findViewById(R.id.btn45minutes)
-        btn60mins = view.findViewById(R.id.btn60minutes)
+        btn15mins = view.findViewById(R.id.btn15minutesalpha)
+        btn30mins = view.findViewById(R.id.btn30minutesalpha)
+        btn45mins = view.findViewById(R.id.btn45minutesalpha)
+        btn60mins = view.findViewById(R.id.btn60minutesalpha)
         btnReinit = view.findViewById(R.id.btnReinit)
         rdGroup = view.findViewById(R.id.radioGroup)
         rdBtnOui = view.findViewById(R.id.radio_oui)

@@ -25,7 +25,7 @@ class VueMesLecturesAdaptateur(private val lectures : MutableList<Lecture>?) :
             holder.titre.text = currentItem.titreLecture
             holder.duree.text = currentItem.duréeMinutes.toString() + " minutes"
             holder.date.text = currentItem.dateInscription
-            holder.oblig.text = if ( currentItem.obligatoire ) "OBLIGATOIRE" else "LIBRE"
+            holder.oblig.text = if (currentItem.obligatoire == true) "OBLIGATOIRE" else "LIBRE"
         }
     }
 

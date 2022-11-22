@@ -1,13 +1,15 @@
 package com.dti.defilecture.présentation.ajouterlecture.obligation
 
 
-import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.ajouterlecture.obligation.IContratVPAjouterLectureObligation.IPrésentateurAjouterLectureObligation
 import com.dti.defilecture.présentation.ajouterlecture.obligation.IContratVPAjouterLectureObligation.IVueAjouterLectureObligation
 
 
-class PrésentateurAjouterLectureObligation(var modèle : modèle,
-                                      var vue: IVueAjouterLectureObligation): IPrésentateurAjouterLectureObligation {
+class PrésentateurAjouterLectureObligation(var vue: IVueAjouterLectureObligation): IPrésentateurAjouterLectureObligation {
+    override fun naviguerVersMesLecture() {
+        vue.naviguerVersMesLecture()
+    }
+
     override fun traiterObligationDeLecture() {
         TODO("Not yet implemented")
     }

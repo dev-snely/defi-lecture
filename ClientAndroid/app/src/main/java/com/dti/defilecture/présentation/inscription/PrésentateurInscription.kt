@@ -1,15 +1,9 @@
 package com.dti.defilecture.présentation.inscription;
 
+import com.dti.defilecture.présentation.inscription.ContratVuePrésentateurInscription.IVueInscription
+import com.dti.defilecture.présentation.inscription.ContratVuePrésentateurInscription.IPrésentateurInscription
 
-import com.dti.defilecture.présentation.modèle
-
-class PrésentateurInscription(var modèle : modèle, var vue: ContratVuePrésentateurInscription.IVueInscription):
-    ContratVuePrésentateurInscription.IPrésentateurInscription {
-
-        init {
-
-        }
-
+class PrésentateurInscription( var vue: IVueInscription ): IPrésentateurInscription {
 
 
 }

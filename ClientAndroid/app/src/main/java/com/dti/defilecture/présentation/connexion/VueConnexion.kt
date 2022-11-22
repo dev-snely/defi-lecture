@@ -49,7 +49,6 @@ class VueConnexion : Fragment(), IVueConnexion {
 
     override fun connexionReussi(){
         Toast.makeText(context,"Connexion reussie",Toast.LENGTH_SHORT).show()
-        naviguerVersDefiLecture()
     }
 
     override fun connexionEchouer(){
@@ -57,6 +56,6 @@ class VueConnexion : Fragment(), IVueConnexion {
     }
 
     override fun naviguerVersDefiLecture(){
-        //navController.navigate(R.id.action_vueConnexion_to_mainActivity)
+        navController.navigate(R.id.action_vueConnexion_to_mainActivity)
     }
 }

@@ -194,7 +194,7 @@
             app:layout_constraintTop_toBottomOf="@+id/descriptionAjouterTitre" />
 
         <Button
-            android:id="@+id/btnSuivantVersAjouterTemps"
+            android:id="@+id/btnTerminerVersMesLectures"
             android:layout_width="303dp"
             android:layout_height="73dp"
             android:backgroundTint="#000000"
@@ -215,7 +215,7 @@
             android:id="@+id/editTextAjouterTitreLecture"
             android:layout_width="338dp"
             android:layout_height="50dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="52dp"
             android:background="@drawable/custom_input_1"
             android:drawableStart="@drawable/custom_title_icon"
             android:drawablePadding="12dp"

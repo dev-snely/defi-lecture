@@ -1,19 +1,33 @@
 package com.dti.defilecture.présentation.ajouterlecture.temps
 
 
-import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.ajouterlecture.temps.IContratVPAjouterLectureTemps.IVueAjouterLectureTemps
 import com.dti.defilecture.présentation.ajouterlecture.temps.IContratVPAjouterLectureTemps.IPrésentateurAjouterLectureTemps
+import com.dti.defilecture.présentation.modèle
 
 
-class PrésentateurAjouterLectureTemps(var modèle : modèle,
-                                      var vue: IVueAjouterLectureTemps): IPrésentateurAjouterLectureTemps {
+class PrésentateurAjouterLectureTemps(var vue: IVueAjouterLectureTemps): IPrésentateurAjouterLectureTemps {
+
     override fun traiterAjouterMinutes(minuteAAjouter: Int, texteAuCompteur: String) {
-        TODO("Not yet implemented")
+        var minutesAuCompteur = texteAuCompteur.filter { it.isDigit() }.toInt()
+
+        minutesAuCompteur += minuteAAjouter
+
+        vue.modifierMinutesAuCompteur(minutesAuCompteur)
     }
 
     override fun traiterReinitialisationCompteur() {
-        TODO("Not yet implemented")
+        vue.réinitialiserMinutesAuCompteur()
+    }
+
+    override fun naviguerVersAjouterLectureObligation() {
+        vue.naviguerVersAjouterLectureObligation()
+    }
+
+    override fun avertirInfosManquant(minutes: Int) {
+        if( modèle.verifierLectureDureeManquante()  ){
+            vue.afficherAvertissementInfosManquants("Vous n'avez entré aucune minute.")
+        }
     }
 
 }

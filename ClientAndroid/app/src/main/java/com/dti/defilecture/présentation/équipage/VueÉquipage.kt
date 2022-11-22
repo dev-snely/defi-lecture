@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.modèle
+import com.dti.defilecture.présentation.équipage.ContratVuePrésentateurÉquipage.IPrésentateurÉquipage
+import com.dti.defilecture.présentation.équipage.ContratVuePrésentateurÉquipage.IVueÉquipage
 
 
-class VueÉquipage : Fragment(), ContratVuePrésentateurÉquipage.IVueÉquipage  {
-    lateinit var présentateur : ContratVuePrésentateurÉquipage.IPrésentateurÉquipage
+class VueÉquipage : Fragment(), IVueÉquipage  {
+    lateinit var présentateur : IPrésentateurÉquipage
     lateinit var nomÉquipage: TextView
     lateinit var numéroRang: TextView
     lateinit var totalDoublons: TextView
@@ -24,7 +25,7 @@ class VueÉquipage : Fragment(), ContratVuePrésentateurÉquipage.IVueÉquipage 
         savedInstanceState: Bundle?
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_equipage, container, false)
-        présentateur = PrésentateurÉquipage( modèle, this  )
+        présentateur = PrésentateurÉquipage( this  )
         return vue
     }
 

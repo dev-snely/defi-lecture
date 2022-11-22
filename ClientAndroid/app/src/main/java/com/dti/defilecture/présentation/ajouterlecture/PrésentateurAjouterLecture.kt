@@ -1,15 +1,12 @@
 package com.dti.defilecture.présentation.ajouterlecture
 
 import com.dti.defilecture.domaine.entité.Lecture
-import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.accesAuxDonnees.*
-import java.time.LocalDate
 import com.dti.defilecture.présentation.ajouterlecture.ContratVuePrésentateurAjouterLecture.IVueAjouterLecture
 import com.dti.defilecture.présentation.ajouterlecture.ContratVuePrésentateurAjouterLecture.IPrésentateurAjouterLecture
 
 
-class PrésentateurAjouterLecture(var modèle : modèle,
-                                 var vue: IVueAjouterLecture): IPrésentateurAjouterLecture {
+class PrésentateurAjouterLecture(var vue: IVueAjouterLecture): IPrésentateurAjouterLecture {
 
     init {
         Remplir()
@@ -21,10 +18,11 @@ class PrésentateurAjouterLecture(var modèle : modèle,
 
 
     override fun traiterAjouterMinutes(minuteAAjouter: Int, texteAuCompteur: String) {
-        var texteAvecChiffreSeulement = texteAuCompteur.filter { it.isDigit() }
-        var mins: Int = texteAvecChiffreSeulement.toInt()
-        mins += minuteAAjouter
-        vue.modifierMinutesAuCompteur(mins)
+        var minutesAuCompteur = texteAuCompteur.filter { it.isDigit() }.toInt()
+
+        minutesAuCompteur += minuteAAjouter
+
+        vue.modifierMinutesAuCompteur(minutesAuCompteur)
     }
 
     override fun traiterAjouterLecture(titre: String,
@@ -37,9 +35,9 @@ class PrésentateurAjouterLecture(var modèle : modèle,
             if( !lectureObligé ){
                // doubler les doublons gagné par le joueur.
             }
-            modèle.lecture = Lecture( titre, getCurrentDateTime().toString(), minutes, lectureObligé )
+            //modèle.lecture = Lecture( titre, getCurrentDateTime().toString(), minutes, lectureObligé )
         }
-        modèle.ajouterLectureDansSourceDeDonnée(modèle.lecture)
+        //modèle.ajouterLectureDansSourceDeDonnée(modèle.lecture)
     }
 
     override fun traiterReinitialisationCompteur() {

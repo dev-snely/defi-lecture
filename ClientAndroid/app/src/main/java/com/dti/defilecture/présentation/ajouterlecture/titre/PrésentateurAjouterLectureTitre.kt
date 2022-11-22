@@ -4,8 +4,18 @@ import com.dti.defilecture.présentation.ajouterlecture.titre.IContratVPAjouterL
 import com.dti.defilecture.présentation.ajouterlecture.titre.IContratVPAjouterLectureTitre.IVueAjouterLectureTitre
 import com.dti.defilecture.présentation.modèle
 
-class PrésentateurAjouterLectureTitre( var modèle: modèle,
-                                       vue: IVueAjouterLectureTitre ) : IPrésentateurAjouterLectureTitre {
+class PrésentateurAjouterLectureTitre(var vue: IVueAjouterLectureTitre ) : IPrésentateurAjouterLectureTitre {
+    override fun traiterAjouterLectureTitre(titre: String) {
+        modèle.initialiserLecture()
+        if( titre.isNotEmpty() ) {
+            modèle.ajouterTitreAUneLecture( titre )
+            vue.naviguerVersAjouterTempsLecture()
+        }
+    }
 
-
+    override fun avertirInfosManquant(titre: String) {
+        if( titre.isEmpty() ){
+            vue.afficherAvertissementInfosManquants()
+        }
+    }
 }

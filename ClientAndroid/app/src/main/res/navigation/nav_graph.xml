@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/vueMesLectures">
+
 
     <fragment
         android:id="@+id/vueMesLectures"
@@ -41,4 +43,27 @@
             android:id="@+id/action_vueAjouterLectureObligation_to_vueMesLectures"
             app:destination="@id/vueMesLectures" />
     </fragment>
+    <action android:id="@+id/action_global_vueMesLectures" app:destination="@id/vueMesLectures" />
+    <fragment
+        android:id="@+id/vueÉquipage"
+        android:name="com.dti.defilecture.présentation.équipage.VueÉquipage"
+        android:label="fragment_equipage"
+        tools:layout="@layout/fragment_equipage" />
+    <fragment
+        android:id="@+id/vueTrésorerie"
+        android:name="com.dti.defilecture.présentation.trésorerie.VueTrésorerie"
+        android:label="fragment_tresorerie"
+        tools:layout="@layout/fragment_tresorerie" />
+    <action android:id="@+id/action_global_vueTrésorerie" app:destination="@id/vueTrésorerie" />
+    <action android:id="@+id/action_global_vueÉquipage" app:destination="@id/vueÉquipage" />
+    <fragment
+        android:id="@+id/vueÉpreuve"
+        android:name="com.dti.defilecture.présentation.épreuve.VueÉpreuve"
+        android:label="VueÉpreuve" />
+    <action android:id="@+id/action_global_vueÉpreuve" app:destination="@id/vueÉpreuve" />
+    <fragment
+        android:id="@+id/vueCompteUtilisateur"
+        android:name="com.dti.defilecture.présentation.compte.VueCompteUtilisateur"
+        android:label="fragment_compte_utilisateur"
+        tools:layout="@layout/fragment_compte_utilisateur" /><action android:id="@+id/action_global_vueCompteUtilisateur" app:destination="@id/vueCompteUtilisateur"/>
 </navigation>
