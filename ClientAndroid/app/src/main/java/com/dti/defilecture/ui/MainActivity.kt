@@ -10,8 +10,8 @@ import com.dti.defilecture.présentation.vue.VueAjouterLecture
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var pseudonyme:TextView
-    private lateinit var mot_de_passe:TextView
+    private lateinit var pseudo:TextView
+    private lateinit var mdp:TextView
     private lateinit var aLabordage:Button
 
 

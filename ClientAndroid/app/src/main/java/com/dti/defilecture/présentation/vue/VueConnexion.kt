@@ -1,11 +1,11 @@
 package com.dti.defilecture.présentation.vue
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.dti.defilecture.R
@@ -14,8 +14,8 @@ import com.dti.defilecture.présentation.présentateur.PrésentateurConnexion
 
 
 class VueConnexion : Fragment() {
-    private lateinit var pseudonyme: TextView
-    private lateinit var mdp: TextView
+    private lateinit var pseudonyme: EditText
+    private lateinit var mdp: EditText
     private lateinit var aLabordage: Button
     private lateinit var présentateur:PrésentateurConnexion
 
@@ -39,9 +39,11 @@ class VueConnexion : Fragment() {
         }
     }
      fun connexionReussi(){
-        Toast.makeText(this.context,"Connexion reussie",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@VueConnexion.context,"Connexion reussie",Toast.LENGTH_SHORT).show()
     }
     fun connexionEchouer(){
-        Toast.makeText(this.context,"pseudo ou mot de passe incorrect",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@VueConnexion.context,"pseudo ou mot de passe incorrect",Toast.LENGTH_SHORT).show()
     }
+
+
 }
