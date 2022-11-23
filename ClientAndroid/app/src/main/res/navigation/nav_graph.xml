@@ -57,13 +57,13 @@
     <action android:id="@+id/action_global_vueTrésorerie" app:destination="@id/vueTrésorerie" />
     <action android:id="@+id/action_global_vueÉquipage" app:destination="@id/vueÉquipage" />
     <fragment
-        android:id="@+id/vueÉpreuve"
-        android:name="com.dti.defilecture.présentation.épreuve.VueÉpreuve"
-        android:label="VueÉpreuve" />
-    <action android:id="@+id/action_global_vueÉpreuve" app:destination="@id/vueÉpreuve" />
-    <fragment
         android:id="@+id/vueCompteUtilisateur"
         android:name="com.dti.defilecture.présentation.compte.VueCompteUtilisateur"
         android:label="fragment_compte_utilisateur"
         tools:layout="@layout/fragment_compte_utilisateur" /><action android:id="@+id/action_global_vueCompteUtilisateur" app:destination="@id/vueCompteUtilisateur"/>
+    <fragment
+        android:id="@+id/vueQuestionnaire"
+        android:name="com.dti.defilecture.présentation.questionnaire.VueQuestionnaire"
+        android:label="fragment_questionnaire"
+        tools:layout="@layout/fragment_questionnaire" /><action android:id="@+id/action_global_vueQuestionnaire" app:destination="@id/vueQuestionnaire"/>
 </navigation>

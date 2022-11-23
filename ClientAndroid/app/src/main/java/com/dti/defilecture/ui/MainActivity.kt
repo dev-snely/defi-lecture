@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.fragment.NavHostFragment
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var barre_navigation: BottomNavigationView
     lateinit var navController : NavController
 
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_ajouter -> navController.navigate( R.id.action_global_vueMesLectures )
                 R.id.ic_équipage ->navController.navigate( R.id.action_global_vueÉquipage)
                 R.id.ic_trésorerie -> navController.navigate( R.id.action_global_vueTrésorerie)
-                R.id.ic_epreuve -> navController.navigate( R.id.action_global_vueÉpreuve )
+                R.id.ic_epreuve -> navController.navigate( R.id.action_global_vueQuestionnaire )
                 R.id.ic_compte -> navController.navigate( R.id.action_global_vueCompteUtilisateur )
             }
             true

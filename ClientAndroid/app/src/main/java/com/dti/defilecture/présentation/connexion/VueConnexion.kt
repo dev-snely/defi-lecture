@@ -14,7 +14,6 @@ import androidx.navigation.Navigation
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.connexion.IContratVPConnexion.IPrésentateurConnexion
 import com.dti.defilecture.présentation.connexion.IContratVPConnexion.IVueConnexion
-import com.dti.defilecture.présentation.connexion.PrésentateurConnexion
 
 
 class VueConnexion : Fragment(), IVueConnexion {

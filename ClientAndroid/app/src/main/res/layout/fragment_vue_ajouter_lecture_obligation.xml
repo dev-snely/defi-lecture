@@ -20,7 +20,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-android:translationZ="90dp"
+        android:translationZ="90dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/opacity_bg"
         app:layout_constraintEnd_toEndOf="parent"
