@@ -1,7 +1,6 @@
 package com.dti.defilecture.accesAuxDonnees
 
 import com.dti.defilecture.domaine.entité.Lecture
-import com.dti.defilecture.domaine.intéracteur.SourceDeLecture
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -12,15 +11,12 @@ class SourceDeLectureBidons : ISourcesDeLectures{
         Remplir()
     }
 
-    fun récupérerListeDeLecture(): List<Lecture>? {
-        return if(lectures.isNullOrEmpty()) null else lectures
-    }
-    fun ajouterUneLecture(uneLecture: Lecture) {
-        lectures?.add(uneLecture)
-    }
-
     override fun obtenirListeDeLecturesDUnUtilisateur(): MutableList<Lecture>? {
         return lectures
+    }
+
+    override fun ajouterUneLectureALaListe(lecture: Lecture) {
+        lectures?.add( lecture )
     }
 }
 
@@ -34,14 +30,14 @@ fun Remplir() {
             Lecture("Alchimiste", formatter.format(date), 75, true),
             Lecture("Tartuffle", formatter.format(date), 45, false),
             Lecture("Rouge Poison", formatter.format(date), 15, false),
-            Lecture("Tartuffle", formatter.format(date), 30, false),
+            /*Lecture("Tartuffle", formatter.format(date), 30, false),
             Lecture("Tartuffle", formatter.format(date), 75, true),
             Lecture("Naruto Shippuden", formatter.format(date), 120, false),
             Lecture("Alchimiste", formatter.format(date), 75, true),
             Lecture("Alchimiste", formatter.format(date), 75, true),
             Lecture("Baki", formatter.format(date), 30, false),
             Lecture("Tartuffle", formatter.format(date), 45, false),
-            Lecture("Rouge Poison", formatter.format(date), 15, false)
+            Lecture("Rouge Poison", formatter.format(date), 15, false)*/
         )
     }
 }

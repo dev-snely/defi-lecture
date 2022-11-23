@@ -10,18 +10,27 @@ interface IContratVPAjouterLectureObligation {
      * Définit les méthodes à utiliser dans une vue AjouterLecture.
      */
     interface IVueAjouterLectureObligation{
+        /**
+         * Naviguer vers la liste de lecture de l'utilisateur
+         */
         fun naviguerVersMesLecture()
+        /**
+         * Indique a l'utilisateur que des informations manque pour sa soumission.
+         */
+        fun afficherAvertissementInfosManquants()
+        /**
+         * Indique a l'utilisateur que l'ajout à réussi.
+         */
+        fun avertirAjoutReussi()
     }
 
     /**
      * Définit les méthodes à utiliser dans un présentateur AjouterLecture.
      */
     interface IPrésentateurAjouterLectureObligation{
+        fun avertirInfoManquante(btnSelectionné: Boolean)
+        fun ajouterLectureDansLaSource()
         fun naviguerVersMesLecture()
-        fun traiterObligationDeLecture()
-        /**
-         * Ajoute une lecture a la liste de lecture fais par un étudiant.
-         */
-        fun traiterAjouterLecture(titre: String, minutes: Int, obligation: Boolean, lectureObligé: Boolean)
+        fun traiterObligationDeLecture(btnSelectionné: Boolean, btnNonSelectionné: Boolean, btnOuiSelectionné: Boolean)
     }
 }

@@ -11,8 +11,8 @@
     <color name="bg_color_barre">#FAFAFA</color>
     <color name="df_rougeprimaire">#d9534f</color>
     <color name="underline">#adadad</color>
-    <color name="gris">#adadad</color>
-    <color name="blanc_fonce">#fafafa</color>
+    <color name="gris">#808080</color>
+    <color name="blanc_fonce">#f6f6f6</color>
     <color name="saumon">#FFD9D8</color>
     <color name="saumon_pale">#fff0ef</color>
 </resources>

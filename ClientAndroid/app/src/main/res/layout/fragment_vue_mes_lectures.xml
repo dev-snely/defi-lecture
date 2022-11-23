@@ -64,16 +64,18 @@
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
             tools:listitem="@layout/rangee_lectures" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/ajouterUneLecture"
             android:layout_width="303dp"
             android:layout_height="73dp"
-            android:backgroundTint="#D9534F"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:text="@string/ajouter_une_lecture_minuscule"
             android:textAllCaps="false"
-            android:textSize="25sp"
-            app:cornerRadius="20sp"
+            android:textSize="22sp"
+            app:backgroundTint="@color/df_rougeprimaire"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp"
+            app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

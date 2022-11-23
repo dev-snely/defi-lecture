@@ -147,8 +147,9 @@
             android:layout_height="74dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Une lecture libre est un ouvrage littéraire, incluant les essais et les article scientifiues, mais exclu les journaux et les médias sociaux. "
+            android:text="@string/descriptionLectureVALT"
             android:textSize="19sp"
+            android:textColor="@color/gris"
             app:layout_constraintStart_toStartOf="@+id/titreAjouterTitre"
             app:layout_constraintTop_toBottomOf="@+id/titreAjouterTitre" />
 

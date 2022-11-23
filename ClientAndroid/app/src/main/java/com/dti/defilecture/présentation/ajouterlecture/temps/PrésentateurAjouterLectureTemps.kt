@@ -9,24 +9,37 @@ import com.dti.defilecture.présentation.modèle
 class PrésentateurAjouterLectureTemps(var vue: IVueAjouterLectureTemps): IPrésentateurAjouterLectureTemps {
 
     override fun traiterAjouterMinutes(minuteAAjouter: Int, texteAuCompteur: String) {
-        var minutesAuCompteur = texteAuCompteur.filter { it.isDigit() }.toInt()
+        var minutesAuCompteur = texteAuCompteur.filter { it.isDigit() }
 
-        minutesAuCompteur += minuteAAjouter
-
-        vue.modifierMinutesAuCompteur(minutesAuCompteur)
+        if ( minutesAuCompteur.isNotEmpty() ) {
+            var minutesEntières = minutesAuCompteur.toInt()
+            minutesEntières += minuteAAjouter
+            vue.modifierMinutesAuCompteur(minutesEntières)
+        } else {
+            vue.modifierMinutesAuCompteur(minuteAAjouter)
+        }
     }
 
     override fun traiterReinitialisationCompteur() {
         vue.réinitialiserMinutesAuCompteur()
     }
 
-    override fun naviguerVersAjouterLectureObligation() {
-        vue.naviguerVersAjouterLectureObligation()
+    override fun naviguerVersAjouterLectureObligation(texteAuCompteur: String) {
+        var minutesAuCompteur = texteAuCompteur.filter { it.isDigit() }
+
+        if ( minutesAuCompteur.isNotEmpty() ){
+            var minutesEntières = minutesAuCompteur.toInt()
+            modèle.ajouterTempsAUneLecture( minutesEntières )
+            if ( !modèle.verifierLectureDureeManquante() ){
+                vue.naviguerVersAjouterLectureObligation()
+            }
+        }
     }
 
-    override fun avertirInfosManquant(minutes: Int) {
-        if( modèle.verifierLectureDureeManquante()  ){
-            vue.afficherAvertissementInfosManquants("Vous n'avez entré aucune minute.")
+    override fun avertirInfosManquant(texteAuCompteur: String) {
+        var minutesAuCompteur = texteAuCompteur.filter { it.isDigit() }
+        if( minutesAuCompteur.isEmpty() ){
+            vue.afficherAvertissementInfosManquants()
         }
     }
 

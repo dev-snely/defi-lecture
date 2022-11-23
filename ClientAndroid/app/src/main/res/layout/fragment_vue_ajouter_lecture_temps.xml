@@ -157,10 +157,11 @@
             android:background="@color/saumon"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:gravity="center"
-            android:text="J'ai lu 0 minutes"
+            android:text="@string/minutes_singulier"
             android:textColor="@color/black"
-            android:textSize="25sp"
-
+            android:textSize="22sp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="30dp"
             app:layout_constraintStart_toStartOf="@+id/titreAjouterTemps"
             app:layout_constraintTop_toBottomOf="@+id/titreAjouterTemps" />
 

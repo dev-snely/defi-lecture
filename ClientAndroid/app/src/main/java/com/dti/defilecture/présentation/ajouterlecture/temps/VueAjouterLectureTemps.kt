@@ -50,12 +50,8 @@ class VueAjouterLectureTemps : Fragment(), IVueAjouterLectureTemps {
         btnReinit = view.findViewById(R.id.VALTBtnReinit)
 
         btnSuivant.setOnClickListener {
-            présentateur.avertirInfosManquant(
-                tvNbMinutes
-                    .text.toString()
-                    .filter { it.isDigit() }
-                    .toInt()
-            )
+            présentateur.avertirInfosManquant( tvNbMinutes.text.toString() )
+            présentateur.naviguerVersAjouterLectureObligation( tvNbMinutes.text.toString() )
         }
 
         btn15mins.setOnClickListener{
@@ -69,6 +65,10 @@ class VueAjouterLectureTemps : Fragment(), IVueAjouterLectureTemps {
         }
         btn60mins.setOnClickListener{
             présentateur.traiterAjouterMinutes(60, tvNbMinutes.text.toString())
+        }
+
+        btnReinit.setOnClickListener{
+            présentateur.traiterReinitialisationCompteur()
         }
 
 
@@ -89,10 +89,10 @@ class VueAjouterLectureTemps : Fragment(), IVueAjouterLectureTemps {
     override fun réinitialiserMinutesAuCompteur() {
         tvNbMinutes.text = getString(R.string.minutes_singulier)
     }
-    override fun afficherAvertissementInfosManquants(message: String) {
+    override fun afficherAvertissementInfosManquants() {
         builder = AlertDialog.Builder(this.context)
         builder.setTitle(getString(R.string.avertissement))
-            .setMessage(message)
+            .setMessage(getString(R.string.tempsManquant))
             .setCancelable(true)
             .setPositiveButton(getString(R.string.jaicompris)){dialoginterface, it ->
                 //continue l'application

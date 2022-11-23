@@ -17,9 +17,13 @@
     <string name="ajouter_une_lecture_minuscule">Ajouter une lecture</string>
     <string name="bg_opacite">bg_opacite</string>
     <string name="btnReinitialiser">Réinitialiser</string>
-    <string name="minutes_pluriel">J\'ai lu %1$d minutes</string>
-    <string name="minutes_singulier">Veuiller entrer le nombre de minute lu.</string>
-    <string name="jaicompris">J\'ai compris</string>
-    <string name="avertissement">Avertissement!</string>
+    <string name="minutes_pluriel">J\'ai lu %1$d minutes.</string>
+    <string name="minutes_singulier">Veuillez s\'il vous plaît entrer le nombre de minutes lues.</string>
+    <string name="jaicompris">Arghh! J\'ai compris</string>
+    <string name="avertissement">Oops…</string>
     <string name="titreManquant">Veuillez s\'il vous plaît spécifier le titre de votre lecture.</string>
+    <string name="tempsManquant">Veuillez s\'il vous plait spécifier votre temps de lecture.</string>
+    <string name="obligationManquant">Veuiller s\'il vous plait nous dire si votre lecture était obligatoire.</string>
+    <string name="TitrePageObligationLecture">Votre lecture a-t-elle été réalisée dans le cadre d’un cours ?</string>
+    <string name="descriptionLectureVALT">Une lecture libre est un ouvrage littéraire, incluant les essais et les article scientifiues, mais exclu les journaux et les médias sociaux.</string>
 </resources>

@@ -2,15 +2,23 @@ package com.dti.defilecture.présentation
 
 import com.dti.defilecture.accesAuxDonnees.SourceDeLectureBidons
 import com.dti.defilecture.domaine.entité.Lecture
+import com.dti.defilecture.domaine.intéracteur.AjouterLectureDUnUtilisateur
 import com.dti.defilecture.domaine.intéracteur.InitialiserLectureInteracteur
 import com.dti.defilecture.domaine.intéracteur.ObtenirListeDeLecturesDUnUtilisateur
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Modèle() {
 
     private var lecture =  Lecture("","",0,false)
 
-    fun ajouterLectureDansSourceDeDonnée(lecture: Lecture){
-        ajouterLectureDansSourceDeDonnée(lecture)
+    fun ajouterLectureDansSourceDeDonnée(){
+        val aujourdhui = Calendar.getInstance().time
+        val adapteur = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+        lecture.dateInscription = adapteur.format(aujourdhui)
+
+        AjouterLectureDUnUtilisateur( SourceDeLectureBidons() ).ajouterlecture( lecture )
+
     }
 
     /**

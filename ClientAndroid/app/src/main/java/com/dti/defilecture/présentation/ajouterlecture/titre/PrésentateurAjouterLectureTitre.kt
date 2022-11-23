@@ -9,7 +9,9 @@ class PrésentateurAjouterLectureTitre(var vue: IVueAjouterLectureTitre ) : IPr�
         modèle.initialiserLecture()
         if( titre.isNotEmpty() ) {
             modèle.ajouterTitreAUneLecture( titre )
-            vue.naviguerVersAjouterTempsLecture()
+            if( !modèle.verifierLectureTitreManquant() ){
+                vue.naviguerVersAjouterTempsLecture()
+            }
         }
     }
 

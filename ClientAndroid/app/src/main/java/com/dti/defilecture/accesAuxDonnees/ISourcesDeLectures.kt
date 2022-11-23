@@ -4,4 +4,5 @@ import com.dti.defilecture.domaine.entité.Lecture
 
 interface ISourcesDeLectures {
     fun obtenirListeDeLecturesDUnUtilisateur() : MutableList<Lecture>?
+    fun ajouterUneLectureALaListe( lecture: Lecture )
 }
