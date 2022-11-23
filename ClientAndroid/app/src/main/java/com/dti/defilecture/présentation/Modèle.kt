@@ -1,10 +1,7 @@
 package com.dti.defilecture.présentation
 
-import com.dti.defilecture.accesAuxDonnees.SourceDeLectureBidons
 import com.dti.defilecture.domaine.entité.Lecture
-import com.dti.defilecture.domaine.intéracteur.AjouterLectureDUnUtilisateur
-import com.dti.defilecture.domaine.intéracteur.InitialiserLectureInteracteur
-import com.dti.defilecture.domaine.intéracteur.ObtenirListeDeLecturesDUnUtilisateur
+import com.dti.defilecture.domaine.intéracteur.InteractionListeDeLecturesDUnUtilisateur
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,22 +14,21 @@ class Modèle() {
         val adapteur = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
         lecture.dateInscription = adapteur.format(aujourdhui)
 
-        AjouterLectureDUnUtilisateur( SourceDeLectureBidons() ).ajouterlecture( lecture )
-
+        InteractionListeDeLecturesDUnUtilisateur().ajouterlecture( lecture )
     }
 
     /**
     Récupère la liste des lectures de l'utilisateur avec l'intéracteur
      */
     fun obtenirListeLecturesDeLUtilisateur(): MutableList<Lecture>?  {
-        return ObtenirListeDeLecturesDUnUtilisateur( SourceDeLectureBidons() ).obtenirListe()
+        return InteractionListeDeLecturesDUnUtilisateur().obtenirListe()
     }
 
     /**
      *  Initialise une lecture vide
      */
     fun initialiserLecture(){
-        InitialiserLectureInteracteur().initialiser( lecture )
+        lecture = InteractionListeDeLecturesDUnUtilisateur().initialiser()
     }
 
     /**

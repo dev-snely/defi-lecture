@@ -1,5 +1,6 @@
 package com.dti.defilecture.accesAuxDonnees
 
+import android.util.Log
 import com.dti.defilecture.domaine.entité.Lecture
 import java.text.SimpleDateFormat
 import java.util.*
@@ -27,22 +28,13 @@ val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
 fun Remplir() {
     if (lectures.isNullOrEmpty()) {
         lectures = mutableListOf(
-            Lecture("Alchimiste", formatter.format(date), 75, true),
-            Lecture("Tartuffle", formatter.format(date), 45, false),
-            Lecture("Rouge Poison", formatter.format(date), 15, false),
-            /*Lecture("Tartuffle", formatter.format(date), 30, false),
-            Lecture("Tartuffle", formatter.format(date), 75, true),
-            Lecture("Naruto Shippuden", formatter.format(date), 120, false),
-            Lecture("Alchimiste", formatter.format(date), 75, true),
-            Lecture("Alchimiste", formatter.format(date), 75, true),
-            Lecture("Baki", formatter.format(date), 30, false),
-            Lecture("Tartuffle", formatter.format(date), 45, false),
-            Lecture("Rouge Poison", formatter.format(date), 15, false)*/
+            Lecture("Alchimiste", formatter.format(date), 75, false),
+            Lecture("Tartuffle", formatter.format(date), 45, true),
+            Lecture("Tartuffle", formatter.format(date), 30, true),
+            Lecture("Le Joueur", formatter.format(date), 60, false)
         )
     }
 }
-
-
 
 // Étant donnée notre API minimum de 21, j'ai tiré cette méthode de stackoverflow, parce que
 // celle que j'utilisais, soit LocalDateTime.now() obligeais un api minimum de 26.

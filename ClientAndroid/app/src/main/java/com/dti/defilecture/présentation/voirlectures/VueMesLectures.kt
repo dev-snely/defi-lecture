@@ -40,13 +40,6 @@ class VueMesLectures : Fragment(), IVueMesLectures {
         navController = Navigation.findNavController(view)
         btnAjouter = view.findViewById(R.id.ajouterUneLecture)
 
-        /*
-        var navHostFragment : Fragment? = childFragmentManager.findFragmentById(R.id.nav_host_fragment)
-        if (navHostFragment != null) {
-            navController = navHostFragment.findNavController()
-        }
-        */
-
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.recyclerViewLectures)
         recyclerView.layoutManager = layoutManager
@@ -64,14 +57,6 @@ class VueMesLectures : Fragment(), IVueMesLectures {
     }
 
     override fun naviguerVersAjoutTitreLecture() {
-        /*
-        var navHostFragment: Fragment? =
-            childFragmentManager.findFragmentById(R.id.nav_host_fragment)
-        navHostFragment?.childFragmentManager?.fragments?.get(0)
-
-        if (navHostFragment != null) {
-            navController = navHostFragment.findNavController()
-        }*/
         navController.navigate(R.id.action_vueMesLectures_to_vueAjouterLectureTitre)
     }
 }

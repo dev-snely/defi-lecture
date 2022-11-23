@@ -28,9 +28,10 @@ interface IContratVPAjouterLectureObligation {
      * Définit les méthodes à utiliser dans un présentateur AjouterLecture.
      */
     interface IPrésentateurAjouterLectureObligation{
-        fun avertirInfoManquante(btnSelectionné: Boolean)
-        fun ajouterLectureDansLaSource()
-        fun naviguerVersMesLecture()
+        /**
+         * Méthode qui se charge d'ejouter une lecture dans sa source
+         * apres y avoir mis l'attibut d'obligation de lecture.
+         */
         fun traiterObligationDeLecture(btnSelectionné: Boolean, btnNonSelectionné: Boolean, btnOuiSelectionné: Boolean)
     }
 }

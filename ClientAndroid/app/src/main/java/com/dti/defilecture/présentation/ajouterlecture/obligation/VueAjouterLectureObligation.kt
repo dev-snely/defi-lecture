@@ -46,14 +46,14 @@ class VueAjouterLectureObligation : Fragment(), IVueAjouterLectureObligation {
         rdBtnNon = view.findViewById(R.id.rb_option_non)
 
         btnSuivant.setOnClickListener {
-            présentateur.avertirInfoManquante( rdBtnOui.isChecked || rdBtnNon.isChecked )
+            //présentateur.avertirInfoManquante( rdBtnOui.isChecked || rdBtnNon.isChecked )
             présentateur.traiterObligationDeLecture(
                 rdBtnOui.isChecked || rdBtnNon.isChecked,
                 rdBtnOui.isChecked,
                 rdBtnNon.isChecked
             )
-            présentateur.ajouterLectureDansLaSource()
-            présentateur.naviguerVersMesLecture()
+            //présentateur.ajouterLectureDansLaSource()
+            //présentateur.naviguerVersMesLecture()
         }
     }
 
@@ -73,6 +73,6 @@ class VueAjouterLectureObligation : Fragment(), IVueAjouterLectureObligation {
     }
 
     override fun avertirAjoutReussi() {
-        Toast.makeText(this.context,"Lecture Ajouté!",Toast.LENGTH_SHORT)
+        Toast.makeText(this.context,"Lecture Ajouté!",Toast.LENGTH_SHORT).show()
     }
 }

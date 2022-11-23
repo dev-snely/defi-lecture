@@ -1,18 +1,12 @@
 package com.dti.defilecture.domaine.entité
 
-class Lecture {
+class Lecture(titre: String, date: String, durée: Int, obligatoire: Boolean) {
 
-    var titreLecture: String = ""
-    var dateInscription: String = ""
-    var duréeMinutes: Int = 0
-    var obligatoire: Boolean? = null
+    var titreLecture: String = titre
+    var dateInscription: String = date
+    var duréeMinutes: Int = durée
+    var obligatoire: Boolean? = obligatoire
 
     init{}
 
-    constructor( titre: String, date: String, durée: Int, obligatoire: Boolean ){
-        this.titreLecture = titre
-        this.dateInscription = date
-        this.duréeMinutes = duréeMinutes
-        this.obligatoire = obligatoire
-    }
 }
