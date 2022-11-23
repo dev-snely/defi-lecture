@@ -2,20 +2,10 @@ package com.dti.defilecture.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.compte.VueCompteUtilisateur
-import com.dti.defilecture.présentation.trésorerie.VueTrésorerie
-import com.dti.defilecture.présentation.voirlectures.VueMesLectures
-import com.dti.defilecture.présentation.épreuve.VueÉpreuve
-import com.dti.defilecture.présentation.équipage.VueÉquipage
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.fragment.NavHostFragment
-import com.dti.defilecture.présentation.ajouterlecture.VueAjouterLecture
-import com.dti.defilecture.présentation.ajouterlecture.titre.VueAjouterLectureTitre
 
 class MainActivity : AppCompatActivity() {
     lateinit var barre_navigation: BottomNavigationView
