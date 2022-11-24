@@ -7,20 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".présentation.questionnaire.VueQuestionnaire">
 
-    <ImageView
-        android:id="@+id/opacity_bg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#CCFFEAEA"
-        android:contentDescription="@string/bg_opacite"
+
+    <TextView
+        android:id="@+id/titrePageQuestionnaire"
+        android:layout_width="412dp"
+        android:layout_height="109dp"
+        android:background="#785F43"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:gravity="center"
+        android:padding="20dp"
+        android:shadowColor="#0B0A0A"
+        android:text="Questionnaire"
+        android:textColor="@color/black"
+        android:textColorLink="#151414"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="ImageContrastCheck" />
-
+        app:layout_constraintVertical_bias="0.049" />
 
     <TextView
         android:id="@+id/question"
@@ -134,6 +140,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rb_option_c" />
 
+        <ImageView
+            android:id="@+id/opacity_bg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#CCFFEAEA"
+            android:contentDescription="@string/bg_opacite"
+            tools:ignore="ImageContrastCheck" />
+
 
     </RadioGroup>
 
@@ -145,26 +159,9 @@
         android:text="Envoyer vos réponses"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rg_questionnaire"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintVertical_bias="0.531" />
 
-    <TextView
-        android:id="@+id/titrePageQuestionnaire"
-        android:layout_width="412dp"
-        android:layout_height="109dp"
-        android:layout_marginBottom="688dp"
-        android:background="@color/df_rougeprimaire"
-        android:fontFamily="@font/goudy_bookletter1911_regular"
-        android:gravity="center"
-        android:padding="20dp"
-        android:shadowColor="#0B0A0A"
-        android:text="Questionnaire"
-        android:textColor="@color/black"
-        android:textColorLink="#151414"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="@+id/opacity_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
