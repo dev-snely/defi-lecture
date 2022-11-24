@@ -3,9 +3,9 @@ package com.dti.defilecture.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.dti.defilecture.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.navigation.fragment.NavHostFragment
 
 class MainActivity : AppCompatActivity() {
 
