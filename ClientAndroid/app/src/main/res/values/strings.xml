@@ -27,4 +27,5 @@
     <string name="TitrePageObligationLecture">Votre lecture a-t-elle été réalisée dans le cadre d’un cours ?</string>
     <string name="descriptionLectureVALT">Une lecture libre est un ouvrage littéraire, incluant les essais et les article scientifiues, mais exclu les journaux et les médias sociaux.</string>
     <string name="nbMinute">%1$d minutes</string>
+    <string name="IndiceProgrammeJoueur">Domaine d\'étude*</string>
 </resources>
