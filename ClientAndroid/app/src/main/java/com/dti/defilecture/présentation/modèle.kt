@@ -2,7 +2,9 @@ package com.dti.defilecture.présentation
 
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
+import com.dti.defilecture.domaine.entité.Questionnaire
 import com.dti.defilecture.domaine.intéracteur.InteractionListeDeLecturesDUnUtilisateur
+import com.dti.defilecture.domaine.intéracteur.InteractionSourceQuestion
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -10,7 +12,6 @@ class Modèle() {
 
     private var lecture =  Lecture("","",0,false)
     lateinit var compte: Compte
-
 
     fun ajouterLectureDansSourceDeDonnée(){
         val aujourdhui = Calendar.getInstance().time
@@ -68,13 +69,12 @@ class Modèle() {
         return lecture.duréeMinutes == 0
     }
 
+    fun obtenirListeQuestion(): Array<Questionnaire>{
+        return InteractionSourceQuestion().obtenirQuestionInteracteur()
+    }
+
     fun créationCompteDansSourceDeDonnée(compte: Compte){
         //À Faire
     }
-
 }
 val modèle = Modèle()
-
-
-
-
