@@ -61,4 +61,22 @@
             android:id="@+id/action_vueBienvenue_to_vueInscription"
             app:destination="@id/vueInscription" />
     </fragment>
+    <fragment
+        android:id="@+id/vueCompteUtilisateur"
+        android:name="com.dti.defilecture.présentation.compte.VueCompteUtilisateur"
+        android:label="fragment_compte_utilisateur"
+        tools:layout="@layout/fragment_compte_utilisateur" >
+        <action
+            android:id="@+id/action_vueCompteUtilisateur_to_vueModifier"
+            app:destination="@id/vueModifier" />
+    </fragment>
+    <fragment
+        android:id="@+id/vueModifier"
+        android:name="com.dti.defilecture.présentation.modifier.VueModifier"
+        android:label="fragment_modification"
+        tools:layout="@layout/fragment_modification" >
+        <action
+            android:id="@+id/action_vueModifier_to_vueCompteUtilisateur"
+            app:destination="@id/vueCompteUtilisateur" />
+    </fragment>
 </navigation>
