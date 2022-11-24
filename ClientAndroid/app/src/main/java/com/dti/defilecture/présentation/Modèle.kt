@@ -1,7 +1,9 @@
 package com.dti.defilecture.présentation
 
 import com.dti.defilecture.domaine.entité.Lecture
+import com.dti.defilecture.domaine.entité.Questionnaire
 import com.dti.defilecture.domaine.intéracteur.InteractionListeDeLecturesDUnUtilisateur
+import com.dti.defilecture.domaine.intéracteur.InteractionSourceQuestion
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -71,7 +73,9 @@ class Modèle() {
     fun verifierLectureObligation(): Boolean{
         return lecture.obligatoire == null
     }
-
+    fun obtenirListeQuestion(): Array<Questionnaire>{
+        return InteractionSourceQuestion().obtenirQuestionInteracteur()
+    }
 
 }
 val modèle = Modèle()
