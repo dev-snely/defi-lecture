@@ -13,13 +13,13 @@ import com.dti.defilecture.R
 import com.dti.defilecture.présentation.bienvenue.IContratVPBienvenue.IVueBienvenue
 import com.dti.defilecture.présentation.bienvenue.IContratVPBienvenue.IPrésentateurBienvenue
 
-
 class VueBienvenue: Fragment(), IVueBienvenue {
 
     lateinit var navController : NavController
     lateinit var présentateur: IPrésentateurBienvenue
-    lateinit var btnCnx: Button
-    lateinit var btnIns: Button
+
+    lateinit var btnConnexion : Button
+    lateinit var btnInscription : Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,25 +33,24 @@ class VueBienvenue: Fragment(), IVueBienvenue {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         navController = Navigation.findNavController(view)
-        btnCnx = view.findViewById(R.id.btnBienvenueConnexion)
-        btnIns = view.findViewById(R.id.btnBienvenueInscription)
+        btnInscription = view.findViewById(R.id.btnInscription)
+        btnConnexion = view.findViewById(R.id.btnConnexion)
 
-        btnCnx.setOnClickListener {
-            présentateur.naviguerVersPageDeConnexion()
+        btnInscription.setOnClickListener {
+            naviguerVersInscription()
         }
 
-        btnIns.setOnClickListener {
-            présentateur.naviguerVersPageDInscription()
+        btnConnexion.setOnClickListener {
+            naviguerVersConnexion()
         }
     }
 
-    override fun naviguerVersPageDeConnexion(){
-        navController.navigate(R.id.action_vueBienvenue_to_vueConnexion)
-    }
-
-    override fun naviguerVersPageDInscription() {
+    override fun naviguerVersInscription(){
         navController.navigate(R.id.action_vueBienvenue_to_vueInscription)
+    }
+
+    override fun naviguerVersConnexion(){
+        navController.navigate(R.id.action_vueBienvenue_to_vueConnexion)
     }
 }

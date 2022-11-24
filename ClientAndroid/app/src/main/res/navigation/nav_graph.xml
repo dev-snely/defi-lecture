@@ -60,10 +60,23 @@
         android:id="@+id/vueCompteUtilisateur"
         android:name="com.dti.defilecture.présentation.compte.VueCompteUtilisateur"
         android:label="fragment_compte_utilisateur"
-        tools:layout="@layout/fragment_compte_utilisateur" /><action android:id="@+id/action_global_vueCompteUtilisateur" app:destination="@id/vueCompteUtilisateur"/>
+        tools:layout="@layout/fragment_compte_utilisateur" >
+        <action
+            android:id="@+id/action_vueCompteUtilisateur_to_vueModifier"
+            app:destination="@id/vueModifier" />
+    </fragment><action android:id="@+id/action_global_vueCompteUtilisateur" app:destination="@id/vueCompteUtilisateur"/>
     <fragment
         android:id="@+id/vueQuestionnaire"
         android:name="com.dti.defilecture.présentation.questionnaire.VueQuestionnaire"
         android:label="fragment_questionnaire"
         tools:layout="@layout/fragment_questionnaire" /><action android:id="@+id/action_global_vueQuestionnaire" app:destination="@id/vueQuestionnaire"/>
+    <fragment
+        android:id="@+id/vueModifier"
+        android:name="com.dti.defilecture.présentation.modifier.VueModifier"
+        android:label="fragment_modification"
+        tools:layout="@layout/fragment_modification" >
+        <action
+            android:id="@+id/action_vueModifier_to_vueCompteUtilisateur"
+            app:destination="@id/vueCompteUtilisateur" />
+    </fragment>
 </navigation>

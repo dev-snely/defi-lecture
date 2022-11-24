@@ -1,4 +1,6 @@
 package com.dti.defilecture.présentation.compte
 
-class PrésentateurCompteUtilisateur {
+import com.dti.defilecture.présentation.compte.IContratVPCompte.IPrésentateurCompte
+
+class PrésentateurCompteUtilisateur(vueCompteUtilisateur: VueCompteUtilisateur): IPrésentateurCompte {
 }

@@ -4,13 +4,11 @@ import com.dti.defilecture.présentation.bienvenue.IContratVPBienvenue.IPrésent
 import com.dti.defilecture.présentation.bienvenue.IContratVPBienvenue.IVueBienvenue
 
 class PrésentateurBienvenue(var vue: IVueBienvenue) : IPrésentateurBienvenue {
-
     override fun naviguerVersPageDInscription() {
-        vue.naviguerVersPageDInscription()
+        vue.naviguerVersInscription()
     }
 
     override fun naviguerVersPageDeConnexion() {
-        vue.naviguerVersPageDeConnexion()
+        vue.naviguerVersConnexion()
     }
-
 }
