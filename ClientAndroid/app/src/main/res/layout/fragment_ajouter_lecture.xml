@@ -25,7 +25,7 @@
             android:minHeight="48dp"
             android:textColor="@color/black"
             android:textColorHint="#690000"
-            app:layout_constraintBottom_toTopOf="@+id/btn30minutes"
+            app:layout_constraintBottom_toTopOf="@+id/btn30minutesalpha"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.732"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,18 +34,18 @@
 
 
         <Button
-            android:id="@+id/btn45minutes"
+            android:id="@+id/btn45minutesalpha"
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:text="45"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/btn15minutes"
-            app:layout_constraintTop_toBottomOf="@+id/btn15minutes"
+            app:layout_constraintStart_toStartOf="@+id/btn15minutesalpha"
+            app:layout_constraintTop_toBottomOf="@+id/btn15minutesalpha"
             app:layout_constraintVertical_bias="0.024" />
 
 
         <Button
-            android:id="@+id/btn15minutes"
+            android:id="@+id/btn15minutesalpha"
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:layout_marginStart="88dp"
@@ -56,26 +56,26 @@
             app:layout_constraintVertical_bias="0.053" />
 
         <Button
-            android:id="@+id/btn30minutes"
+            android:id="@+id/btn30minutesalpha"
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:layout_marginStart="24dp"
             android:text="30"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btn15minutes"
-            app:layout_constraintTop_toTopOf="@+id/btn15minutes"
+            app:layout_constraintStart_toEndOf="@+id/btn15minutesalpha"
+            app:layout_constraintTop_toTopOf="@+id/btn15minutesalpha"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/btn60minutes"
+            android:id="@+id/btn60minutesalpha"
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:text="60"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btn30minutes"
+            app:layout_constraintEnd_toEndOf="@+id/btn30minutesalpha"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/btn45minutes"
-            app:layout_constraintTop_toTopOf="@+id/btn45minutes"
+            app:layout_constraintStart_toEndOf="@+id/btn45minutesalpha"
+            app:layout_constraintTop_toTopOf="@+id/btn45minutesalpha"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -101,7 +101,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn45minutes"
+            app:layout_constraintTop_toBottomOf="@+id/btn45minutesalpha"
             app:layout_constraintVertical_bias="0.049" />
 
 

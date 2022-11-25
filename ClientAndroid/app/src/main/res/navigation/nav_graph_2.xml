@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_2"
+    app:startDestination="@id/vueBienvenue">
+
+    <fragment
+        android:id="@+id/vueConnexion"
+        android:name="com.dti.defilecture.présentation.connexion.VueConnexion"
+        android:label="fragment_connexion"
+        tools:layout="@layout/fragment_connexion" >
+        <action
+            android:id="@+id/action_vueConnexion_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.dti.defilecture.ui.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/vueInscription"
+        android:name="com.dti.defilecture.présentation.inscription.VueInscription"
+        android:label="fragment_inscription"
+        tools:layout="@layout/fragment_inscription" >
+        <action
+            android:id="@+id/action_vueInscription_to_vueConnexion"
+            app:destination="@id/vueConnexion" />
+        <action
+            android:id="@+id/action_vueInscription_to_vueBienvenue"
+            app:destination="@id/vueBienvenue" />
+    </fragment>
+    <fragment
+        android:id="@+id/vueBienvenue"
+        android:name="com.dti.defilecture.présentation.bienvenue.VueBienvenue"
+        android:label="fragment_page_de_bienvenue"
+        tools:layout="@layout/fragment_page_de_bienvenue" >
+        <action
+            android:id="@+id/action_vueBienvenue_to_vueConnexion"
+            app:destination="@id/vueConnexion" />
+        <action
+            android:id="@+id/action_vueBienvenue_to_vueInscription"
+            app:destination="@id/vueInscription" />
+    </fragment>
+</navigation>

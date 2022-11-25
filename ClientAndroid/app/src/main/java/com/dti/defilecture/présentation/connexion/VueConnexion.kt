@@ -1,5 +1,6 @@
 package com.dti.defilecture.présentation.connexion
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,7 +15,6 @@ import androidx.navigation.Navigation
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.connexion.IContratVPConnexion.IPrésentateurConnexion
 import com.dti.defilecture.présentation.connexion.IContratVPConnexion.IVueConnexion
-import com.dti.defilecture.présentation.connexion.PrésentateurConnexion
 
 
 class VueConnexion : Fragment(), IVueConnexion {
@@ -23,6 +23,9 @@ class VueConnexion : Fragment(), IVueConnexion {
     private lateinit var mdp: TextView
     private lateinit var aLabordage: Button
     private lateinit var présentateur: IPrésentateurConnexion
+    private lateinit var tvMotDePasseOublié: TextView
+
+    private lateinit var builder : AlertDialog.Builder
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,17 +42,17 @@ class VueConnexion : Fragment(), IVueConnexion {
         navController = Navigation.findNavController(view)
         pseudonyme=view.findViewById(R.id.pseudo)
         mdp=view.findViewById(R.id.mot_de_passe)
+        tvMotDePasseOublié = view.findViewById(R.id.mdp_oublié)
 
         aLabordage=view.findViewById(R.id.abordage)
         aLabordage.setOnClickListener {
-            Log.d("ids","Pseudo: ${pseudonyme.text.toString()}, MDP: ${mdp.text.toString()} ")
             présentateur.validerIdentifiants(pseudonyme.text.toString(),mdp.text.toString())
         }
+        MessageMotDePasseOublié()
     }
 
     override fun connexionReussi(){
         Toast.makeText(context,"Connexion reussie",Toast.LENGTH_SHORT).show()
-        naviguerVersDefiLecture()
     }
 
     override fun connexionEchouer(){
@@ -58,5 +61,17 @@ class VueConnexion : Fragment(), IVueConnexion {
 
     override fun naviguerVersDefiLecture(){
         navController.navigate(R.id.action_vueConnexion_to_mainActivity)
+    }
+
+    override fun MessageMotDePasseOublié() {
+        tvMotDePasseOublié.setOnClickListener {
+            builder = AlertDialog.Builder(this.context)
+            builder.setTitle("Avertissement!")
+                .setMessage("Veuillez contactez l'administrateur au « admin@crosemont.qc.ca » afin de modifier votre mot de passe")
+                .setCancelable(true)
+                .setPositiveButton("J'ai compris"){dialoginterface, it ->
+                }
+                .show()
+        }
     }
 }

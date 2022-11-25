@@ -7,6 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="rouge">#FF0000</color>
     <color name="bg_color_barre">#FAFAFA</color>
     <color name="df_rougeprimaire">#d9534f</color>
+    <color name="underline">#adadad</color>
+    <color name="gris">#808080</color>
+    <color name="blanc_fonce">#f6f6f6</color>
+    <color name="saumon">#FFD9D8</color>
+    <color name="saumon_pale">#fff0ef</color>
 </resources>

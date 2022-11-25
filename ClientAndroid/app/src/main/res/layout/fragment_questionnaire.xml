@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/sophie_louisnard_bg_unsplash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".présentation.questionnaire.VueQuestionnaire">
+
+
+    <TextView
+        android:id="@+id/titrePageQuestionnaire"
+        android:layout_width="412dp"
+        android:layout_height="109dp"
+        android:background="#785F43"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:gravity="center"
+        android:padding="20dp"
+        android:shadowColor="#0B0A0A"
+        android:text="Questionnaire"
+        android:textColor="@color/black"
+        android:textColorLink="#151414"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="394dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_blanc"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp"
+        android:shadowColor="#0B0A0A"
+        android:text="A La Découverte de Louise Portal, dans quelle catégorie Louise Portal a-t-elle remporté un prix génie?"
+        android:textColor="@color/black"
+        android:textColorLink="#151414"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titrePageQuestionnaire" />
+
+    <RadioGroup
+        android:id="@+id/rg_questionnaire"
+        android:layout_width="393dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question"
+        app:layout_constraintVertical_bias="0.060000002">
+
+
+        <RadioButton
+            android:id="@+id/rb_option_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_custom_radio_btn"
+            android:button="@null"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:gravity="left"
+            android:layoutDirection="rtl"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            android:text="Prix hommage ( Pour l'ensemble de sa carrière cinématographique )."
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioButton
+            android:id="@+id/rb_option_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_custom_radio_btn"
+            android:button="@null"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:gravity="left"
+            android:layoutDirection="rtl"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            android:text="Meilleure actrice de soutien ( Pour les invasions barbare )"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rb_option_a" />
+
+        <RadioButton
+            android:id="@+id/rb_option_c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_custom_radio_btn"
+            android:button="@null"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:gravity="left"
+            android:layoutDirection="rtl"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            android:text="Meilleure actrice ( Pour Cordélia )"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rb_option_b" />
+
+        <RadioButton
+            android:id="@+id/rb_option_d"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_custom_radio_btn"
+            android:button="@null"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:gravity="left"
+            android:layoutDirection="rtl"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            android:text="Meilleure actrice de soutien ( Pour Le Déclin de L'empire américain )"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rb_option_c" />
+
+        <ImageView
+            android:id="@+id/opacity_bg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#CCFFEAEA"
+            android:contentDescription="@string/bg_opacite"
+            tools:ignore="ImageContrastCheck" />
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/envoyer"
+        android:layout_width="265dp"
+        android:layout_height="76dp"
+        android:backgroundTint="#000000"
+        android:text="Envoyer vos réponses"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_questionnaire"
+        app:layout_constraintVertical_bias="0.30" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
