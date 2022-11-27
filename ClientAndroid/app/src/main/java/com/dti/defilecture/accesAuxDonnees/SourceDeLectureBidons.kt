@@ -12,7 +12,7 @@ class SourceDeLectureBidons : ISourcesDeLectures{
         Remplir()
     }
 
-    override fun obtenirListeDeLecturesDUnUtilisateur(): MutableList<Lecture>? {
+    override fun obtenirListeDeLecturesBidon(): MutableList<Lecture>? {
         return lectures
     }
 

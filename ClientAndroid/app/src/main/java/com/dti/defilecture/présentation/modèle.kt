@@ -4,6 +4,7 @@ import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.domaine.entité.Questionnaire
 import com.dti.defilecture.domaine.intéracteur.InteractionListeDeLecturesDUnUtilisateur
+import com.dti.defilecture.domaine.intéracteur.InteractionSourceDeCompte
 import com.dti.defilecture.domaine.intéracteur.InteractionSourceQuestion
 import java.text.SimpleDateFormat
 import java.util.*
@@ -11,7 +12,7 @@ import java.util.*
 class Modèle() {
 
     private var lecture =  Lecture("","",0,false)
-    lateinit var compte: Compte
+    private var compteConnecté = Compte()
 
     fun ajouterLectureDansSourceDeDonnée(){
         val aujourdhui = Calendar.getInstance().time
@@ -69,12 +70,29 @@ class Modèle() {
         return lecture.duréeMinutes == 0
     }
 
+    /**
+     * Renvoie vrai si la lecture n'est ni obligatoire, ni non obligatoire.
+     */
+    fun verifierLectureObligation(): Boolean{
+        return lecture.obligatoire == null
+    }
     fun obtenirListeQuestion(): Array<Questionnaire>{
         return InteractionSourceQuestion().obtenirQuestionInteracteur()
     }
 
-    fun créationCompteDansSourceDeDonnée(compte: Compte){
-        //À Faire
+    /**
+     * Établis la connexion et initialise le compte connecté selon le compte retourné depuis la source
+     * lorsque les bons identifiants ont été entré.
+     */
+    fun connexion(pseudo: String, mdp: String): Boolean{
+        var connexion = false
+        val unCompte: Compte? = InteractionSourceDeCompte().récupérerComptePourConnexion( pseudo, mdp )
+        if( unCompte != null ){
+          compteConnecté = unCompte
+          connexion = true
+        }
+        return connexion
     }
+
 }
 val modèle = Modèle()

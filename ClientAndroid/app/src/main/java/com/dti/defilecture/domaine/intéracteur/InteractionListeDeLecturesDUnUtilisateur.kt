@@ -25,7 +25,7 @@ class InteractionListeDeLecturesDUnUtilisateur(  ) {
      *  Permet d'obtenir une liste de lecture.
      */
     fun obtenirListe(): MutableList< Lecture >?{
-        return sourceDeDonnées.obtenirListeDeLecturesDUnUtilisateur()
+        return sourceDeDonnées.obtenirListeDeLecturesBidon()
     }
 
     /**
