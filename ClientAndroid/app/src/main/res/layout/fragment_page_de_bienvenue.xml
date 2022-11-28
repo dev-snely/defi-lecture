@@ -60,10 +60,12 @@
 
         <Button
             android:id="@+id/btnConnexion"
-            android:layout_width="158dp"
+            android:layout_width="185dp"
             android:layout_height="77dp"
             android:backgroundTint="@color/black"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
             android:text="Se Connecter"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -73,10 +75,12 @@
 
         <Button
             android:id="@+id/btnInscription"
-            android:layout_width="145dp"
+            android:layout_width="185dp"
             android:layout_height="77dp"
             android:backgroundTint="@color/black"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
             android:text="S'inscrire"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnConnexion"
             app:layout_constraintHorizontal_bias="0.5"
