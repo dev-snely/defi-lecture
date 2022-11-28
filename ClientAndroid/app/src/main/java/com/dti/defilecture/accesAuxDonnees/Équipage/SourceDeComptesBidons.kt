@@ -1,8 +1,9 @@
-package com.dti.defilecture.accesAuxDonnees
+package com.dti.defilecture.accesAuxDonnees.Équipage
 
+import com.dti.defilecture.accesAuxDonnees.Équipage.ISourcesDeDonnéesÉquipage
 import com.dti.defilecture.domaine.entité.Compte
 
-class SourceDeComptesBidons : ISourcesDeDonnéesÉquipage{
+class SourceDeComptesBidons : ISourcesDeDonnéesÉquipage {
 
     init {
         RemplirComptes()

@@ -1,9 +1,10 @@
-package com.dti.defilecture.accesAuxDonnees
+package com.dti.defilecture.accesAuxDonnees.Trésorerie
 
+import com.dti.defilecture.accesAuxDonnees.Trésorerie.ISourcesDeDonnéesTrésorerie
 import com.dti.defilecture.domaine.entité.Équipage
 
 
-class SourceÉquipagesBidons : ISourcesDeDonnéesTrésorerie{
+class SourceÉquipagesBidons : ISourcesDeDonnéesTrésorerie {
 
     init {
         RemplirÉquipages()

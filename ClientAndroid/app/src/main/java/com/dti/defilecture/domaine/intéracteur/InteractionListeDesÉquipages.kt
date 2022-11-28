@@ -1,7 +1,7 @@
 package com.dti.defilecture.domaine.intéracteur
 
-import com.dti.defilecture.accesAuxDonnees.ISourcesDeDonnéesTrésorerie
-import com.dti.defilecture.accesAuxDonnees.SourceÉquipagesBidons
+import com.dti.defilecture.accesAuxDonnees.Trésorerie.ISourcesDeDonnéesTrésorerie
+import com.dti.defilecture.accesAuxDonnees.Trésorerie.SourceÉquipagesBidons
 import com.dti.defilecture.domaine.entité.Équipage
 
 class InteractionListeDesÉquipages(  ) {

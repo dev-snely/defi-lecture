@@ -1,4 +1,4 @@
-package com.dti.defilecture.accesAuxDonnees
+package com.dti.defilecture.accesAuxDonnees.Équipage
 
 import android.content.Context;
 
@@ -12,9 +12,11 @@ import java.util.concurrent.ExecutionException;
 import java.io.StringReader
 
 import android.util.JsonReader;
+import com.dti.defilecture.accesAuxDonnees.AccèsRessourcesException
 import com.dti.defilecture.domaine.entité.Compte
 
-class SourceDeDonnéesÉquipageHTTP(var ctx: Context, var urlSource: URL) : ISourcesDeDonnéesÉquipage {
+class SourceDeDonnéesÉquipageHTTP(var ctx: Context, var urlSource: URL) :
+    ISourcesDeDonnéesÉquipage {
     override fun obtenirListeDesComptesÉquipage(): MutableList<Compte> {
         val queue = Volley.newRequestQueue(ctx)
 

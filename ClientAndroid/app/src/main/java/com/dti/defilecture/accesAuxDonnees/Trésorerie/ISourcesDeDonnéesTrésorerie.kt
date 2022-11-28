@@ -1,4 +1,4 @@
-package com.dti.defilecture.accesAuxDonnees
+package com.dti.defilecture.accesAuxDonnees.Trésorerie
 
 import com.dti.defilecture.domaine.entité.Équipage
 

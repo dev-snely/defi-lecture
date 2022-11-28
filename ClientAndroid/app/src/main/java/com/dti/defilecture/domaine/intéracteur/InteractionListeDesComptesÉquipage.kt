@@ -1,8 +1,7 @@
 package com.dti.defilecture.domaine.intéracteur
 
-import com.dti.defilecture.accesAuxDonnees.ISourcesDeDonnéesÉquipage
-import com.dti.defilecture.accesAuxDonnees.SourceDeComptesBidons
-import com.dti.defilecture.accesAuxDonnees.SourceDeDonnéesÉquipageHTTP
+import com.dti.defilecture.accesAuxDonnees.Équipage.ISourcesDeDonnéesÉquipage
+import com.dti.defilecture.accesAuxDonnees.Équipage.SourceDeComptesBidons
 import com.dti.defilecture.domaine.entité.Compte
 
 class InteractionListeDesComptesÉquipage() {
