@@ -1,14 +1,15 @@
 package com.dti.defilecture.présentation.trésorerie
 
-import android.os.Build
 import com.dti.defilecture.accesAuxDonnees.*
+import com.dti.defilecture.domaine.entité.Équipage
 import com.dti.defilecture.présentation.Modèle
+import com.dti.defilecture.présentation.trésorerie.IContratVPTrésorerie.*
 
-class PrésentateurTrésorerie(var modèle : Modèle, var vue: ContratVuePrésentateurTrésorerie.IVueTrésorerie):
-    ContratVuePrésentateurTrésorerie.IPrésentateurTrésorerie {
+class PrésentateurTrésorerie(var modèle : Modèle, var vue: IVueTrésorerie):
+    IPrésentateurTrésorerie {
 
-    init {
-        Remplir()
+    override fun initisaliseurDesÉquipages(): MutableList<Équipage>? {
+        return modèle.obtenirListeDesÉquipages()
     }
 
 }

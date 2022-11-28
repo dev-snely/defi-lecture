@@ -1,40 +1,26 @@
 package com.dti.defilecture.domaine.intéracteur
 
-import com.dti.defilecture.accesAuxDonnees.ISourcesDeLectures
-import com.dti.defilecture.accesAuxDonnees.SourceDeLectureBidons
-import com.dti.defilecture.domaine.entité.Lecture
+import com.dti.defilecture.accesAuxDonnees.ISourcesDesÉquipages
+import com.dti.defilecture.accesAuxDonnees.SourceÉquipagesBidons
+import com.dti.defilecture.domaine.entité.Équipage
 
 class InteractionListeDesÉquipages(  ) {
 
 
-    var sourceDeDonnées: ISourcesDeLectures = SourceDeLectureBidons()
+    var sourceDeDonnées: ISourcesDesÉquipages = SourceÉquipagesBidons()
 
-    var lecture: Lecture = Lecture("","",0, false)
+    var équipage: Équipage = Équipage("",0,0)
 
-    /**
-    Initialise une lecture en la rendant vide lorsque
-    l'utilisateur décide d'ajouter une lecture.
 
-    @param lecture La lecture qui sera ajouter dans la liste de lecture de l'utilisateur
-     */
-    fun initialiser(): Lecture{
-        return lecture
+    fun initialiser(): Équipage{
+        return équipage
     }
 
     /**
-     *  Permet d'obtenir une liste de lecture.
+     *  Permet d'obtenir une liste des équipages.
      */
-    fun obtenirListe(): MutableList< Lecture >?{
-        return sourceDeDonnées.obtenirListeDeLecturesDUnUtilisateur()
+    fun obtenirListe(): MutableList< Équipage >?{
+        return sourceDeDonnées.obtenirListeDesÉquipages()
     }
-
-    /**
-     *  Permet d'ajouter une lecture a une liste de lecture.
-     */
-    fun ajouterlecture( lecture: Lecture ){
-        sourceDeDonnées.ajouterUneLectureALaListe( lecture )
-    }
-
-
 
 }

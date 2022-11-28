@@ -8,14 +8,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
-import com.dti.defilecture.domaine.entité.Lecture
+import com.dti.defilecture.domaine.entité.Équipage
 
-class VueTrésorerieAdaptateur(private val lectures : MutableList<Lecture>?) :
+class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?) :
     RecyclerView.Adapter<VueTrésorerieAdaptateur.MyViewHolder>() {
     lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.rangee_lectures
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_tresorerie
         ,parent, false)
 
         context = parent.context
@@ -24,31 +24,21 @@ class VueTrésorerieAdaptateur(private val lectures : MutableList<Lecture>?) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = lectures?.get(position)
+        val currentItem = équipages?.get(position)
         if (currentItem != null){
-            holder.titre.text = currentItem.titreLecture
-            //holder.duree.text = "${currentItem.duréeMinutes} minutes"
-
-            holder.duree.text = context.resources.getString(R.string.nbMinute, currentItem.duréeMinutes)
-
-            holder.date.text = currentItem.dateInscription
-            holder.oblig.text = if (currentItem.obligatoire == true) "OBLIGATOIRE" else "LIBRE"
+            holder.nom.text = currentItem.nomÉquipage
+            holder.doublons.text = currentItem.doublonsÉquipage.toString()
         }
 
     }
 
     override fun getItemCount(): Int {
-        return lectures?.size!!
+        return équipages?.size!!
     }
 
     class MyViewHolder(itemView: View ) : RecyclerView.ViewHolder(itemView){
-        val titre: TextView = itemView.findViewById(R.id.titreDUneLecture)
-        val duree: TextView = itemView.findViewById(R.id.dureeDUneLecture)
-        val date: TextView = itemView.findViewById(R.id.dateDUneLecture)
-        val oblig: TextView = itemView.findViewById(R.id.obligationDUneLecture)
-
-
-
+        val nom: TextView = itemView.findViewById(R.id.tv_itemNomÉquipage)
+        val doublons: TextView = itemView.findViewById(R.id.tv_itemTotalDoublon)
     }
 
 }

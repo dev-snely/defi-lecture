@@ -26,7 +26,7 @@ class VueÉquipageAdaptateur(private val comptes : MutableList<Compte>?) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = comptes?.get(position)
         if (currentItem != null){
-            holder.titre.text = currentItem.pseudonymeCompte
+            holder.pseudonyme.text = currentItem.pseudonymeCompte
 
             holder.doublons.text = currentItem.doublonsPersonne.toString()
         }
@@ -38,7 +38,7 @@ class VueÉquipageAdaptateur(private val comptes : MutableList<Compte>?) :
     }
 
     class MyViewHolder(itemView: View ) : RecyclerView.ViewHolder(itemView){
-        val titre: TextView = itemView.findViewById(R.id.tv_itemPseudonyme)
+        val pseudonyme: TextView = itemView.findViewById(R.id.tv_itemPseudonyme)
         val doublons: TextView = itemView.findViewById(R.id.tv_itemCompteTotalDoublon)
     }
 

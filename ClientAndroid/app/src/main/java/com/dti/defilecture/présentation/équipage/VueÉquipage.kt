@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.modèle
-import com.dti.defilecture.présentation.voirlectures.VueMesLecturesAdaptateur
-import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.IPrésentateurÉquipage
-import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.IVueÉquipage
+import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
 
 class VueÉquipage : Fragment(), IVueÉquipage  {
@@ -25,8 +23,8 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
     lateinit var nomÉquipage: TextView
     lateinit var numéroRang: TextView
     lateinit var totalDoublons: TextView
-    lateinit var listeComptesÉquipage: ListView
-    lateinit var adapter : ArrayAdapter<*>
+    /**lateinit var listeComptesÉquipage: ListView
+    lateinit var adapter : ArrayAdapter<*>*/
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,14 +40,13 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         super.onViewCreated(view, savedInstanceState)
 
         navController = Navigation.findNavController(view)
-        lateinit var recyclerView: RecyclerView
 
         nomÉquipage = view.findViewById(R.id.tv_nomÉquipage)
         numéroRang = view.findViewById(R.id.tv_numéroRang)
         totalDoublons = view.findViewById(R.id.tv_totalDoublons)
 
         val layoutManager = LinearLayoutManager(context)
-        recyclerView = view.findViewById(R.id.rv_Équipage)
+        val recyclerView: RecyclerView = view.findViewById(R.id.rv_Équipage)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         adaptateur = VueÉquipageAdaptateur( présentateur.initisaliseurDesComptes() )

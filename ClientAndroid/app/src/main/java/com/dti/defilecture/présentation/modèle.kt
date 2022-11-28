@@ -3,8 +3,10 @@ package com.dti.defilecture.présentation
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.domaine.entité.Questionnaire
+import com.dti.defilecture.domaine.entité.Équipage
 import com.dti.defilecture.domaine.intéracteur.InteractionListeDeLecturesDUnUtilisateur
 import com.dti.defilecture.domaine.intéracteur.InteractionListeDesComptesÉquipage
+import com.dti.defilecture.domaine.intéracteur.InteractionListeDesÉquipages
 import com.dti.defilecture.domaine.intéracteur.InteractionSourceQuestion
 import java.text.SimpleDateFormat
 import java.util.*
@@ -83,6 +85,11 @@ class Modèle() {
     // Section Équipage
     fun obtenirListeDesComptesÉquipage(): MutableList<Compte>?{
         return InteractionListeDesComptesÉquipage().obtenirListe()
+    }
+
+    // Section Trésorerie
+    fun obtenirListeDesÉquipages(): MutableList<Équipage>?{
+        return InteractionListeDesÉquipages().obtenirListe()
     }
 
 }
