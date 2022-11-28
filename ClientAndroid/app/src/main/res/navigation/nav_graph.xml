@@ -48,12 +48,20 @@
         android:id="@+id/vueÉquipage"
         android:name="com.dti.defilecture.présentation.équipage.VueÉquipage"
         android:label="fragment_equipage"
-        tools:layout="@layout/fragment_equipage" />
+        tools:layout="@layout/fragment_equipage" >
+        <action
+            android:id="@+id/action_vueÉquipage_to_vueCompteUtilisateur"
+            app:destination="@id/vueCompteUtilisateur" />
+    </fragment>
     <fragment
         android:id="@+id/vueTrésorerie"
         android:name="com.dti.defilecture.présentation.trésorerie.VueTrésorerie"
         android:label="fragment_tresorerie"
-        tools:layout="@layout/fragment_tresorerie" />
+        tools:layout="@layout/fragment_tresorerie" >
+        <action
+            android:id="@+id/action_vueTrésorerie_to_vueÉquipage"
+            app:destination="@id/vueÉquipage" />
+    </fragment>
     <action android:id="@+id/action_global_vueTrésorerie" app:destination="@id/vueTrésorerie" />
     <action android:id="@+id/action_global_vueÉquipage" app:destination="@id/vueÉquipage" />
     <fragment

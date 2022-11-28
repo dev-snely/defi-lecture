@@ -4,6 +4,7 @@ import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.domaine.entité.Questionnaire
 import com.dti.defilecture.domaine.intéracteur.InteractionListeDeLecturesDUnUtilisateur
+import com.dti.defilecture.domaine.intéracteur.InteractionListeDesComptesÉquipage
 import com.dti.defilecture.domaine.intéracteur.InteractionSourceQuestion
 import java.text.SimpleDateFormat
 import java.util.*
@@ -76,5 +77,13 @@ class Modèle() {
     fun créationCompteDansSourceDeDonnée(compte: Compte){
         //À Faire
     }
+
+
+
+    // Section Équipage
+    fun obtenirListeDesComptesÉquipage(): MutableList<Compte>?{
+        return InteractionListeDesComptesÉquipage().obtenirListe()
+    }
+
 }
 val modèle = Modèle()

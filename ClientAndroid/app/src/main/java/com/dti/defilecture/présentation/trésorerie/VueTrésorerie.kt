@@ -36,7 +36,7 @@ class VueTrésorerie : Fragment(), ContratVuePrésentateurTrésorerie.IVueTréso
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+/**
         //Initialisations
         searchView = view.findViewById(R.id.sv_équipage)
         listeÉquipages = view.findViewById(R.id.lv_listeÉquipages)
@@ -49,7 +49,7 @@ class VueTrésorerie : Fragment(), ContratVuePrésentateurTrésorerie.IVueTréso
         listeÉquipages.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
             Toast.makeText(context, parent?.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
         }
-        listeÉquipages.emptyView = emptyText
+        listeÉquipages.emptyView = emptyText */
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
