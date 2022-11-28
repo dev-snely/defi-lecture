@@ -2,6 +2,6 @@ package com.dti.defilecture.accesAuxDonnees
 
 import com.dti.defilecture.domaine.entité.Compte
 
-interface ISourcesDesComptesÉquipage {
+interface ISourcesDeDonnéesÉquipage {
     fun obtenirListeDesComptesÉquipage() : MutableList<Compte>?
 }

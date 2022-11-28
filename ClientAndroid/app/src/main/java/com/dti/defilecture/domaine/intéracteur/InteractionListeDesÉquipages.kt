@@ -1,13 +1,13 @@
 package com.dti.defilecture.domaine.intéracteur
 
-import com.dti.defilecture.accesAuxDonnees.ISourcesDesÉquipages
+import com.dti.defilecture.accesAuxDonnees.ISourcesDeDonnéesTrésorerie
 import com.dti.defilecture.accesAuxDonnees.SourceÉquipagesBidons
 import com.dti.defilecture.domaine.entité.Équipage
 
 class InteractionListeDesÉquipages(  ) {
 
 
-    var sourceDeDonnées: ISourcesDesÉquipages = SourceÉquipagesBidons()
+    var sourceDeDonnées: ISourcesDeDonnéesTrésorerie = SourceÉquipagesBidons()
 
     var équipage: Équipage = Équipage("",0,0)
 

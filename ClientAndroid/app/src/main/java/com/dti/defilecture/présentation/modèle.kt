@@ -83,7 +83,7 @@ class Modèle() {
 
 
     // Section Équipage
-    fun obtenirListeDesComptesÉquipage(): MutableList<Compte>?{
+    fun obtenirListeDesComptesÉquipage(): MutableList<Compte>? {
         return InteractionListeDesComptesÉquipage().obtenirListe()
     }
 

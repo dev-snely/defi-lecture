@@ -1,11 +1,9 @@
 package com.dti.defilecture.accesAuxDonnees
 
-import android.util.Log
 import com.dti.defilecture.domaine.entité.Équipage
-import java.util.*
 
 
-class SourceÉquipagesBidons : ISourcesDesÉquipages{
+class SourceÉquipagesBidons : ISourcesDeDonnéesTrésorerie{
 
     init {
         RemplirÉquipages()

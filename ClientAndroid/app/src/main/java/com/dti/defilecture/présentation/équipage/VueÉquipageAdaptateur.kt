@@ -28,7 +28,7 @@ class VueÉquipageAdaptateur(private val comptes : MutableList<Compte>?) :
         if (currentItem != null){
             holder.pseudonyme.text = currentItem.pseudonymeCompte
 
-            holder.doublons.text = currentItem.doublonsPersonne.toString()
+            holder.doublons.text = currentItem.doublonsCompte.toString()
         }
 
     }

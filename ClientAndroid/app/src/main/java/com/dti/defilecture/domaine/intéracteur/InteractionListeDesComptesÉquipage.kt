@@ -1,13 +1,13 @@
 package com.dti.defilecture.domaine.intéracteur
 
-import com.dti.defilecture.accesAuxDonnees.ISourcesDesComptesÉquipage
+import com.dti.defilecture.accesAuxDonnees.ISourcesDeDonnéesÉquipage
 import com.dti.defilecture.accesAuxDonnees.SourceDeComptesBidons
 import com.dti.defilecture.domaine.entité.Compte
 
 class InteractionListeDesComptesÉquipage(  ) {
 
 
-    var sourceDeDonnées: ISourcesDesComptesÉquipage = SourceDeComptesBidons()
+    var sourceDeDonnées: ISourcesDeDonnéesÉquipage = SourceDeComptesBidons()
 
     var compte: Compte = Compte("","",0, "", "", "", "")
 
@@ -19,7 +19,7 @@ class InteractionListeDesComptesÉquipage(  ) {
     /**
      *  Permet d'obtenir une liste des comptes d'un équipage.
      */
-    fun obtenirListe(): MutableList<Compte>?{
+    fun obtenirListe(): MutableList<Compte>? {
         return sourceDeDonnées.obtenirListeDesComptesÉquipage()
     }
 

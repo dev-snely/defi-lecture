@@ -1,11 +1,8 @@
 package com.dti.defilecture.accesAuxDonnees
 
-import android.util.Log
 import com.dti.defilecture.domaine.entité.Compte
-import java.util.*
 
-
-class SourceDeComptesBidons : ISourcesDesComptesÉquipage{
+class SourceDeComptesBidons : ISourcesDeDonnéesÉquipage{
 
     init {
         RemplirComptes()
@@ -21,10 +18,9 @@ var comptes: MutableList<Compte>? = null
 fun RemplirComptes() {
     if (comptes.isNullOrEmpty()) {
         comptes = mutableListOf(
-            Compte( "Prenom","Nom",10,"admin@crosemont.qc.ca", "Admin", "idk", "mdp"),
-            Compte( "Prenom","Nom",100,"admin@crosemont.qc.ca", "Joueur1", "idk", "mdp"),
-            Compte( "Prenom","Nom",1000,"admin@crosemont.qc.ca", "Joueur2", "idk", "mdp")
+            Compte("Prenom","Nom",10,"admin@crosemont.qc.ca", "Admin", "idk", "mdp"),
+            Compte("Prenom","Nom",100,"admin@crosemont.qc.ca", "Joueur1", "idk", "mdp"),
+            Compte("Prenom","Nom",1000,"admin@crosemont.qc.ca", "Joueur2", "idk", "mdp")
         )
     }
 }
-
