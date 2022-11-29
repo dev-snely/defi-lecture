@@ -19,7 +19,7 @@ class InteractionListeDesÉquipages(  ) {
     /**
      *  Permet d'obtenir une liste des équipages.
      */
-    fun obtenirListe(): MutableList< Équipage >?{
+    fun obtenirListe(): MutableList<Équipage>?{
         return sourceDeDonnées.obtenirListeDesÉquipages()
     }
 

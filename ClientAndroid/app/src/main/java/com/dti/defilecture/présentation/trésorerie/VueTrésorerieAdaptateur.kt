@@ -36,9 +36,8 @@ class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?)
         return équipages?.size!!
     }
 
-    class MyViewHolder(itemView: View ) : RecyclerView.ViewHolder(itemView){
+    inner class MyViewHolder(itemView: View ) : RecyclerView.ViewHolder(itemView){
         val nom: TextView = itemView.findViewById(R.id.tv_itemNomÉquipage)
         val doublons: TextView = itemView.findViewById(R.id.tv_itemTotalDoublon)
     }
-
 }

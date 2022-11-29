@@ -33,6 +33,7 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_equipage, container, false)
         présentateur = PrésentateurÉquipage( modèle, this  )
+
         return vue
     }
 
@@ -49,17 +50,8 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_Équipage)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adaptateur = VueÉquipageAdaptateur( présentateur.initisaliseurDesComptes() )
+        adaptateur = VueÉquipageAdaptateur( présentateur.initisaliseurDesComptes())
         recyclerView.adapter = adaptateur
-
-/**
-        listeComptesÉquipage = view.findViewById(R.)
-
-        adapter = ArrayAdapter(view.context, android.R.layout.simple_list_item_1, resources.getStringArray(R.array.liste_personnes))
-        listeComptesÉquipage.adapter = adapter
-        listeComptesÉquipage.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            Toast.makeText(context, parent?.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
-        }*/
 
         //Différentes fonctions sur la vue.
         calculerTotalDoublons()
@@ -67,9 +59,5 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
 
     private fun calculerTotalDoublons() {
         totalDoublons.text = (0).toString() + " doublons"
-    }
-
-    override fun naviguerVersUnCompte() {
-        navController.navigate(R.id.action_vueÉquipage_to_vueCompteUtilisateur)
     }
 }
