@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imgBackgroundBienvenue"
             android:layout_width="275dp"
             android:layout_height="105dp"
             android:layout_alignParentEnd="true"
@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imgBackgroundBienvenue" />
 
         <EditText
             android:id="@+id/tvProgramme"

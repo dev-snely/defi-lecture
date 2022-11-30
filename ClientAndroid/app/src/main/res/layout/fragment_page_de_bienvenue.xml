@@ -13,10 +13,10 @@
         android:layout_height="match_parent"
         android:background="#E9CEB3"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4">
+        app:layout_constraintBottom_toBottomOf="@+id/imgLogoDefiLecture">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imgBackgroundBienvenue"
             android:layout_width="422dp"
             android:layout_height="499dp"
             android:layout_marginEnd="8dp"
@@ -29,7 +29,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imgLogoDefiLecture"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="36dp"
@@ -56,7 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintTop_toBottomOf="@+id/imgLogoDefiLecture" />
 
         <Button
             android:id="@+id/btnConnexion"

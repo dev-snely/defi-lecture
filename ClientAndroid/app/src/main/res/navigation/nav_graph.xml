@@ -79,4 +79,42 @@
             android:id="@+id/action_vueModifier_to_vueCompteUtilisateur"
             app:destination="@id/vueCompteUtilisateur" />
     </fragment>
+    <fragment
+        android:id="@+id/vueMenu"
+        android:name="com.dti.defilecture.présentation.menu.VueMenu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_vueMenu_to_vueLangage"
+            app:destination="@id/vueLangage" />
+        <action
+            android:id="@+id/action_vueMenu_to_vueAPropos"
+            app:destination="@id/vueAPropos" />
+        <action
+            android:id="@+id/action_vueMenu_to_vueGlossaire"
+            app:destination="@id/vueGlossaire" />
+        <action
+            android:id="@+id/action_vueMenu_to_connexionActivity"
+            app:destination="@id/connexionActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/vueLangage"
+        android:name="com.dti.defilecture.présentation.langage.VueLangage"
+        android:label="fragment_langage"
+        tools:layout="@layout/fragment_langage" />
+    <fragment
+        android:id="@+id/vueAPropos"
+        android:name="com.dti.defilecture.présentation.apropos.VueAPropos"
+        android:label="fragment_apropos"
+        tools:layout="@layout/fragment_apropos" />
+    <fragment
+        android:id="@+id/vueGlossaire"
+        android:name="com.dti.defilecture.présentation.glossaire.VueGlossaire"
+        android:label="fragment_glossaire"
+        tools:layout="@layout/fragment_glossaire" />
+    <activity
+        android:id="@+id/connexionActivity"
+        android:name="com.dti.defilecture.ui.ConnexionActivity"
+        android:label="activity_connexion"
+        tools:layout="@layout/activity_connexion" />
 </navigation>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".présentation.apropos.VueAPropos">
 
     <ScrollView
         android:layout_width="410dp"
@@ -49,7 +50,7 @@
                 android:layout_height="100dp"
                 android:paddingBottom="15dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/Le_Robert_rectangle" />
+                app:srcCompat="@drawable/logo_lerobert" />
 
             <ImageView
                 android:id="@+id/imgAProposDruide"
@@ -57,7 +58,7 @@
                 android:layout_height="100dp"
                 android:paddingBottom="15dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/Logo_Druide" />
+                app:srcCompat="@drawable/logo_druide" />
 
             <ImageView
                 android:id="@+id/imgAProposCoop"
@@ -65,7 +66,7 @@
                 android:layout_height="100dp"
                 android:paddingBottom="15dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/Logo_COOPSCO_vertical_encadre" />
+                app:srcCompat="@drawable/logo_coop" />
 
             <ImageView
                 android:id="@+id/imgAProposRosemont"
@@ -81,7 +82,7 @@
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/SPCR"
+                app:srcCompat="@drawable/logo_spcr"
                 />
 
             <TextView
