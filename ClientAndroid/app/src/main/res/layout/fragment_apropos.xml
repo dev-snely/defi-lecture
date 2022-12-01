@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".présentation.apropos.VueAPropos">
+
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/vue_coin_rond"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvAProposContributeur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:gravity="center"
+                android:paddingBottom="15dp"
+                android:text="Contributeurs"
+                android:textSize="34dp" />
+
+            <TextView
+                android:id="@+id/tvAProposMecenes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:gravity="center"
+                android:text="Mécènes"
+                android:textSize="34dp" />
+
+            <ImageView
+                android:id="@+id/imgAProposLeRobert"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:paddingBottom="15dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/logo_lerobert" />
+
+            <ImageView
+                android:id="@+id/imgAProposDruide"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:paddingBottom="15dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/logo_druide" />
+
+            <ImageView
+                android:id="@+id/imgAProposCoop"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:paddingBottom="15dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/logo_coop" />
+
+            <ImageView
+                android:id="@+id/imgAProposRosemont"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:paddingBottom="15dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/logo_rosemont"
+                />
+
+            <ImageView
+                android:id="@+id/imgAProposSpcr"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/logo_spcr"
+                />
+
+            <TextView
+                android:id="@+id/tvAProposComplices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp"
+                android:text="Complices"
+                android:textSize="34dp" />
+
+            <TextView
+                android:id="@+id/tvAProposIdeateurs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Idéateurs et concepteurs : Monik Richard et Benoit Dugas, professeurs au Département de Français"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:textSize="28dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvAProposDeveloppeurs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Développeurs du site : Patrick Lafrance, professeur au Département des techniques de l’informatique, Charles-André Fortin et Joël Teuday Lutumba, étudiants stagiaires"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:textSize="28dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvAProposConcepteurs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Concepteurs graphiques : Maxime Blanchet, enseignant au Département de bureautique, Charlotte Ganivet, Eléazar Désiré, Samony Chea et Alexandre Paillé, étudiants (concepts visuels retenus). Merci aux autres étudiants du cours Conception de sites web interactifs en Techniques de bureautique, Microédition et hypermédia, pour les maquettes présentées à la session d’hiver 2017"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:textSize="28dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvAProposOrganisatrices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Organisatrices, animatrices et trésorières : Caroline Gagné, Karine Castonguay et Mélanie Bergeron, professeures au Département de français"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:textSize="28dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvAProposCollaborateur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Collaborateur : Maxime Blanchet, professeur au Département de bureautique"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:textSize="28dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvAProposCommunications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Collaboratrices aux communications : Marie-Ève Robitaille, conseillère en communication, Denise Courtine, technicienne en art graphique, et Andie Giroux, technicienne en art graphique"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:textSize="28dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvAProposDirections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Direction des études et de la vie étudiante"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:textSize="28dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tvAProposDepartement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Département de Français"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:textSize="28dp"
+                android:paddingBottom="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
