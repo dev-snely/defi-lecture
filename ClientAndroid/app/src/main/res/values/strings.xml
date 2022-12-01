@@ -27,5 +27,15 @@
     <string name="TitrePageObligationLecture">Votre lecture a-t-elle été réalisée dans le cadre d’un cours ?</string>
     <string name="descriptionLectureVALT">Une lecture libre est un ouvrage littéraire, incluant les essais et les article scientifiues, mais exclu les journaux et les médias sociaux.</string>
     <string name="nbMinute">%1$d minutes</string>
-    <string name="IndiceProgrammeJoueur">Domaine d\'étude*</string>
+    <string name="PrenomCompteUtilisateur">Prénom: %1$s</string>
+    <string name="NomCompteUtilisateur">Nom: %1$s</string>
+    <string name="CourrielCompteUtilisateur">Courriel: %1$s</string>
+    <string name="ProgrammeCompteUtilisateur">Programme: %1$s</string>
+    <string name="IndicePrenomInscription">Prénom</string>
+    <string name="IndicePseudonymeInscription">Pseudonyme</string>
+    <string name="IndiceNomInscription">Nom</string>
+    <string name="IndiceProgrammeJoueur">Programme</string>
+    <string name="IndiceCourrielInscription">Courriel</string>
+    <string name="IndiceMotDePasseInscription">Mot De Passe</string>
+    <string name="IndiceMotDePasseConfirmationInscription">Confirmation Mot De Passe</string>
 </resources>
