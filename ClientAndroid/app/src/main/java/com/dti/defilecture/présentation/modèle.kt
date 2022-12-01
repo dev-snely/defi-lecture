@@ -1,15 +1,17 @@
 package com.dti.defilecture.présentation
 
+import com.dti.defilecture.accèsAuxDonnées.compte.ISourceDeComptes
+import com.dti.defilecture.accèsAuxDonnées.compte.SourceDeComptesBidons
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.domaine.entité.Questionnaire
-import com.dti.defilecture.domaine.intéracteur.InteractionListeDeLecturesDUnUtilisateur
-import com.dti.defilecture.domaine.intéracteur.InteractionSourceDeCompte
-import com.dti.defilecture.domaine.intéracteur.InteractionSourceQuestion
+import com.dti.defilecture.domaine.intéracteur.InteractionSourceDeLectures
+import com.dti.defilecture.domaine.intéracteur.InteractionSourceDeComptes
+import com.dti.defilecture.domaine.intéracteur.InteractionSourceDeQuestions
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Modèle() {
+class Modèle(var sourceDeCompte : ISourceDeComptes = SourceDeComptesBidons()) {
 
     private var lecture =  Lecture("","",0,false)
     private var compteConnecté = Compte()
@@ -19,21 +21,21 @@ class Modèle() {
         val adapteur = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
         lecture.dateInscription = adapteur.format(aujourdhui)
 
-        InteractionListeDeLecturesDUnUtilisateur().ajouterlecture( lecture )
+        InteractionSourceDeLectures().ajouterlecture( lecture )
     }
 
     /**
     Récupère la liste des lectures de l'utilisateur avec l'intéracteur
      */
     fun obtenirListeLecturesDeLUtilisateur(): MutableList<Lecture>?  {
-        return InteractionListeDeLecturesDUnUtilisateur().obtenirListe()
+        return InteractionSourceDeLectures().obtenirListe()
     }
 
     /**
      *  Initialise une lecture vide
      */
     fun initialiserLecture(){
-        lecture = InteractionListeDeLecturesDUnUtilisateur().initialiser()
+        lecture = InteractionSourceDeLectures().initialiser()
     }
 
     /**
@@ -77,7 +79,7 @@ class Modèle() {
         return lecture.obligatoire == null
     }
     fun obtenirListeQuestion(): Array<Questionnaire>{
-        return InteractionSourceQuestion().obtenirQuestionInteracteur()
+        return InteractionSourceDeQuestions().obtenirQuestionInteracteur()
     }
 
     /**
@@ -86,7 +88,7 @@ class Modèle() {
      */
     fun connexion(pseudo: String, mdp: String): Boolean{
         var connexion = false
-        val unCompte: Compte? = InteractionSourceDeCompte().récupérerComptePourConnexion( pseudo, mdp )
+        val unCompte: Compte? = InteractionSourceDeComptes( sourceDeCompte ).récupérerComptePourConnexion( pseudo, mdp )
         if( unCompte != null ){
           compteConnecté = unCompte
           connexion = true
