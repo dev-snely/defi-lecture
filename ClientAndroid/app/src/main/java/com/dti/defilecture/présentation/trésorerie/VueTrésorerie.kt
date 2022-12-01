@@ -1,6 +1,5 @@
 package com.dti.defilecture.présentation.trésorerie
 
-import android.os.Build
 import android.os.Bundle
 import android.view.*
 import android.widget.AdapterView
@@ -9,7 +8,6 @@ import android.widget.ListView
 import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.modèle
@@ -23,7 +21,6 @@ class VueTrésorerie : Fragment(), ContratVuePrésentateurTrésorerie.IVueTréso
     lateinit var emptyText: TextView
     lateinit var adapter : ArrayAdapter<*>
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

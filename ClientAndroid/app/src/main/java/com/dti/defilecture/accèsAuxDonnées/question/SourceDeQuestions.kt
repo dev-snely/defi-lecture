@@ -1,8 +1,13 @@
-package com.dti.defilecture.accesAuxDonnees
+package com.dti.defilecture.accèsAuxDonnées.question
 
 import com.dti.defilecture.domaine.entité.Questionnaire
 
-class SourceQuestion {
+class SourceDeQuestions {
+    /**
+     * Cette méthode permet d'obtenir quatre question contenant chacune leur réponse.
+     *
+     * @return Un tableau d'objets Questionnaire.
+     */
     fun obtenirQuestions():Array<Questionnaire> {
         val question1 = Questionnaire(
             1, "Dans l'article pirate,quels sont les deux ecrivains cites",

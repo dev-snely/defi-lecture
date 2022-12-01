@@ -1,8 +1,8 @@
-package com.dti.defilecture.accesAuxDonnees
+package com.dti.defilecture.accèsAuxDonnées.compte
 
 import com.dti.defilecture.domaine.entité.Compte
 
-class SourceDeCompteBidons: ISourceDeCompte {
+class SourceDeComptesBidons: ISourceDeComptes {
 
     override fun validerComptePourLaConnexion( pseudo : String, mdp : String ): Compte?{
 
@@ -18,8 +18,8 @@ class SourceDeCompteBidons: ISourceDeCompte {
 
     var listeDeCompte : MutableList<Compte> = mutableListOf(
         Compte(1,null,"John", "Doe", 30,"john@gmail.com",
-            "Barbossa", "Informatique", 1, "johndoe", true, null),
+            "Barbossa", "Informatique", 1, "johndoe", true, ""),
         Compte(2,1,"Jess", "Foe", 30,"jesss@gmail.com",
-            "Sparrow", "Administration", 2, "blackpearl", false, null)
+            "Sparrow", "Administration", 2, "blackpearl", false, "")
     )
 }

@@ -11,7 +11,6 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.dti.defilecture.R
-import com.dti.defilecture.accesAuxDonnees.SourceQuestion
 import com.dti.defilecture.présentation.questionnaire.IContratVPQuestionnaire.IVueQuestionnaire
 import com.dti.defilecture.présentation.questionnaire.IContratVPQuestionnaire.IPrésentateurQuestionnaire
 

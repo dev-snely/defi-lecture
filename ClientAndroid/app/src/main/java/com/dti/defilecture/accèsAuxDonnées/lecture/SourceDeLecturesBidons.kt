@@ -1,12 +1,11 @@
-package com.dti.defilecture.accesAuxDonnees
+package com.dti.defilecture.accèsAuxDonnées.lecture
 
-import android.util.Log
 import com.dti.defilecture.domaine.entité.Lecture
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class SourceDeLectureBidons : ISourcesDeLectures{
+class SourceDeLectureBidons : ISourceDeLectures {
 
     init {
         Remplir()
@@ -16,8 +15,8 @@ class SourceDeLectureBidons : ISourcesDeLectures{
         return lectures
     }
 
-    override fun ajouterUneLectureALaListe(lecture: Lecture) {
-        lectures?.add( lecture )
+    override fun ajouterUneLectureALaListe(uneLecture: Lecture) {
+        lectures?.add( uneLecture )
     }
 }
 
