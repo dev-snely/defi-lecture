@@ -60,9 +60,6 @@ class SourceDeComptesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeCompt
                 "idCompte" -> {
                     compte.idCompte = jsonReader.nextInt()
                 }
-                "idEquipe" -> {
-                    compte.idEquipe = jsonReader.nextInt()
-                }
                 "courriel" -> {
                     compte.courriel = jsonReader.nextString()
                 }

@@ -11,7 +11,6 @@ class ConnexionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_connexion)
-
-        modèle.sourceDeCompte = SourceDeComptesHTTP( this.applicationContext, URL("http://localhost:51723"))
+        modèle.sourceDeCompte = SourceDeComptesHTTP( this, URL("https://f3d45bda-704e-423d-a51a-015d619ac62c.mock.pstmn.io"))
     }
 }
