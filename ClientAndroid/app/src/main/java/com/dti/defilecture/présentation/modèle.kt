@@ -5,9 +5,8 @@ import com.dti.defilecture.accèsAuxDonnées.compte.SourceDeComptesBidons
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.domaine.entité.Questionnaire
-import com.dti.defilecture.domaine.intéracteur.InteractionSourceDeLectures
-import com.dti.defilecture.domaine.intéracteur.InteractionSourceDeComptes
-import com.dti.defilecture.domaine.intéracteur.InteractionSourceDeQuestions
+import com.dti.defilecture.domaine.entité.Équipage
+import com.dti.defilecture.domaine.intéracteur.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -96,5 +95,16 @@ class Modèle(var sourceDeCompte : ISourceDeComptes = SourceDeComptesBidons()) {
         return connexion
     }
 
+    fun créationCompteDansSourceDeDonnée(compte: Compte){
+        //À Faire
+    }
+
+    fun obtenirListeDesComptesÉquipage(): MutableList<Compte>? {
+        return InteractionListeDesComptesÉquipage().obtenirListe()
+    }
+
+    fun obtenirListeDesÉquipages(): MutableList<Équipage>?{
+        return InteractionListeDesÉquipages().obtenirListe()
+    }
 }
 val modèle = Modèle()

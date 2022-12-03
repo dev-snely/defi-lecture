@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DefiLecture</string>
+    <string name="page_tresorerie">Treasury</string>
+    <string name="page_équipage">Crew</string>
+    <string name="ic_equipage">Crew</string>
+    <string name="ic_ajouter">Add</string>
+    <string name="ic_tresorerie">Treasury</string>
+    <string name="ic_epreuve">Challenge</string>
+    <string name="compte">Account</string>
+    <string name="defilecture">Reading Challenge</string>
+    <string name="AjouterLecture">Add a reading</string>
+    <string name="paramètre">Settings</string>
+    <string name="langue">Language</string>
+    <string name="deconnexion">Logout</string>
+    <string name="oui">YES</string>
+    <string name="non">NO</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Supprimer">delete</string>
+    <string name="ajouter_une_lecture_minuscule">Add a reading</string>
+    <string name="bg_opacite">bg_opacite</string>
+    <string name="btnReinitialiser">Reset</string>
+    <string name="minutes_pluriel">I\'ve read %1$d minutes.</string>
+    <string name="minutes_singulier">Please enter the amount of minutes you\'ve read</string>
+    <string name="jaicompris">"Arghh! "</string>
+    <string name="avertissement">Oops...</string>
+    <string name="titreManquant">Please enter the title of your book</string>
+    <string name="tempsManquant">Please enter the amount of time you\'ve read</string>
+    <string name="obligationManquant">Please chose if you have to read your book for a class</string>
+    <string name="TitrePageObligationLecture">Do you have to read your book for a class ?</string>
+    <string name="descriptionLectureVALT">A reading is a literary work, including essays and scientific articles, but excluding newspapers and social media.</string>
+    <string name="nbMinute">%1$d minutes</string>
+    <string name="IndiceProgrammeJoueur">Field of study*</string>
+    <string name="titre_du_roman">Novel Title</string>
+    <string name="obligatoire">MANDATORY</string>
+    <string name="mot_de_passse">Password</string>
+</resources>

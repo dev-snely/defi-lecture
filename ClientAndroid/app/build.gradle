@@ -51,6 +51,15 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
 
+    // dependances pour "retrofit"
+    // Coroutines to make the HTTP requests asynchronous(In the background thread)
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    // Okhttp3 for the POST requests
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    // Gson (To convert raw JSON to pretty JSON)
+    implementation 'com.google.code.gson:gson:2.8.9'
     implementation 'com.android.volley:volley:1.2.1'
 
     testImplementation 'junit:junit:4.13.2'

@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="50dp"
+    android:background="@drawable/sophie_louisnard_bg_unsplash"
     tools:context=".présentation.équipage.VueÉquipage">
 
+    <ImageView
+        android:id="@+id/opacity_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#CCFFEAEA"
+        android:contentDescription="@string/bg_opacite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tv_nomÉquipage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="100dp"
             android:text="( Nom de l'équipage )"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,17 +56,20 @@
             app:layout_constraintStart_toStartOf="@+id/tv_numéroRang"
             app:layout_constraintTop_toBottomOf="@+id/tv_numéroRang" />
 
-        <ListView
-            android:id="@+id/lv_listePersonnesÉquipage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="150dp"
-            android:layout_marginBottom="50dp"
-            android:padding="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tv_totalDoublons"
-            app:layout_constraintStart_toStartOf="@+id/tv_totalDoublons"
-            app:layout_constraintTop_toBottomOf="@+id/tv_totalDoublons" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_Équipage"
+            android:layout_width="365dp"
+            android:layout_height="470dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_recyclerview"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_totalDoublons"
+            tools:listitem="@layout/item_equipage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -30,4 +30,5 @@
     <string name="titre_du_roman">Titre du roman</string>
     <string name="obligatoire">OBLIGATOIRE</string>
     <string name="mot_de_passse">Mot de passse</string>
+    <string name="IndiceProgrammeJoueur">Domaine d\'étude*</string>
 </resources>

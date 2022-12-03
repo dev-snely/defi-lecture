@@ -2,23 +2,29 @@ package com.dti.defilecture.présentation.trésorerie
 
 import android.os.Bundle
 import android.view.*
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SearchView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.modèle
+import com.dti.defilecture.présentation.trésorerie.IContratVPTrésorerie.*
 
 
-class VueTrésorerie : Fragment(), ContratVuePrésentateurTrésorerie.IVueTrésorerie  {
+class VueTrésorerie : Fragment(), IVueTrésorerie {
 
-    lateinit var présentateur : ContratVuePrésentateurTrésorerie.IPrésentateurTrésorerie
-    lateinit var searchView: SearchView
+    lateinit var navController : NavController
+    lateinit var présentateur : IPrésentateurTrésorerie
+    lateinit var adaptateur: VueTrésorerieAdaptateur
+
+    /**
     lateinit var listeÉquipages: ListView
-    lateinit var emptyText: TextView
+    lateinit var emptyText: TextView*/
     lateinit var adapter : ArrayAdapter<*>
 
     override fun onCreateView(
@@ -34,6 +40,15 @@ class VueTrésorerie : Fragment(), ContratVuePrésentateurTrésorerie.IVueTréso
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navController = Navigation.findNavController(view)
+
+        val layoutManager = LinearLayoutManager(context)
+        val recyclerView: RecyclerView = view.findViewById(R.id.rv_trésorerie)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+        adaptateur = VueTrésorerieAdaptateur( présentateur.initisaliseurDesÉquipages() )
+        recyclerView.adapter = adaptateur
+/**
         //Initialisations
         searchView = view.findViewById(R.id.sv_équipage)
         listeÉquipages = view.findViewById(R.id.lv_listeÉquipages)
@@ -46,7 +61,7 @@ class VueTrésorerie : Fragment(), ContratVuePrésentateurTrésorerie.IVueTréso
         listeÉquipages.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
             Toast.makeText(context, parent?.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
         }
-        listeÉquipages.emptyView = emptyText
+        listeÉquipages.emptyView = emptyText */
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -67,5 +82,9 @@ class VueTrésorerie : Fragment(), ContratVuePrésentateurTrésorerie.IVueTréso
             }
         })
         return super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun naviguerVersUnÉquipage() {
+        navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipage)
     }
 }
