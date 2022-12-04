@@ -15,4 +15,5 @@
     <color name="blanc_fonce">#f6f6f6</color>
     <color name="saumon">#FFD9D8</color>
     <color name="saumon_pale">#fff0ef</color>
+    <color name="dore"> #FFD700</color>
 </resources>

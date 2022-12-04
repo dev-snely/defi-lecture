@@ -7,17 +7,6 @@
     android:background="@drawable/sophie_louisnard_bg_unsplash"
     tools:context=".présentation.voirlectures.VueMesLectures">
 
-    <ImageView
-        android:id="@+id/opacity_bg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#CCFFEAEA"
-        android:contentDescription="@string/bg_opacite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -28,40 +17,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/bg_titre_equipage"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/mesLectures"
+            android:textColor="@color/white"
+            android:textSize="27sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/materialToolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:title="Mes lectures"
-                app:titleTextColor="@color/black" />
-
-        </com.google.android.material.appbar.AppBarLayout>
-
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewLectures"
             android:layout_width="365dp"
-            android:layout_height="470dp"
-            android:layout_marginTop="75dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="221dp"
             android:background="@drawable/bg_recyclerview"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:listitem="@layout/rangee_lectures" />
 
         <com.google.android.material.button.MaterialButton
@@ -72,15 +58,17 @@
             android:text="@string/ajouter_une_lecture_minuscule"
             android:textAllCaps="false"
             android:textSize="22sp"
-            app:backgroundTint="@color/df_rougeprimaire"
-            app:strokeColor="@color/black"
-            app:strokeWidth="2dp"
+            app:backgroundTint="@color/black"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerViewLectures"
-            app:layout_constraintVertical_bias="0.25" />
+            app:layout_constraintVertical_bias="0.25"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

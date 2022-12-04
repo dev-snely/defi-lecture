@@ -1,57 +1,64 @@
 package com.dti.defilecture.présentation
 
+import com.dti.defilecture.accèsAuxDonnées.ISourceDeDonnées
+import com.dti.defilecture.accèsAuxDonnées.SourceDeDonnéesBidon
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.domaine.entité.Questionnaire
-import com.dti.defilecture.domaine.intéracteur.InteractionListeDeLecturesDUnUtilisateur
-import com.dti.defilecture.domaine.intéracteur.InteractionSourceQuestion
+import com.dti.defilecture.domaine.entité.Équipage
+import com.dti.defilecture.domaine.intéracteur.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Modèle() {
+class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()) {
 
-    private var lecture =  Lecture("","",0,false)
-    lateinit var compte: Compte
+    private var lecture = Lecture("","",0,false)
+    private var compteConnecté = Compte()
 
+    /**
+     * Ajoute une lecture dans la source de données.
+     */
     fun ajouterLectureDansSourceDeDonnée(){
         val aujourdhui = Calendar.getInstance().time
         val adapteur = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
         lecture.dateInscription = adapteur.format(aujourdhui)
 
-        InteractionListeDeLecturesDUnUtilisateur().ajouterlecture( lecture )
+        InteractionSourceDeDonnées( sourceDeDonnées ).ajouterUneLecture( lecture )
     }
 
     /**
-    Récupère la liste des lectures de l'utilisateur avec l'intéracteur
+     * Récupère la liste des lectures de l'utilisateur avec l'intéracteur.
+     *
+     * @return une liste de lecture.
      */
     fun obtenirListeLecturesDeLUtilisateur(): MutableList<Lecture>?  {
-        return InteractionListeDeLecturesDUnUtilisateur().obtenirListe()
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeLectures()
     }
 
     /**
-     *  Initialise une lecture vide
+     * Initialise un modèle de lecture à l'état vide.
      */
     fun initialiserLecture(){
-        lecture = InteractionListeDeLecturesDUnUtilisateur().initialiser()
+        lecture = InteractionSourceDeDonnées( sourceDeDonnées ).initialiserUneLecture()
     }
 
     /**
      * Ajoute un titre a la lecture
      */
-    fun ajouterTitreAUneLecture(titre: String){
+    fun ajouterTitreAUneLecture( titre: String ){
         lecture.titreLecture = titre
     }
 
     /**
      * Ajoute un temps de lecture a la lecture
      */
-    fun ajouterTempsAUneLecture(durée: Int){
+    fun ajouterTempsAUneLecture( durée: Int ){
         lecture.duréeMinutes = durée
     }
     /**
      * Ajoute une obligation  la lecture
      */
-    fun ajouterObligationAUneLecture(obligation: Boolean){
+    fun ajouterObligationAUneLecture( obligation: Boolean ){
         lecture.obligatoire = obligation
     }
 
@@ -69,12 +76,51 @@ class Modèle() {
         return lecture.duréeMinutes == 0
     }
 
+    /**
+     * Obtient une liste de question depuis la source de données.
+     *
+     * @return une liste de questions.
+     */
     fun obtenirListeQuestion(): Array<Questionnaire>{
-        return InteractionSourceQuestion().obtenirQuestionInteracteur()
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirQuestions()
     }
 
-    fun créationCompteDansSourceDeDonnée(compte: Compte){
+    /**
+     * Établis la connexion et initialise le compte connecté selon le compte retourné depuis la source
+     * lorsque les bons identifiants ont été entré.
+     *
+     * @return Vrai si la connexion est établie.
+     */
+    fun connexion( pseudo: String, mdp: String ): Boolean{
+        var connexion = false
+        val unCompte: Compte? = InteractionSourceDeDonnées( sourceDeDonnées ).récupérerComptePourConnexion( pseudo, mdp )
+        if( unCompte != null ){
+            compteConnecté = unCompte
+            connexion = true
+        }
+        return connexion
+    }
+
+    fun créationCompteDansSourceDeDonnée( compte : Compte ){
         //À Faire
+    }
+
+    /**
+     * Obtient une liste des comptes provenant d'un équipage.
+     *
+     * @return une liste de comptes.
+     */
+    fun obtenirListeDesComptesÉquipage(): MutableList<Compte> {
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes()
+    }
+
+    /**
+     * Obtient la liste des Équipages qu'on trouve entre autre dans la trésorerie.
+     *
+     * @return une liste d'équipage.
+     */
+    fun obtenirListeDesÉquipages(): MutableList<Équipage>?{
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDesÉquipages()
     }
 }
 val modèle = Modèle()

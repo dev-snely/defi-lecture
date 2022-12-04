@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/goudy_bookletter1911_regular"
-        android:text="Titre du roman"
+        android:text="@string/titre_du_roman"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,7 +51,7 @@
         android:layout_marginTop="8dp"
         android:layout_toEndOf="@+id/dureeDUneLecture"
         android:fontFamily="@font/goudy_bookletter1911_regular"
-        android:text="OBLIGATOIRE"
+        android:text="@string/obligatoire"
         android:textColor="#4CAF50"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/dureeDUneLecture"
@@ -90,17 +90,13 @@
         app:layout_constraintTop_toBottomOf="@+id/titreDUneLecture" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00000000"
+        android:id="@+id/langueA"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
         android:contentDescription="@string/Supprimer"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/titreDUneLecture"
-        app:srcCompat="@drawable/delete_svgrepo_com" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_supprimer" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

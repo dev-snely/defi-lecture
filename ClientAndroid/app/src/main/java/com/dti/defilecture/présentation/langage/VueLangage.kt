@@ -17,7 +17,6 @@ class VueLangage: Fragment(), IVueLangage {
 
     lateinit var navController : NavController
     lateinit var présentateur: IPrésentateurLangage
-
     lateinit var btnAnglais: Button
     lateinit var btnFrancais: Button
 
