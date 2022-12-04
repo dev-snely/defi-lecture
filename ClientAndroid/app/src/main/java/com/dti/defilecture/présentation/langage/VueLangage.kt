@@ -34,8 +34,6 @@ class VueLangage: Fragment(), IVueLangage {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        btnAnglais = view.findViewById(R.id.btnAnglais)
-        btnFrancais = view.findViewById(R.id.btnFrancais)
 
         btnAnglais.setOnClickListener {
             

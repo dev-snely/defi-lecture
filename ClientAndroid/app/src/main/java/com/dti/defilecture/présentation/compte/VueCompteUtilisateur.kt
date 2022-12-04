@@ -20,6 +20,7 @@ class VueCompteUtilisateur : Fragment(), IVueCompte{
     lateinit var navController : NavController
     lateinit var btnModifierInfo : ImageButton
     lateinit var btnModifierPhoto : ImageButton
+    lateinit var btnParametre: ImageButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +37,7 @@ class VueCompteUtilisateur : Fragment(), IVueCompte{
         navController = Navigation.findNavController(view)
         btnModifierInfo = view.findViewById(R.id.btnModifierInfo)
         btnModifierPhoto = view.findViewById(R.id.btnModifierPhoto)
+        btnParametre = view.findViewById(R.id.btnParametre)
 
         btnModifierInfo.setOnClickListener {
             Log.d("Test", "Rediretion vers Modification.")

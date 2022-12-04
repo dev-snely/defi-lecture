@@ -41,7 +41,7 @@ class VueInscription : Fragment(), IVueInscription {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnInscription = view.findViewById(R.id.btnInscription)
+        btnInscription = view.findViewById(R.id.btnModifier)
         tvNom = view.findViewById(R.id.tvNom)
         tvPrenom = view.findViewById(R.id.tvPrenom)
         tvCourriel = view.findViewById(R.id.tvCourriel)
