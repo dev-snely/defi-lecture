@@ -12,7 +12,7 @@ import java.util.*
 
 class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()) {
 
-    private var lecture =  Lecture("","",0,false)
+    private var lecture = Lecture("","",0,false)
     private var compteConnecté = Compte()
 
     /**
@@ -36,7 +36,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
     }
 
     /**
-     *  Initialise un modèle de lecture à l'état vide.
+     * Initialise un modèle de lecture à l'état vide.
      */
     fun initialiserLecture(){
         lecture = InteractionSourceDeDonnées( sourceDeDonnées ).initialiserUneLecture()

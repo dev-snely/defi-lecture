@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -17,7 +18,8 @@ class VueCompteUtilisateur : Fragment(), IVueCompte{
 
     lateinit var présentateur: IPrésentateurCompte
     lateinit var navController : NavController
-    lateinit var btnModifier : Button
+    lateinit var btnModifierInfo : ImageButton
+    lateinit var btnModifierPhoto : ImageButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,9 +34,10 @@ class VueCompteUtilisateur : Fragment(), IVueCompte{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        btnModifier = view.findViewById(R.id.btnModifier)
+        btnModifierInfo = view.findViewById(R.id.btnModifierInfo)
+        btnModifierPhoto = view.findViewById(R.id.btnModifierPhoto)
 
-        btnModifier.setOnClickListener {
+        btnModifierInfo.setOnClickListener {
             Log.d("Test", "Rediretion vers Modification.")
             naviguerVersModifier()
         }

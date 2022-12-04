@@ -30,8 +30,18 @@
     <string name="TitrePageObligationLecture">Do you have to read your book for a class ?</string>
     <string name="descriptionLectureVALT">A reading is a literary work, including essays and scientific articles, but excluding newspapers and social media.</string>
     <string name="nbMinute">%1$d minutes</string>
-    <string name="IndiceProgrammeJoueur">Field of study*</string>
     <string name="titre_du_roman">Novel Title</string>
     <string name="obligatoire">MANDATORY</string>
     <string name="mot_de_passse">Password</string>
+    <string name="IndiceProgrammeJoueur">Field of study</string>
+    <string name="PrenomCompteUtilisateur">First Name: %1$s</string>
+    <string name="NomCompteUtilisateur">Last Name: %1$s</string>
+    <string name="CourrielCompteUtilisateur">Email: %1$s</string>
+    <string name="ProgrammeCompteUtilisateur">Field of study: %1$s</string>
+    <string name="IndicePrenomInscription">First Name</string>
+    <string name="IndicePseudonymeInscription">Pseudonym</string>
+    <string name="IndiceNomInscription">Last Name</string>
+    <string name="IndiceCourrielInscription">Email Adress</string>
+    <string name="IndiceMotDePasseInscription">Password</string>
+    <string name="IndiceMotDePasseConfirmationInscription">Password Confirmation</string>
 </resources>

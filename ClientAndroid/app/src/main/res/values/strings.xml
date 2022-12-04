@@ -30,5 +30,15 @@
     <string name="titre_du_roman">Titre du roman</string>
     <string name="obligatoire">OBLIGATOIRE</string>
     <string name="mot_de_passse">Mot de passse</string>
-    <string name="IndiceProgrammeJoueur">Domaine d\'étude*</string>
+    <string name="PrenomCompteUtilisateur">Prénom: %1$s</string>
+    <string name="NomCompteUtilisateur">Nom: %1$s</string>
+    <string name="CourrielCompteUtilisateur">Courriel: %1$s</string>
+    <string name="ProgrammeCompteUtilisateur">Programme: %1$s</string>
+    <string name="IndicePrenomInscription">Prénom</string>
+    <string name="IndicePseudonymeInscription">Pseudonyme</string>
+    <string name="IndiceNomInscription">Nom</string>
+    <string name="IndiceProgrammeJoueur">Programme</string>
+    <string name="IndiceCourrielInscription">Courriel</string>
+    <string name="IndiceMotDePasseInscription">Mot De Passe</string>
+    <string name="IndiceMotDePasseConfirmationInscription">Confirmation Mot De Passe</string>
 </resources>

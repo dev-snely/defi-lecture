@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".présentation.glossaire.VueGlossaire">
+
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/vue_coin_rond"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvGlossaireTitre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:gravity="center"
+                android:text="Glossaire"
+                android:textSize="28dp"
+                android:paddingBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/tvGlossaireCapitaine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:text="Capitaine : professeur.e, membre du personnel, tuteur ou tutrice qui donne un nom à son navire et détermine la composition de son équipage en entérinant les demandes des matelots."
+                android:textSize="20dp"
+                android:paddingBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/tvGlossaireMatelot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:text="Matelot : élève, membre du personnel ou professeur.e qui demandee à se joindre à un équipage et qui obtient l’approbation du ou de la capitaine au moment de l’inscription. Il y a deux matelots par équipe."
+                android:textSize="20dp"
+                android:paddingBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/tvGlossaireDoublon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:text="Doublon : pièce d’or utilisée en Espagne et dans ses colonies jusqu'au milieu du XIXe siècle. Chaque période de 15 minutes de lecture obligatoire donne droit à un doublon. Les lectures libres valent plutôt deux doublons."
+                android:textSize="20dp"
+                android:paddingBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/tvGlossaireLecture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:text="Lecture : une lecture obligatoire est imposée dans le cadre d’un cours ; une lecture libre renvoie à toute autre lecture littéraire, incluant les essais, mais excluant les journaux et les médias sociaux. Ainsi, le temps de lecture d’un article scientifique ou d’un texte philosophique pourra être consigné, alors qu’on s’abstiendra de noter celui d’une chronique culinaire. De plus, il va de soi que seuls les ouvrages en français seront acceptés dans cette activité de valorisation de la langue française."
+                android:textSize="20dp"
+                android:paddingBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/tvGlossaireTresorerie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:text="Trésorerie : page du Défi lecture où sont comptabilisés les doublons obtenus par chaque équipage."
+                android:textSize="20dp"
+                android:paddingBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/tvGlossaireEpreuve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:text="Épreuves hebdomadaires : épreuves auxquelles se soumettent les membres de l’équipage afin d’obtenir des doublons supplémentaires. Il pourra s’agir de lectures complémentaires ou de jeu-concours auxquels les pirates devront participer. Des trésors seront distribués parmi les braves qui auront relevé ces défis."
+                android:textSize="20dp"
+                android:paddingBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/tvGlossaireCoffre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:text="Coffre aux trésors : les joyaux contenus dans le coffre aux trésors (livres et bons d’achat à la COOP) seront partagés entre les pirates de l’équipage ayant cumulé le plus de doublons au cours de l’aventure."
+                android:textSize="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
