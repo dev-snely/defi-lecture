@@ -22,18 +22,15 @@ class VueÉquipageAdaptateur(private val comptes: MutableList<Compte>?) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_equipage
         ,parent, false)
-
         context = parent.context
-        
-
         return MyViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = comptes?.get(position)
         if (currentItem != null){
-            holder.pseudonyme.text = currentItem.pseudonymeCompte
-            holder.doublons.text = currentItem.doublonsCompte.toString()
+            holder.pseudonyme.text = currentItem.pseudonyme
+            holder.doublons.text = currentItem.doublons.toString()
             holder.delete.setOnClickListener(){
                 val builder = AlertDialog.Builder(context)
                 builder.setMessage("Êtes-vous certain d'effacer ce compte de l'équipage?")

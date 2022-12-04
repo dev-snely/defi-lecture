@@ -1,6 +1,5 @@
 package com.dti.defilecture.présentation.équipage
 
-import com.dti.defilecture.accèsAuxDonnées.lecture.Remplir
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.IVueÉquipage
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.présentation.Modèle
