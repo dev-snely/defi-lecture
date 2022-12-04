@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titreDUneLecture" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/langueA"
         android:layout_width="54dp"
         android:layout_height="50dp"
         android:contentDescription="@string/Supprimer"

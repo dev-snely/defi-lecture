@@ -17,7 +17,6 @@ class VueLangage: Fragment(), IVueLangage {
 
     lateinit var navController : NavController
     lateinit var présentateur: IPrésentateurLangage
-
     lateinit var btnAnglais: Button
     lateinit var btnFrancais: Button
 
@@ -34,8 +33,8 @@ class VueLangage: Fragment(), IVueLangage {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        btnAnglais = view.findViewById(R.id.btnAnglais)
-        btnFrancais = view.findViewById(R.id.btnFrancais)
+        btnAnglais = view.findViewById(R.id.langueB)
+        btnFrancais = view.findViewById(R.id.langueA)
 
         btnAnglais.setOnClickListener {
             

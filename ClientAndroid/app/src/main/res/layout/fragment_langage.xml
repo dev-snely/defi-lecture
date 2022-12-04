@@ -8,7 +8,7 @@
     tools:context=".présentation.langage.VueLangage">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/langueA"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="49dp"
@@ -16,51 +16,51 @@
         android:layout_marginEnd="27dp"
         android:layout_marginBottom="40dp"
         android:src="@drawable/barre_rouge"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintBottom_toTopOf="@+id/langueC"
+        app:layout_constraintEnd_toStartOf="@+id/langueB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/langueB"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="117dp"
         android:layout_marginEnd="69dp"
         android:layout_marginBottom="40dp"
         android:src="@drawable/barre_rouge"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+        app:layout_constraintBottom_toTopOf="@+id/langueD"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/langueA"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/langueC"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="49dp"
         android:layout_marginEnd="27dp"
         android:layout_marginBottom="46dp"
         android:src="@drawable/barre_rouge"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+        app:layout_constraintBottom_toTopOf="@+id/langueE"
+        app:layout_constraintEnd_toStartOf="@+id/langueD"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/langueA" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/langueD"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="69dp"
         android:layout_marginBottom="46dp"
         android:src="@drawable/barre_rouge"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton7"
+        app:layout_constraintBottom_toTopOf="@+id/langueF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
+        app:layout_constraintStart_toEndOf="@+id/langueC"
+        app:layout_constraintTop_toBottomOf="@+id/langueB" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/langueE"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="49dp"
@@ -68,12 +68,12 @@
         android:layout_marginBottom="111dp"
         android:src="@drawable/barre_rouge"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton7"
+        app:layout_constraintEnd_toStartOf="@+id/langueF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+        app:layout_constraintTop_toBottomOf="@+id/langueC" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/langueF"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="60dp"
@@ -81,6 +81,6 @@
         android:src="@drawable/barre_rouge"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton6"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+        app:layout_constraintStart_toEndOf="@+id/langueE"
+        app:layout_constraintTop_toBottomOf="@+id/langueD" />
 </androidx.constraintlayout.widget.ConstraintLayout>
