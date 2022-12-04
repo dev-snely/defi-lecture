@@ -8,18 +8,6 @@
     android:background="@drawable/sophie_louisnard_bg_unsplash"
     tools:context=".présentation.trésorerie.VueTrésorerie">
 
-    <ImageView
-        android:id="@+id/opacity_bg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#CCFFEAEA"
-        android:contentDescription="@string/bg_opacite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
@@ -51,15 +39,31 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <SearchView
+        <ImageView
+            android:id="@+id/opacity_bg"
+            android:layout_width="365dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="148dp"
+            android:background="@drawable/bg_titre_equipage"
+            android:contentDescription="@string/bg_opacite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/sv_équipage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="346dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="164dp"
             android:iconifiedByDefault="false"
+            android:inputType="text"
             android:padding="4dp"
-            android:layout_marginTop="75dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
             android:queryHint="Recherche un équipage"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,23 +71,28 @@
             android:id="@+id/rv_trésorerie"
             android:layout_width="365dp"
             android:layout_height="470dp"
-            android:layout_marginTop="20dp"
             android:background="@drawable/bg_recyclerview"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sv_équipage"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:layout_constraintVertical_bias="0.538"
             tools:listitem="@layout/item_tresorerie" />
 
         <TextView
+            android:id="@+id/tv_emptySearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_emptySearch"
+            android:layout_centerInParent="true"
             android:text="No Results"
             android:textSize="20sp"
             android:visibility="gone"
-            android:layout_centerInParent="true" />
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

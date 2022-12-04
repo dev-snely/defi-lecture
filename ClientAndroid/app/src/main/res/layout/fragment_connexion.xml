@@ -37,15 +37,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.132" />
+            app:layout_constraintVertical_bias="0.15" />
 
         <EditText
             android:id="@+id/pseudo"
             android:layout_width="334dp"
             android:layout_height="60dp"
             android:ems="10"
+            android:textSize="20sp"
+            android:textColor="@color/black"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:hint="Pseudonym"
+            android:hint="@string/IndicePseudonymeInscription"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -57,10 +59,12 @@
             android:id="@+id/mot_de_passe"
             android:layout_width="332dp"
             android:layout_height="57dp"
+            android:textColor="@color/black"
             android:ems="10"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:hint="@string/mot_de_passse"
             android:inputType="textPassword"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.492"
@@ -70,17 +74,18 @@
 
         <Button
             android:id="@+id/abordage"
-            android:layout_width="239dp"
-            android:layout_height="84dp"
-            android:backgroundTint="#DF3B3B"
+            android:layout_width="315dp"
+            android:layout_height="74dp"
+            android:backgroundTint="@color/black"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="À l'abordage"
-            android:textSize="20sp"
+            android:text="À l'abordage !"
+            android:textSize="25sp"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/background_blanc"
-            app:layout_constraintVertical_bias="0.25" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/mdp_oublié"
@@ -88,19 +93,19 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:text="Mot de passe oublié?"
-            android:textColor="#DA1E1E"
-            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.841"
+            app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.617" />
+            app:layout_constraintVertical_bias="0.64" />
 
         <ImageView
             android:id="@+id/tete_de_mort"
-            android:layout_width="128dp"
-            android:layout_height="89dp"
+            android:layout_width="144dp"
+            android:layout_height="103dp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

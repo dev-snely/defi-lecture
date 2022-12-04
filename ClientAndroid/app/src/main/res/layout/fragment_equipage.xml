@@ -9,11 +9,11 @@
 
     <ImageView
         android:id="@+id/opacity_bg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#CCFFEAEA"
+        android:layout_width="365dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/bg_titre_equipage"
         android:contentDescription="@string/bg_opacite"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,8 +32,11 @@
             android:id="@+id/tv_nomÉquipage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
             android:text="( Nom de l'équipage )"
+            android:textColor="@color/white"
+            android:textSize="23sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,6 +46,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rang #0"
+            android:textSize="23sp"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/tv_nomÉquipage"
             app:layout_constraintStart_toStartOf="@+id/tv_nomÉquipage"
             app:layout_constraintTop_toBottomOf="@+id/tv_nomÉquipage" />
@@ -52,6 +58,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0 Doublons"
+            android:textSize="23sp"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/tv_numéroRang"
             app:layout_constraintStart_toStartOf="@+id/tv_numéroRang"
             app:layout_constraintTop_toBottomOf="@+id/tv_numéroRang" />
