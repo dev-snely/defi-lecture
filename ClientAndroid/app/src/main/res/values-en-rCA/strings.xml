@@ -44,4 +44,5 @@
     <string name="IndiceCourrielInscription">Email Adress</string>
     <string name="IndiceMotDePasseInscription">Password</string>
     <string name="IndiceMotDePasseConfirmationInscription">Password Confirmation</string>
+    <string name="mesLectures">My readings</string>
 </resources>
