@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.inscription.ContratVuePrésentateurInscription.IVueInscription
 import com.dti.defilecture.présentation.inscription.ContratVuePrésentateurInscription.IPrésentateurInscription
@@ -16,15 +18,16 @@ import com.dti.defilecture.présentation.présentateur.PrésentateurInscription
 
 class VueInscription : Fragment(), IVueInscription {
 
-    lateinit var présentateur: IPrésentateurInscription
-    lateinit var btnInscription: Button
-    lateinit var tvNom: TextView
-    lateinit var tvPrenom: TextView
-    lateinit var tvCourriel: TextView
-    lateinit var tvProgramme: TextView
-    lateinit var tvPseudonyme: TextView
-    lateinit var tvMotDePasse: TextView
-    lateinit var tvConfirmationMotDePasse: TextView
+    private lateinit var présentateur: IPrésentateurInscription
+    private lateinit var btnInscription: Button
+    private lateinit var tvNom: TextView
+    private lateinit var tvPrenom: TextView
+    private lateinit var tvCourriel: TextView
+    private lateinit var tvProgramme: TextView
+    private lateinit var tvPseudonyme: TextView
+    private lateinit var tvMotDePasse: TextView
+    private lateinit var tvConfirmationMotDePasse: TextView
+    lateinit var navController : NavController
 
     private lateinit var builder : AlertDialog.Builder
 
@@ -40,6 +43,8 @@ class VueInscription : Fragment(), IVueInscription {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
 
         btnInscription = view.findViewById(R.id.btnModifier)
         tvNom = view.findViewById(R.id.tvNom)
@@ -70,5 +75,9 @@ class VueInscription : Fragment(), IVueInscription {
                 tvCourriel.text.toString(),tvPseudonyme.text.toString(),tvProgramme.text.toString(),
                 tvMotDePasse.text.toString(), tvConfirmationMotDePasse.text.toString())
         }
+    }
+
+    override fun naviguerVersConnexion(){
+        navController.navigate(R.id.action_vueInscription_to_vueConnexion)
     }
 }

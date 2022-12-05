@@ -36,6 +36,7 @@ class PrésentateurInscription(var vue: IVueInscription) : IPrésentateurInscrip
                 prenomCompte + " " + nomCompte + " " + courrielCompte +
                         " " + pseudonymeCompte + " " + programmeCompte + " " + motDePasseCompte
             )
+            vue.naviguerVersConnexion()
         }
     }
 }
