@@ -33,7 +33,7 @@ class VueTrésorerie : Fragment(), IVueTrésorerie {
         savedInstanceState: Bundle?
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_tresorerie, container, false)
-        présentateur = PrésentateurTrésorerie( modèle, this  )
+        présentateur = PrésentateurTrésorerie(this  )
         return vue
     }
 
@@ -46,7 +46,7 @@ class VueTrésorerie : Fragment(), IVueTrésorerie {
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_trésorerie)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adaptateur = VueTrésorerieAdaptateur( présentateur.initisaliseurDesÉquipages() )
+        adaptateur = VueTrésorerieAdaptateur( présentateur.initisaliseurDesÉquipages(), présentateur )
         recyclerView.adapter = adaptateur
 /**
         //Initialisations
@@ -84,7 +84,11 @@ class VueTrésorerie : Fragment(), IVueTrésorerie {
         return super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun naviguerVersUnÉquipage() {
+    override fun naviguerVersDétailsÉquipage(position: Int) {
+        val positionÉquipageUtilisateur = 0
         navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipage)
+        /**if (position == positionÉquipageUtilisateur) {
+            navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipage)
+        }*/
     }
 }

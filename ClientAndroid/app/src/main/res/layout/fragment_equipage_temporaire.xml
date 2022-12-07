@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sophie_louisnard_bg_unsplash"
-    tools:context=".présentation.équipage.VueÉquipage">
+    tools:context=".présentation.équipageTemporaire.VueÉquipageTemporaire">
 
     <ImageView
         android:id="@+id/opacity_bg"
@@ -29,12 +29,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_nomÉquipage"
+            android:id="@+id/tv_nomÉquipageTemporaire"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="( Nom de l'équipage )"
+            android:text="( Nom de l'équipage temporaire )"
             android:textColor="@color/white"
             android:textSize="23sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,31 +42,31 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_numéroRang"
+            android:id="@+id/tv_numéroRangTemporaire"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rang #0"
             android:textSize="23sp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/tv_nomÉquipage"
-            app:layout_constraintStart_toStartOf="@+id/tv_nomÉquipage"
-            app:layout_constraintTop_toBottomOf="@+id/tv_nomÉquipage" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_nomÉquipageTemporaire"
+            app:layout_constraintStart_toStartOf="@+id/tv_nomÉquipageTemporaire"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nomÉquipageTemporaire" />
 
         <TextView
-            android:id="@+id/tv_totalDoublons"
+            android:id="@+id/tv_totalDoublonsTemporaire"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0 Doublons"
             android:textSize="23sp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/tv_numéroRang"
-            app:layout_constraintStart_toStartOf="@+id/tv_numéroRang"
-            app:layout_constraintTop_toBottomOf="@+id/tv_numéroRang" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_numéroRangTemporaire"
+            app:layout_constraintStart_toStartOf="@+id/tv_numéroRangTemporaire"
+            app:layout_constraintTop_toBottomOf="@+id/tv_numéroRangTemporaire" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_équipage"
+            android:id="@+id/rv_équipageTemporaire"
             android:layout_width="365dp"
             android:layout_height="470dp"
             android:layout_marginTop="20dp"
@@ -75,8 +75,8 @@
             android:paddingRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_totalDoublons"
-            tools:listitem="@layout/item_equipage" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_totalDoublonsTemporaire"
+            tools:listitem="@layout/item_equipage_temporaire" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

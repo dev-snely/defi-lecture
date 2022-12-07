@@ -11,7 +11,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
 
@@ -32,7 +31,7 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         savedInstanceState: Bundle?
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_equipage, container, false)
-        présentateur = PrésentateurÉquipage( modèle, this  )
+        présentateur = PrésentateurÉquipage( this  )
 
         return vue
     }
@@ -47,10 +46,10 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         totalDoublons = view.findViewById(R.id.tv_totalDoublons)
 
         val layoutManager = LinearLayoutManager(context)
-        val recyclerView: RecyclerView = view.findViewById(R.id.rv_Équipage)
+        val recyclerView: RecyclerView = view.findViewById(R.id.rv_équipage)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adaptateur = VueÉquipageAdaptateur( présentateur.initisaliseurDesComptes())
+        adaptateur = VueÉquipageAdaptateur( présentateur.initisaliseurDesComptes(), présentateur)
         recyclerView.adapter = adaptateur
 
         //Différentes fonctions sur la vue.
@@ -59,5 +58,12 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
 
     private fun calculerTotalDoublons() {
         totalDoublons.text = (0).toString() + " doublons"
+    }
+
+    override fun naviguerVersDétailsCompte(position: Int) {
+        navController.navigate(R.id.action_vueÉquipage_to_vueCompteUtilisateur)
+        /**if (position == positionCompteUtilisateur) {
+            //navController.navigate(R.id.action_vueTrésorerie_to_vueCompteTemporaire)
+        }*/
     }
 }

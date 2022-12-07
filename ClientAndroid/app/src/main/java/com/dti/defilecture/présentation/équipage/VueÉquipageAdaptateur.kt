@@ -7,15 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
-class VueÉquipageAdaptateur(private val comptes: MutableList<Compte>?) :
+class VueÉquipageAdaptateur(private val comptes: MutableList<Compte>?, var présentateur: IPrésentateurÉquipage) :
     RecyclerView.Adapter<VueÉquipageAdaptateur.MyViewHolder>() {
     lateinit var context: Context
 
@@ -38,6 +36,7 @@ class VueÉquipageAdaptateur(private val comptes: MutableList<Compte>?) :
                 builder.setNegativeButton("No", {dialog, id ->})
                 builder.create().show()
             }
+            holder.pseudonyme.setOnClickListener{présentateur.requêteVoirDétailsCompte(position)}
         }
     }
 

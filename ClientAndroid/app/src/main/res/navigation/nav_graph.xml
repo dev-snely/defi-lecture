@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_vueTrésorerie_to_vueÉquipage"
             app:destination="@id/vueÉquipage" />
+        <action
+            android:id="@+id/action_vueTrésorerie_to_vueÉquipageTemporaire"
+            app:destination="@id/vueÉquipageTemporaire" />
     </fragment>
     <action android:id="@+id/action_global_vueTrésorerie" app:destination="@id/vueTrésorerie" />
     <action android:id="@+id/action_global_vueÉquipage" app:destination="@id/vueÉquipage" />
@@ -140,4 +143,8 @@
         android:name="com.dti.defilecture.ui.ConnexionActivity"
         android:label="activity_connexion"
         tools:layout="@layout/activity_connexion" />
+    <fragment
+        android:id="@+id/vueÉquipageTemporaire"
+        android:name="com.dti.defilecture.présentation.équipageTemporaire.VueÉquipageTemporaire"
+        android:label="VueÉquipageTemporaire" />
 </navigation>

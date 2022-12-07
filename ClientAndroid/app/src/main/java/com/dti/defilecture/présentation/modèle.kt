@@ -115,6 +115,15 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
     }
 
     /**
+     * Obtient une liste des comptes provenant d'un équipage temporaire.
+     *
+     * @return une liste de comptes.
+     */
+    fun obtenirListeDesComptesÉquipageTemporaire(): MutableList<Compte> {
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes()
+    }
+
+    /**
      * Obtient la liste des Équipages qu'on trouve entre autre dans la trésorerie.
      *
      * @return une liste d'équipage.

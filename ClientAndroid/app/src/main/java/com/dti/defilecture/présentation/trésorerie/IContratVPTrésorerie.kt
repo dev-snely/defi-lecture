@@ -12,7 +12,7 @@ interface IContratVPTrésorerie {
      * Définit les méthodes à utiliser dans une vue Trésorerie.
      */
     interface IVueTrésorerie{
-        fun naviguerVersUnÉquipage()
+        fun naviguerVersDétailsÉquipage(position: Int)
     }
 
     /**
@@ -20,5 +20,7 @@ interface IContratVPTrésorerie {
      */
     interface IPrésentateurTrésorerie{
         fun initisaliseurDesÉquipages(): MutableList<Équipage>?
+
+        fun requêteVoirDétailsÉquipage(position: Int)
     }
 }

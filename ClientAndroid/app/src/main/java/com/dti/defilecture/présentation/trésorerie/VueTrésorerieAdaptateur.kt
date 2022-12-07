@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Équipage
 
-class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?) :
+class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?, var présentateur: IContratVPTrésorerie.IPrésentateurTrésorerie) :
     RecyclerView.Adapter<VueTrésorerieAdaptateur.MyViewHolder>() {
     lateinit var context: Context
 
@@ -28,6 +28,7 @@ class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?)
         if (currentItem != null){
             holder.nom.text = currentItem.nomÉquipage
             holder.doublons.text = currentItem.doublonsÉquipage.toString()
+            holder.nom.setOnClickListener{présentateur.requêteVoirDétailsÉquipage(position)}
         }
 
     }
