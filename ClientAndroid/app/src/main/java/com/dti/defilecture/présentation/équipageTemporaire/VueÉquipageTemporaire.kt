@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
+import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipageTemporaire.IContratVPÉquipageTemporaire.*
 
 
@@ -43,11 +44,15 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
         numéroRangTemporaire = view.findViewById(R.id.tv_numéroRangTemporaire)
         totalDoublonsTemporaire = view.findViewById(R.id.tv_totalDoublonsTemporaire)
 
+        nomÉquipageTemporaire.text = modèle.équipage.nomÉquipage
+        numéroRangTemporaire.text = modèle.équipage.rang.toString()
+        totalDoublonsTemporaire.text = modèle.équipage.doublonsÉquipage.toString()
+
         val layoutManager = LinearLayoutManager(context)
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_équipageTemporaire)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adaptateur = VueÉquipageTemporaireAdaptateur( présentateur.initisaliseurDesComptesTemporaires(), présentateur)
+        adaptateur = VueÉquipageTemporaireAdaptateur( présentateur.initisaliseurDesComptesTemporaires(nomÉquipageTemporaire.text.toString()), présentateur)
         recyclerView.adapter = adaptateur
 
         //Différentes fonctions sur la vue.

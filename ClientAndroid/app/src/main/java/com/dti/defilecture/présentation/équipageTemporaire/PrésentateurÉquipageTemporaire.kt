@@ -7,8 +7,8 @@ import com.dti.defilecture.présentation.équipageTemporaire.IContratVPÉquipage
 class PrésentateurÉquipageTemporaire (var vue: IVueÉquipageTemporaire):
     IPrésentateurÉquipageTemporaire {
 
-    override fun initisaliseurDesComptesTemporaires(): MutableList<Compte>? {
-        return modèle.obtenirListeDesComptesÉquipageTemporaire()
+    override fun initisaliseurDesComptesTemporaires(nomÉquipage : String): MutableList<Compte>? {
+        return modèle.obtenirListeDesComptesÉquipageTemporaire(nomÉquipage)
     }
 
     override fun requêteVoirDétailsCompteTemporaire(position: Int) {

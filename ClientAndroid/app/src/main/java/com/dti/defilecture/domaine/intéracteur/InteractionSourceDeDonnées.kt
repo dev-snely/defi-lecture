@@ -50,8 +50,8 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *
      *  @return une liste de comptes
      */
-    fun obtenirListeDeComptes(): MutableList<Compte> {
-        return sourceDeDonnées.obtenirListeDesComptesÉquipage()
+    fun obtenirListeDeComptes(nomÉquipage: String): MutableList<Compte> {
+        return sourceDeDonnées.obtenirListeDesComptes(nomÉquipage)
     }
 
     /**
@@ -67,7 +67,7 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *  Initialise un Équipage à l'état nulle.
      */
     fun initialiserUnÉquipage(): Équipage {
-        return Équipage("",0,0)
+        return Équipage("",0,0, mutableListOf())
     }
 
     /**

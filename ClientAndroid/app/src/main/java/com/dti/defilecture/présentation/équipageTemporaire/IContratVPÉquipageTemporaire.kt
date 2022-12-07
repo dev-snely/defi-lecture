@@ -19,7 +19,7 @@ interface IContratVPÉquipageTemporaire {
      * Définit les méthodes à utiliser dans un présentateur ÉquipageTemporaire.
      */
     interface IPrésentateurÉquipageTemporaire{
-        fun initisaliseurDesComptesTemporaires(): MutableList<Compte>?
+        fun initisaliseurDesComptesTemporaires(nomÉquipage: String): MutableList<Compte>?
 
         fun requêteVoirDétailsCompteTemporaire(position: Int) {
 

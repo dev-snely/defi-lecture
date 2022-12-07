@@ -21,7 +21,7 @@ interface ISourceDeDonnées {
     /**
      * Méthode qui permet d'obtenir la liste des comptes d'un équipage
      */
-    fun obtenirListeDesComptesÉquipage(): MutableList<Compte>
+    fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>
     /**
      * Méthode qui retourne une liste de lectures bidon.
      *

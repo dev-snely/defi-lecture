@@ -35,7 +35,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
 
     }
 
-    override fun obtenirListeDesComptesÉquipage(): MutableList<Compte> {
+    override fun obtenirListeDesComptes(nomÉquipage : String): MutableList<Compte> {
         TODO("Not yet implemented")
     }
 

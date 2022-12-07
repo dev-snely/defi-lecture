@@ -14,6 +14,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
 
     private var lecture = Lecture("","",0,false)
     private var compteConnecté = Compte()
+    public var équipage = Équipage()
 
     /**
      * Ajoute une lecture dans la source de données.
@@ -110,17 +111,8 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      *
      * @return une liste de comptes.
      */
-    fun obtenirListeDesComptesÉquipage(): MutableList<Compte> {
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes()
-    }
-
-    /**
-     * Obtient une liste des comptes provenant d'un équipage temporaire.
-     *
-     * @return une liste de comptes.
-     */
-    fun obtenirListeDesComptesÉquipageTemporaire(): MutableList<Compte> {
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes()
+    fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte> {
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes(nomÉquipage)
     }
 
     /**
@@ -130,6 +122,22 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      */
     fun obtenirListeDesÉquipages(): MutableList<Équipage>?{
         return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDesÉquipages()
+    }
+
+    /**
+     * Obtient une liste des comptes provenant d'un équipage temporaire.
+     *
+     * @return une liste de comptes.
+     */
+    fun obtenirListeDesComptesÉquipageTemporaire(nomÉquipage : String): MutableList<Compte> {
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes(nomÉquipage)
+    }
+
+    fun initialiserÉquipage(nomÉquipage: String) {
+        var liste = InteractionSourceDeDonnées(sourceDeDonnées).obtenirListeDesÉquipages()
+            ?.filter { it.nomÉquipage == nomÉquipage }
+
+        équipage = liste?.get(0) as Équipage
     }
 }
 val modèle = Modèle()

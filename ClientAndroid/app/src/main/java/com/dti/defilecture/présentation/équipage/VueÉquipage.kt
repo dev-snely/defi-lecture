@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
+import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
 
@@ -45,11 +46,15 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         numéroRang = view.findViewById(R.id.tv_numéroRang)
         totalDoublons = view.findViewById(R.id.tv_totalDoublons)
 
+        nomÉquipage.text = modèle.équipage.nomÉquipage
+        numéroRang.text = modèle.équipage.rang.toString()
+        totalDoublons.text = modèle.équipage.doublonsÉquipage.toString()
+
         val layoutManager = LinearLayoutManager(context)
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_équipage)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adaptateur = VueÉquipageAdaptateur( présentateur.initisaliseurDesComptes(), présentateur)
+        adaptateur = VueÉquipageAdaptateur( présentateur.initisaliseurDesComptes(nomÉquipage.text.toString()), présentateur)
         recyclerView.adapter = adaptateur
 
         //Différentes fonctions sur la vue.

@@ -3,16 +3,13 @@ package com.dti.defilecture.présentation.trésorerie
 import android.os.Bundle
 import android.view.*
 import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.SearchView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.trésorerie.IContratVPTrésorerie.*
 
 
@@ -84,11 +81,7 @@ class VueTrésorerie : Fragment(), IVueTrésorerie {
         return super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun naviguerVersDétailsÉquipage(position: Int) {
-        val positionÉquipageUtilisateur = 0
-        navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipage)
-        /**if (position == positionÉquipageUtilisateur) {
-            navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipage)
-        }*/
+    override fun naviguerVersDétailsÉquipage() {
+        navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipageTemporaire)
     }
 }

@@ -8,8 +8,8 @@ import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 class PrésentateurÉquipage(var vue: IVueÉquipage):
     IPrésentateurÉquipage {
 
-    override fun initisaliseurDesComptes(): MutableList<Compte>? {
-        return modèle.obtenirListeDesComptesÉquipage()
+    override fun initisaliseurDesComptes(nomÉquipage : String): MutableList<Compte>? {
+        return modèle.obtenirListeDesComptes(nomÉquipage)
     }
 
     override fun requêteVoirDétailsCompte(position: Int) {

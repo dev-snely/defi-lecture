@@ -19,7 +19,7 @@ interface IContratVPÉquipage {
      * Définit les méthodes à utiliser dans un présentateur Équipage.
      */
     interface IPrésentateurÉquipage{
-        fun initisaliseurDesComptes(): MutableList<Compte>?
+        fun initisaliseurDesComptes(nomÉquipage:String): MutableList<Compte>?
 
         fun requêteVoirDétailsCompte(position: Int) {
 

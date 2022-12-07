@@ -2,6 +2,7 @@ package com.dti.defilecture.présentation.trésorerie
 
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,9 +29,9 @@ class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?,
         if (currentItem != null){
             holder.nom.text = currentItem.nomÉquipage
             holder.doublons.text = currentItem.doublonsÉquipage.toString()
-            holder.nom.setOnClickListener{présentateur.requêteVoirDétailsÉquipage(position)}
-        }
+            holder.nom.setOnClickListener{présentateur.requêteVoirDétailsÉquipage(holder.nom.text.toString())}
 
+        }
     }
 
     override fun getItemCount(): Int {
