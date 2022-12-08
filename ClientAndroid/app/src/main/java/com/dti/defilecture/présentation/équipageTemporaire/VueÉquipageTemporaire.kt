@@ -24,6 +24,8 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
     lateinit var numéroRangTemporaire: TextView
     lateinit var totalDoublonsTemporaire: TextView
 
+    val équipageTemporaire = modèle.équipage()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,9 +46,9 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
         numéroRangTemporaire = view.findViewById(R.id.tv_numéroRangTemporaire)
         totalDoublonsTemporaire = view.findViewById(R.id.tv_totalDoublonsTemporaire)
 
-        nomÉquipageTemporaire.text = modèle.équipage.nomÉquipage
-        numéroRangTemporaire.text = modèle.équipage.rang.toString()
-        totalDoublonsTemporaire.text = modèle.équipage.doublonsÉquipage.toString()
+        nomÉquipageTemporaire.text = équipageTemporaire.nomÉquipage
+        numéroRangTemporaire.text = équipageTemporaire.rang.toString()
+        totalDoublonsTemporaire.text = équipageTemporaire.doublonsÉquipage.toString()
 
         val layoutManager = LinearLayoutManager(context)
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_équipageTemporaire)
@@ -63,7 +65,7 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
         totalDoublonsTemporaire.text = (0).toString() + " doublons"
     }
 
-    override fun naviguerVersDétailsCompteTemporaire(position: Int) {
-       //navController.navigate(R.id.action_vueÉquipageTemporaire_to_vueCompteTemporaire)
+    override fun naviguerVersDétailsCompteTemporaire() {
+       navController.navigate(R.id.action_vueÉquipageTemporaire_to_vueCompteTemporaire)
     }
 }

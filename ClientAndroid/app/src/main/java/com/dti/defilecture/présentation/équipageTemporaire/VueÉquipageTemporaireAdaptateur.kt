@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Compte
+import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipageTemporaire.IContratVPÉquipageTemporaire.*
 
 class VueÉquipageTemporaireAdaptateur(private val comptes: MutableList<Compte>?, var présentateur: IPrésentateurÉquipageTemporaire) :
@@ -27,7 +28,7 @@ class VueÉquipageTemporaireAdaptateur(private val comptes: MutableList<Compte>?
         if (currentItem != null){
             holder.pseudonymeTemporaire.text = currentItem.pseudonyme
             holder.doublonsTemporaire.text = currentItem.doublons.toString()
-            holder.pseudonymeTemporaire.setOnClickListener{présentateur.requêteVoirDétailsCompteTemporaire(position)}
+            holder.pseudonymeTemporaire.setOnClickListener{présentateur.requêteVoirDétailsCompteTemporaire(holder.pseudonymeTemporaire.text.toString(), modèle.équipage().nomÉquipage)}
         }
     }
 

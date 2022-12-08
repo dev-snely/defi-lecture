@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Compte
+import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
 class VueÉquipageAdaptateur(private val comptes: MutableList<Compte>?, var présentateur: IPrésentateurÉquipage) :
@@ -36,7 +37,7 @@ class VueÉquipageAdaptateur(private val comptes: MutableList<Compte>?, var pré
                 builder.setNegativeButton("No", {dialog, id ->})
                 builder.create().show()
             }
-            holder.pseudonyme.setOnClickListener{présentateur.requêteVoirDétailsCompte(position)}
+            holder.pseudonyme.setOnClickListener{présentateur.requêteVoirDétailsCompte(holder.pseudonyme.text.toString(), modèle.équipage().nomÉquipage)}
         }
     }
 

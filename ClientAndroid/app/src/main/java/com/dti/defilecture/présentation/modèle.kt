@@ -15,7 +15,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
     private var lecture = Lecture("","",0,false)
     private var compteConnecté = Compte()
     private var compteTemporaire = Compte()
-    var équipage = Équipage()
+    private var équipage = Équipage()
     var localHelper: LocaleHelper?=null
 
     /**
@@ -27,6 +27,10 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
 
     fun compteTemporaire(): Compte{
         return compteTemporaire
+    }
+
+    fun équipage(): Équipage {
+        return équipage
     }
 
     /**
@@ -124,7 +128,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      *
      * @return une liste de comptes.
      */
-    fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>? {
+    fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>? {
         return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes(nomÉquipage)
     }
 
@@ -155,6 +159,17 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
             équipage = liste[0]
         } else {
             Équipage()
+        }
+    }
+
+    fun initialiserCompte(pseudonyme: String, nomÉquipage: String) {
+        val liste = InteractionSourceDeDonnées(sourceDeDonnées).obtenirListeDeComptes(nomÉquipage)
+            ?.filter { it.pseudonyme == pseudonyme }
+
+        if ( !liste.isNullOrEmpty() ) {
+            compteTemporaire = liste[0]
+        } else {
+            Compte()
         }
     }
 }

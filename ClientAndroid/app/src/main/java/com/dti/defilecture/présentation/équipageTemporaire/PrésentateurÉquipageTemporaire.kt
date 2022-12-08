@@ -11,7 +11,8 @@ class PrésentateurÉquipageTemporaire (var vue: IVueÉquipageTemporaire):
         return modèle.obtenirListeDesComptesÉquipageTemporaire(nomÉquipage)
     }
 
-    override fun requêteVoirDétailsCompteTemporaire(position: Int) {
-        vue.naviguerVersDétailsCompteTemporaire(position)
+    override fun requêteVoirDétailsCompteTemporaire(pseudonyme: String, nomÉquipage: String) {
+        modèle.initialiserCompte(pseudonyme, nomÉquipage)
+        vue.naviguerVersDétailsCompteTemporaire()
     }
 }

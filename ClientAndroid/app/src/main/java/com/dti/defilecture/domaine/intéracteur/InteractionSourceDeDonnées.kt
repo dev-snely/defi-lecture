@@ -64,13 +64,6 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
     }
 
     /**
-     *  Initialise un Équipage à l'état nulle.
-     */
-    fun initialiserUnÉquipage(): Équipage {
-        return Équipage("",0,0, mutableListOf())
-    }
-
-    /**
      *  Permet d'obtenir une liste des équipages.
      */
     fun obtenirListeDesÉquipages(): MutableList<Équipage>?{

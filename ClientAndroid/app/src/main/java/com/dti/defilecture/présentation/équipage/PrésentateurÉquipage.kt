@@ -9,10 +9,11 @@ class PrésentateurÉquipage(var vue: IVueÉquipage):
     IPrésentateurÉquipage {
 
     override fun initisaliseurDesComptes(nomÉquipage: String): MutableList<Compte>? {
-        return modèle.obtenirListeDesComptes(nomÉquipage)
+        return modèle.obtenirListeDesComptesÉquipage(nomÉquipage)
     }
 
-    override fun requêteVoirDétailsCompte(position: Int) {
-        vue.naviguerVersDétailsCompte(position)
+    override fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipage: String) {
+        modèle.initialiserCompte(pseudonyme, nomÉquipage)
+        vue.naviguerVersDétailsCompte()
     }
 }

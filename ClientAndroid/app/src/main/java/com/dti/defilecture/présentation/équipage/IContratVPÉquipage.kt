@@ -12,7 +12,7 @@ interface IContratVPÉquipage {
      * Définit les méthodes à utiliser dans une vue Équipage.
      */
     interface IVueÉquipage{
-        fun naviguerVersDétailsCompte(position: Int)
+        fun naviguerVersDétailsCompte()
     }
 
     /**
@@ -21,7 +21,7 @@ interface IContratVPÉquipage {
     interface IPrésentateurÉquipage{
         fun initisaliseurDesComptes(nomÉquipage:String): MutableList<Compte>?
 
-        fun requêteVoirDétailsCompte(position: Int) {
+        fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipage: String) {
 
         }
     }
