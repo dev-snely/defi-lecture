@@ -8,7 +8,7 @@ import android.graphics.Bitmap
  */
 class Compte(
     var idCompte: Int,
-    var prénom: String,
+    var prenom: String,
     var nom: String,
     var doublons: Int,
     var courriel: String,
