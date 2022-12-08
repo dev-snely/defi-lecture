@@ -4,7 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Lecture
@@ -30,6 +32,13 @@ class VueMesLecturesAdaptateur(private val lectures : MutableList<Lecture>?) :
             holder.duree.text = context.resources.getString(R.string.nbMinute, currentItem.duréeMinutes)
             holder.date.text = currentItem.dateInscription
             holder.oblig.text = if (currentItem.obligatoire == true) "OBLIGATOIRE" else "LIBRE"
+            holder.effacer.setOnClickListener(){
+                val builder = AlertDialog.Builder(context)
+                builder.setMessage("Êtes-vous certain d'effacer cette lecture?")
+                builder.setPositiveButton("Yes", {dialog, id ->})
+                builder.setNegativeButton("No", {dialog, id ->})
+                builder.create().show()
+            }
         }
     }
 
@@ -42,5 +51,6 @@ class VueMesLecturesAdaptateur(private val lectures : MutableList<Lecture>?) :
         val duree: TextView = itemView.findViewById(R.id.dureeDUneLecture)
         val date: TextView = itemView.findViewById(R.id.dateDUneLecture)
         val oblig: TextView = itemView.findViewById(R.id.obligationDUneLecture)
+        val effacer: ImageButton = itemView.findViewById(R.id.ic_EffacerLecture)
     }
 }
