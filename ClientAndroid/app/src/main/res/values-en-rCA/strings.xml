@@ -45,4 +45,7 @@
     <string name="IndiceMotDePasseInscription">Password</string>
     <string name="IndiceMotDePasseConfirmationInscription">Password Confirmation</string>
     <string name="mesLectures">My readings</string>
+    <string name="TitreLangue">Change language</string>
+    <string name="Enregistrer">Save</string>
+    <string name="TitreModification">Edit Profile</string>
 </resources>
