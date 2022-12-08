@@ -20,11 +20,11 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
     }
 
     override fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>? {
-        return équipages.first { it.nomÉquipage == nomÉquipage }.listeComptes
+        return équipages.first { it.nomÉquipage == nomÉquipage }.listeComptes.sortedByDescending{ it.doublons }.toMutableList()
     }
 
     override fun obtenirListeDeLecturesBidon(): MutableList<Lecture>? {
-        return lectures
+        return lectures.sortedByDescending{ it.dateInscription }.toMutableList()
     }
 
     override fun ajouterUneLectureALaListe(lecture: Lecture) {
@@ -36,7 +36,7 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
     }
 
     override fun obtenirListeDesÉquipages(): MutableList<Équipage> {
-        return équipages
+        return équipages.sortedByDescending{ it.doublonsÉquipage }.toMutableList()
     }
 
     private var comptes : MutableList<Compte> = mutableListOf(

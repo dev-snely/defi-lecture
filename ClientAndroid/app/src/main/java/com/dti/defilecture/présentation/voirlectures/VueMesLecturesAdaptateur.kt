@@ -1,6 +1,5 @@
 package com.dti.defilecture.présentation.voirlectures
 
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -15,8 +14,8 @@ class VueMesLecturesAdaptateur(private val lectures : MutableList<Lecture>?) :
     lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.rangee_lectures
-        ,parent, false)
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.rangee_lectures,parent, false)
 
         context = parent.context
 
@@ -28,13 +27,10 @@ class VueMesLecturesAdaptateur(private val lectures : MutableList<Lecture>?) :
         if (currentItem != null){
             holder.titre.text = currentItem.titreLecture
             //holder.duree.text = "${currentItem.duréeMinutes} minutes"
-
             holder.duree.text = context.resources.getString(R.string.nbMinute, currentItem.duréeMinutes)
-
             holder.date.text = currentItem.dateInscription
             holder.oblig.text = if (currentItem.obligatoire == true) "OBLIGATOIRE" else "LIBRE"
         }
-
     }
 
     override fun getItemCount(): Int {
@@ -46,9 +42,5 @@ class VueMesLecturesAdaptateur(private val lectures : MutableList<Lecture>?) :
         val duree: TextView = itemView.findViewById(R.id.dureeDUneLecture)
         val date: TextView = itemView.findViewById(R.id.dateDUneLecture)
         val oblig: TextView = itemView.findViewById(R.id.obligationDUneLecture)
-
-
-
     }
-
 }

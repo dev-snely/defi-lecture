@@ -1,6 +1,5 @@
 package com.dti.defilecture.présentation.équipageTemporaire
 
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -12,13 +11,17 @@ import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipageTemporaire.IContratVPÉquipageTemporaire.*
 
-class VueÉquipageTemporaireAdaptateur(private val comptes: MutableList<Compte>?, var présentateur: IPrésentateurÉquipageTemporaire) :
+class VueÉquipageTemporaireAdaptateur(
+    private val comptes: MutableList<Compte>?,
+    var présentateur: IPrésentateurÉquipageTemporaire) :
     RecyclerView.Adapter<VueÉquipageTemporaireAdaptateur.MyViewHolder>() {
+
     lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_equipage_temporaire
-        ,parent, false)
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_equipage_temporaire, parent, false)
+
         context = parent.context
         return MyViewHolder(itemView)
     }

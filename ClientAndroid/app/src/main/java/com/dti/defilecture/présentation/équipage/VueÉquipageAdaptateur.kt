@@ -1,6 +1,5 @@
 package com.dti.defilecture.présentation.équipage
 
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -14,13 +13,16 @@ import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
-class VueÉquipageAdaptateur(private val comptes: MutableList<Compte>?, var présentateur: IPrésentateurÉquipage) :
-    RecyclerView.Adapter<VueÉquipageAdaptateur.MyViewHolder>() {
+class VueÉquipageAdaptateur(
+    private val comptes: MutableList<Compte>?,
+    var présentateur: IPrésentateurÉquipage) : RecyclerView.Adapter<VueÉquipageAdaptateur.MyViewHolder>() {
+
     lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_equipage
-        ,parent, false)
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_equipage, parent, false)
+
         context = parent.context
         return MyViewHolder(itemView)
     }
@@ -37,7 +39,8 @@ class VueÉquipageAdaptateur(private val comptes: MutableList<Compte>?, var pré
                 builder.setNegativeButton("No", {dialog, id ->})
                 builder.create().show()
             }
-            holder.pseudonyme.setOnClickListener{présentateur.requêteVoirDétailsCompte(holder.pseudonyme.text.toString(), modèle.équipage().nomÉquipage)}
+            holder.pseudonyme.setOnClickListener{présentateur
+                .requêteVoirDétailsCompte(holder.pseudonyme.text.toString(), modèle.équipage().nomÉquipage)}
         }
     }
 

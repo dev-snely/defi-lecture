@@ -1,6 +1,5 @@
 package com.dti.defilecture.présentation.trésorerie
 
-import android.util.Log
 import com.dti.defilecture.domaine.entité.Équipage
 import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.trésorerie.IContratVPTrésorerie.*

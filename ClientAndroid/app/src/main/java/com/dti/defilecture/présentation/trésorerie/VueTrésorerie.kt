@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.présentation.trésorerie.IContratVPTrésorerie.*
 
-
 class VueTrésorerie : Fragment(), IVueTrésorerie {
 
     lateinit var navController : NavController

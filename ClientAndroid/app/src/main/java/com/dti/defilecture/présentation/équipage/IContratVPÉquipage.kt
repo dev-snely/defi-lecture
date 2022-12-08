@@ -23,8 +23,6 @@ interface IContratVPÉquipage {
     interface IPrésentateurÉquipage{
         fun initisaliseurDesComptes(nomÉquipage:String): MutableList<Compte>?
 
-        fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipage: String) {
-
-        }
+        fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipage: String)
     }
 }

@@ -22,7 +22,5 @@ interface IContratVPTrésorerie {
         fun initisaliseurDesÉquipages(): MutableList<Équipage>?
 
         fun requêteVoirDétailsÉquipage(nomÉquipage: String)
-
-
     }
 }

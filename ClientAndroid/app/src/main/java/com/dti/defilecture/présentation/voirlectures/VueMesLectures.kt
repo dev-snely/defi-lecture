@@ -11,11 +11,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.modèle
-import com.dti.defilecture.présentation.voirlectures.IContratVPMesLectures.IVueMesLectures
-import com.dti.defilecture.présentation.voirlectures.IContratVPMesLectures.IPrésentateurMesLectures
-
-
+import com.dti.defilecture.présentation.voirlectures.IContratVPMesLectures.*
 
 class VueMesLectures : Fragment(), IVueMesLectures {
     lateinit var navController : NavController
@@ -30,7 +26,7 @@ class VueMesLectures : Fragment(), IVueMesLectures {
     ): View? {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_vue_mes_lectures, container, false)
-        présentateur = PrésentateurMesLectures( modèle, this )
+        présentateur = PrésentateurMesLectures( this )
         return vue
     }
 

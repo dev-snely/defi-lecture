@@ -5,8 +5,7 @@ import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
-class PrésentateurÉquipage(var vue: IVueÉquipage):
-    IPrésentateurÉquipage {
+class PrésentateurÉquipage(var vue: IVueÉquipage): IPrésentateurÉquipage {
 
     override fun initisaliseurDesComptes(nomÉquipage: String): MutableList<Compte>? {
         return modèle.obtenirListeDesComptesÉquipage(nomÉquipage)

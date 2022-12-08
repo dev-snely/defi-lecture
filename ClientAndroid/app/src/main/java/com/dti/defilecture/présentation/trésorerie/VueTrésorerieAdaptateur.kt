@@ -1,8 +1,6 @@
 package com.dti.defilecture.présentation.trésorerie
 
-
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,8 +14,8 @@ class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?,
     lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_tresorerie
-        ,parent, false)
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_tresorerie,parent, false)
 
         context = parent.context
 
@@ -30,7 +28,6 @@ class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?,
             holder.nom.text = currentItem.nomÉquipage
             holder.doublons.text = currentItem.doublonsÉquipage.toString()
             holder.nom.setOnClickListener{présentateur.requêteVoirDétailsÉquipage(holder.nom.text.toString())}
-
         }
     }
 

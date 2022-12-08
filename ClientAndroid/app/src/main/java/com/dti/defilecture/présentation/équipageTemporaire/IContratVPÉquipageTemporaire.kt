@@ -23,8 +23,6 @@ interface IContratVPÉquipageTemporaire {
     interface IPrésentateurÉquipageTemporaire{
         fun initisaliseurDesComptesTemporaires(nomÉquipage: String): MutableList<Compte>?
 
-        fun requêteVoirDétailsCompteTemporaire(pseudonyme: String, nomÉquipage: String) {
-
-        }
+        fun requêteVoirDétailsCompteTemporaire(pseudonyme: String, nomÉquipage: String)
     }
 }
