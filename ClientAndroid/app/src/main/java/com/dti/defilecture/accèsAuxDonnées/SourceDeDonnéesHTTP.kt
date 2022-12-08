@@ -29,7 +29,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         } catch (e: InterruptedException) {
             e.printStackTrace()
             return Compte()
-        }catch (e: ExecutionException) {
+        } catch (e: ExecutionException) {
             throw AccèsRessourcesException( e )
         }
 

@@ -23,8 +23,6 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
     lateinit var nomÉquipage: TextView
     lateinit var numéroRang: TextView
     lateinit var totalDoublons: TextView
-    /**lateinit var listeComptesÉquipage: ListView
-    lateinit var adapter : ArrayAdapter<*>*/
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -67,8 +65,5 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
 
     override fun naviguerVersDétailsCompte(position: Int) {
         navController.navigate(R.id.action_vueÉquipage_to_vueCompteUtilisateur)
-        /**if (position == positionCompteUtilisateur) {
-            //navController.navigate(R.id.action_vueTrésorerie_to_vueCompteTemporaire)
-        }*/
     }
 }
