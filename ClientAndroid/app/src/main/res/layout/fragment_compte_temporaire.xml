@@ -11,91 +11,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_poste2">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="375dp"
-            android:layout_height="275dp"
-            android:background="@drawable/bg_titre_equipage"
-            android:elevation="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/tvPrénomCompteTemporaire"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
-                android:fontFamily="@font/goudy_bookletter1911_regular"
-                android:paddingLeft="5dp"
-                android:text="@string/PrenomCompteTemporaire"
-                android:textColor="@color/bg_color_barre"
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="@+id/tvNomCompteTemporaire"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvProgrammeCompteTemporaire"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/goudy_bookletter1911_regular"
-                android:paddingLeft="5dp"
-                android:text="@string/ProgrammeCompteTemporaire"
-                android:textColor="@color/bg_color_barre"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.078"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvCourrielCompteTemporaire" />
-
-            <TextView
-                android:id="@+id/tvCourrielCompteTemporaire"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/goudy_bookletter1911_regular"
-                android:paddingLeft="5dp"
-                android:text="@string/CourrielCompteUtilisateur"
-                android:textColor="@color/bg_color_barre"
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="@+id/tvProgrammeCompteTemporaire"
-                app:layout_constraintTop_toBottomOf="@+id/tvNomCompteTemporaire" />
-
-            <TextView
-                android:id="@+id/tvNomCompteTemporaire"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/goudy_bookletter1911_regular"
-                android:paddingLeft="5dp"
-                android:text="@string/NomCompteUtilisateur"
-                android:textColor="@color/bg_color_barre"
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="@+id/tvCourrielCompteTemporaire"
-                app:layout_constraintTop_toBottomOf="@+id/tvPrénomCompteTemporaire" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <ImageButton
-            android:id="@+id/imgBtnPhotoCompteTemporaire"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="225dp"
-            android:background="@drawable/bg_recyclerview"
-            android:elevation="20dp"
-            android:src="@drawable/tete_de_mort"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPseudonymeCompteTemporaire"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-
         <TextView
             android:id="@+id/tvPseudonymeCompteTemporaire"
             android:layout_width="match_parent"
@@ -113,6 +28,132 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/imgBtnPhotoCompteTemporaire"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="225dp"
+            android:background="@drawable/bg_recyclerview"
+            android:elevation="20dp"
+            android:src="@drawable/tete_de_mort"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPseudonymeCompteTemporaire"
+            tools:ignore="SpeakableTextPresentCheck" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="375dp"
+            android:layout_height="375dp"
+            android:background="@drawable/bg_titre_equipage"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPseudonymeCompteTemporaire">
+
+            <TextView
+                android:id="@+id/tvUIPrénomCompte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:padding="10dp"
+                android:text="Prénom :"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPrénomCompteTemporaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:padding="10dp"
+                android:text="@string/PrenomCompteTemporaire"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@+id/tvUIPrénomCompte"
+                app:layout_constraintTop_toTopOf="@+id/tvUIPrénomCompte" />
+
+
+            <TextView
+                android:id="@+id/tvUINomCompte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:padding="10dp"
+                android:text="Nom :"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/tvUIPrénomCompte"
+                app:layout_constraintTop_toBottomOf="@+id/tvUIPrénomCompte" />
+
+            <TextView
+                android:id="@+id/tvNomCompteTemporaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:padding="10dp"
+                android:text="@string/NomCompteUtilisateur"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@+id/tvUINomCompte"
+                app:layout_constraintTop_toTopOf="@+id/tvUINomCompte" />
+
+            <TextView
+                android:id="@+id/tvUICourrielCompte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:padding="10dp"
+                android:text="Courriel :"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/tvUINomCompte"
+                app:layout_constraintTop_toBottomOf="@+id/tvUINomCompte" />
+
+            <TextView
+                android:id="@+id/tvCourrielCompteTemporaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:padding="10dp"
+                android:text="@string/CourrielCompteUtilisateur"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@+id/tvUICourrielCompte"
+                app:layout_constraintTop_toTopOf="@+id/tvUICourrielCompte" />
+
+            <TextView
+                android:id="@+id/tvUIProgrammeCompte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:padding="10dp"
+                android:text="Programme :"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/tvUICourrielCompte"
+                app:layout_constraintTop_toBottomOf="@+id/tvUICourrielCompte" />
+
+            <TextView
+                android:id="@+id/tvProgrammeCompteTemporaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:padding="10dp"
+                android:text="@string/ProgrammeCompteUtilisateur"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@+id/tvUIProgrammeCompte"
+                app:layout_constraintTop_toTopOf="@+id/tvUIProgrammeCompte" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
