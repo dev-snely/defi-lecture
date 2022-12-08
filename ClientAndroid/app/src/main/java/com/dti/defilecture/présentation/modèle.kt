@@ -15,6 +15,14 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
     private var lecture = Lecture("","",0,false)
     private var compteConnecté = Compte()
 
+
+    /**
+     * Retourne le compte actif
+     */
+    fun compteActif(): Compte{
+        return compteConnecté
+    }
+
     /**
      * Ajoute une lecture dans la source de données.
      */

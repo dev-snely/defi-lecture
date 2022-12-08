@@ -11,24 +11,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.Toast
-import androidx.core.graphics.drawable.toDrawable
-import androidx.core.graphics.drawable.toIcon
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.dti.defilecture.R
-import com.dti.defilecture.présentation.compte.IContratVPCompte.IPrésentateurCompte
-import com.dti.defilecture.présentation.compte.IContratVPCompte.IVueCompte
+import com.dti.defilecture.présentation.modèle
 
-class VueCompteUtilisateur : Fragment(), IVueCompte{
+@Suppress("DEPRECATION")
+class VueCompteUtilisateur : Fragment(), IContratVPCompte.IVueCompteUtilisateur{
 
-    lateinit var présentateur: IPrésentateurCompte
+    lateinit var présentateur: IContratVPCompte.IPrésentateurCompteUtilisateur
     lateinit var navController : NavController
     lateinit var btnModifierInfo : ImageButton
     lateinit var btnModifierPhoto : ImageButton
     lateinit var btnParametre: ImageButton
     lateinit var imgBtnPhotoCompte: ImageButton
+    lateinit var tvPseudonyme: TextView
+    lateinit var tvPrénom: TextView
+    lateinit var tvNom: TextView
+    lateinit var tvCourriel: TextView
+    lateinit var tvProgramme: TextView
+    val compteActif = modèle.compteActif()
     val DEMANDE_PRISE_PHOTO = 100
 
     override fun onCreateView(
@@ -37,7 +41,8 @@ class VueCompteUtilisateur : Fragment(), IVueCompte{
         savedInstanceState: Bundle?
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_compte_utilisateur, container, false)
-        présentateur = PrésentateurCompteUtilisateur( this )
+        présentateur = PrésentateurCompteUtilisateur( modèle,this)
+
         return vue
     }
 
@@ -50,6 +55,16 @@ class VueCompteUtilisateur : Fragment(), IVueCompte{
         btnModifierPhoto = view.findViewById(R.id.btnModifierPhoto)
         btnParametre = view.findViewById(R.id.btnParametre)
         imgBtnPhotoCompte = view.findViewById(R.id.imgBtnPhotoCompte)
+        tvPseudonyme = view.findViewById(R.id.tvPseudonymeCompte)
+        tvPrénom = view.findViewById(R.id.tvPrénomCompte)
+        tvNom = view.findViewById(R.id.tvNomCompte)
+        tvCourriel = view.findViewById(R.id.tvCourrielCompte)
+        tvProgramme = view.findViewById(R.id.tvProgrammeCompte)
+
+        présentateur.requêteInitialiserCompte()
+
+
+
 
         btnModifierPhoto.setOnClickListener {
             var photoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -67,6 +82,19 @@ class VueCompteUtilisateur : Fragment(), IVueCompte{
         }
     }
 
+    override fun initCompte(pseudonyme:String, nom: String, prénom: String,
+                            courriel: String, programme: String, avatar: Bitmap?) {
+        tvPseudonyme.text = pseudonyme
+        tvPrénom.text = getString(R.string.PrenomCompteUtilisateur,prénom)
+        tvNom.text = getString(R.string.NomCompteUtilisateur,nom)
+        tvCourriel.text = getString(R.string.CourrielCompteUtilisateur,courriel)
+        tvProgramme.text = getString(R.string.ProgrammeCompteUtilisateur,programme)
+        if(avatar!=null){
+            imgBtnPhotoCompte.setImageBitmap(avatar)
+        }
+
+
+    }
 
     override fun naviguerVersModifier() {
         navController.navigate(R.id.action_vueCompteUtilisateur_to_vueModifier)
@@ -79,6 +107,7 @@ class VueCompteUtilisateur : Fragment(), IVueCompte{
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == DEMANDE_PRISE_PHOTO && resultCode == RESULT_OK){
             val imageBitmap = data?.extras?.get("data") as Bitmap
+            compteActif.avatar = imageBitmap
             imgBtnPhotoCompte.setImageBitmap(imageBitmap)
         }else{
             super.onActivityResult(requestCode, resultCode, data)

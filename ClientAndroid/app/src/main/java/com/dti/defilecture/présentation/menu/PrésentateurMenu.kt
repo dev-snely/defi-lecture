@@ -5,19 +5,20 @@ import com.dti.defilecture.présentation.menu.IContratVPMenu.IVueMenu
 
 
 class PrésentateurMenu(var vue: IVueMenu) : IPrésentateurMenu {
-    override fun naviguerVersPageLangage(){
+
+    override fun requêteNaviguerVersPageLangage(){
         vue.naviguerVersPageLangage()
     }
 
-    override fun naviguerVersPageGlossaire(){
+    override fun requêteNaviguerVersPageGlossaire(){
         vue.naviguerVersPageGlossaire()
     }
 
-    override fun naviguerVersPageAPropos(){
+    override fun requêteNaviguerVersPageAPropos(){
         vue.naviguerVersPageAPropos()
     }
 
-    override fun deconnexion(){
+    override fun requêteDeconnexion(){
         vue.deconnexion()
     }
 

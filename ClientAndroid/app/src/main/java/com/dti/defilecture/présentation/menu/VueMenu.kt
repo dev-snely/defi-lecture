@@ -41,24 +41,17 @@ class VueMenu: Fragment(), IVueMenu {
         btnAPropos = view.findViewById(R.id.btnAPropos)
         btnDeconnexion = view.findViewById(R.id.btnDeconnexion)
 
-        btnLangage.setOnClickListener {
-            naviguerVersPageLangage()
-        }
+        btnLangage.setOnClickListener { présentateur.requêteNaviguerVersPageLangage() }
 
-        btnGlossaire.setOnClickListener {
-            naviguerVersPageGlossaire()
-        }
+        btnGlossaire.setOnClickListener { présentateur.requêteNaviguerVersPageGlossaire() }
 
-        btnAPropos.setOnClickListener {
-            naviguerVersPageAPropos()
-        }
+        btnAPropos.setOnClickListener { présentateur.requêteNaviguerVersPageAPropos() }
 
-        btnDeconnexion.setOnClickListener {
-            deconnexion()
-        }
+        btnDeconnexion.setOnClickListener { présentateur.requêteDeconnexion() }
     }
 
         override fun naviguerVersPageLangage(){
+            Log.d("Test", "Fonction Language")
             navController.navigate(R.id.action_vueMenu_to_vueLangage)
         }
 

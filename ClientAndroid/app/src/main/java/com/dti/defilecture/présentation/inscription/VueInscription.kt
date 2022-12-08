@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.dti.defilecture.R
@@ -78,6 +79,7 @@ class VueInscription : Fragment(), IVueInscription {
     }
 
     override fun naviguerVersConnexion(){
+        Toast.makeText(this.context,"Compte Créé Avec Succès", Toast.LENGTH_SHORT).show()
         navController.navigate(R.id.action_vueInscription_to_vueConnexion)
     }
 }
