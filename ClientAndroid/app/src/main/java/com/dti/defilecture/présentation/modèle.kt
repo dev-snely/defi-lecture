@@ -14,6 +14,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
 
     private var lecture = Lecture("","",0,false)
     private var compteConnecté = Compte()
+    private var compteTemporaire = Compte()
     var équipage = Équipage()
     var localHelper: LocaleHelper?=null
 
@@ -22,6 +23,10 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      */
     fun compteActif(): Compte{
         return compteConnecté
+    }
+
+    fun compteTemporaire(): Compte{
+        return compteTemporaire
     }
 
     /**

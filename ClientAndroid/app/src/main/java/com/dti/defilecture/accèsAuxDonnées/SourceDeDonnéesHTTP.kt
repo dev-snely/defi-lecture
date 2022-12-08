@@ -86,8 +86,8 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
                 "nom" -> {
                     compte.nom = jsonReader.nextString()
                 }
-                "prenom" -> {
-                    compte.prenom = jsonReader.nextString()
+                "prénom" -> {
+                    compte.prénom = jsonReader.nextString()
                 }
                 "pseudo" -> {
                     compte.pseudonyme = jsonReader.nextString()

@@ -1,7 +1,5 @@
 package com.dti.defilecture.présentation.compte
 
-import android.app.Activity
-import android.graphics.Bitmap
 import com.dti.defilecture.présentation.Modèle
 import com.dti.defilecture.présentation.compte.IContratVPCompte.IVueCompteUtilisateur
 import com.dti.defilecture.présentation.compte.IContratVPCompte.IPrésentateurCompteUtilisateur
@@ -11,7 +9,7 @@ class PrésentateurCompteUtilisateur(var modèle: Modèle,
 
     override fun requêteInitialiserCompte(){
         val compteActif = modèle.compteActif()
-        vue.initCompte( compteActif.pseudonyme,compteActif.nom,compteActif.prenom,
+        vue.initCompte( compteActif.pseudonyme,compteActif.nom,compteActif.prénom,
             compteActif.courriel,compteActif.programme,compteActif.avatar)
     }
 

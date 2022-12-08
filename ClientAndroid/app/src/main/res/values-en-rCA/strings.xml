@@ -38,6 +38,10 @@
     <string name="NomCompteUtilisateur">Last Name: %1$s</string>
     <string name="CourrielCompteUtilisateur">Email: %1$s</string>
     <string name="ProgrammeCompteUtilisateur">Field of study: %1$s</string>
+    <string name="PrenomCompteTemporaire">First Name: %1$s</string>
+    <string name="NomCompteTemporaire">Last Name: %1$s</string>
+    <string name="CourrielCompteTemporaire">Email: %1$s</string>
+    <string name="ProgrammeCompteTemporaire">Field of study: %1$s</string>
     <string name="IndicePrenomInscription">First Name</string>
     <string name="IndicePseudonymeInscription">Pseudonym</string>
     <string name="IndiceNomInscription">Last Name</string>

@@ -34,6 +34,10 @@
     <string name="NomCompteUtilisateur">Nom: %1$s</string>
     <string name="CourrielCompteUtilisateur">Courriel: %1$s</string>
     <string name="ProgrammeCompteUtilisateur">Programme: %1$s</string>
+    <string name="PrenomCompteTemporaire">Prénom: %1$s</string>
+    <string name="NomCompteTemporaire">Nom: %1$s</string>
+    <string name="CourrielCompteTemporaire">Courriel: %1$s</string>
+    <string name="ProgrammeCompteTemporaire">Programme: %1$s</string>
     <string name="IndicePrenomInscription">Prénom</string>
     <string name="IndicePseudonymeInscription">Pseudonyme</string>
     <string name="IndiceNomInscription">Nom</string>

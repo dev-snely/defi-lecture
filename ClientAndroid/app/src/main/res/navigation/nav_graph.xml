@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_vueÉquipage_to_vueCompteUtilisateur"
             app:destination="@id/vueCompteUtilisateur" />
+        <action
+            android:id="@+id/action_vueÉquipage_to_vueCompteTemporaire"
+            app:destination="@id/vueCompteTemporaire" />
     </fragment>
     <fragment
         android:id="@+id/vueTrésorerie"
@@ -146,5 +149,14 @@
     <fragment
         android:id="@+id/vueÉquipageTemporaire"
         android:name="com.dti.defilecture.présentation.équipageTemporaire.VueÉquipageTemporaire"
-        android:label="VueÉquipageTemporaire" />
+        android:label="VueÉquipageTemporaire" >
+        <action
+            android:id="@+id/action_vueÉquipageTemporaire_to_vueCompteTemporaire"
+            app:destination="@id/vueCompteTemporaire" />
+    </fragment>
+    <fragment
+        android:id="@+id/vueCompteTemporaire"
+        android:name="com.dti.defilecture.présentation.compteTemporaire.VueCompteTemporaire"
+        android:label="fragment_compte_temporaire"
+        tools:layout="@layout/fragment_compte_temporaire" />
 </navigation>
