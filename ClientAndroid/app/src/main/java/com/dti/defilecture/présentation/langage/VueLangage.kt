@@ -17,8 +17,8 @@ class VueLangage: Fragment(), IVueLangage {
 
     lateinit var navController : NavController
     lateinit var présentateur: IPrésentateurLangage
-    lateinit var btnAnglais: Button
-    lateinit var btnFrancais: Button
+    lateinit var btnFrançais: Button
+    lateinit var btnEnglish: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,14 +33,13 @@ class VueLangage: Fragment(), IVueLangage {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+        /*btnFrançais.setOnClickListener {
 
-        btnAnglais.setOnClickListener {
-            
         }
+        btnEnglish.setOnClickListener {
 
-        btnFrancais.setOnClickListener {
-            
-        }
+        }*/
+
     }
 
 }
