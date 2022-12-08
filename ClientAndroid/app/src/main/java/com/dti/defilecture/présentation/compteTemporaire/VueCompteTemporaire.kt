@@ -21,12 +21,15 @@ class VueCompteTemporaire : Fragment(), IContratVPCompteTemporaire.IVueCompteTem
 
     lateinit var présentateur: IContratVPCompteTemporaire.IPrésentateurCompteTemporaire
     lateinit var navController : NavController
+
     lateinit var imgBtnPhotoCompteTemporaire: ImageButton
     lateinit var tvPseudonymeTemporaire: TextView
     lateinit var tvPrénomTemporaire: TextView
     lateinit var tvNomTemporaire: TextView
+    lateinit var tvDoublonCompteTemporaire: TextView
     lateinit var tvCourrielTemporaire: TextView
     lateinit var tvProgrammeTemporaire: TextView
+
     val compteActif = modèle.compteActif()
     val compteTemporaire = modèle.compteTemporaire()
     val DEMANDE_PRISE_PHOTO = 100
@@ -51,6 +54,7 @@ class VueCompteTemporaire : Fragment(), IContratVPCompteTemporaire.IVueCompteTem
         tvPseudonymeTemporaire = view.findViewById(R.id.tvPseudonymeCompteTemporaire)
         tvPrénomTemporaire = view.findViewById(R.id.tvPrénomCompteTemporaire)
         tvNomTemporaire = view.findViewById(R.id.tvNomCompteTemporaire)
+        tvDoublonCompteTemporaire = view.findViewById(R.id.tv_doublonCompteTemporaire)
         tvCourrielTemporaire = view.findViewById(R.id.tvCourrielCompteTemporaire)
         tvProgrammeTemporaire = view.findViewById(R.id.tvProgrammeCompteTemporaire)
 
@@ -59,6 +63,7 @@ class VueCompteTemporaire : Fragment(), IContratVPCompteTemporaire.IVueCompteTem
         tvPseudonymeTemporaire.text = compteTemporaire.pseudonyme
         tvPrénomTemporaire.text = compteTemporaire.prénom
         tvNomTemporaire.text = compteTemporaire.nom
+        tvDoublonCompteTemporaire.text = compteTemporaire.doublons.toString()
         tvCourrielTemporaire.text = compteTemporaire.courriel
         tvProgrammeTemporaire.text = compteTemporaire.programme
         if(compteTemporaire.avatar!=null){

@@ -12,7 +12,9 @@ interface IContratVPÉquipage {
      * Définit les méthodes à utiliser dans une vue Équipage.
      */
     interface IVueÉquipage{
-        fun naviguerVersDétailsCompte()
+        fun naviguerVersDétailsCompteActif()
+
+        fun naviguerVersDétailsCompteTemporaire()
     }
 
     /**

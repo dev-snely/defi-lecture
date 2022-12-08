@@ -65,7 +65,11 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         totalDoublons.text = (0).toString() + " doublons"
     }
 
-    override fun naviguerVersDétailsCompte() {
+    override fun naviguerVersDétailsCompteActif() {
+        navController.navigate(R.id.action_vueÉquipage_to_vueCompteUtilisateur)
+    }
+
+    override fun naviguerVersDétailsCompteTemporaire() {
         navController.navigate(R.id.action_vueÉquipage_to_vueCompteTemporaire)
     }
 }

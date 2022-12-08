@@ -13,6 +13,8 @@ interface IContratVPÉquipageTemporaire {
      */
     interface IVueÉquipageTemporaire{
         fun naviguerVersDétailsCompteTemporaire()
+
+        fun naviguerVersDétailsCompteActif()
     }
 
     /**

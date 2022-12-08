@@ -14,6 +14,10 @@ class PrésentateurÉquipage(var vue: IVueÉquipage):
 
     override fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipage: String) {
         modèle.initialiserCompte(pseudonyme, nomÉquipage)
-        vue.naviguerVersDétailsCompte()
+        if (pseudonyme == modèle.compteActif().pseudonyme) {
+            vue.naviguerVersDétailsCompteActif()
+        } else {
+            vue.naviguerVersDétailsCompteTemporaire()
+        }
     }
 }

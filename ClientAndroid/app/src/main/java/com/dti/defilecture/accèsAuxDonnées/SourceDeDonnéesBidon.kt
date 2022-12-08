@@ -49,6 +49,7 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
     )
 
     private var équipages : MutableList<Équipage> = mutableListOf(
+        Équipage(),
         Équipage( "Équipage 1", 10, 0,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",

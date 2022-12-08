@@ -68,4 +68,8 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
     override fun naviguerVersDétailsCompteTemporaire() {
        navController.navigate(R.id.action_vueÉquipageTemporaire_to_vueCompteTemporaire)
     }
+
+    override fun naviguerVersDétailsCompteActif() {
+        navController.navigate(R.id.action_vueÉquipageTemporaire_to_vueCompteUtilisateur)
+    }
 }

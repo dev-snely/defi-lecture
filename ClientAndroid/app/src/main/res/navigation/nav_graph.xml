@@ -153,6 +153,9 @@
         <action
             android:id="@+id/action_vueÉquipageTemporaire_to_vueCompteTemporaire"
             app:destination="@id/vueCompteTemporaire" />
+        <action
+            android:id="@+id/action_vueÉquipageTemporaire_to_vueCompteUtilisateur"
+            app:destination="@id/vueCompteUtilisateur" />
     </fragment>
     <fragment
         android:id="@+id/vueCompteTemporaire"
