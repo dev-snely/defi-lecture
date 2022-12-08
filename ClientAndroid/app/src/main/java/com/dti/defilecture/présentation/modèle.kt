@@ -1,5 +1,4 @@
 package com.dti.defilecture.présentation
-
 import com.dti.defilecture.accèsAuxDonnées.ISourceDeDonnées
 import com.dti.defilecture.accèsAuxDonnées.SourceDeDonnéesBidon
 import com.dti.defilecture.domaine.entité.Compte
@@ -10,11 +9,12 @@ import com.dti.defilecture.domaine.intéracteur.*
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()) {
 
     private var lecture = Lecture("","",0,false)
     private var compteConnecté = Compte()
-
+    var localHelper: LocaleHelper?=null
 
     /**
      * Retourne le compte actif
@@ -132,3 +132,5 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
     }
 }
 val modèle = Modèle()
+
+
