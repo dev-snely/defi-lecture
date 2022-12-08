@@ -12,31 +12,11 @@
         android:background="@drawable/bg_poste2">
 
 
-        <TextView
-            android:id="@+id/tvPseudonymeCompte"
-            android:layout_width="220dp"
-            android:layout_height="60dp"
-            android:background="@drawable/vue_coin_rond"
-            android:elevation="30dp"
-            android:ems="10"
-            android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:gravity="center"
-            android:inputType="textPersonName"
-            android:text="Pseudonyme"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout2"
             android:layout_width="375dp"
-            android:layout_height="300dp"
-            android:background="@drawable/vue_coin_rond"
+            android:layout_height="275dp"
+            android:background="@drawable/bg_titre_equipage"
             android:elevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,61 +24,74 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/tvPrénomCompte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="68dp"
+                android:layout_marginTop="64dp"
                 android:fontFamily="@font/goudy_bookletter1911_regular"
                 android:paddingLeft="5dp"
                 android:text="@string/PrenomCompteUtilisateur"
-                android:textColor="@color/black"
+                android:textColor="@color/bg_color_barre"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.511"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvNomCompte"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tvProgrammeCompte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/goudy_bookletter1911_regular"
-                android:paddingLeft="5dp"
-                android:text="@string/NomCompteUtilisateur"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/goudy_bookletter1911_regular"
-                android:paddingLeft="5dp"
-                android:text="@string/CourrielCompteUtilisateur"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/goudy_bookletter1911_regular"
                 android:paddingLeft="5dp"
                 android:text="@string/ProgrammeCompteUtilisateur"
-                android:textColor="@color/black"
+                android:textColor="@color/bg_color_barre"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                app:layout_constraintTop_toBottomOf="@+id/tvCourrielCompte" />
+
+            <TextView
+                android:id="@+id/tvCourrielCompte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:paddingLeft="5dp"
+                android:text="@string/CourrielCompteUtilisateur"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/tvProgrammeCompte"
+                app:layout_constraintTop_toBottomOf="@+id/tvNomCompte" />
+
+            <TextView
+                android:id="@+id/tvNomCompte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:paddingLeft="5dp"
+                android:text="@string/NomCompteUtilisateur"
+                android:textColor="@color/bg_color_barre"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/tvCourrielCompte"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrénomCompte" />
+
+            <ImageButton
+                android:id="@+id/btnParametre"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_recyclerview"
+                android:elevation="50dp"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_parametre"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.064" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -107,7 +100,7 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_marginBottom="225dp"
-            android:background="@drawable/vue_coin_rond"
+            android:background="@drawable/bg_recyclerview"
             android:elevation="20dp"
             android:src="@drawable/tete_de_mort"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
@@ -122,8 +115,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="75dp"
-            android:background="@drawable/vue_coin_rond"
-            android:backgroundTint="@color/bg_color_barre"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_recyclerview"
             android:elevation="30dp"
             android:padding="5dp"
             android:scaleType="fitCenter"
@@ -137,8 +130,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginEnd="75dp"
-            android:background="@drawable/bg_boutons_ajout_temps"
-            android:backgroundTint="@color/bg_color_barre"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_recyclerview"
             android:elevation="30dp"
             android:padding="10dp"
             android:scaleType="fitCenter"
@@ -146,6 +139,23 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <TextView
+            android:id="@+id/tvPseudonymeCompte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/bg_titre_equipage"
+            android:fontFamily="@font/goudy_bookletter1911_regular"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/IndicePseudonymeInscription"
+            android:textColor="@color/white"
+            android:textSize="27sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

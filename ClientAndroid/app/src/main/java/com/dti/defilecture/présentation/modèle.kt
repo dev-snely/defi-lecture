@@ -1,5 +1,4 @@
 package com.dti.defilecture.présentation
-
 import com.dti.defilecture.accèsAuxDonnées.ISourceDeDonnées
 import com.dti.defilecture.accèsAuxDonnées.SourceDeDonnéesBidon
 import com.dti.defilecture.domaine.entité.Compte
@@ -10,11 +9,20 @@ import com.dti.defilecture.domaine.intéracteur.*
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()) {
 
     private var lecture = Lecture("","",0,false)
     private var compteConnecté = Compte()
-    public var équipage = Équipage()
+    var équipage = Équipage()
+    var localHelper: LocaleHelper?=null
+
+    /**
+     * Retourne le compte actif
+     */
+    fun compteActif(): Compte{
+        return compteConnecté
+    }
 
     /**
      * Ajoute une lecture dans la source de données.
@@ -111,7 +119,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      *
      * @return une liste de comptes.
      */
-    fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte> {
+    fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>? {
         return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes(nomÉquipage)
     }
 
@@ -129,15 +137,22 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      *
      * @return une liste de comptes.
      */
-    fun obtenirListeDesComptesÉquipageTemporaire(nomÉquipage : String): MutableList<Compte> {
+    fun obtenirListeDesComptesÉquipageTemporaire(nomÉquipage : String): MutableList<Compte>? {
         return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes(nomÉquipage)
     }
 
     fun initialiserÉquipage(nomÉquipage: String) {
-        var liste = InteractionSourceDeDonnées(sourceDeDonnées).obtenirListeDesÉquipages()
+
+        val liste = InteractionSourceDeDonnées(sourceDeDonnées).obtenirListeDesÉquipages()
             ?.filter { it.nomÉquipage == nomÉquipage }
 
-        équipage = liste?.get(0) as Équipage
+        if ( !liste.isNullOrEmpty() ) {
+            équipage = liste[0]
+        } else {
+            Équipage()
+        }
     }
 }
 val modèle = Modèle()
+
+

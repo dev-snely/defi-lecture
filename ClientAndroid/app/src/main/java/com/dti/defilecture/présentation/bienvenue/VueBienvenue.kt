@@ -1,7 +1,6 @@
 package com.dti.defilecture.présentation.bienvenue
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,7 +33,7 @@ class VueBienvenue: Fragment(), IVueBienvenue {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        btnInscription = view.findViewById(R.id.btnInscription)
+        btnInscription = view.findViewById(R.id.btnModifier)
         btnConnexion = view.findViewById(R.id.btnConnexion)
 
         btnInscription.setOnClickListener {

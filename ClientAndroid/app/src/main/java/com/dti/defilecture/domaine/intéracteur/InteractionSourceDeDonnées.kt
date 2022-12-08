@@ -50,7 +50,7 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *
      *  @return une liste de comptes
      */
-    fun obtenirListeDeComptes(nomÉquipage: String): MutableList<Compte> {
+    fun obtenirListeDeComptes(nomÉquipage: String): MutableList<Compte>? {
         return sourceDeDonnées.obtenirListeDesComptes(nomÉquipage)
     }
 

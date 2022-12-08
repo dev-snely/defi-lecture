@@ -7,80 +7,78 @@
     android:background="@drawable/background"
     tools:context=".présentation.langage.VueLangage">
 
-    <ImageButton
-        android:id="@+id/langueA"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/barre_rouge"
-        app:layout_constraintBottom_toTopOf="@+id/langueC"
-        app:layout_constraintEnd_toStartOf="@+id/langueB"
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:background="@drawable/bg_titre_equipage"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/TitreLangue"
+        android:textColor="@color/white"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/langueB"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/barre_rouge"
-        app:layout_constraintBottom_toTopOf="@+id/langueD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/langueA"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/langueC"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="46dp"
-        android:src="@drawable/barre_rouge"
-        app:layout_constraintBottom_toTopOf="@+id/langueE"
-        app:layout_constraintEnd_toStartOf="@+id/langueD"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/langueA" />
-
-    <ImageButton
-        android:id="@+id/langueD"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="46dp"
-        android:src="@drawable/barre_rouge"
-        app:layout_constraintBottom_toTopOf="@+id/langueF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/langueC"
-        app:layout_constraintTop_toBottomOf="@+id/langueB" />
-
-    <ImageButton
-        android:id="@+id/langueE"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="111dp"
-        android:src="@drawable/barre_rouge"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/drapeaufrance"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/langueF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/langueC" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
-    <ImageButton
-        android:id="@+id/langueF"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="111dp"
-        android:src="@drawable/barre_rouge"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="30dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/drapeauroyaumeuni"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/langueE"
-        app:layout_constraintTop_toBottomOf="@+id/langueD" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFrançais"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:text="@string/buttonLangueFrancaise"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        app:backgroundTint="@color/black"
+        app:cornerRadius="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnglish"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:text="@string/buttonLangueEnglish"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        app:backgroundTint="@color/black"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

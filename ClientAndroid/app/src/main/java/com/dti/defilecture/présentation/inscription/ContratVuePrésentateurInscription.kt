@@ -9,6 +9,10 @@ interface ContratVuePrésentateurInscription {
          * Indique a l'utilisateur que des informations manque pour son inscription.
          */
         fun afficherAvertissementInfosManquants(message: String)
+        /**
+         * Navigation vers la page connexion lors d'une réussite
+         */
+        fun naviguerVersConnexion()
 
 
     }
