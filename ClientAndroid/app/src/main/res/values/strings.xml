@@ -52,4 +52,15 @@
     <string name="buttonLangueEnglish" translatable="false">English</string>
     <string name="Enregistrer">Enregistrer</string>
     <string name="TitreModification">Modification</string>
+    <string name="titre">Titre</string>
+    <string name="temps">Temps</string>
+    <string name="obligationLabel">Obligation</string>
+    <string name="combien_de_temps_avez_vous_lu">Combien de temps avez-vous lu ?</string>
+    <string name="suivant">Suivant</string>
+    <string name="quel_est_le_nom_de_votre_lecture">Quel est le nom de votre lecture ?</string>
+    <string name="Glossaire">Glossaire</string>
+    <string name="plus_d_informations">Plus d\'informations :</string>
+    <string name="entrer_le_titre_de_votre_lecture">Entrer le titre de votre lecture</string>
+    <string name="terminer">Terminer</string>
+    <string name="lectureAjoute">Lecture ajouté !</string>
 </resources>

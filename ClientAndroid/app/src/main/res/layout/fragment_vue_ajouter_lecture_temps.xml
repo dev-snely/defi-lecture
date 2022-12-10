@@ -8,38 +8,10 @@
     android:background="@drawable/sophie_louisnard_bg_unsplash"
     tools:context=".présentation.ajouterlecture.temps.VueAjouterLectureTemps">
 
-    <ImageView
-        android:id="@+id/opacity_bg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/bg_opacite"
-        tools:ignore="ImageContrastCheck" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_ajouterTemps"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/materialToolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:title="Ajouter une lecture"
-                app:titleTextColor="@color/black" />
-
-        </com.google.android.material.appbar.AppBarLayout>
 
         <ImageView
             android:id="@+id/bg_ajouterLectureTitre2"
@@ -52,7 +24,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:layout_constraintTop_toTopOf="@+id/cl_ajouterTemps"
             tools:ignore="ImageContrastCheck" />
 
         <TextView
@@ -61,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Titre"
+            android:text="@string/titre"
             android:textColor="@color/df_rougeprimaire"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Temps"
+            android:text="@string/temps"
             android:textColor="@color/df_rougeprimaire"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Obligation"
+            android:text="@string/obligationLabel"
             android:textColor="#8D8D8D"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -136,7 +108,7 @@
             android:layout_height="81dp"
             android:elegantTextHeight="false"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Combien de temps avez-vous lu ?"
+            android:text="@string/combien_de_temps_avez_vous_lu"
             android:textAlignment="viewStart"
             android:textColor="#000000"
             android:textSize="40sp"
@@ -171,7 +143,7 @@
             android:backgroundTint="#000000"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:padding="5dp"
-            android:text="Suivant"
+            android:text="@string/suivant"
             android:textAllCaps="false"
             android:textSize="25sp"
             app:cornerRadius="20sp"

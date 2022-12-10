@@ -23,7 +23,7 @@
     <string name="minutes_pluriel">I\'ve read %1$d minutes.</string>
     <string name="minutes_singulier">Please enter the amount of minutes you\'ve read</string>
     <string name="jaicompris">"Arghh! "</string>
-    <string name="avertissement">Oops...</string>
+    <string name="avertissement">Oops…</string>
     <string name="titreManquant">Please enter the title of your book</string>
     <string name="tempsManquant">Please enter the amount of time you\'ve read</string>
     <string name="obligationManquant">Please chose if you have to read your book for a class</string>
@@ -45,7 +45,7 @@
     <string name="IndicePrenomInscription">First Name</string>
     <string name="IndicePseudonymeInscription">Pseudonym</string>
     <string name="IndiceNomInscription">Last Name</string>
-    <string name="IndiceCourrielInscription">Email Adress</string>
+    <string name="IndiceCourrielInscription">Email Address</string>
     <string name="IndiceMotDePasseInscription">Password</string>
     <string name="IndiceMotDePasseConfirmationInscription">Password Confirmation</string>
     <string name="mesLectures">My readings</string>
@@ -53,4 +53,15 @@
     <string name="Enregistrer">Save</string>
     <string name="TitreModification">Edit Profile</string>
     <string name="libre">CHOSEN</string>
+    <string name="titre">Title</string>
+    <string name="temps">Time</string>
+    <string name="obligationLabel">Obligation</string>
+    <string name="combien_de_temps_avez_vous_lu">How much time have you read ?</string>
+    <string name="suivant">Next</string>
+    <string name="quel_est_le_nom_de_votre_lecture">What is the name of your reading ?</string>
+    <string name="Glossaire">Glossary</string>
+    <string name="plus_d_informations">More informations</string>
+    <string name="entrer_le_titre_de_votre_lecture">Enter the name of your reading</string>
+    <string name="terminer">Finished</string>
+    <string name="lectureAjoute">You\'ve added your reading successfully !</string>
 </resources>

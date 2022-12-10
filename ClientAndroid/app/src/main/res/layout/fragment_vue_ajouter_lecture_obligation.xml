@@ -15,30 +15,6 @@
         android:contentDescription="@string/bg_opacite"
         tools:ignore="ImageContrastCheck" />
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:translationZ="90dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/opacity_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/materialToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:title="Ajouter une lecture"
-            app:titleTextColor="@color/black" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
         <ImageView
             android:id="@+id/bg_ajouterLectureTitre2"
             android:layout_width="match_parent"
@@ -50,7 +26,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:layout_constraintTop_toTopOf="@+id/opacity_bg"
             tools:ignore="ImageContrastCheck" />
 
         <TextView
@@ -59,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Titre"
+            android:text="@string/titre"
             android:textColor="@color/df_rougeprimaire"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Temps"
+            android:text="@string/temps"
             android:textColor="@color/df_rougeprimaire"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Obligation"
+            android:text="@string/obligationLabel"
             android:textColor="@color/df_rougeprimaire"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -192,7 +168,7 @@
                         android:id="@+id/rb_option_non"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:background="@drawable/bg_custom_radio_btn"
                         android:button="@null"
                         android:fontFamily="@font/goudy_bookletter1911_regular"
@@ -218,7 +194,7 @@
             android:backgroundTint="#000000"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:padding="5dp"
-            android:text="Terminer"
+            android:text="@string/terminer"
             android:textAllCaps="false"
             android:textSize="25sp"
             app:cornerRadius="20sp"

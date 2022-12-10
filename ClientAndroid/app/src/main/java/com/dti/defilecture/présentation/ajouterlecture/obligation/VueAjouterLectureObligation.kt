@@ -73,6 +73,6 @@ class VueAjouterLectureObligation : Fragment(), IVueAjouterLectureObligation {
     }
 
     override fun avertirAjoutReussi() {
-        Toast.makeText(this.context,"Lecture Ajouté!",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this.context, this.context?.resources?.getString(R.string.lectureAjoute), Toast.LENGTH_SHORT).show()
     }
 }

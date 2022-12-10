@@ -54,7 +54,7 @@ class VueAjouterLectureTitre : Fragment(), IVueAjouterLectureTitre {
             .setMessage(getString(R.string.titreManquant))
             .setCancelable(true)
             .setPositiveButton(getString(R.string.jaicompris)){dialoginterface, it ->
-                //continue l'application
+                //continue
             }
             .show()
     }
