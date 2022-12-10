@@ -5,57 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="8dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="12dp">
+    android:paddingTop="10dp">
 
     <TextView
         android:id="@+id/titreDUneLecture"
-        style="@style/TextAppearance.AppCompat.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:maxWidth="270dp"
         android:text="@string/titre_du_roman"
+        android:textColor="@color/black"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/icDureeLecture"
-        android:layout_width="17dp"
-        android:layout_height="17dp"
-        android:layout_below="@+id/titreDUneLecture"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/dateDUneLecture"
-        android:background="#00FEFEFE"
-        android:src="@drawable/clock_svgrepo_com"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titreDUneLecture" />
-
-    <ImageView
-        android:id="@+id/icCalendrier"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/titreDUneLecture"
-        android:layout_marginTop="7dp"
-        android:background="#00FEFEFE"
-        android:src="@drawable/calendar_svgrepo_com"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titreDUneLecture" />
 
     <TextView
         android:id="@+id/obligationDUneLecture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/dureeDUneLecture"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_toEndOf="@+id/dureeDUneLecture"
+        android:background="@drawable/coin_obligation"
         android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:padding="4dp"
         android:text="@string/obligatoire"
-        android:textColor="#4CAF50"
+        android:textColor="#228B22"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/dureeDUneLecture"
         app:layout_constraintTop_toBottomOf="@+id/titreDUneLecture" />
+
 
     <TextView
         android:id="@+id/dureeDUneLecture"
@@ -63,14 +43,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/titreDUneLecture"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/icCalendrier"
+        android:background="@drawable/coin_temps"
         android:fontFamily="@font/goudy_bookletter1911_regular"
-        android:text="30 minutes"
-        android:textColor="#000000"
+        android:padding="4dp"
+        android:text="30 min"
+        android:textColor="#000088"
         android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/icDureeLecture"
+        app:layout_constraintStart_toEndOf="@+id/dateDUneLecture"
         app:layout_constraintTop_toBottomOf="@+id/titreDUneLecture" />
 
     <TextView
@@ -79,24 +60,52 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/titreDUneLecture"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/icCalendrier"
+        android:background="@drawable/coin_date"
         android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:padding="4dp"
         android:text="12-31-2022"
-        android:textColor="#000000"
+        android:textColor="#F77F00"
         android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/icCalendrier"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titreDUneLecture" />
+
 
     <ImageButton
         android:id="@id/ic_EffacerLecture"
-        android:layout_width="54dp"
-        android:layout_height="50dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/coin_supprimer"
         android:contentDescription="@string/Supprimer"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_supprimer" />
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:srcCompat="@drawable/delete_svgrepo_com" />
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ddd"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="1dp"
+        android:background="#ddd"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/obligationDUneLecture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

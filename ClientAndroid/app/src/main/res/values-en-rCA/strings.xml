@@ -29,9 +29,9 @@
     <string name="obligationManquant">Please chose if you have to read your book for a class</string>
     <string name="TitrePageObligationLecture">Do you have to read your book for a class ?</string>
     <string name="descriptionLectureVALT">A reading is a literary work, including essays and scientific articles, but excluding newspapers and social media.</string>
-    <string name="nbMinute">%1$d minutes</string>
+    <string name="nbMinute">%1$d min</string>
     <string name="titre_du_roman">Novel Title</string>
-    <string name="obligatoire">MANDATORY</string>
+    <string name="obligatoire">TASK</string>
     <string name="mot_de_passse">Password</string>
     <string name="IndiceProgrammeJoueur">Field of study</string>
     <string name="PrenomCompteUtilisateur">First Name: %1$s</string>
@@ -52,4 +52,5 @@
     <string name="TitreLangue">Change language</string>
     <string name="Enregistrer">Save</string>
     <string name="TitreModification">Edit Profile</string>
+    <string name="libre">CHOSEN</string>
 </resources>

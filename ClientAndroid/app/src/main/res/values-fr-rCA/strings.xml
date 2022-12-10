@@ -27,9 +27,9 @@
     <string name="obligationManquant">Veuiller s\'il vous plait nous dire si votre lecture était obligatoire.</string>
     <string name="TitrePageObligationLecture">Votre lecture a-t-elle été réalisée dans le cadre d’un cours ?</string>
     <string name="descriptionLectureVALT">Une lecture libre est un ouvrage littéraire, incluant les essais et les article scientifiues, mais exclu les journaux et les médias sociaux.</string>
-    <string name="nbMinute">%1$d minutes</string>
+    <string name="nbMinute">%1$d min</string>
     <string name="titre_du_roman">Titre du roman</string>
-    <string name="obligatoire">OBLIGATOIRE</string>
+    <string name="obligatoire">DEVOIR</string>
     <string name="mot_de_passse">Mot de passse</string>
     <string name="PrenomCompteUtilisateur">Prénom: %1$s</string>
     <string name="NomCompteUtilisateur">Nom: %1$s</string>
@@ -52,4 +52,5 @@
     <string name="TitreModification">Modification</string>
     <string name="page_tresorerie">" Trésorerie "</string>
     <string name="page_équipage">" Équipage "</string>
+    <string name="libre">LIBRE</string>
 </resources>
