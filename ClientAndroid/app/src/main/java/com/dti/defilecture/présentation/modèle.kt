@@ -50,7 +50,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      * @return une liste de lecture.
      */
     fun obtenirListeLecturesDeLUtilisateur(): MutableList<Lecture>?  {
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeLectures()
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeLectures(compteConnecté.idCompte)
     }
 
     /**
@@ -129,7 +129,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      * @return une liste de comptes.
      */
     fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>? {
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes(nomÉquipage)
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes( nomÉquipage )
     }
 
     /**

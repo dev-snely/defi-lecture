@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
 import android.util.JsonReader
+import android.util.Log
 import com.android.volley.Request
 import com.android.volley.toolbox.RequestFuture
 import com.android.volley.toolbox.StringRequest
@@ -24,15 +25,17 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
 
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
 
+        Log.e("AAAAA","\"$urlSource/api/Comptes/connexion/$pseudo/$mdp\"")
+
         val requête = StringRequest(Request.Method.GET,
-            "$urlSource/api/Compte/$pseudo/$mdp", promesse, promesse)
+            "$urlSource/api/Comptes/connexion/$pseudo/$mdp", promesse, promesse)
         queue.add(requête);
 
-        try {
-            return réponseJsonToCompte( JsonReader( StringReader( promesse.get() )) )
+        return try {
+            réponseJsonToCompte( JsonReader( StringReader( promesse.get() )) )
         } catch (e: InterruptedException) {
             e.printStackTrace()
-            return Compte()
+            Compte()
         } catch (e: ExecutionException) {
             throw AccèsRessourcesException( e )
         }
@@ -43,8 +46,26 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         TODO("Not yet implemented")
     }
 
-    override fun obtenirListeDeLecturesBidon(): MutableList<Lecture>? {
-        TODO("Not yet implemented")
+    override fun obtenirListeDeLecturesUtilisateur(identifiant: Int): MutableList<Lecture>? {
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        Log.e("Id", "#: $identifiant XD")
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/Lectures/compte/$identifiant", promesse, promesse)
+        queue.add(requête)
+
+
+        return try {
+            réponseJsonToLecture( JsonReader( StringReader( promesse.get() )) )
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            mutableListOf<Lecture>( Lecture("","",0,false) )
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
     }
 
     override fun ajouterUneLectureALaListe(lecture: Lecture) {
@@ -114,26 +135,56 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         }
         jsonReader.endObject()
 
-
-
-
-
         return compte
     }
+
+    private fun réponseJsonToLecture( jsonReader: JsonReader ): MutableList<Lecture>? {
+        val liste = mutableListOf<Lecture>()
+
+        jsonReader.beginArray()
+        while ( jsonReader.hasNext() ) {
+            var lecture = Lecture("","",0,false)
+
+            jsonReader.beginObject()
+            while ( jsonReader.hasNext() ){
+                val clé = jsonReader.nextName()
+                when (clé) {
+                    "titre" -> {
+                        lecture.titreLecture = jsonReader.nextString()
+                    }
+                    "dateInscription" -> {
+                        lecture.dateInscription = jsonReader.nextString()
+                    }
+                    "tempsLu" -> {
+                        lecture.duréeMinutes = jsonReader.nextInt()
+                    }
+                    "estObligatoire" -> {
+                        lecture.obligatoire = jsonReader.nextBoolean()
+                    }
+                    else -> {
+                        jsonReader.skipValue()
+                    }
+                }
+
+            }
+            jsonReader.endObject()
+            liste.add(lecture)
+        }
+        jsonReader.endArray()
+        return liste
+    }
+
 
     /**
      * Fonction tiré de : https://stackoverflow.com/questions/23005948/convert-string-to-bitmap
      */
     fun stringToBitMap(encodedString: String?): Bitmap? {
         return try {
-            val encodeByte =
-                Base64.decode(encodedString, Base64.DEFAULT)
+            val encodeByte = Base64.decode(encodedString, Base64.DEFAULT)
             BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.size)
         } catch (e: Exception) {
             e.message
             null
         }
     }
-
-
 }

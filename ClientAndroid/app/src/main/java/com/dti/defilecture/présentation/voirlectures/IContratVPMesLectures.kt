@@ -5,10 +5,16 @@ import com.dti.defilecture.domaine.entité.Lecture
 interface IContratVPMesLectures {
 
     interface IVueMesLectures{
+        /**
+         * Méthode qui permet
+         */
         fun naviguerVersAjoutTitreLecture()
     }
 
     interface IPrésentateurMesLectures{
-        fun initisaliseurDeLectures(): MutableList<Lecture>?
+        /**
+         * Méthode qui récupère les données de l'utilisateur connecté
+         */
+        fun requêteRécupérationLecturesUtilisateurConnecté(): MutableList<Lecture>?
     }
 }

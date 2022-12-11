@@ -24,11 +24,11 @@ interface ISourceDeDonnées {
     fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>?
 
     /**
-     * Méthode qui retourne une liste de lectures bidon.
+     * Méthode qui retourne la liste de lecture de l'utilisateur.
      *
      * @return Une liste mutable d'objets lectures.
      */
-    fun obtenirListeDeLecturesBidon() : MutableList<Lecture>?
+    fun obtenirListeDeLecturesUtilisateur( identifiant: Int ) : MutableList<Lecture>?
     /**
      * Méthode qui ajoute une lecture à une liste de lectures bidon.
      *

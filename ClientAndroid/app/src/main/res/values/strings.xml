@@ -63,4 +63,5 @@
     <string name="entrer_le_titre_de_votre_lecture">Entrer le titre de votre lecture</string>
     <string name="terminer">Terminer</string>
     <string name="lectureAjoute">Lecture ajouté !</string>
+    <string name="connexion">Connexion</string>
 </resources>

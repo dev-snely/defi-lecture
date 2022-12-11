@@ -27,7 +27,7 @@ class VueMesLecturesAdaptateur(private val lectures : MutableList<Lecture>?) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = lectures?.get(position)
         if (currentItem != null){
-            var res = context.resources
+            val res = context.resources
             holder.titre.text = currentItem.titreLecture
             holder.duree.text = res.getString(R.string.nbMinute, currentItem.duréeMinutes)
             holder.date.text = currentItem.dateInscription
@@ -35,8 +35,8 @@ class VueMesLecturesAdaptateur(private val lectures : MutableList<Lecture>?) :
             holder.effacer.setOnClickListener(){
                 val builder = AlertDialog.Builder(context)
                 builder.setMessage("Êtes-vous certain d'effacer cette lecture?")
-                builder.setPositiveButton("Yes", {dialog, id ->})
-                builder.setNegativeButton("No", {dialog, id ->})
+                builder.setPositiveButton(res.getString(R.string.oui)) { dialog, id -> }
+                builder.setNegativeButton(res.getString(R.string.non)) { dialog, id -> }
                 builder.create().show()
             }
         }

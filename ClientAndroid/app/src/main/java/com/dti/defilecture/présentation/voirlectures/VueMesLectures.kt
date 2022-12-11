@@ -40,7 +40,7 @@ class VueMesLectures : Fragment(), IVueMesLectures {
         recyclerView = view.findViewById(R.id.recyclerViewLectures)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adaptateur = VueMesLecturesAdaptateur( présentateur.initisaliseurDeLectures() )
+        adaptateur = VueMesLecturesAdaptateur( présentateur.requêteRécupérationLecturesUtilisateurConnecté() )
         recyclerView.adapter = adaptateur
 
         gestionAjoutDeLecture()

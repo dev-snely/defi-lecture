@@ -64,4 +64,5 @@
     <string name="entrer_le_titre_de_votre_lecture">Enter the name of your reading</string>
     <string name="terminer">Finished</string>
     <string name="lectureAjoute">You\'ve added your reading successfully !</string>
+    <string name="connexion">Log in</string>
 </resources>

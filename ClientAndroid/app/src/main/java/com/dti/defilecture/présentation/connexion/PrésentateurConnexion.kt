@@ -9,18 +9,15 @@ class PrésentateurConnexion(var vue: VueConnexion): IPrésentateurConnexion{
 
     override fun validerIdentifiants(pseudonyme:String,mdp:String) {
 
-        //Ce bloc est exécuté dans le fil principal (GUI)
         GlobalScope.launch(Dispatchers.Main) {
 
-            //Ce bloc est exécuté dans le fil IO
-            var job = async(Dispatchers.IO) {
-                //cette opération est longue
+            val job = async(Dispatchers.IO) {
                 modèle.connexion( pseudonyme, mdp )
             }
             //en attendant la fin de la tâche,
             //l'exécution de cette coroutine est suspendue
             try{
-                var résultatConnexion : Boolean = job.await()
+                val résultatConnexion : Boolean = job.await()
 
                 if ( résultatConnexion ){
                     vue.connexionReussi()
