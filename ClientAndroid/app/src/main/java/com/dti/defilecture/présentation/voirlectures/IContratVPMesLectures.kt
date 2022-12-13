@@ -15,6 +15,6 @@ interface IContratVPMesLectures {
         /**
          * Méthode qui récupère les données de l'utilisateur connecté
          */
-        fun requêteRécupérationLecturesUtilisateurConnecté(): MutableList<Lecture>?
+        fun requêteRécupérationLecturesUtilisateurConnecté()
     }
 }

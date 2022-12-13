@@ -23,7 +23,7 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
         return équipages.first { it.nomÉquipage == nomÉquipage }.listeComptes.sortedByDescending{ it.doublons }.toMutableList()
     }
 
-    override fun obtenirListeDeLecturesUtilisateur(identifiant: Int): MutableList<Lecture>? {
+    override fun obtenirListeDeLecturesUtilisateur(identifiant: Int): MutableList<Lecture> {
         return lectures.sortedByDescending{ it.dateInscription }.toMutableList()
     }
 

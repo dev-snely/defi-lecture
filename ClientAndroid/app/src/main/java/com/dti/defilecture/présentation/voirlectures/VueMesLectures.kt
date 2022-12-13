@@ -26,7 +26,9 @@ class VueMesLectures : Fragment(), IVueMesLectures {
     ): View? {
         // Inflate the layout for this fragment
         val vue = inflater.inflate(R.layout.fragment_vue_mes_lectures, container, false)
-        présentateur = PrésentateurMesLectures( this )
+        adaptateur = VueMesLecturesAdaptateur()
+        présentateur = PrésentateurMesLectures( this, adaptateur)
+
         return vue
     }
 
@@ -40,7 +42,7 @@ class VueMesLectures : Fragment(), IVueMesLectures {
         recyclerView = view.findViewById(R.id.recyclerViewLectures)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adaptateur = VueMesLecturesAdaptateur( présentateur.requêteRécupérationLecturesUtilisateurConnecté() )
+        présentateur.requêteRécupérationLecturesUtilisateurConnecté()
         recyclerView.adapter = adaptateur
 
         gestionAjoutDeLecture()

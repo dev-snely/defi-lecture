@@ -28,7 +28,8 @@ interface ISourceDeDonnées {
      *
      * @return Une liste mutable d'objets lectures.
      */
-    fun obtenirListeDeLecturesUtilisateur( identifiant: Int ) : MutableList<Lecture>?
+    fun obtenirListeDeLecturesUtilisateur( identifiant: Int ) : MutableList<Lecture>
+
     /**
      * Méthode qui ajoute une lecture à une liste de lectures bidon.
      *

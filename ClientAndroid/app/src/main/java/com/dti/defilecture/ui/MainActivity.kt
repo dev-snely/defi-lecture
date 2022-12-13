@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView (R.layout.activity_main)
         modèle.localHelper=LocaleHelper(this)
-        modèle.sourceDeDonnées = SourceDeDonnéesHTTP( this, URL("http://10.0.2.2:51723") )
+        //modèle.sourceDeDonnées = SourceDeDonnéesHTTP( this, URL("http://10.0.2.2:51723") )
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_1) as NavHostFragment
         navController = navHostFragment.navController
         barre_navigation = findViewById(R.id.barre_navigation)

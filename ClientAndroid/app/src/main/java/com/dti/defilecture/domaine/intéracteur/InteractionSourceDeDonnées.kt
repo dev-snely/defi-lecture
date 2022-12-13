@@ -32,7 +32,7 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *
      *  @return une liste de lectures
      */
-    fun obtenirListeDeLectures(id: Int): MutableList<Lecture>?{
+    fun obtenirListeDeLectures(id: Int): MutableList<Lecture>{
         return sourceDeDonnées.obtenirListeDeLecturesUtilisateur(id)
     }
 

@@ -1,4 +1,5 @@
 package com.dti.defilecture.présentation
+import android.util.Log
 import com.dti.defilecture.accèsAuxDonnées.ISourceDeDonnées
 import com.dti.defilecture.accèsAuxDonnées.SourceDeDonnéesBidon
 import com.dti.defilecture.domaine.entité.Compte
@@ -49,7 +50,8 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      *
      * @return une liste de lecture.
      */
-    fun obtenirListeLecturesDeLUtilisateur(): MutableList<Lecture>?  {
+    fun obtenirListeLecturesDeLUtilisateur(): MutableList<Lecture>  {
+
         return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeLectures(compteConnecté.idCompte)
     }
 
@@ -114,6 +116,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
         val unCompte: Compte? = InteractionSourceDeDonnées( sourceDeDonnées ).récupérerComptePourConnexion( pseudo, mdp )
         if( unCompte != null ){
             compteConnecté = unCompte
+            Log.e("AAAA", compteConnecté.idCompte.toString() )
             connexion = true
         }
         return connexion

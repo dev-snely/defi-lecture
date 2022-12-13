@@ -46,7 +46,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         TODO("Not yet implemented")
     }
 
-    override fun obtenirListeDeLecturesUtilisateur(identifiant: Int): MutableList<Lecture>? {
+    override fun obtenirListeDeLecturesUtilisateur(identifiant: Int): MutableList<Lecture> {
         val queue = Volley.newRequestQueue(ctx)
 
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
@@ -138,7 +138,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         return compte
     }
 
-    private fun réponseJsonToLecture( jsonReader: JsonReader ): MutableList<Lecture>? {
+    private fun réponseJsonToLecture( jsonReader: JsonReader ): MutableList<Lecture> {
         val liste = mutableListOf<Lecture>()
 
         jsonReader.beginArray()

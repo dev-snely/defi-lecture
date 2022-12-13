@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Lecture
 
-class VueMesLecturesAdaptateur(private val lectures : MutableList<Lecture>?) :
+class VueMesLecturesAdaptateur( var lectures : MutableList<Lecture> = mutableListOf() ) :
     RecyclerView.Adapter<VueMesLecturesAdaptateur.MyViewHolder>() {
     lateinit var context: Context
 
