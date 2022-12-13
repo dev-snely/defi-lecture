@@ -66,7 +66,7 @@ class VueConnexion : Fragment(), IVueConnexion {
     override fun MessageMotDePasseOublié() {
         tvMotDePasseOublié.setOnClickListener {
             builder = AlertDialog.Builder(this.context)
-            builder.setTitle("Avertissement!")
+            builder.setTitle(getString(R.string.avertissement))
                 .setMessage("Veuillez contactez l'administrateur au « admin@crosemont.qc.ca » afin de modifier votre mot de passe")
                 .setCancelable(true)
                 .setPositiveButton("J'ai compris"){dialoginterface, it ->

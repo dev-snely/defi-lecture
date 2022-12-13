@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Mot de passe oublié?"
+            android:text="@string/mot_de_passe_oubli"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"

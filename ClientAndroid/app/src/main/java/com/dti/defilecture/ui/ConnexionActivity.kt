@@ -14,7 +14,7 @@ class ConnexionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_connexion)
         modèle.localHelper= LocaleHelper(this)
         //modèle.sourceDeDonnées = SourceDeDonnéesHTTP( this, URL("https://f3d45bda-704e-423d-a51a-015d619ac62c.mock.pstmn.io") )
-        modèle.sourceDeDonnées = SourceDeDonnéesHTTP( this, URL("http://10.0.2.2:51723") )
+        //modèle.sourceDeDonnées = SourceDeDonnéesHTTP( this, URL("http://10.0.2.2:51723") )
 
     }
 }

@@ -65,4 +65,6 @@
     <string name="terminer">Terminer</string>
     <string name="lectureAjoute">Lecture ajouté !</string>
     <string name="connexion">Connexion</string>
+    <string name="mot_de_passe_oubli">Mot de passe oublié?</string>
+    <string name="erreurInternet">Erreur d\'accès aux données. Veuillez vérifier votre connexion à Internet !!!</string>
 </resources>

@@ -4,29 +4,32 @@ import com.dti.defilecture.accèsAuxDonnées.AccèsRessourcesException
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.voirlectures.IContratVPMesLectures.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class PrésentateurMesLectures(var vue: IVueMesLectures ) : IPrésentateurMesLectures {
 
-    override fun requêteRécupérationLecturesUtilisateurConnecté(): MutableList<Lecture>? {
-
-        var listeLecture: MutableList<Lecture>? = null
-
+    override fun requêteRécupérationLecturesUtilisateurConnecté() {
         GlobalScope.launch(Dispatchers.Main) {
-            val job = async(Dispatchers.IO) {
+
+            val job = async(SupervisorJob() + Dispatchers.IO) {
                 modèle.obtenirListeLecturesDeLUtilisateur()
             }
 
-            try{
-                listeLecture = job.await()
+            try {
+                var listeLecture = job.await()
+
+                //lorsque la tâche est terminée, la coroutine
+                //reprend et on met à jour l'interface utilisateur
+                //vue.effacerLecture();
+                vue.gestionAfficherLecture(listeLecture)
             }
             catch(e: AccèsRessourcesException){
-                //vue.afficherErreur()
+                vue.afficherMessageErreurInternet()
             }
         }
-        return listeLecture
+    }
+
+    override fun requêteNaviguerVersAjoutTitreLecture() {
+        vue.naviguerVersAjoutTitreLecture()
     }
 }
