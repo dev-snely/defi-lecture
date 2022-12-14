@@ -176,7 +176,7 @@
             android:layout_marginTop="32dp"
             android:backgroundTint="#6C2E2C"
             android:fontFamily="@font/goudy_bookletter1911_regular"
-            android:text="Glossaire"
+            android:text="@string/Glossaire"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toEndOf="@+id/tvPlusDInformation"
             app:layout_constraintTop_toBottomOf="@+id/descriptionAjouterTitre" />

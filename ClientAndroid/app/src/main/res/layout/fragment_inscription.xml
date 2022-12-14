@@ -170,7 +170,7 @@
             android:backgroundTint="#000000"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:padding="5dp"
-            android:text="Inscription"
+            android:text="@string/Inscription"
             android:textAllCaps="false"
             android:textSize="25sp"
             app:cornerRadius="5sp"

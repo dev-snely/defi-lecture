@@ -48,4 +48,10 @@
     <string name="TitreLangue">Change language</string>
     <string name="Enregistrer">Save</string>
     <string name="TitreModification">Edit Profile</string>
+    <string name="Motdepasseoublié">Forgot your password ?</string>
+    <string name="TitreConnexion">Log in</string>
+    <string name="Alabordage">Let\'s go !</string>
+    <string name="Inscription">Create Account</string>
+    <string name="Glossaire">Glossary</string>
+    <string name="Apropos">About Us</string>
 </resources>

@@ -41,11 +41,17 @@
         <string name="IndiceProgrammeJoueur">Programme</string>
         <string name="IndiceCourrielInscription">Courriel</string>
         <string name="IndiceMotDePasseInscription">Mot De Passe</string>
-        <string name="IndiceMotDePasseConfirmationInscription">" Trésorerie "</string>
+        <string name="IndiceMotDePasseConfirmationInscription">Confirmation Mot De Passe</string>
         <string name="mesLectures">Mes lectures</string>
         <string name="TitreLangue">Changer la langue</string>
     <string name="Enregistrer">Enregistrer</string>
         <string name="TitreModification">Modification</string>
     <string name="page_tresorerie">" Trésorerie "</string>
     <string name="page_équipage">" Équipage "</string>
+    <string name="TitreConnexion">Connexion</string>
+    <string name="Alabordage">À l\'abordage !</string>
+    <string name="Motdepasseoublié">Mot de passe oublié ?</string>
+    <string name="Inscription">S\'inscrire</string>
+    <string name="Glossaire">Glossaire</string>
+    <string name="Apropos">À propos</string>
 </resources>
