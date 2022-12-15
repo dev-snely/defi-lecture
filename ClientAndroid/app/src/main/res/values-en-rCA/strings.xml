@@ -59,7 +59,6 @@
     <string name="combien_de_temps_avez_vous_lu">How much time have you read ?</string>
     <string name="suivant">Next</string>
     <string name="quel_est_le_nom_de_votre_lecture">What is the name of your reading ?</string>
-    <string name="Glossaire">Glossary</string>
     <string name="plus_d_informations">More informations</string>
     <string name="entrer_le_titre_de_votre_lecture">Enter the name of your reading</string>
     <string name="terminer">Finished</string>
@@ -67,4 +66,11 @@
     <string name="connexion">Log in</string>
     <string name="erreurInternet">Data access error. Please check your internet connection!!!</string>
     <string name="mot_de_passe_oubli">Forgot your password?</string>
+    <string name="Motdepasseoublié">Forgot your password ?</string>
+    <string name="TitreConnexion">Log in</string>
+    <string name="Alabordage">Let\'s go !</string>
+    <string name="Inscription">Create Account</string>
+    <string name="Glossaire">Glossary</string>
+    <string name="Apropos">About Us</string>
+    <string name="message_accueil">All the filibusters, aboard their proud ship, will engage in a fierce battle to obtain the most doubloons and thus outwit their opponents.</string>
 </resources>

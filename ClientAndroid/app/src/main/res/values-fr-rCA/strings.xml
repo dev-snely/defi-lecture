@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DefiLecture</string>
+    <string name="PrenomCompteTemporaire">Prénom: %1$s</string>
+    <string name="NomCompteTemporaire">Nom: %1$s</string>
+    <string name="CourrielCompteTemporaire">Courriel: %1$s</string>
+    <string name="ProgrammeCompteTemporaire">Programme: %1$s</string>
     <string name="ic_equipage">Équipage</string>
     <string name="ic_ajouter">Ajouter</string>
     <string name="ic_tresorerie">Trésorerie</string>
@@ -27,25 +31,21 @@
     <string name="obligationManquant">Veuiller s\'il vous plait nous dire si votre lecture était obligatoire.</string>
     <string name="TitrePageObligationLecture">Votre lecture a-t-elle été réalisée dans le cadre d’un cours ?</string>
     <string name="descriptionLectureVALT">Une lecture libre est un ouvrage littéraire, incluant les essais et les article scientifiues, mais exclu les journaux et les médias sociaux.</string>
-    <string name="nbMinute">%1$d min</string>
+    <string name="nbMinute">%1$d minutes</string>
     <string name="titre_du_roman">Titre du roman</string>
-    <string name="obligatoire">DEVOIR</string>
+    <string name="obligatoire">OBLIGATOIRE</string>
     <string name="mot_de_passse">Mot de passse</string>
     <string name="PrenomCompteUtilisateur">Prénom: %1$s</string>
     <string name="NomCompteUtilisateur">Nom: %1$s</string>
     <string name="CourrielCompteUtilisateur">Courriel: %1$s</string>
     <string name="ProgrammeCompteUtilisateur">Programme: %1$s</string>
-    <string name="PrenomCompteTemporaire">Prénom: %1$s</string>
-    <string name="NomCompteTemporaire">Nom: %1$s</string>
-    <string name="CourrielCompteTemporaire">Courriel: %1$s</string>
-    <string name="ProgrammeCompteTemporaire">Programme: %1$s</string>
     <string name="IndicePrenomInscription">Prénom</string>
     <string name="IndicePseudonymeInscription">Pseudonyme</string>
     <string name="IndiceNomInscription">Nom</string>
     <string name="IndiceProgrammeJoueur">Programme</string>
     <string name="IndiceCourrielInscription">Courriel</string>
     <string name="IndiceMotDePasseInscription">Mot De Passe</string>
-    <string name="IndiceMotDePasseConfirmationInscription">" Trésorerie "</string>
+    <string name="IndiceMotDePasseConfirmationInscription">Confirmation Mot De Passe</string>
     <string name="mesLectures">Mes lectures</string>
     <string name="TitreLangue">Changer la langue</string>
     <string name="Enregistrer">Enregistrer</string>
@@ -67,4 +67,10 @@
     <string name="connexion">Connexion</string>
     <string name="mot_de_passe_oubli">Mot de passe oublié?</string>
     <string name="erreurInternet">Erreur d\'accès aux données. Veuillez vérifier votre connexion à Internet !!!</string>
+    <string name="TitreConnexion">Connexion</string>
+    <string name="Alabordage">À l\'abordage !</string>
+    <string name="Motdepasseoublié">Mot de passe oublié ?</string>
+    <string name="Inscription">S\'inscrire</string>
+    <string name="Apropos">À propos</string>
+    <string name="message_accueil">Tous les flibustiers, à bord de leur fier vaisseau, se livreront un combat féroce pour obtenir le plus de doublons et ainsi damer le pion à leurs adversaires.</string>
 </resources>

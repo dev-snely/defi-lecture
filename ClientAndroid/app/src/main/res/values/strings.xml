@@ -45,7 +45,7 @@
     <string name="IndiceProgrammeJoueur">Programme</string>
     <string name="IndiceCourrielInscription">Courriel</string>
     <string name="IndiceMotDePasseInscription">Mot De Passe</string>
-    <string name="IndiceMotDePasseConfirmationInscription">" Trésorerie "</string>
+    <string name="IndiceMotDePasseConfirmationInscription">Confirmation Mot De Passe</string>
     <string name="mesLectures">Mes lectures</string>
     <string name="TitreLangue">Changer la langue</string>
     <string name="buttonLangueFrancaise" translatable="false">Français</string>
@@ -66,4 +66,10 @@
     <string name="connexion">Connexion</string>
     <string name="erreurInternet">Erreur d\'accès aux données. Veuillez vérifier votre connexion à Internet !!!</string>
     <string name="mot_de_passe_oubli">Mot de passe oublié?</string>
+    <string name="TitreConnexion">Connexion</string>
+    <string name="Alabordage">À l\'abordage !</string>
+    <string name="Motdepasseoublié">Mot de passe oublié ?</string>
+    <string name="Inscription">S\'inscrire</string>
+    <string name="Apropos">À propos</string>
+    <string name="message_accueil">Tous les flibustiers, à bord de leur fier vaisseau, se livreront un combat féroce pour obtenir le plus de doublons et ainsi damer le pion à leurs adversaires.</string>
 </resources>

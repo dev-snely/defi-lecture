@@ -18,7 +18,6 @@ class VueMenu: Fragment(), IVueMenu {
     lateinit var navController : NavController
     lateinit var présentateur: IPrésentateurMenu
 
-    lateinit var btnLangage : Button
     lateinit var btnGlossaire : Button
     lateinit var btnAPropos: Button
     lateinit var btnDeconnexion: Button
@@ -36,12 +35,9 @@ class VueMenu: Fragment(), IVueMenu {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        btnLangage = view.findViewById(R.id.btnLangage)
         btnGlossaire = view.findViewById(R.id.btnGlossaire)
         btnAPropos = view.findViewById(R.id.btnAPropos)
         btnDeconnexion = view.findViewById(R.id.btnDeconnexion)
-
-        btnLangage.setOnClickListener { présentateur.requêteNaviguerVersPageLangage() }
 
         btnGlossaire.setOnClickListener { présentateur.requêteNaviguerVersPageGlossaire() }
 

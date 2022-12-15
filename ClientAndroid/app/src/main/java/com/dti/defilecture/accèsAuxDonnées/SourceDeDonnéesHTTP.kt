@@ -29,7 +29,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
 
         val requête = StringRequest(Request.Method.GET,
             "$urlSource/api/Compte/$pseudo/$mdp", promesse, promesse)
-        queue.add(requête);
+        queue.add(requête)
 
         return try {
             réponseJsonToCompte( JsonReader( StringReader( promesse.get() )) )
@@ -122,7 +122,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
                 "avatar" -> {
                     compte.avatar = stringToBitMap(jsonReader.nextString())
                 }
-                "point" -> {
+                "doublons" -> {
                     compte.doublons = jsonReader.nextInt()
                 }
                 "programme" -> {
