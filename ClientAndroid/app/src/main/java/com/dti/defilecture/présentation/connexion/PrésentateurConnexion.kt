@@ -1,5 +1,6 @@
 package com.dti.defilecture.présentation.connexion
 
+import android.util.Log
 import com.dti.defilecture.accèsAuxDonnées.AccèsRessourcesException
 import com.dti.defilecture.présentation.connexion.IContratVPConnexion.IPrésentateurConnexion
 import com.dti.defilecture.présentation.modèle

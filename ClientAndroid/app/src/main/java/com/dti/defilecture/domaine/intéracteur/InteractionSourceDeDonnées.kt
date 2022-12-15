@@ -1,5 +1,6 @@
 package com.dti.defilecture.domaine.intéracteur
 
+import android.util.Log
 import com.dti.defilecture.accèsAuxDonnées.ISourceDeDonnées
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture

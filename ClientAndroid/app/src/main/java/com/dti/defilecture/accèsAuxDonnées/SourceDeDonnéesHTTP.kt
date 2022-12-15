@@ -25,10 +25,10 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
 
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
 
-        Log.e("AAAAA","\"$urlSource/api/Comptes/connexion/$pseudo/$mdp\"")
+        Log.e("Quoi","connecte avec : $pseudo et $mdp")
 
         val requête = StringRequest(Request.Method.GET,
-            "$urlSource/api/Comptes/connexion/$pseudo/$mdp", promesse, promesse)
+            "$urlSource/api/Compte/$pseudo/$mdp", promesse, promesse)
         queue.add(requête);
 
         return try {
@@ -51,12 +51,9 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
 
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
 
-        Log.e("Id", "#: $identifiant XD")
-
         val requête = StringRequest(Request.Method.GET,
             "$urlSource/api/Lectures/compte/$identifiant", promesse, promesse)
         queue.add(requête)
-
 
         return try {
             réponseJsonToLecture( JsonReader( StringReader( promesse.get() )) )
@@ -69,7 +66,13 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
     }
 
     override fun ajouterUneLectureALaListe(lecture: Lecture) {
-        TODO("Not yet implemented")
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.POST,
+            "$urlSource/api/Lectures/compte/$lecture", promesse, promesse)
+        queue.add(requête)
     }
 
     override fun obtenirQuestions(): Array<Questionnaire> {

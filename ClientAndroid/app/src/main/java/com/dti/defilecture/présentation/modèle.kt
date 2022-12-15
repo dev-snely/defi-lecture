@@ -1,4 +1,5 @@
 package com.dti.defilecture.présentation
+import android.util.Log
 import com.dti.defilecture.accèsAuxDonnées.ISourceDeDonnées
 import com.dti.defilecture.accèsAuxDonnées.SourceDeDonnéesBidon
 import com.dti.defilecture.domaine.entité.Compte

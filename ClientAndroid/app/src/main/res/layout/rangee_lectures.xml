@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/goudy_bookletter1911_regular"
-        android:maxWidth="270dp"
+        android:maxWidth="256dp"
         android:text="@string/titre_du_roman"
         android:textColor="@color/black"
         android:textSize="22sp"
@@ -65,7 +65,7 @@
         android:fontFamily="@font/goudy_bookletter1911_regular"
         android:padding="4dp"
         android:text="12-31-2022"
-        android:textColor="#F77F00"
+        android:textColor="#883300"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titreDUneLecture" />
