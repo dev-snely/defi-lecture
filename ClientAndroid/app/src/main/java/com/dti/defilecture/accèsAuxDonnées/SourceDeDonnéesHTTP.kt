@@ -116,9 +116,6 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
                 "pseudo" -> {
                     compte.pseudonyme = jsonReader.nextString()
                 }
-                "role" -> {
-                    compte.role = jsonReader.nextInt()
-                }
                 "avatar" -> {
                     compte.avatar = stringToBitMap(jsonReader.nextString())
                 }
@@ -128,8 +125,8 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
                 "programme" -> {
                     compte.programme = jsonReader.nextString()
                 }
-                "devenirCapitaine" -> {
-                    compte.devenirCapitaine = jsonReader.nextBoolean()
+                "équipage" -> {
+                    compte.nomÉquipage = jsonReader.nextString()
                 }
                 else -> {
                     jsonReader.skipValue()

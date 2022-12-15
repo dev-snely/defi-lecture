@@ -32,13 +32,6 @@ class VueÉquipageAdaptateur(
         if (currentItem != null){
             holder.pseudonyme.text = currentItem.pseudonyme
             holder.doublons.text = currentItem.doublons.toString()
-            holder.effacer.setOnClickListener(){
-                val builder = AlertDialog.Builder(context)
-                builder.setMessage("Êtes-vous certain d'effacer ce compte de l'équipage?")
-                builder.setPositiveButton("Yes", {dialog, id ->})
-                builder.setNegativeButton("No", {dialog, id ->})
-                builder.create().show()
-            }
             holder.pseudonyme.setOnClickListener{présentateur
                 .requêteVoirDétailsCompte(holder.pseudonyme.text.toString(), modèle.équipage().nomÉquipage)}
         }
@@ -51,6 +44,5 @@ class VueÉquipageAdaptateur(
     inner class MyViewHolder(itemView: View ) : RecyclerView.ViewHolder(itemView){
         val pseudonyme: TextView = itemView.findViewById(R.id.tv_itemPseudonyme)
         val doublons: TextView = itemView.findViewById(R.id.tv_itemCompteTotalDoublon)
-        val effacer: ImageButton = itemView.findViewById(R.id.deleteEquipage)
     }
 }

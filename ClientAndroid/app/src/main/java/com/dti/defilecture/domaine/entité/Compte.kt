@@ -14,16 +14,15 @@ class Compte(
     var courriel: String,
     var pseudonyme: String,
     var programme: String,
-    var role: Int,
     var motDePasse: String,
-    var devenirCapitaine: Boolean,
-    var avatar: Bitmap?
+    var avatar: Bitmap?,
+    var nomÉquipage: String
 ) {
 
     /**
      * Second constructeur qui permet l'initialisation d'un compte sans information.
      */
-    constructor() : this(0, "","",0,"","","",0,
-    "",false,null)
+    constructor() : this(0, "","",0,"","","",
+    "",null, "")
 
 }

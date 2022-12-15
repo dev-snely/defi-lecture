@@ -10,7 +10,7 @@ class PrésentateurCompteUtilisateur(var modèle: Modèle,
     override fun requêteInitialiserCompte(){
         val compteActif = modèle.compteActif()
         vue.initCompte( compteActif.pseudonyme,compteActif.nom,compteActif.prénom,
-            compteActif.courriel,compteActif.programme,compteActif.avatar)
+            compteActif.courriel,compteActif.programme,compteActif.avatar, compteActif.nomÉquipage)
     }
 
 

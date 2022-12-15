@@ -50,18 +50,5 @@
         app:layout_constraintStart_toEndOf="@+id/icDoublon"
         app:layout_constraintTop_toTopOf="@+id/icDoublon" />
 
-    <ImageButton
-        android:id="@+id/deleteEquipage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00000000"
-        android:contentDescription="@string/Supprimer"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_itemPseudonyme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_itemPseudonyme"
-        app:srcCompat="@drawable/delete_svgrepo_com" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

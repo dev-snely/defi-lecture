@@ -9,5 +9,4 @@ class Lecture(titre: String, date: String, durée: Int, obligatoire: Boolean) {
     var dateInscription: String = date
     var duréeMinutes: Int = durée
     var obligatoire: Boolean? = obligatoire
-
 }

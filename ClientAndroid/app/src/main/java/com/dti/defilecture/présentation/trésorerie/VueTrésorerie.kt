@@ -44,20 +44,6 @@ class VueTrésorerie : Fragment(), IVueTrésorerie {
         recyclerView.setHasFixedSize(true)
         adaptateur = VueTrésorerieAdaptateur( présentateur.initisaliseurDesÉquipages(), présentateur )
         recyclerView.adapter = adaptateur
-/**
-        //Initialisations
-        searchView = view.findViewById(R.id.sv_équipage)
-        listeÉquipages = view.findViewById(R.id.lv_listeÉquipages)
-        emptyText = view.findViewById(R.id.tv_emptySearch)
-
-        adapter = ArrayAdapter(view.context, android.R.layout.simple_list_item_1, resources.getStringArray(R.array.liste_équipages))
-        listeÉquipages.adapter = adapter
-
-        //Peu être modifier pour montrer/afficher l'équipage sélectionné
-        listeÉquipages.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            Toast.makeText(context, parent?.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
-        }
-        listeÉquipages.emptyView = emptyText */
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

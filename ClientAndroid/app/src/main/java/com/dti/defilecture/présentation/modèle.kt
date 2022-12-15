@@ -158,8 +158,6 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
 
         if ( !liste.isNullOrEmpty() ) {
             équipage = liste[0]
-        } else {
-            Équipage()
         }
     }
 
@@ -169,8 +167,6 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
 
         if ( !liste.isNullOrEmpty() ) {
             compteTemporaire = liste[0]
-        } else {
-            Compte()
         }
     }
 }
