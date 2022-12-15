@@ -26,7 +26,8 @@ class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?,
         val currentItem = équipages?.get(position)
         if (currentItem != null){
             holder.nom.text = currentItem.nomÉquipage
-            holder.doublons.text = currentItem.doublonsÉquipage.toString()
+            holder.doublons.text = currentItem.doublons.toString()
+            holder.rang.text = currentItem.rang.toString()
             holder.nom.setOnClickListener{présentateur.requêteVoirDétailsÉquipage(holder.nom.text.toString())}
         }
     }
@@ -38,5 +39,6 @@ class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?,
     inner class MyViewHolder(itemView: View ) : RecyclerView.ViewHolder(itemView){
         val nom: TextView = itemView.findViewById(R.id.tv_itemNomÉquipage)
         val doublons: TextView = itemView.findViewById(R.id.tv_itemTotalDoublon)
+        val rang: TextView = itemView.findViewById(R.id.tv_itemNuméroRang)
     }
 }

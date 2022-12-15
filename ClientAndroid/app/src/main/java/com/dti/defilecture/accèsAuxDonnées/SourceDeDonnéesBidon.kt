@@ -36,7 +36,7 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
     }
 
     override fun obtenirListeDesÉquipages(): MutableList<Équipage> {
-        return équipages.sortedByDescending{ it.doublonsÉquipage }.toMutableList()
+        return équipages.sortedByDescending{ it.doublons }.toMutableList()
     }
 
     private var comptes : MutableList<Compte> = mutableListOf(

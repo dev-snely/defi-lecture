@@ -12,6 +12,10 @@ interface IContratVPÉquipageTemporaire {
      * Définit les méthodes à utiliser dans une vue ÉquipageTemporaire.
      */
     interface IVueÉquipageTemporaire{
+        fun afficherTotalDoublons()
+
+        fun afficherRang()
+
         fun naviguerVersDétailsCompteTemporaire()
 
         fun naviguerVersDétailsCompteActif()
@@ -24,5 +28,7 @@ interface IContratVPÉquipageTemporaire {
         fun initisaliseurDesComptesTemporaires(nomÉquipage: String): MutableList<Compte>?
 
         fun requêteVoirDétailsCompteTemporaire(pseudonyme: String, nomÉquipage: String)
+
+        fun rejoindreÉquipage(compte: Compte)
     }
 }

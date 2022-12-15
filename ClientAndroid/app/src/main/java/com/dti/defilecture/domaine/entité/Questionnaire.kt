@@ -5,14 +5,19 @@ package com.dti.defilecture.domaine.entité
  * Si un participant s'avérait à répondre correctement questionnaire, il gagnerait des points supplémentaire
  * pour son équipe.
  */
-data class Questionnaire (
-    val id :Int,
-    val question:String,
-    val rep_A:String,
-    val rep_B: String,
-    val rep_C: String,
-    val rep_D: String,
-    val Bonne_reponse:String
-)
+class Questionnaire (
+    var id :Int,
+    var question:String,
+    var rep_A:String,
+    var rep_B: String,
+    var rep_C: String,
+    var rep_D: String,
+    var Bonne_reponse:String)
+{
+    /**
+     * Second constructeur qui permet l'initialisation d'un compte sans information.
+     */
+    constructor() : this(0,"","","","","","" )
+}
 
 

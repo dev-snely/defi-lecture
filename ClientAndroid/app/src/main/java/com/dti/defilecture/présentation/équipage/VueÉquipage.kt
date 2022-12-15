@@ -46,9 +46,11 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         numéroRang = view.findViewById(R.id.tv_numéroRang)
         totalDoublons = view.findViewById(R.id.tv_totalDoublons)
 
-        nomÉquipage.text = équipage .nomÉquipage
-        numéroRang.text = équipage .rang.toString()
-        totalDoublons.text = équipage .doublonsÉquipage.toString()
+        nomÉquipage.text = équipage.nomÉquipage
+        //numéroRang.text = équipage.rang.toString()
+        //totalDoublons.text = équipage.doublons.toString()
+        afficherTotalDoublons()
+        afficherRang()
 
         val layoutManager = LinearLayoutManager(context)
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_équipage)
@@ -56,13 +58,16 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         recyclerView.setHasFixedSize(true)
         adaptateur = VueÉquipageAdaptateur( présentateur.initisaliseurDesComptes(nomÉquipage.text.toString()), présentateur)
         recyclerView.adapter = adaptateur
-
-        //Différentes fonctions sur la vue.
-        calculerTotalDoublons()
     }
 
-    private fun calculerTotalDoublons() {
-        totalDoublons.text = (0).toString() + " doublons"
+    override fun afficherTotalDoublons() {
+        équipage.setTotalDoublons()
+        totalDoublons.text = équipage.doublons.toString()
+    }
+
+    override fun afficherRang() {
+        équipage.setRang()
+        numéroRang.text = équipage.rang.toString()
     }
 
     override fun naviguerVersDétailsCompteActif() {
