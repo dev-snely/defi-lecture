@@ -3,7 +3,7 @@ package com.dti.defilecture.domaine
 import com.dti.defilecture.domaine.entité.Compte
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.fail
+
 
 class CompteTest {
 
