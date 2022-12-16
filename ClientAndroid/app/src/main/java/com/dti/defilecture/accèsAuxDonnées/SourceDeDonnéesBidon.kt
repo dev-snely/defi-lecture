@@ -6,6 +6,7 @@ import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.domaine.entité.Questionnaire
 import com.dti.defilecture.domaine.entité.Équipage
+import com.dti.defilecture.présentation.modèle
 
 class SourceDeDonnéesBidon : ISourceDeDonnées {
     override fun validerComptePourLaConnexion( pseudo: String, mdp: String ): Compte? {
@@ -32,10 +33,11 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
     }
 
     override fun obtenirQuestionSource(): Questionnaire {
-        return Questionnaire()
+        return Questionnaire(0, "Bonjour?", "HelloWorld", "Allo", "Hi", "Yeet", "HelloWorld")
     }
 
     override fun obtenirBonneReponseSource(questionnaire: Questionnaire): String {
+        modèle.compteActif().doublons += 10
         return questionnaire.bonneReponse
     }
 

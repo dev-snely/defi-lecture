@@ -62,17 +62,16 @@
             android:id="@+id/btnConnexion"
             android:layout_width="158dp"
             android:layout_height="77dp"
+            android:layout_marginEnd="124dp"
             android:backgroundTint="@color/black"
             android:fontFamily="@font/goudy_bookletter1911_regular"
             android:text="@string/TitreConnexion"
-            android:textSize="24sp"
             android:textAllCaps="false"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnModifier"
             app:layout_constraintTop_toBottomOf="@+id/msgBienvenue"
-            app:layout_constraintVertical_bias="0.489" />
+            app:layout_constraintVertical_bias="0.485" />
 
         <Button
             android:id="@+id/btnModifier"
@@ -83,6 +82,7 @@
             android:text="@string/Inscription"
             android:textSize="24sp"
             android:textAllCaps="false"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnConnexion"
             app:layout_constraintHorizontal_bias="0.5"
