@@ -1,6 +1,5 @@
 package com.dti.defilecture.domaine.intéracteur
 
-import android.util.Log
 import com.dti.defilecture.accèsAuxDonnées.ISourceDeDonnées
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
@@ -52,7 +51,7 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *  @return une liste de comptes
      */
     fun obtenirListeDeComptes(nomÉquipage: String): MutableList<Compte>? {
-        return sourceDeDonnées.obtenirListeDesComptes(nomÉquipage)
+        return sourceDeDonnées.obtenirListeDesComptesÉquipage(nomÉquipage)
     }
 
     /**
@@ -60,8 +59,8 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *
      * @returns Un tableau d'objets Questionnaire.
      */
-    fun obtenirQuestions():Array<Questionnaire>{
-        return sourceDeDonnées.obtenirQuestions()
+    fun obtenirQuestion():Questionnaire{
+        return sourceDeDonnées.obtenirQuestionSource()
     }
 
     /**
@@ -69,5 +68,9 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      */
     fun obtenirListeDesÉquipages(): MutableList<Équipage>?{
         return sourceDeDonnées.obtenirListeDesÉquipages()
+    }
+
+    fun obtenirBonneReponseIntéracteur(questionnaire: Questionnaire): String {
+        return sourceDeDonnées.obtenirBonneReponseSource(questionnaire)
     }
 }

@@ -12,7 +12,7 @@ class Questionnaire (
     var rep_B: String,
     var rep_C: String,
     var rep_D: String,
-    var Bonne_reponse:String)
+    var bonneReponse:String)
 {
     /**
      * Second constructeur qui permet l'initialisation d'un compte sans information.

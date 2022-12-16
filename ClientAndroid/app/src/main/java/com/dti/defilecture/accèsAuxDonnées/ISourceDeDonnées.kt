@@ -21,7 +21,7 @@ interface ISourceDeDonnées {
     /**
      * Méthode qui permet d'obtenir la liste des comptes d'un équipage
      */
-    fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>?
+    fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>?
 
     /**
      * Méthode qui retourne la liste de lecture de l'utilisateur.
@@ -40,7 +40,11 @@ interface ISourceDeDonnées {
      *
      * @return Un tableau d'objets Questionnaire.
      */
-    fun obtenirQuestions():Array<Questionnaire>
+    fun obtenirQuestionSource(): Questionnaire
+
+
+    fun obtenirBonneReponseSource(questionnaire: Questionnaire): String
+
 
     /**
      *  Cette méthode permet l'obtention d'une liste d'équipages participants au Défi Lecture.

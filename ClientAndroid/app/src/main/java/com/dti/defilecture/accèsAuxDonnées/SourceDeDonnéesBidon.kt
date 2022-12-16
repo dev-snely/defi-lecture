@@ -19,7 +19,7 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
         return monCompte
     }
 
-    override fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>? {
+    override fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>? {
         return équipages.first { it.nomÉquipage == nomÉquipage }.listeComptes.sortedByDescending{ it.doublons }.toMutableList()
     }
 
@@ -31,8 +31,12 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
         lectures.add( lecture )
     }
 
-    override fun obtenirQuestions(): Array<Questionnaire> {
-        return arrayOf(question1, question2, question3, question4)
+    override fun obtenirQuestionSource(): Questionnaire {
+        return Questionnaire()
+    }
+
+    override fun obtenirBonneReponseSource(questionnaire: Questionnaire): String {
+        return questionnaire.bonneReponse
     }
 
     override fun obtenirListeDesÉquipages(): MutableList<Équipage> {

@@ -41,10 +41,6 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         }
     }
 
-    override fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>? {
-        TODO("Not yet implemented")
-    }
-
     override fun obtenirListeDeLecturesUtilisateur(identifiant: Int): MutableList<Lecture>? {
         val queue = Volley.newRequestQueue(ctx)
 
@@ -74,12 +70,81 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         queue.add(requête)
     }
 
-    override fun obtenirQuestions(): Array<Questionnaire> {
-        TODO("Not yet implemented")
+    override fun obtenirQuestionSource(): Questionnaire {
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/questionnaire/question", promesse, promesse)
+        queue.add(requête)
+
+        return try {
+            réponseJsonToQuestionnaire( JsonReader( StringReader( promesse.get() )) )
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            Questionnaire()
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
+    }
+
+    override fun obtenirBonneReponseSource(questionnaire: Questionnaire): String {
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/questionnaire/question", promesse, promesse)
+        queue.add(requête)
+
+        return try {
+            réponseJsonToBonneReponse( JsonReader( StringReader( promesse.get() )) )
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            questionnaire.bonneReponse
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
+    }
+
+
+    override fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>? {
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/comptes/equipage/$nomÉquipage", promesse, promesse)
+        queue.add(requête)
+
+        return try {
+            réponseJsonToComptesÉquipage( JsonReader( StringReader( promesse.get() )) )
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            mutableListOf<Compte>( Compte() )
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
     }
 
     override fun obtenirListeDesÉquipages(): MutableList<Équipage>? {
-        TODO("Not yet implemented")
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/tresorerie/equipages", promesse, promesse)
+        queue.add(requête)
+
+        return try {
+            réponseJsonToTrésorerie( JsonReader( StringReader( promesse.get() )) )
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            mutableListOf<Équipage>( Équipage() )
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
     }
 
     /**
@@ -176,6 +241,42 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         jsonReader.endObject()
 
         return compte
+    }
+    /**
+     * Méthode qui convertit la réponse JSON en objet kotlin Compte.
+     *
+     * @param jsonReader Objet permettant la lecture d'un objet JSON
+     */
+    private fun réponseJsonToComptesÉquipage(jsonReader: JsonReader): MutableList<Compte> {
+        val liste = mutableListOf<Compte>()
+/*
+        jsonReader.beginObject()
+
+        while (jsonReader.hasNext()) {
+
+            val clé = jsonReader.nextName()
+
+            when (clé) {
+                "nomÉquipage" -> {
+                    équipage.nomÉquipage = jsonReader.nextString()
+                }
+                "rang" -> {
+                    équipage.rang = jsonReader.nextInt()
+                }
+                "doublons" -> {
+                    équipage.doublons = jsonReader.nextInt()
+                }
+                "listeComptes" -> {
+                    //équipage.listeComptes = jsonReader.nextString()
+                }
+                else -> {
+                    jsonReader.skipValue()
+                }
+            }
+        }
+        jsonReader.endObject*/
+
+        return liste
     }
 
     /**
@@ -293,6 +394,34 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         jsonReader.endObject()
 
         return questionnaire
+    }
+
+    /**
+     * Méthode qui convertit la réponse JSON en objet kotlin Compte.
+     *
+     * @param jsonReader Objet permettant la lecture d'un objet JSON
+     */
+    private fun réponseJsonToBonneReponse(jsonReader: JsonReader): String {
+        val questionnaire = Questionnaire()
+
+        jsonReader.beginObject()
+
+        while (jsonReader.hasNext()) {
+
+            val clé = jsonReader.nextName()
+
+            when (clé) {
+                "bonneReponse" -> {
+                    questionnaire.bonneReponse = jsonReader.nextString()
+                }
+                else -> {
+                    jsonReader.skipValue()
+                }
+            }
+        }
+        jsonReader.endObject()
+
+        return questionnaire.bonneReponse
     }
 
     /**

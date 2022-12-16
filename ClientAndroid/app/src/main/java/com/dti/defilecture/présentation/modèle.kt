@@ -1,5 +1,4 @@
 package com.dti.defilecture.présentation
-import android.util.Log
 import com.dti.defilecture.accèsAuxDonnées.ISourceDeDonnées
 import com.dti.defilecture.accèsAuxDonnées.SourceDeDonnéesBidon
 import com.dti.defilecture.domaine.entité.Compte
@@ -100,8 +99,12 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      *
      * @return une liste de questions.
      */
-    fun obtenirListeQuestion(): Array<Questionnaire>{
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirQuestions()
+    fun obtenirQuestionModèle(): Questionnaire{
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirQuestion()
+    }
+
+    fun obtenirBonneReponseModèle(questionnaire: Questionnaire): String {
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirBonneReponseIntéracteur(questionnaire)
     }
 
     /**
