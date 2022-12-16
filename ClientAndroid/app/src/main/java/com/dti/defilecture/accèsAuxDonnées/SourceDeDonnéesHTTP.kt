@@ -54,7 +54,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
             réponseJsonToLecture( JsonReader( StringReader( promesse.get() )) )
         } catch (e: InterruptedException) {
             e.printStackTrace()
-            mutableListOf<Lecture>( Lecture("","",0,false) )
+            mutableListOf( Lecture("","",0,false) )
         } catch (e: ExecutionException) {
             throw AccèsRessourcesException( e )
         }
@@ -95,7 +95,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
 
         val requête = StringRequest(Request.Method.GET,
-            "$urlSource/api/questionnaire/question", promesse, promesse)
+            "$urlSource/api/questionnaire/bonneReponse", promesse, promesse)
         queue.add(requête)
 
         return try {
@@ -141,7 +141,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
             réponseJsonToTrésorerie( JsonReader( StringReader( promesse.get() )) )
         } catch (e: InterruptedException) {
             e.printStackTrace()
-            mutableListOf<Équipage>( Équipage() )
+            mutableListOf( Équipage() )
         } catch (e: ExecutionException) {
             throw AccèsRessourcesException( e )
         }
@@ -230,7 +230,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
                 "programme" -> {
                     compte.programme = jsonReader.nextString()
                 }
-                "équipage" -> {
+                "nomÉquipage" -> {
                     compte.nomÉquipage = jsonReader.nextString()
                 }
                 else -> {
@@ -249,33 +249,54 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
      */
     private fun réponseJsonToComptesÉquipage(jsonReader: JsonReader): MutableList<Compte> {
         val liste = mutableListOf<Compte>()
-/*
-        jsonReader.beginObject()
 
-        while (jsonReader.hasNext()) {
+        jsonReader.beginArray()
+        while ( jsonReader.hasNext() ) {
+            var compte = Compte()
 
-            val clé = jsonReader.nextName()
-
-            when (clé) {
-                "nomÉquipage" -> {
-                    équipage.nomÉquipage = jsonReader.nextString()
-                }
-                "rang" -> {
-                    équipage.rang = jsonReader.nextInt()
-                }
-                "doublons" -> {
-                    équipage.doublons = jsonReader.nextInt()
-                }
-                "listeComptes" -> {
-                    //équipage.listeComptes = jsonReader.nextString()
-                }
-                else -> {
-                    jsonReader.skipValue()
+            jsonReader.beginObject()
+            while ( jsonReader.hasNext() ){
+                val clé = jsonReader.nextName()
+                when (clé) {
+                    "idCompte" -> {
+                        compte.idCompte = jsonReader.nextInt()
+                    }
+                    "prénom" -> {
+                        compte.prénom = jsonReader.nextString()
+                    }
+                    "nom" -> {
+                        compte.nom = jsonReader.nextString()
+                    }
+                    "doublons" -> {
+                        compte.doublons = jsonReader.nextInt()
+                    }
+                    "courriel" -> {
+                        compte.courriel = jsonReader.nextString()
+                    }
+                    "pseudonyme" -> {
+                        compte.pseudonyme = jsonReader.nextString()
+                    }
+                    "programme" -> {
+                        compte.programme = jsonReader.nextString()
+                    }
+                    "motDePasse" -> {
+                        compte.motDePasse = jsonReader.nextString()
+                    }
+                    "avatar" -> {
+                        compte.avatar = stringToBitMap(jsonReader.nextString())
+                    }
+                    "nomÉquipage" -> {
+                        compte.nomÉquipage = jsonReader.nextString()
+                    }
+                    else -> {
+                        jsonReader.skipValue()
+                    }
                 }
             }
+            jsonReader.endObject()
+            liste.add(compte)
         }
-        jsonReader.endObject*/
-
+        jsonReader.endArray()
         return liste
     }
 
