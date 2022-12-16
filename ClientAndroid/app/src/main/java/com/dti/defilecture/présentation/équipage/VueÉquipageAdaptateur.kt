@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
@@ -35,8 +36,10 @@ class VueÉquipageAdaptateur(
         if (currentItem != null){
             holder.pseudonyme.text = currentItem.pseudonyme
             holder.doublons.text = currentItem.doublons.toString()
-            holder.pseudonyme.setOnClickListener{présentateur
-                .requêteVoirDétailsCompte(holder.pseudonyme.text.toString(), modèle.équipage().nomÉquipage)}
+            holder.pseudonyme.setOnClickListener{
+                //présentateur.requêteVoirDétailsCompte(holder.pseudonyme.toString(), currentItem.nomÉquipage, modèle.équipage().nomÉquipage)
+                Toast.makeText(context, "You clicked me.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

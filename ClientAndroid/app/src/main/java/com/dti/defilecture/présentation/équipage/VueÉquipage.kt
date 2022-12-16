@@ -20,6 +20,7 @@ import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
 
 class VueÉquipage : Fragment(), IVueÉquipage  {
+
     lateinit var navController : NavController
     lateinit var présentateur : IPrésentateurÉquipage
     lateinit var adaptateur: VueÉquipageAdaptateur
@@ -28,7 +29,6 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
     lateinit var numéroRang: TextView
     lateinit var totalDoublons: TextView
 
-    lateinit var comptes: MutableList<Compte>
     lateinit var recyclerView: RecyclerView
 
     val équipage = modèle.équipage()
@@ -40,7 +40,6 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
     ): View? {
         val vue = inflater.inflate(R.layout.fragment_equipage, container, false)
         présentateur = PrésentateurÉquipage( this  )
-
         return vue
     }
 
@@ -49,6 +48,11 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
 
         navController = Navigation.findNavController(view)
 
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.rv_équipage)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+
         nomÉquipage = view.findViewById(R.id.tv_nomÉquipage)
         numéroRang = view.findViewById(R.id.tv_numéroRang)
         totalDoublons = view.findViewById(R.id.tv_totalDoublons)
@@ -56,11 +60,6 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         nomÉquipage.text = équipage.nomÉquipage
         afficherTotalDoublons()
         afficherRang()
-
-        val layoutManager = LinearLayoutManager(context)
-        val recyclerView: RecyclerView = view.findViewById(R.id.rv_équipage)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.setHasFixedSize(true)
 
         présentateur.initisaliseurDesComptes(nomÉquipage.text.toString())
     }

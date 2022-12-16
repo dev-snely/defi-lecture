@@ -2,6 +2,7 @@ package com.dti.defilecture.présentation.équipage
 
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
+import com.dti.defilecture.présentation.compte.VueCompteUtilisateur
 
 /**
  * Interface de contrats établissant les méthodes utiliser
@@ -29,9 +30,9 @@ interface IContratVPÉquipage {
      */
     interface IPrésentateurÉquipage{
 
-        fun initisaliseurDesComptes(nomÉquipage:String)
+        fun initisaliseurDesComptes(nomÉquipage: String)
 
 
-        fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipage: String)
+        fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipageCompteUtilisateur: String, nomÉquipage: String)
     }
 }

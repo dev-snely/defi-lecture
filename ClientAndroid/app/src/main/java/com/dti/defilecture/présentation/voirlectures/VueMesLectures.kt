@@ -67,6 +67,5 @@ class VueMesLectures : Fragment(), IVueMesLectures {
     override fun afficherMessageErreurInternet() {
         val toast = Toast.makeText(this.activity, getString(R.string.erreurInternet), Toast.LENGTH_SHORT)
         toast.show()
-
     }
 }

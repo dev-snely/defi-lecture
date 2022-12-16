@@ -1,5 +1,6 @@
 package com.dti.defilecture.présentation.trésorerie
 
+import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Équipage
 
 /**
@@ -13,13 +14,18 @@ interface IContratVPTrésorerie {
      */
     interface IVueTrésorerie{
         fun naviguerVersDétailsÉquipage()
+
+        fun naviguerVersDétailsÉquipageTemporaire()
+
+        fun gestionAfficherÉquipagesTrésorerie( équipages: MutableList<Équipage>? )
     }
 
     /**
      * Définit les méthodes à utiliser dans un présentateur Trésorerie.
      */
     interface IPrésentateurTrésorerie{
-        fun initisaliseurDesÉquipages(): MutableList<Équipage>?
+
+        fun initisaliseurDesÉquipages()
 
         fun requêteVoirDétailsÉquipage(nomÉquipage: String)
     }

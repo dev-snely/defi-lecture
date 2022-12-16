@@ -19,22 +19,19 @@ interface ISourceDeDonnées {
     fun validerComptePourLaConnexion( pseudo : String, mdp : String ): Compte?
 
     /**
-     * Méthode qui permet d'obtenir la liste des comptes d'un équipage
-     */
-    fun obtenirListeDesComptesÉquipageSource(nomÉquipage: String): MutableList<Compte>?
-
-    /**
      * Méthode qui retourne la liste de lecture de l'utilisateur.
      *
      * @return Une liste mutable d'objets lectures.
      */
     fun obtenirListeDeLecturesUtilisateurSource(identifiant: Int ) : MutableList<Lecture>?
+
     /**
      * Méthode qui ajoute une lecture à une liste de lectures bidon.
      *
      * @param lecture Une lecture à ajouter.
      */
     fun ajouterUneLectureALaListeSource(lecture: Lecture)
+
     /**
      * Cette méthode permet d'obtenir quatre question contenant chacune leur réponse.
      *
@@ -42,13 +39,21 @@ interface ISourceDeDonnées {
      */
     fun obtenirQuestionSource(): Questionnaire
 
-
     fun obtenirBonneReponseSource(questionnaire: Questionnaire): String
-
-    fun obtenirÉquipageParNomÉquipage(nomÉquipage: String): Équipage
 
     /**
      *  Cette méthode permet l'obtention d'une liste d'équipages participants au Défi Lecture.
      */
     fun obtenirListeDesÉquipagesSource() : MutableList<Équipage>?
+
+
+    fun obtenirÉquipageParNomÉquipage(nomÉquipage: String): Équipage
+
+    /**
+     * Méthode qui permet d'obtenir la liste des comptes d'un équipage
+     */
+    fun obtenirListeDesComptesÉquipageSource(nomÉquipage: String): MutableList<Compte>?
+
+
+    fun obtenirListeDesComptesSource(): MutableList<Compte>?
 }

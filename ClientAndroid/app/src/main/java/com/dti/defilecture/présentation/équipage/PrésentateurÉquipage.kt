@@ -1,5 +1,6 @@
 package com.dti.defilecture.présentation.équipage
 
+import android.util.Log
 import com.dti.defilecture.accèsAuxDonnées.AccèsRessourcesException
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.IVueÉquipage
 import com.dti.defilecture.domaine.entité.Compte
@@ -17,8 +18,8 @@ class PrésentateurÉquipage(var vue: IVueÉquipage): IPrésentateurÉquipage {
             }
 
             try {
-                val listeComptes = job.await()
-                vue.gestionAfficherComptesÉquipage(listeComptes)
+                val comptes = job.await()
+                vue.gestionAfficherComptesÉquipage(comptes)
             }
             catch(e: AccèsRessourcesException){
                 //vue.afficherMessageErreurInternet()
@@ -26,9 +27,9 @@ class PrésentateurÉquipage(var vue: IVueÉquipage): IPrésentateurÉquipage {
         }
     }
 
-    override fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipage: String) {
-        modèle.initialiserCompte(pseudonyme, nomÉquipage)
-        if (pseudonyme == modèle.compteActif().pseudonyme) {
+    override fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipageCompteUtilisateur: String, nomÉquipage: String) {
+        modèle.initialiserCompte(pseudonyme)
+        if (nomÉquipageCompteUtilisateur == modèle.compteActif().nomÉquipage) {
             vue.naviguerVersDétailsCompteActif()
         } else {
             vue.naviguerVersDétailsCompteTemporaire()

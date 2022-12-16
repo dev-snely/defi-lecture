@@ -58,7 +58,7 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
         rejoindreÉquipage.setOnClickListener { présentateur.rejoindreÉquipage(modèle.compteActif()) }
 
         val layoutManager = LinearLayoutManager(context)
-        val recyclerView: RecyclerView = view.findViewById(R.id.rv_équipageTemporaire)
+        recyclerView = view.findViewById(R.id.rv_équipageTemporaire)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
 

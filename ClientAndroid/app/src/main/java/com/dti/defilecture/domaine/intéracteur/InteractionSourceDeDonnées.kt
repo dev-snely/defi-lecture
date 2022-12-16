@@ -46,21 +46,16 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
     }
 
     /**
-     *  Permet d'obtenir une liste des comptes d'un équipage.
-     *
-     *  @return une liste de comptes
-     */
-    fun obtenirListeDeComptesIntéracteur(nomÉquipage: String): MutableList<Compte>? {
-        return sourceDeDonnées.obtenirListeDesComptesÉquipageSource(nomÉquipage)
-    }
-
-    /**
      * Méthode qui obtient des questions depuis la source de données.
      *
      * @returns Un tableau d'objets Questionnaire.
      */
     fun obtenirQuestionIntéracteur():Questionnaire{
         return sourceDeDonnées.obtenirQuestionSource()
+    }
+
+    fun obtenirBonneReponseIntéracteur(questionnaire: Questionnaire): String {
+        return sourceDeDonnées.obtenirBonneReponseSource(questionnaire)
     }
 
     /**
@@ -70,7 +65,28 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
         return sourceDeDonnées.obtenirListeDesÉquipagesSource()
     }
 
-    fun obtenirBonneReponseIntéracteur(questionnaire: Questionnaire): String {
-        return sourceDeDonnées.obtenirBonneReponseSource(questionnaire)
+    /**
+     *  Permet d'obtenir une liste des équipages.
+     */
+    fun obtenirÉquipageParNomÉquipageIntéracteur(nomÉquipage: String): Équipage{
+        return sourceDeDonnées.obtenirÉquipageParNomÉquipage(nomÉquipage)
+    }
+
+    /**
+     *  Permet d'obtenir une liste des comptes d'un équipage.
+     *
+     *  @return une liste de comptes
+     */
+    fun obtenirListeDeComptesÉquipageIntéracteur(nomÉquipage: String): MutableList<Compte>? {
+        return sourceDeDonnées.obtenirListeDesComptesÉquipageSource(nomÉquipage)
+    }
+
+    /**
+     *  Permet d'obtenir une liste des comptes d'un équipage.
+     *
+     *  @return une liste de comptes
+     */
+    fun obtenirListeDesComptesIntéracteur(): MutableList<Compte>? {
+        return sourceDeDonnées.obtenirListeDesComptesSource()
     }
 }

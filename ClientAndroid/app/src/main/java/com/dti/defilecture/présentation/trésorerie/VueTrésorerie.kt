@@ -10,6 +10,9 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
+import com.dti.defilecture.domaine.entité.Compte
+import com.dti.defilecture.domaine.entité.Équipage
+import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.trésorerie.IContratVPTrésorerie.*
 
 class VueTrésorerie : Fragment(), IVueTrésorerie {
@@ -18,6 +21,7 @@ class VueTrésorerie : Fragment(), IVueTrésorerie {
     lateinit var présentateur : IPrésentateurTrésorerie
     lateinit var adaptateur: VueTrésorerieAdaptateur
 
+    lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,14 +39,25 @@ class VueTrésorerie : Fragment(), IVueTrésorerie {
         navController = Navigation.findNavController(view)
 
         val layoutManager = LinearLayoutManager(context)
-        val recyclerView: RecyclerView = view.findViewById(R.id.rv_trésorerie)
+        recyclerView = view.findViewById(R.id.rv_trésorerie)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adaptateur = VueTrésorerieAdaptateur( présentateur.initisaliseurDesÉquipages(), présentateur )
+
+        présentateur.initisaliseurDesÉquipages()
+    }
+
+    override fun gestionAfficherÉquipagesTrésorerie(équipages: MutableList<Équipage>?) {
+        adaptateur = VueTrésorerieAdaptateur(équipages)
         recyclerView.adapter = adaptateur
     }
 
+
     override fun naviguerVersDétailsÉquipage() {
+        navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipage)
+    }
+
+    override fun naviguerVersDétailsÉquipageTemporaire() {
         navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipageTemporaire)
     }
+
 }
