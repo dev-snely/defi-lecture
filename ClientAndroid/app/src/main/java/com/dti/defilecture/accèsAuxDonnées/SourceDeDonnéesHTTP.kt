@@ -14,6 +14,7 @@ import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
 import com.dti.defilecture.domaine.entité.Questionnaire
 import com.dti.defilecture.domaine.entité.Équipage
+import com.dti.defilecture.présentation.modèle
 import java.io.StringReader
 import java.net.URL
 import java.util.concurrent.ExecutionException
@@ -31,8 +32,11 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
             "$urlSource/api/Compte/$pseudo/$mdp", promesse, promesse)
         queue.add(requête)
 
+        var compteConnecté = réponseJsonToCompte( JsonReader( StringReader( promesse.get() )) )
+        modèle.setCompteConnecté(compteConnecté)
+
         return try {
-            réponseJsonToCompte( JsonReader( StringReader( promesse.get() )) )
+            compteConnecté
         } catch (e: InterruptedException) {
             e.printStackTrace()
             Compte()
@@ -122,7 +126,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
 
         return try {
             réponseJsonToTrésorerie( JsonReader(StringReader(promesse.get())) )
-                ?.sortedByDescending{ it.doublons }?.toMutableList()
+                ?.sortedBy{ it.rang }?.toMutableList()
         } catch (e: InterruptedException) {
             e.printStackTrace()
             mutableListOf( Équipage() )
@@ -183,9 +187,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         queue.add(requête)
 
         return try {
-            mutableListOf( Compte() )
             réponseJsonToListeComptes( JsonReader( StringReader( promesse.get() )) )
-                //?.sortedByDescending{ it.doublons }?.toMutableList()
         } catch (e: InterruptedException) {
             e.printStackTrace()
             mutableListOf( Compte() )
@@ -264,7 +266,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
                 "prénom" -> {
                     compte.prénom = jsonReader.nextString()
                 }
-                "pseudo" -> {
+                "pseudonyme" -> {
                     compte.pseudonyme = jsonReader.nextString()
                 }
                 "avatar" -> {
@@ -510,7 +512,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
 
         jsonReader.beginArray()
         while ( jsonReader.hasNext() ) {
-            var compte = Compte()
+            val compte = Compte()
 
             jsonReader.beginObject()
             while ( jsonReader.hasNext() ){

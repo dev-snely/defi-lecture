@@ -8,11 +8,11 @@ import kotlinx.coroutines.*
 
 class PrésentateurÉquipageTemporaire (var vue: IVueÉquipageTemporaire): IPrésentateurÉquipageTemporaire {
 
-    override fun initisaliseurDesComptesTemporaires(nomÉquipage : String) {
+    override fun initisaliseurDesComptesTemporaires() {
         GlobalScope.launch(Dispatchers.Main) {
 
             val job = async(SupervisorJob() + Dispatchers.IO) {
-                modèle.obtenirListeDesComptesÉquipageTemporaire(nomÉquipage)
+                modèle.obtenirListeDesComptesÉquipageTemporaire()
             }
 
             try {
@@ -25,7 +25,7 @@ class PrésentateurÉquipageTemporaire (var vue: IVueÉquipageTemporaire): IPré
         }
     }
 
-    override fun requêteVoirDétailsCompteTemporaire(pseudonyme: String, nomÉquipage: String) {
+    override fun requêteVoirDétailsCompteTemporaire(pseudonyme: String) {
         modèle.initialiserCompte(pseudonyme)
         if (pseudonyme == modèle.compteActif().pseudonyme) {
             vue.naviguerVersDétailsCompteActif()

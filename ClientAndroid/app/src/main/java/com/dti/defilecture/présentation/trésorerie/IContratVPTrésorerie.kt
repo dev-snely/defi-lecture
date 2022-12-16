@@ -15,8 +15,6 @@ interface IContratVPTrésorerie {
     interface IVueTrésorerie{
         fun naviguerVersDétailsÉquipage()
 
-        fun naviguerVersDétailsÉquipageTemporaire()
-
         fun gestionAfficherÉquipagesTrésorerie( équipages: MutableList<Équipage>? )
     }
 

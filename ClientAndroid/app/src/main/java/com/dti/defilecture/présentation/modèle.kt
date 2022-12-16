@@ -25,6 +25,10 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
         return compteConnecté
     }
 
+    fun setCompteConnecté(compte: Compte) {
+        compteConnecté = compte
+    }
+
     fun compteTemporaire(): Compte{
         return compteTemporaire
     }
@@ -138,17 +142,13 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
         return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDesÉquipagesIntéracteur()
     }
 
-    fun obtenirListeDesComptes(): MutableList<Compte>?{
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDesComptesIntéracteur()
-    }
-
     /**
      * Obtient une liste des comptes provenant d'un équipage.
      *
      * @return une liste de comptes.
      */
-    fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>? {
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptesÉquipageIntéracteur( nomÉquipage )
+    fun obtenirListeDesComptesÉquipage(): MutableList<Compte>? {
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptesÉquipageIntéracteur( compteConnecté.nomÉquipage )
     }
 
     /**
@@ -156,21 +156,21 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      *
      * @return une liste de comptes.
      */
-    fun obtenirListeDesComptesÉquipageTemporaire(nomÉquipage : String): MutableList<Compte>? {
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptesÉquipageIntéracteur(nomÉquipage)
+    fun obtenirListeDesComptesÉquipageTemporaire(): MutableList<Compte>? {
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptesÉquipageIntéracteur(compteTemporaire.nomÉquipage)
     }
 
     fun initialiserCompte(pseudonyme: String) {
         val liste = InteractionSourceDeDonnées(sourceDeDonnées).obtenirListeDesComptesIntéracteur()
             ?.filter { it.pseudonyme == pseudonyme }
 
-        if ( !liste.isNullOrEmpty() ) {
-            compteTemporaire = liste[0]
+        if ( pseudonyme != compteConnecté.pseudonyme ) {
+            compteTemporaire = liste?.get(0) ?: compteTemporaire
         }
     }
 
-    fun initialiserÉquipage(nomÉquipage: String) {
-        InteractionSourceDeDonnées(sourceDeDonnées).obtenirÉquipageParNomÉquipageIntéracteur(nomÉquipage)
+    fun initialiserÉquipage(nomÉquipage: String):Équipage {
+        return InteractionSourceDeDonnées(sourceDeDonnées).obtenirÉquipageParNomÉquipageIntéracteur(nomÉquipage)
     }
 }
 val modèle = Modèle()

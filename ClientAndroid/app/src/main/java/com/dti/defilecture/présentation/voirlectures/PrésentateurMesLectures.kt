@@ -16,7 +16,7 @@ class PrésentateurMesLectures(var vue: IVueMesLectures ) : IPrésentateurMesLec
             }
 
             try {
-                var listeLecture = job.await()
+                val listeLecture = job.await()
 
                 //lorsque la tâche est terminée, la coroutine
                 //reprend et on met à jour l'interface utilisateur

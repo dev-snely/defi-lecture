@@ -36,7 +36,7 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
     }
 
     override fun obtenirÉquipageParNomÉquipage(nomÉquipage: String): Équipage {
-        TODO("Not yet implemented")
+        return équipages.first { it.nomÉquipage == nomÉquipage }
     }
 
     override fun obtenirListeDesComptesÉquipageSource(nomÉquipage: String): MutableList<Compte>? {

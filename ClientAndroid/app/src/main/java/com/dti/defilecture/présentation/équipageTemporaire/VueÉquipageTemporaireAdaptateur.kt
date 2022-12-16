@@ -1,12 +1,11 @@
 package com.dti.defilecture.présentation.équipageTemporaire
 
 import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Compte
@@ -14,8 +13,7 @@ import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipage.PrésentateurÉquipage
 import com.dti.defilecture.présentation.équipageTemporaire.IContratVPÉquipageTemporaire.*
 
-class VueÉquipageTemporaireAdaptateur(
-    private val comptes: MutableList<Compte>?) :
+class VueÉquipageTemporaireAdaptateur(private val comptes: MutableList<Compte>?) :
     RecyclerView.Adapter<VueÉquipageTemporaireAdaptateur.MyViewHolder>() {
 
     lateinit var context: Context
@@ -28,6 +26,7 @@ class VueÉquipageTemporaireAdaptateur(
 
         context = parent.context
         présentateur = PrésentateurÉquipageTemporaire(vue)
+
         return MyViewHolder(itemView)
     }
 
@@ -36,7 +35,10 @@ class VueÉquipageTemporaireAdaptateur(
         if (currentItem != null){
             holder.pseudonymeTemporaire.text = currentItem.pseudonyme
             holder.doublonsTemporaire.text = currentItem.doublons.toString()
-            holder.pseudonymeTemporaire.setOnClickListener{présentateur.requêteVoirDétailsCompteTemporaire(holder.pseudonymeTemporaire.text.toString(), modèle.équipage().nomÉquipage)}
+            holder.pseudonymeTemporaire.setOnClickListener{
+                présentateur.requêteVoirDétailsCompteTemporaire(
+                    holder.pseudonymeTemporaire.text.toString())
+            }
         }
     }
 

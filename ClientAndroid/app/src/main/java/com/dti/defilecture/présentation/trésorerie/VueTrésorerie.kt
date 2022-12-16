@@ -53,11 +53,6 @@ class VueTrésorerie : Fragment(), IVueTrésorerie {
 
 
     override fun naviguerVersDétailsÉquipage() {
-        navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipage)
-    }
-
-    override fun naviguerVersDétailsÉquipageTemporaire() {
         navController.navigate(R.id.action_vueTrésorerie_to_vueÉquipageTemporaire)
     }
-
 }

@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Équipage
@@ -24,6 +22,7 @@ class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?)
             .inflate(R.layout.item_tresorerie,parent, false)
         context = parent.context
         présentateur = PrésentateurTrésorerie(vue)
+
         return MyViewHolder(itemView)
     }
 
@@ -35,7 +34,6 @@ class VueTrésorerieAdaptateur(private val équipages : MutableList<Équipage>?)
             holder.rang.text = currentItem.rang.toString()
             holder.nom.setOnClickListener{
                 présentateur.requêteVoirDétailsÉquipage(holder.nom.text.toString())
-
             }
         }
     }

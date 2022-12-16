@@ -27,11 +27,6 @@ class PrésentateurTrésorerie(var vue: IVueTrésorerie): IPrésentateurTrésore
 
     override fun requêteVoirDétailsÉquipage(nomÉquipage: String) {
         modèle.initialiserÉquipage(nomÉquipage)
-        if (nomÉquipage == modèle.compteActif().nomÉquipage) {
-            vue.naviguerVersDétailsÉquipage()
-        } else {
-            vue.naviguerVersDétailsÉquipageTemporaire()
-        }
         vue.naviguerVersDétailsÉquipage()
     }
 }

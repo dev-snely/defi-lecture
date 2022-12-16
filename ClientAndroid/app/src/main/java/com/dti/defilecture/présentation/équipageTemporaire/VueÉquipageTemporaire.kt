@@ -29,7 +29,7 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
     lateinit var comptes: MutableList<Compte>
     lateinit var recyclerView: RecyclerView
 
-    val équipageTemporaire = modèle.équipage()
+    val équipageTemporaire = modèle.initialiserÉquipage(modèle.compteTemporaire().nomÉquipage)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,19 +55,18 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
         nomÉquipageTemporaire.text = équipageTemporaire.nomÉquipage
         afficherTotalDoublons()
         afficherRang()
-        rejoindreÉquipage.setOnClickListener { présentateur.rejoindreÉquipage(modèle.compteActif()) }
+        //rejoindreÉquipage.setOnClickListener { présentateur.rejoindreÉquipage(modèle.compteActif()) }
 
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.rv_équipageTemporaire)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
 
-        présentateur.initisaliseurDesComptesTemporaires(nomÉquipageTemporaire.text.toString())
-
+        présentateur.initisaliseurDesComptesTemporaires()
     }
 
     override fun gestionAfficherComptesÉquipageTemporaire(comptes: MutableList<Compte>?) {
-        adaptateur = VueÉquipageTemporaireAdaptateur(comptes)
+        adaptateur = VueÉquipageTemporaireAdaptateur( comptes )
         recyclerView.adapter = adaptateur
     }
 

@@ -65,8 +65,6 @@ class VueCompteUtilisateur : Fragment(), IContratVPCompte.IVueCompteUtilisateur{
         présentateur.requêteInitialiserCompte()
 
 
-
-
         btnModifierPhoto.setOnClickListener {
             var photoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             try {

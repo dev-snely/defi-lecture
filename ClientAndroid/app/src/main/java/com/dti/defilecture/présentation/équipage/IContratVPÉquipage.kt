@@ -30,9 +30,9 @@ interface IContratVPÉquipage {
      */
     interface IPrésentateurÉquipage{
 
-        fun initisaliseurDesComptes(nomÉquipage: String)
+        fun initisaliseurDesComptes()
 
 
-        fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipageCompteUtilisateur: String, nomÉquipage: String)
+        fun requêteVoirDétailsCompte(pseudonyme: String)
     }
 }

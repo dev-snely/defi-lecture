@@ -28,6 +28,7 @@ class VueÉquipageAdaptateur(
 
         context = parent.context
         présentateur = PrésentateurÉquipage(vue)
+
         return MyViewHolder(itemView)
     }
 
@@ -37,8 +38,8 @@ class VueÉquipageAdaptateur(
             holder.pseudonyme.text = currentItem.pseudonyme
             holder.doublons.text = currentItem.doublons.toString()
             holder.pseudonyme.setOnClickListener{
-                //présentateur.requêteVoirDétailsCompte(holder.pseudonyme.toString(), currentItem.nomÉquipage, modèle.équipage().nomÉquipage)
-                Toast.makeText(context, "You clicked me.", Toast.LENGTH_SHORT).show()
+                présentateur.requêteVoirDétailsCompte(holder.pseudonyme.text.toString())
+                //Toast.makeText(context, "You clicked me.", Toast.LENGTH_SHORT).show()
             }
         }
     }

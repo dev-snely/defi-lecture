@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView (R.layout.activity_main)
         modèle.localHelper=LocaleHelper(this)
         //modèle.sourceDeDonnées = SourceDeDonnéesHTTP( this, URL("http://10.0.2.2:51723") )
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_1) as NavHostFragment
         navController = navHostFragment.navController
         barre_navigation = findViewById(R.id.barre_navigation)
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         barre_navigation.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.ic_ajouter -> navController.navigate( R.id.action_global_vueMesLectures )
-                R.id.ic_équipage ->navController.navigate( R.id.action_global_vueÉquipage)
+                R.id.ic_équipage -> navController.navigate( R.id.action_global_vueÉquipage)
                 R.id.ic_trésorerie -> navController.navigate( R.id.action_global_vueTrésorerie)
                 R.id.ic_epreuve -> navController.navigate( R.id.action_global_vueQuestionnaire )
                 R.id.ic_compte -> navController.navigate( R.id.action_global_vueCompteUtilisateur )

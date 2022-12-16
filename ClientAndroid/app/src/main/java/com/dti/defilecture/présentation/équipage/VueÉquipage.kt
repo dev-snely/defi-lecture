@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.domaine.entité.Lecture
+import com.dti.defilecture.domaine.entité.Équipage
 import com.dti.defilecture.présentation.compte.VueCompteUtilisateur
 import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.voirlectures.VueMesLecturesAdaptateur
@@ -24,14 +25,13 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
     lateinit var navController : NavController
     lateinit var présentateur : IPrésentateurÉquipage
     lateinit var adaptateur: VueÉquipageAdaptateur
+    lateinit var recyclerView: RecyclerView
 
     lateinit var nomÉquipage: TextView
     lateinit var numéroRang: TextView
     lateinit var totalDoublons: TextView
 
-    lateinit var recyclerView: RecyclerView
-
-    val équipage = modèle.équipage()
+    var équipage: Équipage = modèle.initialiserÉquipage(modèle.compteActif().nomÉquipage)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,7 +61,7 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         afficherTotalDoublons()
         afficherRang()
 
-        présentateur.initisaliseurDesComptes(nomÉquipage.text.toString())
+        présentateur.initisaliseurDesComptes()
     }
 
     override fun gestionAfficherComptesÉquipage( comptes: MutableList<Compte>? ) {
@@ -71,12 +71,12 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
 
     override fun afficherTotalDoublons() {
         équipage.setTotalDoublons()
-        totalDoublons.text = équipage.doublons.toString()
+        totalDoublons.text = équipage.doublons.toString() + " doublons"
     }
 
     override fun afficherRang() {
         équipage.setRang()
-        numéroRang.text = équipage.rang.toString()
+        numéroRang.text = "Rang# : " + équipage.rang.toString()
     }
 
     override fun naviguerVersDétailsCompteActif() {

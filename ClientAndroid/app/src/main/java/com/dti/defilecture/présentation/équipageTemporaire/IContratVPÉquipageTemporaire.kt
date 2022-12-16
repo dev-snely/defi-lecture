@@ -27,9 +27,9 @@ interface IContratVPÉquipageTemporaire {
      * Définit les méthodes à utiliser dans un présentateur ÉquipageTemporaire.
      */
     interface IPrésentateurÉquipageTemporaire{
-        fun initisaliseurDesComptesTemporaires(nomÉquipage: String)
+        fun initisaliseurDesComptesTemporaires()
 
-        fun requêteVoirDétailsCompteTemporaire(pseudonyme: String, nomÉquipage: String)
+        fun requêteVoirDétailsCompteTemporaire(pseudonyme: String)
 
         fun rejoindreÉquipage(compte: Compte)
     }

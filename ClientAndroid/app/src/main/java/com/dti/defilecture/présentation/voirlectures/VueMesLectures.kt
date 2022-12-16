@@ -21,10 +21,11 @@ class VueMesLectures : Fragment(), IVueMesLectures {
     lateinit var présentateur: IPrésentateurMesLectures
     lateinit var adaptateur: VueMesLecturesAdaptateur
     lateinit var recyclerView: RecyclerView
-    lateinit var lectures: MutableList<Lecture>
+    //lateinit var lectures: MutableList<Lecture>
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
