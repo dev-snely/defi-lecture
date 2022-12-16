@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_ajouter -> navController.navigate( R.id.action_global_vueMesLectures )
                 R.id.ic_équipage ->navController.navigate( R.id.action_global_vueÉquipage)
                 R.id.ic_trésorerie -> navController.navigate( R.id.action_global_vueTrésorerie)
-                R.id.ic_epreuve -> navController.navigate( R.id.action_global_vueQuestionnaire )
+                //R.id.ic_epreuve -> navController.navigate( R.id.action_global_vueQuestionnaire )
                 R.id.ic_compte -> navController.navigate( R.id.action_global_vueCompteUtilisateur )
             }
             true

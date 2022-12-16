@@ -16,11 +16,11 @@
         android:icon="@drawable/locked_chest_svgrepo_com"
         android:title="@string/ic_tresorerie"
         />
-    <item
+    <!--<item
         android:id="@+id/ic_epreuve"
         android:icon="@drawable/puzzle_svgrepo_com"
         android:title="@string/ic_epreuve"
-        />
+        />-->
     <item
         android:id="@+id/ic_compte"
         android:icon="@drawable/account_box_svgrepo_com"
