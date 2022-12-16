@@ -32,10 +32,7 @@ class PrésentateurInscription(var vue: IVueInscription) : IPrésentateurInscrip
             vue.afficherAvertissementInfosManquants("Information nécéssaires manquantes !")
         }
         else {
-            vue.afficherAvertissementInfosManquants(
-                prenomCompte + " " + nomCompte + " " + courrielCompte +
-                        " " + pseudonymeCompte + " " + programmeCompte + " " + motDePasseCompte
-            )
+            traiterInscription(prenomCompte,nomCompte, courrielCompte, pseudonymeCompte, programmeCompte, motDePasseCompte)
             vue.naviguerVersConnexion()
         }
     }
