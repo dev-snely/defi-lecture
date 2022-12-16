@@ -32,7 +32,7 @@
                 android:fontFamily="@font/goudy_bookletter1911_regular"
                 android:gravity="center"
                 android:padding="15dp"
-                android:text="Contributeurs"
+                android:text="@string/Contributeurs"
                 android:textSize="34dp"
                 android:textColor="@color/black"/>
 
@@ -180,6 +180,16 @@
                 android:fontFamily="@font/goudy_bookletter1911_regular"
                 android:padding="15dp"
                 android:text="Département de Français"
+                android:textSize="23dp" />
+
+            <TextView
+                android:id="@+id/tvAProposDepartement2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/goudy_bookletter1911_regular"
+                android:padding="15dp"
+                android:text="Développeurs de l'application mobile: Snely Lys Adam, Ovidiu Cebotari, Vu Minh Vu-Le, Gérard Minh Dat Truong et Jonathan Chérilus"
                 android:textSize="23dp" />
 
         </LinearLayout>

@@ -102,6 +102,7 @@
             android:layout_marginBottom="225dp"
             android:background="@drawable/bg_recyclerview"
             android:elevation="20dp"
+            android:scaleType="center"
             android:src="@drawable/tete_de_mort"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
