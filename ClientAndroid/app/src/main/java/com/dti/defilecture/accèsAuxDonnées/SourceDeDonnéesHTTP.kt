@@ -41,7 +41,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         }
     }
 
-    override fun obtenirListeDeLecturesUtilisateur(identifiant: Int): MutableList<Lecture>? {
+    override fun obtenirListeDeLecturesUtilisateurSource(identifiant: Int): MutableList<Lecture>? {
         val queue = Volley.newRequestQueue(ctx)
 
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
@@ -60,7 +60,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         }
     }
 
-    override fun ajouterUneLectureALaListe(lecture: Lecture) {
+    override fun ajouterUneLectureALaListeSource(lecture: Lecture) {
         val queue = Volley.newRequestQueue(ctx)
 
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
@@ -109,7 +109,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
     }
 
 
-    override fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>? {
+    override fun obtenirListeDesComptesÉquipageSource(nomÉquipage: String): MutableList<Compte>? {
         val queue = Volley.newRequestQueue(ctx)
 
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
@@ -122,13 +122,13 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
             réponseJsonToComptesÉquipage( JsonReader( StringReader( promesse.get() )) )
         } catch (e: InterruptedException) {
             e.printStackTrace()
-            mutableListOf<Compte>( Compte() )
+            mutableListOf( Compte() )
         } catch (e: ExecutionException) {
             throw AccèsRessourcesException( e )
         }
     }
 
-    override fun obtenirListeDesÉquipages(): MutableList<Équipage>? {
+    override fun obtenirListeDesÉquipagesSource(): MutableList<Équipage>? {
         val queue = Volley.newRequestQueue(ctx)
 
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
@@ -286,6 +286,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
      */
     private fun réponseJsonToÉquipage(jsonReader: JsonReader): Équipage {
         val équipage = Équipage()
+        var arrayComptes = arrayOf<Compte>()
 
         jsonReader.beginObject()
 
@@ -304,8 +305,15 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
                     équipage.doublons = jsonReader.nextInt()
                 }
                 "listeComptes" -> {
-                    //équipage.listeComptes = jsonReader.nextString()
+                    jsonReader.beginArray()
+
+                    while (jsonReader.hasNext()) {
+                        arrayComptes += réponseJsonToCompte( jsonReader )
+                    }
+
+                    jsonReader.endArray()
                 }
+
                 else -> {
                     jsonReader.skipValue()
                 }

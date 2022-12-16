@@ -41,7 +41,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
         val adapteur = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
         lecture.dateInscription = adapteur.format(aujourdhui)
 
-        InteractionSourceDeDonnées( sourceDeDonnées ).ajouterUneLecture( lecture )
+        InteractionSourceDeDonnées( sourceDeDonnées ).ajouterUneLectureIntéracteur( lecture )
     }
 
     /**
@@ -50,14 +50,14 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      * @return une liste de lecture.
      */
     fun obtenirListeLecturesDeLUtilisateur(): MutableList<Lecture>?  {
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeLectures(compteConnecté.idCompte)
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeLecturesIntéracteur(compteConnecté.idCompte)
     }
 
     /**
      * Initialise un modèle de lecture à l'état vide.
      */
     fun initialiserLecture(){
-        lecture = InteractionSourceDeDonnées( sourceDeDonnées ).initialiserUneLecture()
+        lecture = InteractionSourceDeDonnées( sourceDeDonnées ).initialiserUneLectureIntéracteur()
     }
 
     /**
@@ -100,7 +100,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      * @return une liste de questions.
      */
     fun obtenirQuestionModèle(): Questionnaire{
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirQuestion()
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirQuestionIntéracteur()
     }
 
     fun obtenirBonneReponseModèle(questionnaire: Questionnaire): String {
@@ -133,7 +133,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      * @return une liste de comptes.
      */
     fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>? {
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes( nomÉquipage )
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptesIntéracteur( nomÉquipage )
     }
 
     /**
@@ -142,7 +142,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      * @return une liste d'équipage.
      */
     fun obtenirListeDesÉquipages(): MutableList<Équipage>?{
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDesÉquipages()
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDesÉquipagesIntéracteur()
     }
 
     /**
@@ -151,12 +151,12 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
      * @return une liste de comptes.
      */
     fun obtenirListeDesComptesÉquipageTemporaire(nomÉquipage : String): MutableList<Compte>? {
-        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptes(nomÉquipage)
+        return InteractionSourceDeDonnées( sourceDeDonnées ).obtenirListeDeComptesIntéracteur(nomÉquipage)
     }
 
     fun initialiserÉquipage(nomÉquipage: String) {
 
-        val liste = InteractionSourceDeDonnées(sourceDeDonnées).obtenirListeDesÉquipages()
+        val liste = InteractionSourceDeDonnées(sourceDeDonnées).obtenirListeDesÉquipagesIntéracteur()
             ?.filter { it.nomÉquipage == nomÉquipage }
 
         if ( !liste.isNullOrEmpty() ) {
@@ -165,7 +165,7 @@ class Modèle(var sourceDeDonnées : ISourceDeDonnées = SourceDeDonnéesBidon()
     }
 
     fun initialiserCompte(pseudonyme: String, nomÉquipage: String) {
-        val liste = InteractionSourceDeDonnées(sourceDeDonnées).obtenirListeDeComptes(nomÉquipage)
+        val liste = InteractionSourceDeDonnées(sourceDeDonnées).obtenirListeDeComptesIntéracteur(nomÉquipage)
             ?.filter { it.pseudonyme == pseudonyme }
 
         if ( !liste.isNullOrEmpty() ) {

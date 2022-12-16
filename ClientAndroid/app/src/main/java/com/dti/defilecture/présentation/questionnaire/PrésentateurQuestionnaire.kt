@@ -36,5 +36,4 @@ class PrésentateurQuestionnaire( var vue: IVueQuestionnaire ): IPrésentateurQu
             vue.afficherMauvaiseReponse()
         }
     }
-
 }

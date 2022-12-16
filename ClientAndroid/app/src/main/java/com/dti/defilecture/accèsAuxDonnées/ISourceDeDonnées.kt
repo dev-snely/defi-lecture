@@ -21,20 +21,20 @@ interface ISourceDeDonnées {
     /**
      * Méthode qui permet d'obtenir la liste des comptes d'un équipage
      */
-    fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>?
+    fun obtenirListeDesComptesÉquipageSource(nomÉquipage: String): MutableList<Compte>?
 
     /**
      * Méthode qui retourne la liste de lecture de l'utilisateur.
      *
      * @return Une liste mutable d'objets lectures.
      */
-    fun obtenirListeDeLecturesUtilisateur( identifiant: Int ) : MutableList<Lecture>?
+    fun obtenirListeDeLecturesUtilisateurSource(identifiant: Int ) : MutableList<Lecture>?
     /**
      * Méthode qui ajoute une lecture à une liste de lectures bidon.
      *
      * @param lecture Une lecture à ajouter.
      */
-    fun ajouterUneLectureALaListe( lecture: Lecture)
+    fun ajouterUneLectureALaListeSource(lecture: Lecture)
     /**
      * Cette méthode permet d'obtenir quatre question contenant chacune leur réponse.
      *
@@ -49,5 +49,5 @@ interface ISourceDeDonnées {
     /**
      *  Cette méthode permet l'obtention d'une liste d'équipages participants au Défi Lecture.
      */
-    fun obtenirListeDesÉquipages() : MutableList<Équipage>?
+    fun obtenirListeDesÉquipagesSource() : MutableList<Équipage>?
 }

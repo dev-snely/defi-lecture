@@ -23,7 +23,7 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *
      * @return une lecture vide
      */
-    fun initialiserUneLecture(): Lecture {
+    fun initialiserUneLectureIntéracteur(): Lecture {
         return Lecture("","",0,false)
     }
 
@@ -32,8 +32,8 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *
      *  @return une liste de lectures
      */
-    fun obtenirListeDeLectures(id: Int): MutableList<Lecture>?{
-        return sourceDeDonnées.obtenirListeDeLecturesUtilisateur(id)
+    fun obtenirListeDeLecturesIntéracteur(id: Int): MutableList<Lecture>?{
+        return sourceDeDonnées.obtenirListeDeLecturesUtilisateurSource(id)
     }
 
     /**
@@ -41,8 +41,8 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *
      *  @param lecture une lecture à ajouter dans la source.
      */
-    fun ajouterUneLecture( lecture: Lecture){
-        sourceDeDonnées.ajouterUneLectureALaListe( lecture )
+    fun ajouterUneLectureIntéracteur(lecture: Lecture){
+        sourceDeDonnées.ajouterUneLectureALaListeSource( lecture )
     }
 
     /**
@@ -50,8 +50,8 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *
      *  @return une liste de comptes
      */
-    fun obtenirListeDeComptes(nomÉquipage: String): MutableList<Compte>? {
-        return sourceDeDonnées.obtenirListeDesComptesÉquipage(nomÉquipage)
+    fun obtenirListeDeComptesIntéracteur(nomÉquipage: String): MutableList<Compte>? {
+        return sourceDeDonnées.obtenirListeDesComptesÉquipageSource(nomÉquipage)
     }
 
     /**
@@ -59,15 +59,15 @@ class InteractionSourceDeDonnées( var sourceDeDonnées: ISourceDeDonnées ) {
      *
      * @returns Un tableau d'objets Questionnaire.
      */
-    fun obtenirQuestion():Questionnaire{
+    fun obtenirQuestionIntéracteur():Questionnaire{
         return sourceDeDonnées.obtenirQuestionSource()
     }
 
     /**
      *  Permet d'obtenir une liste des équipages.
      */
-    fun obtenirListeDesÉquipages(): MutableList<Équipage>?{
-        return sourceDeDonnées.obtenirListeDesÉquipages()
+    fun obtenirListeDesÉquipagesIntéracteur(): MutableList<Équipage>?{
+        return sourceDeDonnées.obtenirListeDesÉquipagesSource()
     }
 
     fun obtenirBonneReponseIntéracteur(questionnaire: Questionnaire): String {
