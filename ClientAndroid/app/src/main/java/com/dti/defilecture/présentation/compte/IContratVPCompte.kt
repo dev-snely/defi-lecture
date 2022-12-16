@@ -1,6 +1,7 @@
 package com.dti.defilecture.présentation.compte
 
 import android.graphics.Bitmap
+import com.dti.defilecture.domaine.entité.Équipage
 
 interface IContratVPCompte {
 
@@ -19,8 +20,13 @@ interface IContratVPCompte {
          * Fonction qui affice les information du compte
          */
         fun initCompte(
-            pseudonyme:String, nom: String, prénom: String,
-            courriel: String, programme: String, avatar: Bitmap?
+            pseudonyme:String,
+            nom: String,
+            prénom: String,
+            courriel: String,
+            programme: String,
+            avatar: Bitmap?,
+            nomÉquipage: String
         )
     }
 

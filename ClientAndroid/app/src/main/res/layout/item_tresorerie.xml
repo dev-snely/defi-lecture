@@ -13,8 +13,8 @@
         style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/icDoublon"
         android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/icDoublon"
         android:fontFamily="@font/goudy_bookletter1911_regular"
         android:text="0"
         android:textColor="#000000"
@@ -41,11 +41,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/goudy_bookletter1911_regular"
         android:text="Nom d'équipage"
         app:layout_constraintBottom_toBottomOf="@+id/icDoublon"
         app:layout_constraintStart_toEndOf="@+id/icDoublon"
         app:layout_constraintTop_toTopOf="@+id/icDoublon" />
+
+    <TextView
+        android:id="@+id/tv_itemTextRang"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:text="Rang #"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_itemNomÉquipage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_itemNomÉquipage" />
+
+    <TextView
+        android:id="@+id/tv_itemNuméroRang"
+        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/goudy_bookletter1911_regular"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_itemTextRang"
+        app:layout_constraintStart_toEndOf="@+id/tv_itemTextRang"
+        app:layout_constraintTop_toTopOf="@+id/tv_itemTextRang" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

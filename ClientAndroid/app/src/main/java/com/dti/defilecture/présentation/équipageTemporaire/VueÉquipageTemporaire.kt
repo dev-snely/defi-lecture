@@ -23,6 +23,7 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
     lateinit var nomÉquipageTemporaire: TextView
     lateinit var numéroRangTemporaire: TextView
     lateinit var totalDoublonsTemporaire: TextView
+    lateinit var rejoindreÉquipage: ImageButton
 
     val équipageTemporaire = modèle.équipage()
 
@@ -45,10 +46,14 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
         nomÉquipageTemporaire = view.findViewById(R.id.tv_nomÉquipageTemporaire)
         numéroRangTemporaire = view.findViewById(R.id.tv_numéroRangTemporaire)
         totalDoublonsTemporaire = view.findViewById(R.id.tv_totalDoublonsTemporaire)
+        rejoindreÉquipage = view.findViewById(R.id.ib_rejoindreÉquipage)
 
         nomÉquipageTemporaire.text = équipageTemporaire.nomÉquipage
-        numéroRangTemporaire.text = équipageTemporaire.rang.toString()
-        totalDoublonsTemporaire.text = équipageTemporaire.doublonsÉquipage.toString()
+        //numéroRangTemporaire.text = équipageTemporaire.rang.toString()
+        //totalDoublonsTemporaire.text = équipageTemporaire.doublons.toString()
+        afficherTotalDoublons()
+        afficherRang()
+        rejoindreÉquipage.setOnClickListener { présentateur.rejoindreÉquipage(modèle.compteActif()) }
 
         val layoutManager = LinearLayoutManager(context)
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_équipageTemporaire)
@@ -56,13 +61,16 @@ class VueÉquipageTemporaire : Fragment(), IVueÉquipageTemporaire  {
         recyclerView.setHasFixedSize(true)
         adaptateur = VueÉquipageTemporaireAdaptateur( présentateur.initisaliseurDesComptesTemporaires(nomÉquipageTemporaire.text.toString()), présentateur)
         recyclerView.adapter = adaptateur
-
-        //Différentes fonctions sur la vue.
-        calculerTotalDoublons()
     }
 
-    private fun calculerTotalDoublons() {
-        totalDoublonsTemporaire.text = (0).toString() + " doublons"
+    override fun afficherTotalDoublons() {
+        équipageTemporaire.setTotalDoublons()
+        totalDoublonsTemporaire.text = équipageTemporaire.doublons.toString()
+    }
+
+    override fun afficherRang() {
+        équipageTemporaire.setRang()
+        numéroRangTemporaire.text = équipageTemporaire.rang.toString()
     }
 
     override fun naviguerVersDétailsCompteTemporaire() {

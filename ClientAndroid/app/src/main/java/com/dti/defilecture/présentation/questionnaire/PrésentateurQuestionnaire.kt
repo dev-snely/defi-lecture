@@ -1,36 +1,35 @@
 package com.dti.defilecture.présentation.questionnaire
 
-import com.dti.defilecture.présentation.Modèle
 import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.questionnaire.IContratVPQuestionnaire.IVueQuestionnaire
 import com.dti.defilecture.présentation.questionnaire.IContratVPQuestionnaire.IPrésentateurQuestionnaire
 
 
 class PrésentateurQuestionnaire( var vue: IVueQuestionnaire ): IPrésentateurQuestionnaire {
-    var liste = modèle.obtenirListeQuestion()
+    var question = modèle.obtenirQuestionModèle()
 
     override fun getQuestion(): String {
-        return liste[0].question
+        return question.question
     }
 
     override fun getReponseA(): String {
-        return liste[0].rep_A
+        return question.rep_A
     }
 
     override fun getReponseB(): String {
-        return liste[0].rep_B
+        return question.rep_B
     }
 
     override fun getReponseC(): String {
-        return liste[0].rep_C
+        return question.rep_C
     }
 
     override fun getReponseD(): String {
-        return liste[0].rep_D
+        return question.rep_D
     }
 
     override fun bonneReponse(reponseChoisi: String) {
-        if (liste[0].Bonne_reponse == reponseChoisi) {
+        if (modèle.obtenirBonneReponseModèle(question) == reponseChoisi) {
             vue.afficherBonneReponse()
         }
         else{

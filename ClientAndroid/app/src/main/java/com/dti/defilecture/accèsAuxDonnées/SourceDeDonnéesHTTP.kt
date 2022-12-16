@@ -39,11 +39,6 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         } catch (e: ExecutionException) {
             throw AccèsRessourcesException( e )
         }
-
-    }
-
-    override fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>? {
-        TODO("Not yet implemented")
     }
 
     override fun obtenirListeDeLecturesUtilisateur(identifiant: Int): MutableList<Lecture>? {
@@ -75,12 +70,122 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         queue.add(requête)
     }
 
-    override fun obtenirQuestions(): Array<Questionnaire> {
-        TODO("Not yet implemented")
+    override fun obtenirQuestionSource(): Questionnaire {
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/questionnaire/question", promesse, promesse)
+        queue.add(requête)
+
+        return try {
+            réponseJsonToQuestionnaire( JsonReader( StringReader( promesse.get() )) )
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            Questionnaire()
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
+    }
+
+    override fun obtenirBonneReponseSource(questionnaire: Questionnaire): String {
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/questionnaire/question", promesse, promesse)
+        queue.add(requête)
+
+        return try {
+            réponseJsonToBonneReponse( JsonReader( StringReader( promesse.get() )) )
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            questionnaire.bonneReponse
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
+    }
+
+
+    override fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>? {
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/comptes/equipage/$nomÉquipage", promesse, promesse)
+        queue.add(requête)
+
+        return try {
+            réponseJsonToComptesÉquipage( JsonReader( StringReader( promesse.get() )) )
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            mutableListOf<Compte>( Compte() )
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
     }
 
     override fun obtenirListeDesÉquipages(): MutableList<Équipage>? {
-        TODO("Not yet implemented")
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/tresorerie/equipages", promesse, promesse)
+        queue.add(requête)
+
+        return try {
+            réponseJsonToTrésorerie( JsonReader( StringReader( promesse.get() )) )
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            mutableListOf<Équipage>( Équipage() )
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
+    }
+
+    /**
+     * Méthode qui convertit la réponse JSON en objet kotlin Compte.
+     *
+     * @param jsonReader Objet permettant la lecture d'un objet JSON
+     */
+    private fun réponseJsonToLecture( jsonReader: JsonReader ): MutableList<Lecture>? {
+        val liste = mutableListOf<Lecture>()
+
+        jsonReader.beginArray()
+        while ( jsonReader.hasNext() ) {
+            var lecture = Lecture()
+
+            jsonReader.beginObject()
+            while ( jsonReader.hasNext() ){
+                val clé = jsonReader.nextName()
+                when (clé) {
+                    "titre" -> {
+                        lecture.titreLecture = jsonReader.nextString()
+                    }
+                    "dateInscription" -> {
+                        lecture.dateInscription = jsonReader.nextString()
+                    }
+                    "tempsLu" -> {
+                        lecture.duréeMinutes = jsonReader.nextInt()
+                    }
+                    "estObligatoire" -> {
+                        lecture.obligatoire = jsonReader.nextBoolean()
+                    }
+                    else -> {
+                        jsonReader.skipValue()
+                    }
+                }
+
+            }
+            jsonReader.endObject()
+            liste.add(lecture)
+        }
+        jsonReader.endArray()
+        return liste
     }
 
     /**
@@ -116,9 +221,6 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
                 "pseudo" -> {
                     compte.pseudonyme = jsonReader.nextString()
                 }
-                "role" -> {
-                    compte.role = jsonReader.nextInt()
-                }
                 "avatar" -> {
                     compte.avatar = stringToBitMap(jsonReader.nextString())
                 }
@@ -128,8 +230,8 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
                 "programme" -> {
                     compte.programme = jsonReader.nextString()
                 }
-                "devenirCapitaine" -> {
-                    compte.devenirCapitaine = jsonReader.nextBoolean()
+                "équipage" -> {
+                    compte.nomÉquipage = jsonReader.nextString()
                 }
                 else -> {
                     jsonReader.skipValue()
@@ -140,43 +242,187 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
 
         return compte
     }
+    /**
+     * Méthode qui convertit la réponse JSON en objet kotlin Compte.
+     *
+     * @param jsonReader Objet permettant la lecture d'un objet JSON
+     */
+    private fun réponseJsonToComptesÉquipage(jsonReader: JsonReader): MutableList<Compte> {
+        val liste = mutableListOf<Compte>()
+/*
+        jsonReader.beginObject()
 
-    private fun réponseJsonToLecture( jsonReader: JsonReader ): MutableList<Lecture>? {
-        val liste = mutableListOf<Lecture>()
+        while (jsonReader.hasNext()) {
+
+            val clé = jsonReader.nextName()
+
+            when (clé) {
+                "nomÉquipage" -> {
+                    équipage.nomÉquipage = jsonReader.nextString()
+                }
+                "rang" -> {
+                    équipage.rang = jsonReader.nextInt()
+                }
+                "doublons" -> {
+                    équipage.doublons = jsonReader.nextInt()
+                }
+                "listeComptes" -> {
+                    //équipage.listeComptes = jsonReader.nextString()
+                }
+                else -> {
+                    jsonReader.skipValue()
+                }
+            }
+        }
+        jsonReader.endObject*/
+
+        return liste
+    }
+
+    /**
+     * Méthode qui convertit la réponse JSON en objet kotlin Compte.
+     *
+     * @param jsonReader Objet permettant la lecture d'un objet JSON
+     */
+    private fun réponseJsonToÉquipage(jsonReader: JsonReader): Équipage {
+        val équipage = Équipage()
+
+        jsonReader.beginObject()
+
+        while (jsonReader.hasNext()) {
+
+            val clé = jsonReader.nextName()
+
+            when (clé) {
+                "nomÉquipage" -> {
+                    équipage.nomÉquipage = jsonReader.nextString()
+                }
+                "rang" -> {
+                    équipage.rang = jsonReader.nextInt()
+                }
+                "doublons" -> {
+                    équipage.doublons = jsonReader.nextInt()
+                }
+                "listeComptes" -> {
+                    //équipage.listeComptes = jsonReader.nextString()
+                }
+                else -> {
+                    jsonReader.skipValue()
+                }
+            }
+        }
+        jsonReader.endObject()
+
+        return équipage
+    }
+
+    /**
+     * Méthode qui convertit la réponse JSON en objet kotlin Compte.
+     *
+     * @param jsonReader Objet permettant la lecture d'un objet JSON
+     */
+    private fun réponseJsonToTrésorerie( jsonReader: JsonReader ): MutableList<Équipage>? {
+        val liste = mutableListOf<Équipage>()
 
         jsonReader.beginArray()
         while ( jsonReader.hasNext() ) {
-            var lecture = Lecture("","",0,false)
+            var équipage = Équipage()
 
             jsonReader.beginObject()
             while ( jsonReader.hasNext() ){
                 val clé = jsonReader.nextName()
                 when (clé) {
-                    "titre" -> {
-                        lecture.titreLecture = jsonReader.nextString()
+                    "nomÉquipage" -> {
+                        équipage.nomÉquipage = jsonReader.nextString()
                     }
-                    "dateInscription" -> {
-                        lecture.dateInscription = jsonReader.nextString()
+                    "rang" -> {
+                        équipage.rang = jsonReader.nextInt()
                     }
-                    "tempsLu" -> {
-                        lecture.duréeMinutes = jsonReader.nextInt()
-                    }
-                    "estObligatoire" -> {
-                        lecture.obligatoire = jsonReader.nextBoolean()
+                    "doublons" -> {
+                        équipage.doublons = jsonReader.nextInt()
                     }
                     else -> {
                         jsonReader.skipValue()
                     }
                 }
-
             }
             jsonReader.endObject()
-            liste.add(lecture)
+            liste.add(équipage)
         }
         jsonReader.endArray()
         return liste
     }
 
+    /**
+     * Méthode qui convertit la réponse JSON en objet kotlin Compte.
+     *
+     * @param jsonReader Objet permettant la lecture d'un objet JSON
+     */
+    private fun réponseJsonToQuestionnaire(jsonReader: JsonReader): Questionnaire {
+        val questionnaire = Questionnaire()
+
+        jsonReader.beginObject()
+
+        while (jsonReader.hasNext()) {
+
+            val clé = jsonReader.nextName()
+
+            when (clé) {
+                "id" -> {
+                    questionnaire.id = jsonReader.nextInt()
+                }
+                "question" -> {
+                    questionnaire.question = jsonReader.nextString()
+                }
+                "rep_A" -> {
+                    questionnaire.rep_A = jsonReader.nextString()
+                }
+                "rep_B" -> {
+                    questionnaire.rep_B = jsonReader.nextString()
+                }
+                "rep_C" -> {
+                    questionnaire.rep_C = jsonReader.nextString()
+                }
+                "rep_D" -> {
+                    questionnaire.rep_D = jsonReader.nextString()
+                }
+                else -> {
+                    jsonReader.skipValue()
+                }
+            }
+        }
+        jsonReader.endObject()
+
+        return questionnaire
+    }
+
+    /**
+     * Méthode qui convertit la réponse JSON en objet kotlin Compte.
+     *
+     * @param jsonReader Objet permettant la lecture d'un objet JSON
+     */
+    private fun réponseJsonToBonneReponse(jsonReader: JsonReader): String {
+        val questionnaire = Questionnaire()
+
+        jsonReader.beginObject()
+
+        while (jsonReader.hasNext()) {
+
+            val clé = jsonReader.nextName()
+
+            when (clé) {
+                "bonneReponse" -> {
+                    questionnaire.bonneReponse = jsonReader.nextString()
+                }
+                else -> {
+                    jsonReader.skipValue()
+                }
+            }
+        }
+        jsonReader.endObject()
+
+        return questionnaire.bonneReponse
+    }
 
     /**
      * Fonction tiré de : https://stackoverflow.com/questions/23005948/convert-string-to-bitmap

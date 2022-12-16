@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.dti.defilecture.R
+import com.dti.defilecture.domaine.entité.Équipage
 import com.dti.defilecture.présentation.modèle
 
 @Suppress("DEPRECATION")
@@ -83,7 +84,7 @@ class VueCompteUtilisateur : Fragment(), IContratVPCompte.IVueCompteUtilisateur{
     }
 
     override fun initCompte(pseudonyme:String, nom: String, prénom: String,
-                            courriel: String, programme: String, avatar: Bitmap?) {
+                            courriel: String, programme: String, avatar: Bitmap?, nomÉquipage: String) {
         tvPseudonyme.text = pseudonyme
         tvPrénom.text = getString(R.string.PrenomCompteUtilisateur,prénom)
         tvNom.text = getString(R.string.NomCompteUtilisateur,nom)

@@ -19,7 +19,7 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
         return monCompte
     }
 
-    override fun obtenirListeDesComptes(nomÉquipage: String): MutableList<Compte>? {
+    override fun obtenirListeDesComptesÉquipage(nomÉquipage: String): MutableList<Compte>? {
         return équipages.first { it.nomÉquipage == nomÉquipage }.listeComptes.sortedByDescending{ it.doublons }.toMutableList()
     }
 
@@ -31,21 +31,25 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
         lectures.add( lecture )
     }
 
-    override fun obtenirQuestions(): Array<Questionnaire> {
-        return arrayOf(question1, question2, question3, question4)
+    override fun obtenirQuestionSource(): Questionnaire {
+        return Questionnaire()
+    }
+
+    override fun obtenirBonneReponseSource(questionnaire: Questionnaire): String {
+        return questionnaire.bonneReponse
     }
 
     override fun obtenirListeDesÉquipages(): MutableList<Équipage> {
-        return équipages.sortedByDescending{ it.doublonsÉquipage }.toMutableList()
+        return équipages.sortedByDescending{ it.doublons }.toMutableList()
     }
 
     private var comptes : MutableList<Compte> = mutableListOf(
         Compte(1,"John", "Doe", 30,"john@gmail.com",
-            "Barbossa", "Informatique", 1, "johndoe", true, null),
+            "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
         Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-            "Sparrow", "Administration", 2, "blackpearl", false, null),
+            "Sparrow", "Administration", "blackpearl", null, "unÉquipage"),
         Compte(3, "Snely", "Man", 60, "snel@gmail.com",
-            "Jotaro", "Info", 1,"okokok",true,null)
+            "Jotaro", "Info","okokok", null, "unÉquipage")
     )
 
     private var équipages : MutableList<Équipage> = mutableListOf(
@@ -53,93 +57,93 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
         Équipage( "Équipage 1", 10, 0,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",
-            "Barbossa", "Informatique", 1, "johndoe", true, null),
+            "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
                 Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-                "Sparrow", "Administration", 2, "blackpearl", false, null),
+                "Sparrow", "Administration", "blackpearl", null, "unÉquipage"),
                 Compte(3, "Snely", "Man", 60, "snel@gmail.com",
-                "Jotaro", "Info", 1,"okokok",true,null)
+                "Jotaro", "Info","okokok", null, "unÉquipage")
             )
         ),
         Équipage( "Équipage 2", 9, 15,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",
-                    "Barbossa", "Informatique", 1, "johndoe", true, null),
+                    "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
                 Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-                    "Sparrow", "Administration", 2, "blackpearl", false, null),
+                    "Sparrow", "Administration", "blackpearl", null, "unÉquipage"),
             )
         ),
         Équipage( "Équipage 3", 8, 30,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",
-                    "Barbossa", "Informatique", 1, "johndoe", true, null),
+                    "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
                 Compte(3, "Snely", "Man", 60, "snel@gmail.com",
-                    "Jotaro", "Info", 1,"okokok",true,null)
+                    "Jotaro", "Info","okokok", null, "unÉquipage")
             )
         ),
         Équipage( "Équipage 4", 7, 45,
             mutableListOf(
                 Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-                    "Sparrow", "Administration", 2, "blackpearl", false, null),
+                    "Sparrow", "Administration", "blackpearl", null, "unÉquipage"),
                 Compte(3, "Snely", "Man", 60, "snel@gmail.com",
-                    "Jotaro", "Info", 1,"okokok",true,null)
+                    "Jotaro", "Info","okokok",null, "unÉquipage")
             )
         ),
         Équipage( "Équipage 5", 6, 60,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",
-                    "Barbossa", "Informatique", 1, "johndoe", true, null),
+                    "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
                 Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-                    "Sparrow", "Administration", 2, "blackpearl", false, null)
+                    "Sparrow", "Administration", "blackpearl", null, "unÉquipage")
             )
         ),
         Équipage( "Équipage 6", 5, 75,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",
-                    "Barbossa", "Informatique", 1, "johndoe", true, null),
+                    "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
                 Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-                    "Sparrow", "Administration", 2, "blackpearl", false, null),
+                    "Sparrow", "Administration", "blackpearl", null, "unÉquipage"),
                 Compte(3, "Snely", "Man", 60, "snel@gmail.com",
-                    "Jotaro", "Info", 1,"okokok",true,null)
+                    "Jotaro", "Info","okokok",null, "unÉquipage")
             )
         ),
         Équipage( "Équipage 7", 4, 90,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",
-                    "Barbossa", "Informatique", 1, "johndoe", true, null),
+                    "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
                 Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-                    "Sparrow", "Administration", 2, "blackpearl", false, null),
+                    "Sparrow", "Administration", "blackpearl", null, "unÉquipage"),
                 Compte(3, "Snely", "Man", 60, "snel@gmail.com",
-                    "Jotaro", "Info", 1,"okokok",true,null)
+                    "Jotaro", "Info","okokok",null, "unÉquipage")
             )
         ),
         Équipage( "Équipage 8", 3, 105,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",
-                    "Barbossa", "Informatique", 1, "johndoe", true, null),
+                    "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
                 Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-                    "Sparrow", "Administration", 2, "blackpearl", false, null),
+                    "Sparrow", "Administration", "blackpearl", null, "unÉquipage"),
                 Compte(3, "Snely", "Man", 60, "snel@gmail.com",
-                    "Jotaro", "Info", 1,"okokok",true,null)
+                    "Jotaro", "Info","okokok", null, "unÉquipage")
             )
         ),
         Équipage( "Équipage 9", 2, 120,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",
-                    "Barbossa", "Informatique", 1, "johndoe", true, null),
+                    "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
                 Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-                    "Sparrow", "Administration", 2, "blackpearl", false, null),
+                    "Sparrow", "Administration", "blackpearl", null, "unÉquipage"),
                 Compte(3, "Snely", "Man", 60, "snel@gmail.com",
-                    "Jotaro", "Info", 1,"okokok",true,null)
+                    "Jotaro", "Info","okokok",null, "unÉquipage")
             )
         ),
         Équipage( "Équipage 10", 1, 135,
             mutableListOf(
                 Compte(1,"John", "Doe", 30,"john@gmail.com",
-                    "Barbossa", "Informatique", 1, "johndoe", true, null),
+                    "Barbossa", "Informatique", "johndoe", null, "unÉquipage"),
                 Compte(2,"Jess", "Foe", 30,"jesss@gmail.com",
-                    "Sparrow", "Administration", 2, "blackpearl", false, null),
+                    "Sparrow", "Administration", "blackpearl", null, "unÉquipage"),
                 Compte(3, "Snely", "Man", 60, "snel@gmail.com",
-                    "Jotaro", "Info", 1,"okokok",true,null)
+                    "Jotaro", "Info","okokok",null, "unÉquipage")
             )
         )
     )

@@ -12,6 +12,10 @@ interface IContratVPÉquipage {
      * Définit les méthodes à utiliser dans une vue Équipage.
      */
     interface IVueÉquipage{
+        fun afficherTotalDoublons()
+
+        fun afficherRang()
+
         fun naviguerVersDétailsCompteActif()
 
         fun naviguerVersDétailsCompteTemporaire()

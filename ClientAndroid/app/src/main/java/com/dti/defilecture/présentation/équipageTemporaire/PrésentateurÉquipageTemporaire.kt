@@ -18,4 +18,8 @@ class PrésentateurÉquipageTemporaire (var vue: IVueÉquipageTemporaire): IPré
             vue.naviguerVersDétailsCompteTemporaire()
         }
     }
+
+    override fun rejoindreÉquipage(compte: Compte) {
+        TODO("Not yet implemented")
+    }
 }
