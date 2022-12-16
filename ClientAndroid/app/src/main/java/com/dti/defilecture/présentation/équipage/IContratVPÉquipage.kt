@@ -1,6 +1,7 @@
 package com.dti.defilecture.présentation.équipage
 
 import com.dti.defilecture.domaine.entité.Compte
+import com.dti.defilecture.domaine.entité.Lecture
 
 /**
  * Interface de contrats établissant les méthodes utiliser
@@ -19,13 +20,17 @@ interface IContratVPÉquipage {
         fun naviguerVersDétailsCompteActif()
 
         fun naviguerVersDétailsCompteTemporaire()
+
+        fun gestionAfficherComptesÉquipage( comptes: MutableList<Compte>? )
     }
 
     /**
      * Définit les méthodes à utiliser dans un présentateur Équipage.
      */
     interface IPrésentateurÉquipage{
-        fun initisaliseurDesComptes(nomÉquipage:String): MutableList<Compte>?
+
+        fun initisaliseurDesComptes(nomÉquipage:String)
+
 
         fun requêteVoirDétailsCompte(pseudonyme: String, nomÉquipage: String)
     }

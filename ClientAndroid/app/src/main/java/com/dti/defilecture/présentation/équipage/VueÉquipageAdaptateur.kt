@@ -14,16 +14,19 @@ import com.dti.defilecture.présentation.modèle
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
 class VueÉquipageAdaptateur(
-    private val comptes: MutableList<Compte>?,
-    var présentateur: IPrésentateurÉquipage) : RecyclerView.Adapter<VueÉquipageAdaptateur.MyViewHolder>() {
+    private val comptes: MutableList<Compte>?) :
+    RecyclerView.Adapter<VueÉquipageAdaptateur.MyViewHolder>() {
 
     lateinit var context: Context
+    lateinit var présentateur : IPrésentateurÉquipage
+    var vue = VueÉquipage()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_equipage, parent, false)
 
         context = parent.context
+        présentateur = PrésentateurÉquipage(vue)
         return MyViewHolder(itemView)
     }
 

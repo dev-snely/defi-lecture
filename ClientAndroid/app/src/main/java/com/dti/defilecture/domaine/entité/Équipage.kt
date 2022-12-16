@@ -6,8 +6,7 @@ package com.dti.defilecture.domaine.entité
 class Équipage(var nomÉquipage: String,
                var rang: Int,
                var doublons: Int,
-               var listeComptes: MutableList<Compte>)
-{
+               var listeComptes : MutableList<Compte>?) {
     /**
      * Second constructeur qui permet l'initialisation d'un compte sans information.
      */
@@ -15,8 +14,8 @@ class Équipage(var nomÉquipage: String,
 
     fun setTotalDoublons() {
         doublons = 0
-        for (i in 0 until this.listeComptes.size) {
-            doublons += listeComptes[i].doublons
+        for (i in 0 until (this.listeComptes?.size ?: 0)) {
+            doublons += listeComptes?.get(i)?.doublons ?: 0
         }
     }
 

@@ -45,6 +45,7 @@ interface ISourceDeDonnées {
 
     fun obtenirBonneReponseSource(questionnaire: Questionnaire): String
 
+    fun obtenirÉquipageParNomÉquipage(nomÉquipage: String): Équipage
 
     /**
      *  Cette méthode permet l'obtention d'une liste d'équipages participants au Défi Lecture.

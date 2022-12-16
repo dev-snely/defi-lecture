@@ -19,13 +19,15 @@ interface IContratVPÉquipageTemporaire {
         fun naviguerVersDétailsCompteTemporaire()
 
         fun naviguerVersDétailsCompteActif()
+
+        fun gestionAfficherComptesÉquipageTemporaire( comptes: MutableList<Compte>? )
     }
 
     /**
      * Définit les méthodes à utiliser dans un présentateur ÉquipageTemporaire.
      */
     interface IPrésentateurÉquipageTemporaire{
-        fun initisaliseurDesComptesTemporaires(nomÉquipage: String): MutableList<Compte>?
+        fun initisaliseurDesComptesTemporaires(nomÉquipage: String)
 
         fun requêteVoirDétailsCompteTemporaire(pseudonyme: String, nomÉquipage: String)
 

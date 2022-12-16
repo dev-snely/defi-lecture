@@ -11,7 +11,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
+import com.dti.defilecture.domaine.entité.Compte
+import com.dti.defilecture.domaine.entité.Lecture
+import com.dti.defilecture.présentation.compte.VueCompteUtilisateur
 import com.dti.defilecture.présentation.modèle
+import com.dti.defilecture.présentation.voirlectures.VueMesLecturesAdaptateur
 import com.dti.defilecture.présentation.équipage.IContratVPÉquipage.*
 
 
@@ -23,6 +27,9 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
     lateinit var nomÉquipage: TextView
     lateinit var numéroRang: TextView
     lateinit var totalDoublons: TextView
+
+    lateinit var comptes: MutableList<Compte>
+    lateinit var recyclerView: RecyclerView
 
     val équipage = modèle.équipage()
 
@@ -47,8 +54,6 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         totalDoublons = view.findViewById(R.id.tv_totalDoublons)
 
         nomÉquipage.text = équipage.nomÉquipage
-        //numéroRang.text = équipage.rang.toString()
-        //totalDoublons.text = équipage.doublons.toString()
         afficherTotalDoublons()
         afficherRang()
 
@@ -56,7 +61,12 @@ class VueÉquipage : Fragment(), IVueÉquipage  {
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_équipage)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adaptateur = VueÉquipageAdaptateur( présentateur.initisaliseurDesComptes(nomÉquipage.text.toString()), présentateur)
+
+        présentateur.initisaliseurDesComptes(nomÉquipage.text.toString())
+    }
+
+    override fun gestionAfficherComptesÉquipage( comptes: MutableList<Compte>? ) {
+        adaptateur = VueÉquipageAdaptateur(comptes)
         recyclerView.adapter = adaptateur
     }
 

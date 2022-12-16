@@ -108,6 +108,24 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         }
     }
 
+    override fun obtenirÉquipageParNomÉquipage(nomÉquipage: String): Équipage {
+        val queue = Volley.newRequestQueue(ctx)
+
+        val promesse: RequestFuture<String> = RequestFuture.newFuture()
+
+        val requête = StringRequest(Request.Method.GET,
+            "$urlSource/api/equipage/$nomÉquipage", promesse, promesse)
+        queue.add(requête)
+
+        return try {
+            réponseJsonToÉquipage( JsonReader( StringReader( promesse.get() )))
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+            Équipage()
+        } catch (e: ExecutionException) {
+            throw AccèsRessourcesException( e )
+        }
+    }
 
     override fun obtenirListeDesComptesÉquipageSource(nomÉquipage: String): MutableList<Compte>? {
         val queue = Volley.newRequestQueue(ctx)
@@ -115,14 +133,15 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
         val promesse: RequestFuture<String> = RequestFuture.newFuture()
 
         val requête = StringRequest(Request.Method.GET,
-            "$urlSource/api/comptes/equipage/$nomÉquipage", promesse, promesse)
+            "$urlSource/api/comptes/$nomÉquipage", promesse, promesse)
         queue.add(requête)
 
         return try {
-            réponseJsonToComptesÉquipage( JsonReader( StringReader( promesse.get() )) )
+            obtenirListeDesÉquipagesSource()?.first { it.nomÉquipage == nomÉquipage }?.listeComptes
+                ?.sortedByDescending{ it.doublons }?.toMutableList()
         } catch (e: InterruptedException) {
             e.printStackTrace()
-            mutableListOf( Compte() )
+            mutableListOf(Compte())
         } catch (e: ExecutionException) {
             throw AccèsRessourcesException( e )
         }
@@ -139,6 +158,7 @@ class SourceDeDonnéesHTTP(var ctx: Context, var urlSource: URL) : ISourceDeDonn
 
         return try {
             réponseJsonToTrésorerie( JsonReader( StringReader( promesse.get() )) )
+                ?.sortedByDescending{ it.doublons }?.toMutableList()
         } catch (e: InterruptedException) {
             e.printStackTrace()
             mutableListOf( Équipage() )

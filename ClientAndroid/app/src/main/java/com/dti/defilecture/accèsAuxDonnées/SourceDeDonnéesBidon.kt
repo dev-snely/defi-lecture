@@ -36,8 +36,12 @@ class SourceDeDonnéesBidon : ISourceDeDonnées {
         return questionnaire.bonneReponse
     }
 
+    override fun obtenirÉquipageParNomÉquipage(nomÉquipage: String): Équipage {
+        TODO("Not yet implemented")
+    }
+
     override fun obtenirListeDesComptesÉquipageSource(nomÉquipage: String): MutableList<Compte>? {
-        return équipages.first { it.nomÉquipage == nomÉquipage }.listeComptes.sortedByDescending{ it.doublons }.toMutableList()
+        return équipages.first { it.nomÉquipage == nomÉquipage }.listeComptes?.sortedByDescending{ it.doublons }?.toMutableList()
     }
 
     override fun obtenirListeDesÉquipagesSource(): MutableList<Équipage> {

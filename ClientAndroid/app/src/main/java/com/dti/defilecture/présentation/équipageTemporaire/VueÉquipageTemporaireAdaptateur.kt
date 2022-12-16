@@ -11,20 +11,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dti.defilecture.R
 import com.dti.defilecture.domaine.entité.Compte
 import com.dti.defilecture.présentation.modèle
+import com.dti.defilecture.présentation.équipage.PrésentateurÉquipage
 import com.dti.defilecture.présentation.équipageTemporaire.IContratVPÉquipageTemporaire.*
 
 class VueÉquipageTemporaireAdaptateur(
-    private val comptes: MutableList<Compte>?,
-    var présentateur: IPrésentateurÉquipageTemporaire) :
+    private val comptes: MutableList<Compte>?) :
     RecyclerView.Adapter<VueÉquipageTemporaireAdaptateur.MyViewHolder>() {
 
     lateinit var context: Context
+    lateinit var présentateur: IPrésentateurÉquipageTemporaire
+    var vue = VueÉquipageTemporaire()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_equipage_temporaire, parent, false)
 
         context = parent.context
+        présentateur = PrésentateurÉquipageTemporaire(vue)
         return MyViewHolder(itemView)
     }
 
