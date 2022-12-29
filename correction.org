@@ -1,0 +1,94 @@
+A=100%
+B=80%
+C=60%
+D=40%
+E=0%
+X=Absent ou non rendu
+
+1. Jonathan
+2. Ovidiu
+3. Snely
+4. Vu Minh
+5. Gérard
+
+Sprint 1
+|                                       | Note | 1 |  2 |  3 |  4 | 5 |
+| Qualité du prototype d'interface :    | A    |   |    |    |    |   |
+|                                       |      |   |    |    |    |   |
+| Présentation :                        | A    |   |    |    |    | X |
+|                                       |      |   |    |    |    |   |
+| Évaluation du travail par les pairs : |      | C |    |    |    | X |
+|---------------------------------------+------+---+----+----+----+---|
+| Total                                 |      | 6 | 10 | 10 | 10 | 0 |
+
+Sprint 2
+|                                            | Note | 1 | 2 |  3 |  4 | 5 |
+| Qualité du développement :                 | A    |   |   |    |    |   |
+|                                            |      |   |   |    |    |   |
+| Présentation :                             | A    |   |   |    |    |   |
+|                                            |      |   |   |    |    |   |
+| Évaluation du travail par les pairs (50%): |      | B | A |  A |  A | B |
+| Part du travail commité sur Gitlab (50%):  |      | C | B |  A |  A | A |
+|--------------------------------------------+------+---+---+----+----+---|
+| Total                                      |      | 7 | 9 | 10 | 10 | 9 |
+
+Sprint 3
+|                                            | Note | 1 |  2 |  3 |  4 | 5 |
+| Qualité du développement :                 | A    |   |    |    |    |   |
+|                                            |      |   |    |    |    |   |
+| Présentation :                             | A    |   |    |    |    |   |
+|                                            |      |   |    |    |    |   |
+| Évaluation du travail par les pairs (50%): |      | X |  A |  A |  A | A |
+| Part du travail commité sur Gitlab (50%):  |      | A |  A |  A |  A | E |
+|--------------------------------------------+------+---+----+----+----+---|
+| Total                                      |      | 5 | 10 | 10 | 10 | 5 |
+
+Sprint 4
+|                                            | Note | 1 |  2 |  3 |  4 |  5 |
+| Qualité du développement :                 | A    |   |    |    |    |    |
+|                                            |      |   |    |    |    |    |
+| Présentation :                             | A    |   |    |    |    |    |
+|                                            |      |   |    |    |    |    |
+| Évaluation du travail par les pairs (50%): |      | X |  A |  A |  A |  A |
+| Part du travail commité sur Gitlab (50%):  |      | E |  A |  A |  A |  A |
+|--------------------------------------------+------+---+----+----+----+----|
+| Total                                      |      | 0 | 10 | 10 | 10 | 10 |
+
+Livraison
+|                                            |     | Note | 1   | 2    | 3    | 4    | 5    |
+| Éléments techniques                        |     |      |     |      |      |      |      |
+| - 2 écrans fonctionnels                    | /5  | A    |     |      |      |      |      |
+| - Échange de données                       | /5  | A    |     |      |      |      |      |
+| - Sauvegardes locales                      | /3  | E    |     |      |      |      |      |
+| - Interaction Android                      | /3  | A    |     |      |      |      |      |
+|                                            |     |      |     |      |      |      |      |
+| IU                                         |     |      |     |      |      |      |      |
+| - Ergonomie                                | /5  | A    |     |      |      |      |      |
+| - I18n                                     | /3  | A    |     |      |      |      |      |
+|                                            |     |      |     |      |      |      |      |
+| Architecture                               |     |      |     |      |      |      |      |
+| - 3-tiers                                  |     |      |     |      |      |      |      |
+| -- Séparation MVP                          | /5  | A    |     |      |      |      |      |
+| -- Source de données                       | /5  | A    |     |      |      |      |      |
+| -- Abstractions                            | /5  | A    |     |      |      |      |      |
+| - Utilisation de fils d'exécution          | /5  | A    |     |      |      |      |      |
+|                                            |     |      |     |      |      |      |      |
+| Assurance qualité                          |     |      |     |      |      |      |      |
+| - Tests Présentateurs/Modèles              | /2  | C    |     |      |      |      |      |
+| - Tests Interacteurs/Entités               | /2  | C    |     |      |      |      |      |
+| - Tests Accès aux données                  | /2  | E    |     |      |      |      |      |
+|                                            |     |      |     |      |      |      |      |
+| Présentation                               |     |      |     |      |      |      |      |
+| - Démontre la présence des fonctionnalités | /5  | A    |     |      |      |      |      |
+| - Démontre la robustesse                   | /5  | A    |     |      |      |      |      |
+| - Qualité de l'interface utilisateur       | /5  | A    |     |      |      |      |      |
+| - Clarté de la présentation                | /5  | A    |     |      |      |      |      |
+| - Pertinence des démonstrations            | /5  | A    |     |      |      |      |      |
+|                                            | /75 | 68.4 |     |      |      |      |      |
+| Participation                              |     |      |     |      |      |      |      |
+|--------------------------------------------+-----+------+-----+------+------+------+------|
+| Participation à la présentation            | ×⅓  |      | E   | A    | A    | A    | A    |
+| Connaissance du projet                     | ×⅓  |      | E   | C    | A    | B    | A    |
+| Participation au projet                    | ×⅓  |      | D   | A    | A    | A    | A    |
+|                                            |     |      | 4.6 | 59.3 | 68.4 | 63.8 | 68.4 |
+
